@@ -1,0 +1,51 @@
+*, ::after, ::before{
+    box-sizing: border-box;
+}
+body{
+    margin-top: 56px !important; /*Correspond à la taille du menu fixe */
+}
+.menuposts{
+    display: flex;
+    justify-content: space-around;
+}
+
+#blocPage{
+    background-image: url("../img/Backhome.jpg");
+    background-position: center;
+}
+#filterHome{
+    background-color: rgba(58, 53, 53, 0.8);
+}
+#backgroundLogin{
+    background-image : url("../img/Backlogin.jpg");
+    background-position: center;
+    height: 1000px !important;
+}
+
+
+/* PARTIE COMMENTAIRES */
+#viewComment{
+    background-color: grey;
+    border-radius: 15px;
+}
+
+/* PARTIE POST */
+
+.postDetail{
+    margin-bottom: 40px;
+}
+
+#sectionLogin{
+    padding-top: 180px;
+    padding-bottom: 180px;
+}
+
+
+/* partie UpdatePassword */
+.show-password {
+	font-size: 9px !important;
+	text-transform: uppercase;
+	
+	cursor: pointer;
+
+}
