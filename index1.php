@@ -8,7 +8,7 @@ include(dirname(__FILE__)."/controller/frontend.php");
 include(dirname(__FILE__)."/controller/backend.php");
 
 try{
-    
+
 }
 catch(Exception $e) // s'il y a une erreur, alors...
 {
