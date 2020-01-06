@@ -4,11 +4,16 @@ session_start(); // enregistrement des paramètres pour l'admin source: http://w
 //source: https://openclassrooms.com/fr/courses/4670706-adoptez-une-architecture-mvc-en-php/4682351-creer-un-routeur#/id/r-4682481
 
 
-include(dirname(__FILE__)."/controller/frontend.php");
-include(dirname(__FILE__)."/controller/backend.php");
+include(dirname(__FILE__)."/controller/frontend1.php");
+include(dirname(__FILE__)."/controller/backend1.php");
 
 try{
-
+    if($_GET["action"] == "home"){
+        ToolsFrontend::home();
+    }
+    else{
+        ToolsFrontend::listNovel();
+    }
 }
 catch(Exception $e) // s'il y a une erreur, alors...
 {
