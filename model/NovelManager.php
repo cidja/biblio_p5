@@ -3,7 +3,7 @@
 //All comments are in English for the understanding of as many people as possible.
 //to support : mail: christian@linternaute-averti.fr
 
-require_once("/model/ManagerDb.php"); //calling the file for the connection to the database
+require_once("model/ManagerDb.php"); //calling the file for the connection to the database
 
 class NovelManager extends ManagerDb
     {
