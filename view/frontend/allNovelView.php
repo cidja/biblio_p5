@@ -7,14 +7,27 @@ $title = "Liste des romans";
 
 ob_start(); //Start of capture to put it in the variable at the end of the script 
 
-    while($data = $result->fetch())
+    while($data = $infos->fetch())
     {
-        echo "titre du livre" . $data['title'];
+        ?>
+        <h1>titre du livre </h1> 
+            <div> 
+                <?= $data['title']; ?> 
+            </div>
+        <h3>Auteur</h3>
+            <span>
+                <?= $data["author"]; ?>
+            </span>
+        <h3>Et voici sa couverture </h3>
+            <div>
+                <img src=<?=$data["cover"]; ?> alt="couverture du livre" title="couverture du livre" />
+            </div>
+        <?php
     }
 
-$results->closeCursor();
+$infos->closeCursor();
 $content = ob_get_clean();
-require("template1.php");
+require("template.php");
 /*This code does 3 things:
 
     It defines the title of the page in $title. This will be integrated in the <title> tag in the template.

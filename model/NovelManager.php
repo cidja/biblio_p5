@@ -12,14 +12,14 @@ class NovelManager extends ManagerDb
             $db = $this->dbConnect();
             $infos = $db->query('SELECT title, author, isbn, genre, page_count, count_volume, active,finish, comment,rate,cover,
                                  DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM novel');
-            return $result;
+            return $infos;
         }
         
         public function oneNovelInfos($id)
         {
             $db = $this->dbConnect();
             $infos = $db->prepare('SELECT * FROM novel where id= ?');
-            $infos->execute(array($id));
+            $oneResult = $infos->execute(array($id));
             return $oneResult;
         }
 
