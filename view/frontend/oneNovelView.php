@@ -40,13 +40,29 @@ foreach($oneInfos as $data){ // Let's go through the board
         <div class="isbn">
             <div>
                 <span>ISBN :</span>
-                <span><?= $data["isbn"]; ?></span>
+                <span>
+                    <?php
+                    if ($data["isbn"] == 0){
+                        echo "non renseigné";
+                    } else{
+                        echo $data["isbn"];
+                    } 
+                    ?>
+                </span>
             </div>
         </div>
         <div class="finish">
             <div>
                 <span>Fini ? :</span>
-                <span><?= $data["finish"]; ?></span>
+                <span>
+                    <?php 
+                        if($data["finish"] == 0){
+                            echo "pas fini";
+                        }
+                        else{
+                            echo "fini";
+                        } ?>
+                </span>
             </div>
         </div>
         <div class="rate">

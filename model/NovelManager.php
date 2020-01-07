@@ -7,7 +7,7 @@ require_once("model/ManagerDb.php"); //calling the file for the connection to th
 
 class NovelManager extends ManagerDb
     {
-        public function allNovelInfos() //method for retrieving all the information from all the books
+        public function allNovelInfos() //method for retrieving all the information from all the novels
         {
             $db = $this->dbConnect();
             $infos = $db->query('SELECT id,title, author, isbn, genre, page_count, count_volume, active,finish, comment,rate,cover,
@@ -15,7 +15,7 @@ class NovelManager extends ManagerDb
             return $infos;
         }
         
-        public function oneNovelInfos($id)
+        public function oneNovelInfos($id) //method for retrieving all the information from one novel with $_GET["id"]
         {
             $db = $this->dbConnect();
             $infos = $db->prepare('SELECT id,title, author, isbn, genre, page_count, count_volume, active,finish, comment,rate,cover,
