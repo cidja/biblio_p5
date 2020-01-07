@@ -28,14 +28,14 @@
                     <a class="nav-link" href="#"> Accueil </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"> Livre en cours </a>
+                    <a class="nav-link" href="index.php?action=novelCurrent"> Livre en cours </a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Livres lus 
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="index.php?action=novelsRead">
                             Roman
                         </a>
                         <a class="dropdown-item" href="#">

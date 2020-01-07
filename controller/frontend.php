@@ -8,14 +8,27 @@ require("model/NovelManager.php"); //call the class novelManager require_once (o
 
             public static function listNovel()
             {
-                $novelManager = new NovelManager(); // creation of the novelManager object
+                $novelManager = new Model_NovelManager(); // creation of the novelManager object
                 $infos = $novelManager->allNovelInfos(); // call of the method allNovelInfos of the NovelManager object
                 require("view/frontend/allNovelView.php"); // Displays a list of all novels 
             }
             public static function oneNovelInfos($id)
             {
-                $novelManager = new NovelManager();
+                $novelManager = new Model_NovelManager();
                 $oneInfos = $novelManager->oneNovelInfos($id); // $oneInfo which is called in oneNovelView.php
                 require("view/frontend/oneNovelView.php");
+            }
+            
+            public static function novelRead()
+            {
+                $novelManager = new Model_NovelManager();
+                $novelsRead = $novelManager->novelsRead(); // $result which is called in novelReadView.php
+                require("view/frontend/novelReadView.php");
+            }
+            public static function novelCurrent()
+            {
+                $novelManager = new Model_NovelManager();
+                $novelCurrent = $novelManager->novelCurrent();
+                require("view/frontend/novelCurrentView.php");
             }
         }
