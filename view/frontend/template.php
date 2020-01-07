@@ -25,7 +25,7 @@
         <div class="collapse navbar-collapse" ide="navbarNav">
             <ul class="navbar-nav">
                 <li class="navbar-item active">
-                    <a class="nav-link" href="#"> Accueil </a>
+                    <a class="nav-link" href="index.php?action=home"> Accueil </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?action=novelCurrent"> Livre en cours </a>

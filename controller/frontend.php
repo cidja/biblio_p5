@@ -31,4 +31,11 @@ require("model/NovelManager.php"); //call the class novelManager require_once (o
                 $novelCurrent = $novelManager->novelCurrent();
                 require("view/frontend/novelCurrentView.php");
             }
+
+            public static function listCartoon()
+            {
+                $cartoonManager = new Model_CartonManager();
+                $infos = $cartoonManager->allCartoonInfos();
+                require("view/frontend/allCartoonView.php");
+            }
         }
