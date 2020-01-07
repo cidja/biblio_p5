@@ -10,7 +10,7 @@ class NovelManager extends ManagerDb
         public function allNovelInfos() //method for retrieving all the information from all the books
         {
             $db = $this->dbConnect();
-            $infos = $db->query('SELECT title, author, isbn, genre, page_count, count_volume, active,finish, comment,rate,cover,
+            $infos = $db->query('SELECT id,title, author, isbn, genre, page_count, count_volume, active,finish, comment,rate,cover,
                                  DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM novel');
             return $infos;
         }
@@ -18,7 +18,8 @@ class NovelManager extends ManagerDb
         public function oneNovelInfos($id)
         {
             $db = $this->dbConnect();
-            $infos = $db->prepare('SELECT * FROM novel where id= ?');
+            $infos = $db->prepare('SELECT id,title, author, isbn, genre, page_count, count_volume, active,finish, comment,rate,cover,
+                                    DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM novel where id= ?');
             $oneResult = $infos->execute(array($id));
             return $oneResult;
         }

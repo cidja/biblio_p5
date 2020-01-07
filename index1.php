@@ -1,6 +1,6 @@
 <?php //deviens notre routeur 
 setlocale(LC_TIME, 'fr_FR.utf8', 'fra');
-session_start(); // enregistrement des paramètres pour l'admin source: http://www.lephpfacile.com/cours/18-les-sessions Ligne 64
+session_start(); // saving settings for the source admin: http://www.lephpfacile.com/cours/18-les-sessions Ligne 64
 //source: https://openclassrooms.com/fr/courses/4670706-adoptez-une-architecture-mvc-en-php/4682351-creer-un-routeur#/id/r-4682481
 
 
@@ -8,8 +8,19 @@ include(dirname(__FILE__)."/controller/frontend.php");
 //include(dirname(__FILE__)."/controller/backend.php");
 
 try{
-    if($_GET["action"] == "home"){
-        ToolsFrontend::home();
+    if(isset($_GET["action"])){
+        if($_GET["action"] == "home"){
+            ToolsFrontend::home();
+        }
+        elseif($_GET["action"] == "oneNovel"){ // if in the url $_GET["action"]= oneNovel
+            if(isset($_GET["id"]) && $_GET["id"] > 0) { // check if $_get["id"] defined and greater than 0
+                $id = htmlspecialchars($_GET["id"]); // to avoid inclusion xss
+                ToolsFrontend::oneNovelInfos($id); // calling the tool oneNovelInfos
+            }
+            else {
+                throw new Exception("Aucun identifiant de billet envoyé !");
+            }
+        }
     }
     else{
         ToolsFrontend::listNovel();

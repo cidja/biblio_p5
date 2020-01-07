@@ -10,17 +10,11 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
     while($data = $infos->fetch())
     {
         ?>
-        <h1>titre du livre </h1> 
-            <div> 
-                <?= $data['title']; ?> 
-            </div>
-        <h3>Auteur</h3>
-            <span>
-                <?= $data["author"]; ?>
-            </span>
-        <h3>Et voici sa couverture </h3>
+        
             <div>
-                <img src=<?=$data["cover"]; ?> alt="couverture du livre" title="couverture du livre" />
+                <a href="index.php?action=oneNovel&amp;id=<?= $data["id"];?>">
+                    <img src=<?=$data["cover"]; ?> alt="couverture du livre" title="couverture du livre" />
+                </a>
             </div>
         <?php
     }

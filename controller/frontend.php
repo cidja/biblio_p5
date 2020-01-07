@@ -12,4 +12,10 @@ require_once("model/NovelManager.php"); //call the class novelManager require_on
                 $infos = $novelManager->allNovelInfos(); // call of the method allNovelInfos of the NovelManager object
                 require("view/frontend/allNovelView.php"); // Displays a list of all novels 
             }
+            public static function oneNovelInfos($id)
+            {
+                $novelManager = new NovelManager();
+                $oneInfos = $novelManager->oneNovelInfos($id);
+                require("view/frontend/oneNovelView.php");
+            }
         }
