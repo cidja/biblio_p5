@@ -19,9 +19,14 @@ class NovelManager extends ManagerDb
         {
             $db = $this->dbConnect();
             $infos = $db->prepare('SELECT id,title, author, isbn, genre, page_count, count_volume, active,finish, comment,rate,cover,
-                                    DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM novel where id= ?');
-            $oneResult = $infos->execute(array($id));
-            return $oneResult;
+                                    DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM novel WHERE id=?');
+            $infos->execute(array($id));
+            $result = $infos->fetch();
+            foreach($result as $value){
+                echo $value;
+            };
+            return $result;
+            
         }
 
     }

@@ -7,7 +7,7 @@ $title = "Liste des romans";
 
 ob_start(); //Start of capture to put it in the variable at the end of the script 
 
-    while($data = $infos->fetch())
+    foreach($infos as $data) //source: https://www.php.net/manual/fr/control-structures.foreach.php
     {
         ?>
         

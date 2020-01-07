@@ -4,8 +4,8 @@
 //to support : mail: christian@linternaute-averti.fr
 require_once("model/NovelManager.php"); //call the class novelManager require_once (once only)
 
-    trait toolsFrontend
-        {
+    trait ToolsFrontend{
+
             public static function listNovel()
             {
                 $novelManager = new NovelManager(); // creation of the novelManager object

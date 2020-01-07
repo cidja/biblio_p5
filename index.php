@@ -14,7 +14,6 @@ try{
         }
         elseif($_GET["action"] == "oneNovel"){ // if in the url $_GET["action"]= oneNovel
             if(isset($_GET["id"]) && $_GET["id"] > 0) { // check if $_get["id"] defined and greater than 0
-                echo "hello world";
                 $id = htmlspecialchars($_GET["id"]); // to avoid inclusion xss
                 ToolsFrontend::oneNovelInfos($id); // calling the tool oneNovelInfos
             }
