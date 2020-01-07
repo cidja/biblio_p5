@@ -9,7 +9,7 @@ foreach($oneInfos as $data){ // Let's go through the board
     $title = $data["title"]; 
     ?>
     <div class="cover">
-        <img src="<?= $data["cover"];?>" alt="image de couverture du livre" title="image de couverture du livre <?= $data["title"]; ?>">
+        <img class="imgCover +" src="<?= $data["cover"];?>" alt="image de couverture du livre" title="image de couverture du livre <?= $data["title"]; ?>">
     </div>
     <section class="infosNovel">
         <h3>Infos du livre </h3>

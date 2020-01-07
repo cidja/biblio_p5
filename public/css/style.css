@@ -1,4 +1,6 @@
-body{
-    background-color: black;
-    font-size: 400px;
+.imgCover{
+    max-width: 20%; 
+}
+.containerContent{
+    margin-top: 65px;
 }
