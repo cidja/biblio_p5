@@ -5,14 +5,10 @@
 
 
 ob_start(); //Start of capture to put it in the variable at the end of the script 
-
-
-echo $result;
-/*while($data = $infos->fetch()){
+foreach($oneInfos as $data){
     $title = $data["title"]; 
+}
 
-    echo "je rentre " . $data["title"];
-}*/
 
 $content = ob_get_clean();
 require("template.php");

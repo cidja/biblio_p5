@@ -21,10 +21,8 @@ class NovelManager extends ManagerDb
             $infos = $db->prepare('SELECT id,title, author, isbn, genre, page_count, count_volume, active,finish, comment,rate,cover,
                                     DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM novel WHERE id=?');
             $infos->execute(array($id));
-            $result = $infos->fetch();
-            foreach($result as $value){
-                echo $value;
-            };
+            $result = $infos->fetchAll(PDO::FETCH_BOTH);
+            print_r($result);
             return $result;
             
         }

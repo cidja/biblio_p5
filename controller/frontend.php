@@ -2,7 +2,7 @@
 //Tous les commentaires sont en anglais pour la compréhension pour le plus grand nombre
 //All comments are in English for the understanding of as many people as possible.
 //to support : mail: christian@linternaute-averti.fr
-require_once("model/NovelManager.php"); //call the class novelManager require_once (once only)
+require("model/NovelManager.php"); //call the class novelManager require_once (once only)
 
     trait ToolsFrontend{
 
@@ -15,7 +15,7 @@ require_once("model/NovelManager.php"); //call the class novelManager require_on
             public static function oneNovelInfos($id)
             {
                 $novelManager = new NovelManager();
-                $oneInfos = $novelManager->oneNovelInfos($id);
+                $oneInfos = $novelManager->oneNovelInfos($id); // $oneInfo which is called in oneNovelView.php
                 require("view/frontend/oneNovelView.php");
             }
         }
