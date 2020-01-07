@@ -13,7 +13,7 @@
     <script src="https://kit.fontawesome.com/bad7172f0a.js" crossorigin="anonymous"></script> <!--cdn fontawesome source: https://fontawesome.com/kits/bad7172f0a/settings !-->
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar fixed-bottom navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="index.php?action=home">
         <i class="fas fa-book-reader"></i>
         <span>Biblio</span>

@@ -4,9 +4,71 @@
 //to support : mail: christian@linternaute-averti.fr
 
 
-ob_start(); //Start of capture to put it in the variable at the end of the script 
-foreach($oneInfos as $data){
+ob_start(); // Start of capture to put it in the variable at the end of the script 
+foreach($oneInfos as $data){ // Let's go through the board
     $title = $data["title"]; 
+    ?>
+    <div class="cover">
+        <img src="<?= $data["cover"];?>" alt="image de couverture du livre" title="image de couverture du livre <?= $data["title"]; ?>">
+    </div>
+    <section class="infosNovel">
+        <h3>Infos du livre </h3>
+        <div class="title">
+            <div>
+                <span>Titre :</span>
+                <span><?= $data["title"]; ?></span>
+            </div>
+        </div>
+        <div class="author">
+            <div>
+                <span>Auteur :</span>
+                <span><?= $data["author"]; ?></span>
+            </div>
+        </div>
+        <div class="genre">
+            <div>
+                <span>Genre : </span>
+                <span><?= $data["genre"]; ?></span>
+            </div>
+        </div>
+        <div class="pagesCount">
+            <div>
+                <span>Nombre de pages :</span>
+                <span><?= $data["page_count"]; ?></span>
+            </div>
+        </div>
+        <div class="isbn">
+            <div>
+                <span>ISBN :</span>
+                <span><?= $data["isbn"]; ?></span>
+            </div>
+        </div>
+        <div class="finish">
+            <div>
+                <span>Fini ? :</span>
+                <span><?= $data["finish"]; ?></span>
+            </div>
+        </div>
+        <div class="rate">
+            <div>
+                <span>Note :</span>
+                <span><?= $data["rate"]; ?></span>
+            </div>
+        </div>
+        <div class="comment">
+            <div>
+                <span>Commentaires :</span>
+                <span><?=$data["comment"]; ?></span>
+            </div>
+        </div>
+        <div class="creation_date">
+            <div>
+                <span>Date d'ajout :</span>
+                <span><?= $data["creation_date_fr"]; ?></span>
+            </div>
+        </div>
+    </section>
+<?php
 }
 
 
@@ -24,3 +86,4 @@ require("template.php");
     Finally, it calls the template with a require. This one will retrieve the variables $title and $content that we just created... to display the page!
 
 Translated with www.DeepL.com/Translator (free version)*/
+?>
