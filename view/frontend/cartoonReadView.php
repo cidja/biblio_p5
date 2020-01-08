@@ -12,7 +12,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
         ?>
         
             <div>
-                <a href="index.php?action=oneNovel&amp;id=<?= $data["id"];?>">
+                <a href="index.php?action=oneCartoon&amp;id=<?= $data["id"];?>">
                     <img class="imgCover +"src=<?=$data["cover"]; ?> alt="couverture de la bande dessinée" title="couverture de la bande dessinée <?=$data["title"] ;?>" />
                 </a>
             </div>

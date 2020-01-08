@@ -46,4 +46,10 @@ require("model/CartoonManager.php");
                 $cartoonsFinish = $cartoonManager->cartoonsRead();
                 require("view/frontend/cartoonReadView.php");
             }
+            public static function oneCartoonInfos($id)
+            {
+                $cartoonManager = new Model_CartoonManager();
+                $oneCartoonInfos = $cartoonManager->oneCartoonInfos($id);
+                require("view/frontend/oneCartoonView.php");
+            }
         }

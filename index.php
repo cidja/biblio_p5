@@ -30,6 +30,12 @@ try{
         elseif ($_GET["action"] == "cartoonsRead"){
             ToolsFrontend::cartoonsRead();
         }
+        elseif ($_GET["action"] == "oneCartoon"){
+            if(isset($_GET["id"]) && $_GET["id"] > 0){
+                $id = htmlspecialchars($_GET["id"]);
+                ToolsFrontend::oneCartoonInfos($id);
+            }
+        }
     }
     else{
         ToolsFrontend::listNovel();
