@@ -27,6 +27,9 @@ try{
         elseif($_GET["action"] == "novelCurrent"){
             ToolsFrontend::novelCurrent();
         }
+        elseif ($_GET["action"] == "cartoonsRead"){
+            ToolsFrontend::cartoonsRead();
+        }
     }
     else{
         ToolsFrontend::listNovel();

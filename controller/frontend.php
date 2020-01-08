@@ -3,6 +3,7 @@
 //All comments are in English for the understanding of as many people as possible.
 //to support : mail: christian@linternaute-averti.fr
 require("model/NovelManager.php"); //call the class novelManager require_once (once only)
+require("model/CartoonManager.php");
 
     trait ToolsFrontend{
 
@@ -34,8 +35,15 @@ require("model/NovelManager.php"); //call the class novelManager require_once (o
 
             public static function listCartoon()
             {
-                $cartoonManager = new Model_CartonManager();
+                $cartoonManager = new Model_CartoonManager();
                 $infos = $cartoonManager->allCartoonInfos();
                 require("view/frontend/allCartoonView.php");
+            }
+
+            public static function cartoonsRead()
+            {
+                $cartoonManager = new Model_CartoonManager();
+                $cartoonsFinish = $cartoonManager->cartoonsRead();
+                require("view/frontend/cartoonReadView.php");
             }
         }

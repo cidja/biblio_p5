@@ -38,7 +38,7 @@
                         <a class="dropdown-item" href="index.php?action=novelsRead">
                             Roman
                         </a>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="index.php?action=cartoonsRead">
                             Bd
                         </a>
                     </div>
