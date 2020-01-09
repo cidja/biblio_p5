@@ -33,7 +33,7 @@ require("model/CartoonManager.php");
                 require("view/frontend/novelCurrentView.php");
             }
 
-            public static function listCartoon()
+            public static function allCartoons()
             {
                 $cartoonManager = new Model_CartoonManager();
                 $infos = $cartoonManager->allCartoonInfos();

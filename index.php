@@ -10,6 +10,9 @@ include(dirname(__FILE__)."/controller/frontend.php");
 try{
     if(isset($_GET["action"])){
         if($_GET["action"] == "home"){
+            header ("location: view/frontend/home.php");
+        }
+        elseif($_GET["action"] == "allNovels"){
             ToolsFrontend::listNovel();
         }
         elseif($_GET["action"] == "oneNovel"){ // if in the url $_GET["action"]= oneNovel
@@ -26,6 +29,11 @@ try{
         }
         elseif($_GET["action"] == "novelCurrent"){
             ToolsFrontend::novelCurrent();
+        }
+
+        //Cartoon part 
+        elseif ($_GET["action"] == "allCartoons"){
+            ToolsFrontend::allCartoons();
         }
         elseif ($_GET["action"] == "cartoonsRead"){
             ToolsFrontend::cartoonsRead();
