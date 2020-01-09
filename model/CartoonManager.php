@@ -32,4 +32,13 @@ class Model_CartoonManager extends Model_ManagerDb
         WHERE finish = 1');
         return $cartoonsFinish;
     }
+
+    public function cartoonCurrent()
+    {
+        $db = $this->dbConnect();
+        $cartoonCurrent = $db->query('SELECT id, title, serie, scriptwriter, designer, isbn, genre, page_count, count_volume
+        ,active,finish,comment,rate,cover,DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM cartoon
+        WHERE active = 1');
+        return $cartoonCurrent;
+    }
 }

@@ -44,6 +44,9 @@ try{
                 ToolsFrontend::oneCartoonInfos($id);
             }
         }
+        elseif ($_GET["action"] == "cartoonCurrent"){
+            ToolsFrontend::cartoonCurrent();
+        }
     }
     else{
         ToolsFrontend::listNovel();

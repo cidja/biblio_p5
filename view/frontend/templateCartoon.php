@@ -34,7 +34,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php?action=novelCurrent"> Livre en cours </a>
+                    <a class="nav-link" href="index.php?action=cartoonCurrent"> Bande dessinée en cours </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?action=cartoonsRead">Bande dessinée déjà lus </a>

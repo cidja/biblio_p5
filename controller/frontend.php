@@ -52,4 +52,10 @@ require("model/CartoonManager.php");
                 $oneCartoonInfos = $cartoonManager->oneCartoonInfos($id);
                 require("view/frontend/oneCartoonView.php");
             }
+            public static function cartoonCurrent()
+            {
+                $cartoonManager = new Model_CartoonManager();
+                $cartoonCurrent = $cartoonManager->cartoonCurrent();
+                require("view/frontend/cartoonCurrentView.php");
+            }
         }
