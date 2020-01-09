@@ -107,7 +107,7 @@ foreach($oneCartoonInfos as $data){ // Let's go through the board
 
 
 $content = ob_get_clean();
-require("template.php");
+require("templateCartoon.php");
 /*This code does 3 things:
 
     It defines the title of the page in $title. This will be integrated in the <title> tag in the template.

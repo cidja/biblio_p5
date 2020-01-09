@@ -25,7 +25,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
 
 $novelsRead->closeCursor();
 $content = ob_get_clean();
-require("template.php");
+require("templateNovel.php");
 /*This code does 3 things:
 
     It defines the title of the page in $title. This will be integrated in the <title> tag in the template.
