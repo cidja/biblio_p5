@@ -17,31 +17,27 @@
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="index.php?action=home">
         <i class="fas fa-book-reader"></i>
-        <span>Biblio</span>
+        <span>Biblio BD</span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" ide="navbarNav">
             <ul class="navbar-nav">
-                <li class="navbar-item active">
-                    <a class="nav-link" href="index.php?action=home"> Accueil </a>
+            <li class="navbar-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Accueil
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="index.php?action=allNovels">Livres</a>
+                        <a class="dropdown-item" href="index.php?action=allCartoons">BD</a>
+                    </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?action=novelCurrent"> Livre en cours </a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Livres lus 
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="index.php?action=novelsRead">
-                            Roman
-                        </a>
-                        <a class="dropdown-item" href="index.php?action=cartoonsRead">
-                            Bd
-                        </a>
-                    </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?action=cartoonsRead">Bande dessinée déjà lus </a>
                 </li>
             </ul>
             <form class="form-inline" id="searchForm">
