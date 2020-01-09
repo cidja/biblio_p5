@@ -40,6 +40,12 @@ class Model_NovelManager extends Model_ManagerDb
             DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM novel WHERE finish = 0');
             return $novelcurrent;
         }
+        public function countNovels()
+    {
+        $db = $this->dbConnect();
+        $countNovels = $db->query("SELECT COUNT(title) FROM novel");
+        return $countNovels;
+    }
 
     }
 

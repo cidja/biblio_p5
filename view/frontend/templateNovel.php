@@ -37,7 +37,14 @@
                     <a class="nav-link" href="index.php?action=novelCurrent">Livre en cours </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php?action=novelsRead">Livres déjà lus</a>
+                    <a class="nav-link" href="index.php?action=novelsRead">Livres déjà lus 
+                        
+                    
+                    <?php $countNovels =  implode(',',$countNovel->fetch(PDO::FETCH_ASSOC)); //utilisation de FETCH_ASSOC source: https://www.php.net/manual/fr/pdostatement.fetch.php ?>
+
+
+                    
+                    </a>
                 </li>
             <!--<li class="nav-item">
                     <a class="nav-link" href="index.php?action=whishList">Livre à lire</a>

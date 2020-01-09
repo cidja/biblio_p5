@@ -58,4 +58,9 @@ require("model/CartoonManager.php");
                 $cartoonCurrent = $cartoonManager->cartoonCurrent();
                 require("view/frontend/cartoonCurrentView.php");
             }
+            public static function countNovels()
+            {
+                $novelManager = new Model_NovelManager();
+                $countNovels = $novelManager->countNovels();
+            }
         }
