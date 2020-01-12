@@ -6,7 +6,9 @@
 $title = "Liste des romans";
 
 ob_start(); //Start of capture to put it in the variable at the end of the script 
-
+?>
+<p>Nombre de livres lus : <?= implode(',',$countNovels->fetch(PDO::FETCH_ASSOC)) ?> </p>
+<?php
     foreach($infos as $data) //source: https://www.php.net/manual/fr/control-structures.foreach.php
     {
         ?>

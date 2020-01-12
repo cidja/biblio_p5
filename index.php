@@ -14,6 +14,7 @@ try{
         }
         elseif($_GET["action"] == "allNovels"){
             ToolsFrontend::listNovel();
+            
         }
         elseif($_GET["action"] == "oneNovel"){ // if in the url $_GET["action"]= oneNovel
             if(isset($_GET["id"]) && $_GET["id"] > 0) { // check if $_get["id"] defined and greater than 0
