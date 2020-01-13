@@ -7,6 +7,11 @@ require("model/CartoonManager.php");
 
     trait ToolsFrontend{
 
+            public static function countTemplate()
+            {
+                $novelManager = new Model_NovelManager(); // creation of the novelManager object
+                $countNovels = $novelManager->countNovels();
+            }
             public static function listNovel()
             {
                 $novelManager = new Model_NovelManager(); // creation of the novelManager object

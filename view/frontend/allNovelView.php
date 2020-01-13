@@ -6,10 +6,6 @@
 $title = "Liste des romans";
 
 ob_start(); //Start of capture to put it in the variable at the end of the script 
-?>
-<p>Nombre de livres lus :  </p>
-<?php
-echo $countNovels;
     foreach($infos as $data) //source: https://www.php.net/manual/fr/control-structures.foreach.php
     {
         ?>

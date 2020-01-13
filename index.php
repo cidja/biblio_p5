@@ -9,6 +9,7 @@ include(dirname(__FILE__)."/controller/frontend.php");
 
 try{
     if(isset($_GET["action"])){
+        
         if($_GET["action"] == "home"){
             header ("location: view/frontend/home.php");
         }

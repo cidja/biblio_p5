@@ -37,13 +37,11 @@
                     <a class="nav-link" href="index.php?action=novelCurrent">Livre en cours </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php?action=novelsRead">Livres déjà lus 
-                  
-
-
-                    
-                    </a>
+                    <a class="nav-link" href="index.php?action=novelsRead">Livres déjà lus</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Statistiques </a>
+                    </li>
             <!--<li class="nav-item">
                     <a class="nav-link" href="index.php?action=whishList">Livre à lire</a>
                 </li> !-->
