@@ -43,8 +43,10 @@ class Model_NovelManager extends Model_ManagerDb
         public function countNovels()
     {
         $db = $this->dbConnect();
-        $countNovels = $db->query("SELECT COUNT(title) FROM novel");
-        return $countNovels;
+        $countNovels = $db->query("SELECT COUNT(title) as nb FROM novel"); //source: https://openclassrooms.com/forum/sujet/pdo-compter-le-nombre-de-resultats-d-une-requete
+        $result = $countNovels->fetch();
+        $nb = $result['nb'];
+        return $nb;
     }
 
     }
