@@ -72,4 +72,9 @@ require("model/CartoonManager.php");
                 echo "je rentre";
                 
             }
+
+            public static function statistics()
+            {
+                require("view/frontend/statisticsView.php");
+            }
         }
