@@ -96,21 +96,5 @@ require("model/CartoonManager.php");
                 header("location:index.php?action=allNovels");
             }
 
-            public static function addNovelTest($title)
-            {
-
-            $title          = htmlspecialchars($_POST["title"]);
-            $author         = htmlspecialchars($_POST["author"]);
-            $isbn           = htmlspecialchars($_POST["isbn"]);
-            $genre          = htmlspecialchars($_POST["genre"]);
-            $page_count     = htmlspecialchars($_POST["page_count"]);
-            $count_volume   = htmlspecialchars($_POST["count_volume"]);
-            $active         = htmlspecialchars($_POST["active"]);
-            $finish         = htmlspecialchars($_POST["finish"]);
-            $comment        = htmlspecialchars($_POST["comment"]);
-            $rate           = htmlspecialchars($_POST["rate"]);
-            $cover          = htmlspecialchars($_POST["cover"]);
-            echo $title;
-            }
 
         }

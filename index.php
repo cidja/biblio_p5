@@ -49,14 +49,9 @@ try{
             $comment        = htmlspecialchars($_POST["comment"]);
             $rate           = htmlspecialchars($_POST["rate"]);
             $cover          = htmlspecialchars($_POST["cover"]);
-
             ToolsFrontend::addNovelConfirm($title, $author,$isbn, $genre, $page_count, $count_volume, $finish, $comment, $rate, $cover);
         }
-        elseif($_GET["action"] == "addNovelTest"){
-            $title = $_POST["title"];
-            ToolsFrontend::addNovelTest($title);
-        }
-
+        
         //Cartoon part 
         elseif ($_GET["action"] == "allCartoons"){
             ToolsFrontend::allCartoons();
