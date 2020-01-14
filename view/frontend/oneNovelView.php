@@ -37,6 +37,12 @@ foreach($oneInfos as $data){ // Let's go through the board
                 <span><?= $data["page_count"]; ?></span>
             </div>
         </div>
+        <div class="countVolume">
+            <div>
+                <span>Nombre de volumes :</span>
+                <span><?= $data["count_volume"]; ?></span>
+            </div>
+        </div>
         <div class="isbn">
             <div>
                 <span>ISBN :</span>
