@@ -77,6 +77,7 @@ require("model/CartoonManager.php");
             {
                 $novelManager = new Model_NovelManager();
                 $countPages = $novelManager->countPages();
+                $avgPages = $novelManager->avgPages();
                 $nbNovels = $novelManager->countNovels();
                 require("view/frontend/statisticsView.php");
             }

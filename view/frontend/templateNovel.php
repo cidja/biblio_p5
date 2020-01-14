@@ -40,8 +40,12 @@
                     <a class="nav-link" href="index.php?action=novelsRead">Livres déjà lus</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php?action=statistics">Statistiques </a>
-                    </li>
+                    <a class="nav-link" href="index.php?action=statistics">Statistiques</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?action=addNovel">Ajout</a>
+                </li>
+
             <!--<li class="nav-item">
                     <a class="nav-link" href="index.php?action=whishList">Livre à lire</a>
                 </li> !-->
