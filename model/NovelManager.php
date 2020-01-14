@@ -68,23 +68,12 @@ class Model_NovelManager extends Model_ManagerDb
             return $avgPages;
         }
 
-        public function addNovel()
+        public function addNovelConfirm($title, $author,$isbn, $genre, $page_count, $count_volume, $finish, $comment, $rate, $cover)
         {
-            $title      = htmlspecialchars($_POST["title"]);
-            $author      = htmlspecialchars($_POST["author"]);
-            $isbn      = htmlspecialchars($_POST["isbn"]);
-            $genre      = htmlspecialchars($_POST["genre"]);
-            $page_count      = htmlspecialchars($_POST["page_count"]);
-            $count_volume      = htmlspecialchars($_POST["count_volume"]);
-            $active      = htmlspecialchars($_POST["active"]);
-            $finish      = htmlspecialchars($_POST["finish"]);
-            $comment      = htmlspecialchars($_POST["comment"]);
-            $rate      = htmlspecialchars($_POST["rate"]);
-            $cover      = htmlspecialchars($_POST["cover"]);
-
+            
             $db = $this->dbConnect();
-            $addNovel = $db->prepare("INSERT INTO novel (`title`, `author`, `isbn`, `genre`, `page_count`, `count_volume`, `active`, `finish`, `comment`, `rate`, `cover`, `creation_date`)
-                                    VALUES(:title, :author, :isbn, : genre, :page_count, :count_volume, :active, :finish, :comment, :rate, :cover, NOW())");
+            $addNovel = $db->prepare("INSERT INTO novel(`title`, `author`, `isbn`, `genre`, `page_count`, `count_volume`, `active`, `finish`, `comment`, `rate`, `cover`, `creation_date`)
+                                    VALUES(:title, :author, :isbn, :genre, :page_count, :count_volume, :active, :finish, :comment, :rate, :cover, NOW())");
             $addNovel->execute(array(
                 "title"         => $title,
                 "author"        => $author,
@@ -92,7 +81,7 @@ class Model_NovelManager extends Model_ManagerDb
                 "genre"         => $genre,
                 "page_count"    => $page_count,
                 "count_volume"  => $count_volume,
-                "active"        => $active,
+                "active"        => 0, //to say it's non active by default
                 "finish"        => $finish,
                 "comment"       => $comment,
                 "rate"          => $rate,

@@ -38,6 +38,24 @@ try{
         elseif($_GET["action"] == "addNovel"){
             ToolsFrontend::addNovel();
         }
+        elseif($_GET["action"] == "addNovelConfirm"){
+            $title          = htmlspecialchars($_POST["title"]);
+            $author         = htmlspecialchars($_POST["author"]);
+            $isbn           = htmlspecialchars($_POST["isbn"]);
+            $genre          = htmlspecialchars($_POST["genre"]);
+            $page_count     = htmlspecialchars($_POST["page_count"]);
+            $count_volume   = htmlspecialchars($_POST["count_volume"]);
+            $finish         = htmlspecialchars($_POST["finish"]);
+            $comment        = htmlspecialchars($_POST["comment"]);
+            $rate           = htmlspecialchars($_POST["rate"]);
+            $cover          = htmlspecialchars($_POST["cover"]);
+
+            ToolsFrontend::addNovelConfirm($title, $author,$isbn, $genre, $page_count, $count_volume, $finish, $comment, $rate, $cover);
+        }
+        elseif($_GET["action"] == "addNovelTest"){
+            $title = $_POST["title"];
+            ToolsFrontend::addNovelTest($title);
+        }
 
         //Cartoon part 
         elseif ($_GET["action"] == "allCartoons"){

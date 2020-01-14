@@ -84,8 +84,33 @@ require("model/CartoonManager.php");
 
             public static function addNovel()
             {
-                $novelManager = new Model_NovelManager();
                 require("view/frontend/addNovelView.php");
+            }
+
+            public static function addNovelConfirm($title, $author,$isbn, $genre, $page_count, $count_volume, $finish, $comment, $rate, $cover)
+            {
+            
+                $novelManager = new Model_NovelManager();
+                $addConfirm = $novelManager->addNovelConfirm($title, $author,$isbn, $genre, $page_count, $count_volume, $finish, $comment, $rate, $cover);
+                echo "je rentre";
+                header("location:index.php?action=allNovels");
+            }
+
+            public static function addNovelTest($title)
+            {
+
+            $title          = htmlspecialchars($_POST["title"]);
+            $author         = htmlspecialchars($_POST["author"]);
+            $isbn           = htmlspecialchars($_POST["isbn"]);
+            $genre          = htmlspecialchars($_POST["genre"]);
+            $page_count     = htmlspecialchars($_POST["page_count"]);
+            $count_volume   = htmlspecialchars($_POST["count_volume"]);
+            $active         = htmlspecialchars($_POST["active"]);
+            $finish         = htmlspecialchars($_POST["finish"]);
+            $comment        = htmlspecialchars($_POST["comment"]);
+            $rate           = htmlspecialchars($_POST["rate"]);
+            $cover          = htmlspecialchars($_POST["cover"]);
+            echo $title;
             }
 
         }
