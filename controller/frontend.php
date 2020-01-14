@@ -81,4 +81,11 @@ require("model/CartoonManager.php");
                 $nbNovels = $novelManager->countNovels();
                 require("view/frontend/statisticsView.php");
             }
+
+            public static function addNovel()
+            {
+                $novelManager = new Model_NovelManager();
+                require("view/frontend/addNovelView.php");
+            }
+
         }

@@ -35,6 +35,9 @@ try{
         elseif($_GET["action"] == "statistics"){
             ToolsFrontend::statistics();
         }
+        elseif($_GET["action"] == "addNovel"){
+            ToolsFrontend::addNovel();
+        }
 
         //Cartoon part 
         elseif ($_GET["action"] == "allCartoons"){
