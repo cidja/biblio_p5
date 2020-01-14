@@ -46,15 +46,16 @@ class Model_NovelManager extends Model_ManagerDb
             $db = $this->dbConnect();
             $countNovels = $db->query("SELECT COUNT(title) as nb FROM novel"); //source: https://openclassrooms.com/forum/sujet/pdo-compter-le-nombre-de-resultats-d-une-requete
             $result = $countNovels->fetch();
-            $nb = $result['nb'];
-            return $nb;
+            $nbNovels = $result['nb'];
+            return $nbNovels;
         }
         
         public function countPages() // method that counts the total number of pages in the library
         {
             $db = $this->dbConnect();
-            $countPages = $db->query("SELECT SUM(page_count) FROM novel");
-            echo $countPages;
+            $req = $db->query("SELECT SUM(page_count) as nb_pages FROM novel");
+            $result = $req->fetch();
+            $countPages = $result["nb_pages"];
             return $countPages;
         }
 

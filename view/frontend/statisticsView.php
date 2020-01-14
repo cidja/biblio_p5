@@ -7,6 +7,7 @@ $title = "Statistiques";
 
 ob_start(); //Start of capture to put it in the variable at the end of the script 
 ?>
+
     <div class="container">
         <section class="container">
             <h2>Quelques chiffres</h2>
@@ -15,7 +16,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                     Nombres total de livres :
                 </div>
                 <div class="#">
-                    "nb livres"
+                    <?= $nbNovels; ?> 
                 </div>
             </div>
             <div class="row">
@@ -23,7 +24,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                     Nombres total de pages :
                 </div>
                 <div class="#">
-                    "nb pages"
+                <?= $countPages; ?> pages
                 </div>
             </div>
             <div class="row">
@@ -32,6 +33,14 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                 </div>
                 <div class="#">
                     "nb paage_current"
+                </div>
+            </div>
+            <div class="row">
+                <div class="#">
+                    Genre le plus lus :
+                </div>
+                <div class="#">
+                    "best genre"
                 </div>
             </div>
             <div class="row">
@@ -48,8 +57,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
 
 
 <?php
-    
-$infos->closeCursor();
+
 $content = ob_get_clean();
 require("templateNovel.php");
 /*This code does 3 things:
