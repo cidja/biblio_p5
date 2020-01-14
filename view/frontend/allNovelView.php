@@ -8,11 +8,17 @@ $title = "Liste des romans";
 ob_start(); //Start of capture to put it in the variable at the end of the script 
     foreach($infos as $data) //source: https://www.php.net/manual/fr/control-structures.foreach.php
     {
+        if(!empty($data["cover"])){
+            $cover = $data["cover"];
+        } else {
+            $cover = "public/img/noCover.png";
+        }
+
         ?>
         
             <div>
                 <a href="index.php?action=oneNovel&amp;id=<?= $data["id"];?>">
-                    <img class="imgCover +"src=<?=$data["cover"]; ?> alt="couverture du livre" title="couverture du livre" />
+                    <img class="imgCover +"src=<?=$cover; ?> alt="couverture du livre" title="couverture du livre" />
                 </a>
             </div>
         <?php
@@ -31,6 +37,5 @@ require("templateNovel.php");
     the content generated with ob_get_clean() (line 28) and put it in $content .
 
     Finally, it calls the template with a require. This one will retrieve the variables $title and $content that we just created... to display the page!
-
-Translated with www.DeepL.com/Translator (free version)*/
-
+*/
+?>
