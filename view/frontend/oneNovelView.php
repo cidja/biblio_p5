@@ -89,6 +89,9 @@ foreach($oneInfos as $data){ // Let's go through the board
                 <span><?= $data["creation_date_fr"]; ?></span>
             </div>
         </div>
+        <button>
+            <a href="index.php?action=updateNovel&amp;id=<?= $data["id"];?>">Modifier la fiche</a>
+        </button>
     </section>
 <?php
 }

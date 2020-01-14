@@ -92,7 +92,20 @@ require("model/CartoonManager.php");
             
                 $novelManager = new Model_NovelManager();
                 $addConfirm = $novelManager->addNovelConfirm($title, $author,$isbn, $genre, $page_count, $count_volume, $finish, $comment, $rate, $cover);
-                echo "je rentre";
+                header("location:index.php?action=allNovels");
+            }
+
+            public static function updateNovelInfos($id)
+            {
+                $novelManager = new Model_NovelManager();
+                $oneInfos = $novelManager->oneNovelInfos($id); // $oneInfo which is called in oneNovelView.php
+                require("view/frontend/updateNovelView.php");
+            }
+
+            public static function updateNovelConfirm($id,$title, $author,$isbn, $genre, $page_count, $count_volume, $finish, $comment, $rate, $cover)
+            {
+                $novelManager = new Model_NovelManager();
+                $updateConfirm = $novelManager->updateNovel($id,$title, $author,$isbn, $genre, $page_count, $count_volume, $finish, $comment, $rate, $cover);
                 header("location:index.php?action=allNovels");
             }
 

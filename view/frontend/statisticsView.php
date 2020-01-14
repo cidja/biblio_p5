@@ -29,10 +29,12 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
             </div>
             <div class="row">
                 <div class="#">
-                    Nombres de pages en moyenne par ouvrage :
+                    Nombres de pages en moyenne par ouvrage : 
                 </div>
                 <div class="#">
-                    <?=  $avgPages; ?>
+                    <?= intval($avgPages); // to remove decimals 
+                    //source: https://www.php.net/manual/fr/function.intval.php 
+                    ?> pages en moyenne
                 </div>
             </div>
             <div class="row">

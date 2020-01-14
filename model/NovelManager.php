@@ -70,7 +70,6 @@ class Model_NovelManager extends Model_ManagerDb
 
         public function addNovelConfirm($title, $author,$isbn, $genre, $page_count, $count_volume, $finish, $comment, $rate, $cover)
         {
-            
             $db = $this->dbConnect();
             $addNovel = $db->prepare("INSERT INTO novel(`title`, `author`, `isbn`, `genre`, `page_count`, `count_volume`, `active`, `finish`, `comment`, `rate`, `cover`, `creation_date`)
                                     VALUES(:title, :author, :isbn, :genre, :page_count, :count_volume, :active, :finish, :comment, :rate, :cover, NOW())");
@@ -87,7 +86,26 @@ class Model_NovelManager extends Model_ManagerDb
                 "rate"          => $rate,
                 "cover"         => $cover
             ));
-            
+        }
+
+        public function updateNovel($id,$title, $author,$isbn, $genre, $page_count, $count_volume, $finish, $comment, $rate, $cover)
+        {
+            $db = $this->dbConnect();
+            $updateNovel = $db->prepare("UPDATE novel SET title=:title, author=:author, isbn=:isbn, genre=:genre, page_count=:page_count, count_volume=:count_volume,
+                                        finish=:finish, comment=:comment, rate=:rate, cover=:cover  WHERE id=:id");
+            $updateNovel->execute(array(
+                ":id"           => $id,
+                "title"         => $title,
+                "author"        => $author,
+                "isbn"          => $isbn,
+                "genre"         => $genre,
+                "page_count"    => $page_count,
+                "count_volume"  => $count_volume,
+                "finish"        => $finish,
+                "comment"       => $comment,
+                "rate"          => $rate,
+                "cover"         => $cover
+            ));
         }
 
     }

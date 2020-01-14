@@ -52,6 +52,31 @@ try{
             ToolsFrontend::addNovelConfirm($title, $author,$isbn, $genre, $page_count, $count_volume, $finish, $comment, $rate, $cover);
         }
         
+        elseif($_GET["action"] == "updateNovel"){
+            if(isset($_GET["id"]) && $_GET["id"] > 0) { // check if $_get["id"] defined and greater than 0
+                $id = htmlspecialchars($_GET["id"]); // to avoid inclusion xss
+                ToolsFrontend::updateNovelInfos($id); // calling the tool oneNovelInfos
+            }
+            else {
+                throw new Exception("Aucun identifiant de billet envoyé !");
+            }
+        }
+        elseif($_GET["action"] == "updateNovelConfirm"){
+            $id             = htmlspecialchars($_GET['id']);
+            $title          = htmlspecialchars($_POST["title"]);
+            $author         = htmlspecialchars($_POST["author"]);
+            $isbn           = htmlspecialchars($_POST["isbn"]);
+            $genre          = htmlspecialchars($_POST["genre"]);
+            $page_count     = htmlspecialchars($_POST["page_count"]);
+            $count_volume   = htmlspecialchars($_POST["count_volume"]);
+            $finish         = htmlspecialchars($_POST["finish"]);
+            $comment        = htmlspecialchars($_POST["comment"]);
+            $rate           = htmlspecialchars($_POST["rate"]);
+            $cover          = htmlspecialchars($_POST["cover"]);
+            ToolsFrontend::updateNovelConfirm($id,$title, $author,$isbn, $genre, $page_count, $count_volume, $finish, $comment, $rate, $cover);
+        }
+
+
         //Cartoon part 
         elseif ($_GET["action"] == "allCartoons"){
             ToolsFrontend::allCartoons();
