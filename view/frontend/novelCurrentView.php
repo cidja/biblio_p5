@@ -29,6 +29,17 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                         <?= $data["page_count"]; ?>
                     </div>
                 </div>
+                <div class="row">
+                    <div>Date de la dernière lecture :</div>
+                    <div><"date dernière lecture"></div>
+                </div>
+                <div class="row">
+                    <div>Vous en étiez à la page :</div>
+                    <div>"page number"</div>
+                </div>
+                <div class="#">
+                    <button><a href="index.php?action=updatePageCount&amp;id=<?= $data["id"];?>">Pages lus depuis la dernière fois</button>
+                </div>
             </div>
         <?php
     }
