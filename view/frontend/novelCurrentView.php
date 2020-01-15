@@ -37,9 +37,14 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                     <div>Vous en étiez à la page :</div>
                     <div>"page number"</div>
                 </div>
-                <div class="#">
-                    <button><a href="index.php?action=updatePageCount&amp;id=<?= $data["id"];?>">Pages lus depuis la dernière fois</button>
-                </div>
+                <form method="post" action="index.php?action=newPageCount">
+                    <div class="form-group">
+                        <label for="newPageCount">Nouveau numéro de pages :</label>
+                        <input type="number" class="form-control" id="newPageCount" name="newPageCount" required>
+                        <input type="hidden" value="<?= $data["id"];?>" id="id" name="id"> <!--to retrieve the id for the query!-->
+                        <button type="submit" class="btn btn-success">Valider</button>
+                    </div>
+                </form>
             </div>
         <?php
     }

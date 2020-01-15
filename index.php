@@ -51,6 +51,15 @@ try{
             $cover          = htmlspecialchars($_POST["cover"]);
             ToolsFrontend::addNovelConfirm($title, $author,$isbn, $genre, $page_count, $count_volume, $finish, $comment, $rate, $cover);
         }
+
+
+        // novelPagesCount
+        elseif($_GET["action"] == "newPageCount"){
+            $id             = htmlspecialchars($_POST["id"]);
+            $newPageCount   = htmlspecialchars($_POST["newPageCount"]);
+            ToolsFrontend::newPageCount($id, $newPageCount);
+        }
+
         
         elseif($_GET["action"] == "updateNovel"){
             if(isset($_GET["id"]) && $_GET["id"] > 0) { // check if $_get["id"] defined and greater than 0

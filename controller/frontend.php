@@ -3,7 +3,9 @@
 //All comments are in English for the understanding of as many people as possible.
 //to support : mail: christian@linternaute-averti.fr
 require("model/NovelManager.php"); //call the class novelManager require_once (once only)
+require("model/PageNovelManager.php");
 require("model/CartoonManager.php");
+
 
     trait ToolsFrontend{
 
@@ -39,6 +41,19 @@ require("model/CartoonManager.php");
 
                 require("view/frontend/novelCurrentView.php");
             }
+
+
+            // novelPageCount part ******
+            public static function newPageCount($id,$newPageCount)
+            {
+                $pageNovelManager = new Model_PageNovelManager();
+                $req = $pageNovelManager->newPageCount($id,$newPageCount);
+                header("location: index.php?action=novelCurrent");
+                
+            }
+
+
+            //Cartoon part *******
 
             public static function allCartoons()
             {
