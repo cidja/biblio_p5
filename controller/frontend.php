@@ -38,22 +38,21 @@ require("model/CartoonManager.php");
             {
                 $novelManager = new Model_NovelManager();
                 $novelCurrent = $novelManager->novelCurrent();
-
                 require("view/frontend/novelCurrentView.php");
             }
 
 
-            // novelPageCount part ******
+
+            //************** */ novelPageCount part ******
             public static function newPageCount($id,$newPageCount)
             {
                 $pageNovelManager = new Model_PageNovelManager();
                 $req = $pageNovelManager->newPageCount($id,$newPageCount);
                 header("location: index.php?action=novelCurrent");
-                
             }
 
 
-            //Cartoon part *******
+            //**************Cartoon part *******
 
             public static function allCartoons()
             {
