@@ -8,17 +8,27 @@ $title = "Roman en cours";
 ob_start(); //Start of capture to put it in the variable at the end of the script 
     ?>
     <div class="titleContainer">
-        <h2>Livres en cours </h2>
+        <h2>Livre en cours </h2>
     </div>
     <?php
     foreach($novelCurrent as $data) //source: https://www.php.net/manual/fr/control-structures.foreach.php
     {
         ?>
         
-            <div>
-                <a href="index.php?action=oneNovel&amp;id=<?= $data["id"];?>">
-                    <img class="imgCover +"src=<?=$data["cover"]; ?> alt="couverture du livre" title="couverture du livre <?= $data["title"]; ?>" />
-                </a>
+            <div class="container">
+                <section class="cover">
+                    <a href="index.php?action=oneNovel&amp;id=<?= $data["id"];?>">
+                        <img class="imgCover +"src=<?=$data["cover"]; ?> alt="couverture du livre" title="couverture du livre <?= $data["title"]; ?>" />
+                    </a>
+                </section>
+                <div class="infos">
+                    <div class="row">
+                        <p>Nombre de pages : </p>
+                    </div>
+                    <div class="#">
+                        <?= $data["page_count"]; ?>
+                    </div>
+                </div>
             </div>
         <?php
     }
