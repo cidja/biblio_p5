@@ -30,7 +30,9 @@ try{
             ToolsFrontend::novelRead();
         }
         elseif($_GET["action"] == "novelCurrent"){
+            
             ToolsFrontend::novelCurrent();
+            
         }
         elseif($_GET["action"] == "statistics"){
             ToolsFrontend::statistics();

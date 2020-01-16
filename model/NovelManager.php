@@ -36,8 +36,12 @@ class Model_NovelManager extends Model_ManagerDb
         public function novelCurrent() // method that displays the current novel
         {
             $db = $this->dbConnect();
-            $novelcurrent = $db->query('SELECT id,title, author, isbn, genre, page_count, count_volume, active,finish, comment,rate,cover,
-            DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM novel WHERE active = 1 AND finish = 0');
+            $novelcurrent = $db->query('SELECT novel.id, novel.title, novel.author, novel.isbn, novel.genre, novel.page_count, novel.count_volume, novel.active,novel.finish, 
+                                        novel.comment,novel.rate,novel.cover, DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr, novel_page_count.novel_id,
+                                        novel_page_count.new_page_count,  DATE_FORMAT(update_date, "%d/%m/%Y à %Hh%imin%ss") AS update_date_fr FROM novel 
+                                        RIGHT JOIN novel_page_count on novel.id = novel_page_count.novel_id WHERE active = 1 AND finish = 0 ORDER BY update_date_fr DESC LIMIT 0,1;');
+                                        // inner query for table join with a date_format on the dates of the 2 tables, a descending ranking and we keep that the last record 
+                                        // used to display new_pages_count
             return $novelcurrent;
         }
 

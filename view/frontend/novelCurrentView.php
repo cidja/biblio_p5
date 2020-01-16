@@ -23,7 +23,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                 </section>
                 <div class="infos">
                     <div class="row">
-                        <p>Nombre de pages : </p>
+                        <div>Nombre de pages : </div>
                     </div>
                     <div class="#">
                         <?= $data["page_count"]; ?>
@@ -31,11 +31,11 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                 </div>
                 <div class="row">
                     <div>Date de la dernière lecture :</div>
-                    <div><"date dernière lecture"></div>
+                    <div><?= $data["update_date_fr"]; ?></div>
                 </div>
                 <div class="row">
                     <div>Vous en étiez à la page :</div>
-                    <div>"page number"</div>
+                    <div><?= $data["new_page_count"]; ?></div>
                 </div>
                 <form method="post" action="index.php?action=newPageCount">
                     <div class="form-group">

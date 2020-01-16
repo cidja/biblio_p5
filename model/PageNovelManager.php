@@ -10,7 +10,7 @@ class Model_PageNovelManager extends Model_ManagerDb
         public function currentPageCount($id) // method for displaying the number of pages already read
         {
             $db = $this->dbConnect();
-            $req = $db->prepare('SELECT new_page_count,  DATE_FORMAT(update_date, "%d/%m/%Y à %Hh%imin%ss") AS update_date_fr FROM novel_page_count WHERE id=?');
+            $req = $db->prepare('SELECT new_page_count,  DATE_FORMAT(update_date, "%d/%m/%Y à %Hh%imin%ss") AS update_date_fr FROM novel_page_count WHERE novel_id=?');
             $currentPageCount = $req->execute(array($id));
             return $currentPageCount;
 
