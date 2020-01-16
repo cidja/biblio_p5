@@ -24,6 +24,6 @@ class Model_PageNovelManager extends Model_ManagerDb
             $req->execute(array(
                 "novel_id"         => $id,
                 "new_page_count"   => $newPageCount
-            ));
+            )); 
         }
     }
