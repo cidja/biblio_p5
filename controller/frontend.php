@@ -128,5 +128,18 @@ require("model/CartoonManager.php");
                 header("location:index.php?action=allNovels");
             }
 
+            public static function addCartoons()
+            {
+                require("view/frontend/addCartoonView.php");
+            }
+            public static function addCartoonsConfirm($title, $serie, $scriptwriter, $designer, $isbn, $genre, $page_count, $count_volume, $volume_number, $finish, $comment,
+            $rate, $cover)
+            {
+                $cartoonManager = new Model_CartoonManager();
+                $addCartoon = $cartoonManager->addCartoonConfirm($title, $serie, $scriptwriter, $designer, $isbn, $genre, $page_count, $count_volume, $volume_number, $finish, $comment,
+                $rate, $cover);
+                header("location:index.php?action=allCartoons");
+            }
+
 
         }

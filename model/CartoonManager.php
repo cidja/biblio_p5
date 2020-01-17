@@ -68,7 +68,7 @@ class Model_CartoonManager extends Model_ManagerDb
             return $avgPagesCartoon;
         }
 
-        public function addCartoonConfirm($title, $serie, $scriptwriter, $designer, $isbn, $genre, $page_count, $count_volume, $volume_number, $active, $finish, $comment,
+        public function addCartoonConfirm($title, $serie, $scriptwriter, $designer, $isbn, $genre, $page_count, $count_volume, $volume_number, $finish, $comment,
         $rate, $cover)
         {
             $db = $this->dbConnect();
