@@ -78,7 +78,7 @@ class Model_CartoonManager extends Model_ManagerDb
                                     :rate, :cover, NOW())");
             $addNovel->execute(array(
                 "title"             => $title,
-                "serie"             => $author,
+                "serie"             => $serie,
                 "scriptwriter"      => $scriptwriter,
                 "designer"          => $designer,
                 "isbn"              => $isbn,
