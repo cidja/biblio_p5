@@ -67,4 +67,30 @@ class Model_CartoonManager extends Model_ManagerDb
             $avgPagesCartoon = $result["avg_nb_pages"];
             return $avgPagesCartoon;
         }
+
+        public function addCartoonConfirm($title, $serie, $scriptwriter, $designer, $isbn, $genre, $page_count, $count_volume, $volume_number, $active, $finish, $comment,
+        $rate, $cover)
+        {
+            $db = $this->dbConnect();
+            $addNovel = $db->prepare("INSERT INTO cartoon(`title`, `serie`, `scriptwriter`, `designer`, `isbn`, `genre`, `page_count`, `count_volume`, `volume_number`
+                                    , `active`, `finish`, `comment`, `rate`, `cover`, `creation_date`)
+                                    VALUES(:title, :serie, :scriptwriter, :designer, :isbn, :genre, :page_count, :count_volume, :volume_number, :active, :finish, :comment,
+                                    :rate, :cover, NOW())");
+            $addNovel->execute(array(
+                "title"             => $title,
+                "serie"             => $author,
+                "scriptwriter"      => $scriptwriter,
+                "designer"          => $designer,
+                "isbn"              => $isbn,
+                "genre"             => $genre,
+                "page_count"        => $page_count, 
+                "count_volume"      => $count_volume,
+                "volume_number"     => $volume_number,
+                "active"            => 0,//to say it's non active by default
+                "finish"            => $finish,
+                "comment"           => $comment,
+                "rate"              => $rate,
+                "cover"             => $cover
+            ));
+        }
 }

@@ -39,6 +39,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?action=cartoonsRead">Bande dessinée déjà lus </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?action=statistics">Statistiques</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?action=addCartoons">Ajout</a>
+                </li>
             </ul>
             <form class="form-inline" id="searchForm">
                 <input class="form-control mr-sm-2" type="search" placeholder="rechercher un ouvrage" aria-label="search">

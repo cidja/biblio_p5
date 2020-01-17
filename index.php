@@ -104,6 +104,10 @@ try{
         elseif ($_GET["action"] == "cartoonCurrent"){
             ToolsFrontend::cartoonCurrent();
         }
+        elseif($_GET["action"] == "addCartoons"){
+            ToolsFrontend::addCartoons();
+        }
+        
     }
     else{
         ToolsFrontend::listNovel();
