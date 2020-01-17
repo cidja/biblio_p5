@@ -10,7 +10,10 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
 
     <div class="container">
         <section class="novelStatistics container">
-            <h2>Quelques chiffres</h2>
+            <h1>Quelques chiffres</h1>
+            <div>
+                <h2>Les livres </h2>
+            </div>
             <div class="row">
                 <div class="#">
                     Nombres total de livres :
@@ -58,12 +61,15 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
     </div>
     <div class="container">
         <section class="cartoonStatistics container">
+            <div>
+                <h2>Les bandes dessinées</h2>
+            </div>
             <div class="row">
                 <div class="#">
                     Nombres total de BD :
                 </div>
                 <div class="#">
-                    <?= $nbNovels; ?> 
+                    <?= $nbCartoons; ?> 
                 </div>
             </div>
             <div class="row">
@@ -71,7 +77,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                     Nombres total de pages de BD :
                 </div>
                 <div class="#">
-                    <?= $nbNovels; ?> 
+                    <?= $countPagesCartoon; ?> Pages
                 </div>
             </div>
             <div class="row">
@@ -79,7 +85,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                     Nombres de pages en moyenne par BD :
                 </div>
                 <div class="#">
-                    <?= $nbNovels; ?> 
+                    <?= intval($avgPagesCartoon); ?> pages en moyenne
                 </div>
             </div>
         </section>

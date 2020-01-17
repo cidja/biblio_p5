@@ -93,6 +93,11 @@ require("model/CartoonManager.php");
                 $countPages = $novelManager->countPages();
                 $avgPages = $novelManager->avgPages();
                 $nbNovels = $novelManager->countNovels();
+                //part cartoons
+                $cartoonManager= new Model_CartoonManager();
+                $countPagesCartoon = $cartoonManager->countPages();
+                $nbCartoons = $cartoonManager->countCartoons();
+                $avgPagesCartoon = $cartoonManager->avgPages();
                 require("view/frontend/statisticsView.php");
             }
 

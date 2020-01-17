@@ -41,4 +41,30 @@ class Model_CartoonManager extends Model_ManagerDb
         WHERE active = 1');
         return $cartoonCurrent;
     }
+    public function countCartoons() // method that counts the number of cartoon
+        {
+            $db = $this->dbConnect();
+            $countNovels = $db->query("SELECT COUNT(title) as nb FROM cartoon"); //source: https://openclassrooms.com/forum/sujet/pdo-compter-le-nombre-de-resultats-d-une-requete
+            $result = $countNovels->fetch();
+            $nbCartoons = $result['nb'];
+            return $nbCartoons;
+        }
+        
+        public function countPages() // method that counts the total number of pages in the library
+        {
+            $db = $this->dbConnect();
+            $req = $db->query("SELECT SUM(page_count) as nb_pages FROM cartoon");
+            $result = $req->fetch();
+            $countPages = $result["nb_pages"];
+            return $countPages;
+        }
+
+        public function avgPages() // method that counts the average number of pages in the library
+        {
+            $db = $this->dbConnect();
+            $req = $db->query("SELECT AVG(page_count) as avg_nb_pages FROM cartoon");
+            $result = $req->fetch();
+            $avgPagesCartoon = $result["avg_nb_pages"];
+            return $avgPagesCartoon;
+        }
 }
