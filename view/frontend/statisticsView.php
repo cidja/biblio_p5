@@ -9,7 +9,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
 ?>
 
     <div class="container">
-        <section class="container">
+        <section class="novelStatistics container">
             <h2>Quelques chiffres</h2>
             <div class="row">
                 <div class="#">
@@ -37,14 +37,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                     ?> pages en moyenne
                 </div>
             </div>
-            <div class="row">
-                <div class="#">
-                    Nombres total de pages lus pour le moment :
-                </div>
-                <div class="#">
-                    "nb paage_current"
-                </div>
-            </div>
+            
             <div class="row">
                 <div class="#">
                     Genre le plus lus :
@@ -61,7 +54,34 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                     "auteur préféré"
                 </div>
             </div>
-
+        </section>
+    </div>
+    <div class="container">
+        <section class="cartoonStatistics container">
+            <div class="row">
+                <div class="#">
+                    Nombres total de BD :
+                </div>
+                <div class="#">
+                    <?= $nbNovels; ?> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="#">
+                    Nombres total de pages de BD :
+                </div>
+                <div class="#">
+                    <?= $nbNovels; ?> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="#">
+                    Nombres de pages en moyenne par BD :
+                </div>
+                <div class="#">
+                    <?= $nbNovels; ?> 
+                </div>
+            </div>
         </section>
     </div>
 
