@@ -87,6 +87,15 @@ try{
             ToolsFrontend::updateNovelConfirm($id,$title, $author,$isbn, $genre, $page_count, $count_volume, $finish, $comment, $rate, $cover);
         }
 
+        elseif($_GET["action"] == "deleteNovel"){
+            if(isset($_GET["id"]) && $_GET["id"] > 0) { // check if $_get["id"] defined and greater than 0
+            $id = htmlspecialchars($_GET["id"]); // to avoid inclusion xss
+            ToolsFrontend::deleteNovel($id);
+            }else {
+                throw new Exception("Aucun identifiant de billet envoyé !");
+            }
+        }
+
 
         //Cartoon part 
         elseif ($_GET["action"] == "allCartoons"){

@@ -92,6 +92,9 @@ foreach($oneInfos as $data){ // Let's go through the board
         <button>
             <a href="index.php?action=updateNovel&amp;id=<?= $data["id"];?>">Modifier la fiche</a>
         </button>
+        <button>
+            <a href="index.php?action=deleteNovel&amp;id=<?= $data["id"];?>">Supprimer le livre</a>
+        </button>
     </section>
 <?php
 }

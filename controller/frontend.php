@@ -124,6 +124,13 @@ require("model/CartoonManager.php");
                 header("location:index.php?action=allNovels");
             }
 
+            public static function deleteNovel($id)
+            {
+                $novelManager = new Model_NovelManager();
+                $deleteNovel = $novelManager->deleteNovel($id);
+                header("location:index.php?action=allNovels");
+            }
+
             public static function addCartoons()
             {
                 require("view/frontend/addCartoonView.php");

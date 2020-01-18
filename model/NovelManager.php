@@ -112,5 +112,13 @@ class Model_NovelManager extends Model_ManagerDb
             ));
         }
 
+        public function deleteNovel($id)
+        {
+            $db = $this->dbConnect();
+            $deleteNovel = $db->prepare("DELETE FROM novel  WHERE id=?");
+            $deleteNovel->execute(array($id));
+
+        }
+
     }
 
