@@ -59,37 +59,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
             </div>
         </section>
     </div>
-    <div class="container">
-        <section class="cartoonStatistics container">
-            <div>
-                <h2>Les bandes dessinées</h2>
-            </div>
-            <div class="row">
-                <div class="#">
-                    Nombres total de BD :
-                </div>
-                <div class="#">
-                    <?= $nbCartoons; ?> 
-                </div>
-            </div>
-            <div class="row">
-                <div class="#">
-                    Nombres total de pages de BD :
-                </div>
-                <div class="#">
-                    <?= $countPagesCartoon; ?> Pages
-                </div>
-            </div>
-            <div class="row">
-                <div class="#">
-                    Nombres de pages en moyenne par BD :
-                </div>
-                <div class="#">
-                    <?= intval($avgPagesCartoon); ?> pages en moyenne
-                </div>
-            </div>
-        </section>
-    </div>
+    
 
 
 <?php

@@ -93,11 +93,7 @@ require("model/CartoonManager.php");
                 $countPages = $novelManager->countPages();
                 $avgPages = $novelManager->avgPages();
                 $nbNovels = $novelManager->countNovels();
-                //part cartoons
-                $cartoonManager= new Model_CartoonManager();
-                $countPagesCartoon = $cartoonManager->countPages();
-                $nbCartoons = $cartoonManager->countCartoons();
-                $avgPagesCartoon = $cartoonManager->avgPages();
+                
                 require("view/frontend/statisticsView.php");
             }
 
@@ -135,11 +131,19 @@ require("model/CartoonManager.php");
             public static function addCartoonsConfirm($title, $serie, $scriptwriter, $designer, $isbn, $genre, $page_count, $count_volume, $volume_number, $finish, $comment,
             $rate, $cover)
             {
-                echo $title;
                 $cartoonManager = new Model_CartoonManager();
                 $addCartoon = $cartoonManager->addCartoonConfirm($title, $serie, $scriptwriter, $designer, $isbn, $genre, $page_count, $count_volume, $volume_number, $finish, $comment,
                 $rate, $cover);
                 header("location:index.php?action=allCartoons");
+            }
+
+            public static function statisticsCartoon()
+            {
+                $cartoonManager= new Model_CartoonManager();
+                $countPagesCartoon = $cartoonManager->countPages();
+                $nbCartoons = $cartoonManager->countCartoons();
+                $avgPagesCartoon = $cartoonManager->avgPages();
+                require("view/frontend/statisticsCartoonView.php");
             }
 
 

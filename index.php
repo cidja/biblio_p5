@@ -125,6 +125,9 @@ try{
             ToolsFrontend::addCartoonsConfirm($title, $serie, $scriptwriter, $designer, $isbn, $genre, $page_count, $count_volume, $volume_number, $finish, $comment,
             $rate, $cover);
         }
+        elseif($_GET["action"] == "statisticsCartoon"){
+            ToolsFrontend::statisticsCartoon();
+        }
         
     }
     else{
