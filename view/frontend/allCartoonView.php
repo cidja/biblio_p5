@@ -9,11 +9,16 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
 
     foreach($infos as $data) //source: https://www.php.net/manual/fr/control-structures.foreach.php
     {
+        if(!empty($data["cover"])){
+            $cover = $data["cover"];
+        } else {
+            $cover = "public/img/noCover.png";
+        }
         ?>
         
             <div>
-                <a href="index.php?action=oneNovel&amp;id=<?= $data["id"];?>">
-                    <img class="imgCover +"src=<?=$data["cover"]; ?> alt="couverture du livre" title="couverture du livre" />
+                <a href="index.php?action=oneCartoon&amp;id=<?= $data["id"];?>">
+                    <img class="imgCover +"src=<?=$cover; ?> alt="couverture de la bande dessinnée <?= $data["title"]; ?>" title="couverture de la bande dessinnée <?= $data["title"]; ?>" />
                 </a>
             </div>
         <?php

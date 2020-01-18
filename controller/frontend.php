@@ -135,6 +135,7 @@ require("model/CartoonManager.php");
             public static function addCartoonsConfirm($title, $serie, $scriptwriter, $designer, $isbn, $genre, $page_count, $count_volume, $volume_number, $finish, $comment,
             $rate, $cover)
             {
+                echo $title;
                 $cartoonManager = new Model_CartoonManager();
                 $addCartoon = $cartoonManager->addCartoonConfirm($title, $serie, $scriptwriter, $designer, $isbn, $genre, $page_count, $count_volume, $volume_number, $finish, $comment,
                 $rate, $cover);

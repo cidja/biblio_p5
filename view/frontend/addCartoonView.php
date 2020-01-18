@@ -9,7 +9,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
 ?>
 <!-- source: https://getbootstrap.com/docs/4.0/components/forms/ !-->
     <section class=" container addCartoonForm">
-        <form method="post" action="index.php?action=addCartoonConfirm">
+        <form method="post" action="index.php?action=addCartoonsConfirm">
             <div class="form-group">
                 <label for="title">Titre de l'ouvrage</label>
                 <input type="text" class="form-control" id="title" name="title" required>

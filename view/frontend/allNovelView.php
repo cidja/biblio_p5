@@ -13,7 +13,6 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
         } else {
             $cover = "public/img/noCover.png";
         }
-
         ?>
         
             <div>
