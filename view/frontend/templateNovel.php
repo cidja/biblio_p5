@@ -40,6 +40,9 @@
                     <a class="nav-link" href="index.php?action=novelsRead">Livres déjà lus</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="index.php?action=allNovels">Tous les livres</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="index.php?action=statistics">Statistiques</a>
                 </li>
                 <li class="nav-item">

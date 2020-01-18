@@ -117,10 +117,10 @@ require("model/CartoonManager.php");
                 require("view/frontend/updateNovelView.php");
             }
 
-            public static function updateNovelConfirm($id,$title, $author,$isbn, $genre, $page_count, $count_volume, $finish, $comment, $rate, $cover)
+            public static function updateNovelConfirm($id,$title, $author,$isbn, $genre, $page_count, $count_volume,$active, $finish, $comment, $rate, $cover)
             {
                 $novelManager = new Model_NovelManager();
-                $updateConfirm = $novelManager->updateNovel($id,$title, $author,$isbn, $genre, $page_count, $count_volume, $finish, $comment, $rate, $cover);
+                $updateConfirm = $novelManager->updateNovel($id,$title, $author,$isbn, $genre, $page_count, $count_volume,$active, $finish, $comment, $rate, $cover);
                 header("location:index.php?action=allNovels");
             }
 

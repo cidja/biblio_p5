@@ -51,7 +51,7 @@ foreach($oneInfos as $data){ // Let's go through the board
                 <small id="count_volumeHelp" class="form-text text-muted">Si aucun autre tome mettre 1</small>
             </div>
 
-            <p>Déjà fini ? :</p>
+            <p>Déjà lu ? :</p>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="finish" id="yes" value="1" checked>
                 <label class="form-check-label" for="yes">
@@ -60,6 +60,19 @@ foreach($oneInfos as $data){ // Let's go through the board
             </div>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="finish" id="no" value="0">
+                <label class="form-check-label" for="no">
+                    Non
+                </label>
+            </div>
+            <p>Lecture actuelle ?</p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="active" id="yes" value="1">
+                <label class="form-check-label" for="yes">
+                    Oui
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="active" id="no" value="0" checked>
                 <label class="form-check-label" for="no">
                     Non
                 </label>

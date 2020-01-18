@@ -90,12 +90,24 @@ class Model_NovelManager extends Model_ManagerDb
                 "rate"          => $rate,
                 "cover"         => $cover
             ));
+            $res = $db->query("SELECT id FROM novel ORDER BY id DESC LIMIT 0,1");
+            $req = $res->fetch();
+            $updatePageCount = $db->prepare("INSERT INTO `novel_page_count` (`novel_id`, `new_page_count`, `update_date`)
+            VALUES(?, '0', NOW()");
+            $updatePageCount->execute(array($req));
         }
-
-        public function updateNovel($id,$title, $author,$isbn, $genre, $page_count, $count_volume, $finish, $comment, $rate, $cover)
+        public function creationUpdateNovelPageCount($id) // method that adds 0 to the creation of an entry 
         {
             $db = $this->dbConnect();
-            $updateNovel = $db->prepare("UPDATE novel SET title=:title, author=:author, isbn=:isbn, genre=:genre, page_count=:page_count, count_volume=:count_volume,
+            $updatePageCount = $db->prepare("INSERT INTO novel_page_count(novel_id, new_page_count, update_date)
+            VALUES(?, 0, :NOW()");
+            $updatePageCount->execute(array($id));
+        }
+
+        public function updateNovel($id,$title, $author,$isbn, $genre, $page_count, $count_volume, $active, $finish, $comment, $rate, $cover)
+        {
+            $db = $this->dbConnect();
+            $updateNovel = $db->prepare("UPDATE novel SET title=:title, author=:author, isbn=:isbn, genre=:genre, page_count=:page_count, count_volume=:count_volume, active=:active,
                                         finish=:finish, comment=:comment, rate=:rate, cover=:cover  WHERE id=:id");
             $updateNovel->execute(array(
                 ":id"           => $id,
@@ -105,11 +117,13 @@ class Model_NovelManager extends Model_ManagerDb
                 "genre"         => $genre,
                 "page_count"    => $page_count,
                 "count_volume"  => $count_volume,
+                "active"        => $active,
                 "finish"        => $finish,
                 "comment"       => $comment,
                 "rate"          => $rate,
                 "cover"         => $cover
             ));
+            
         }
 
         public function deleteNovel($id)

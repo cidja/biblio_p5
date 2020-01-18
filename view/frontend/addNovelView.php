@@ -49,7 +49,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                 <small id="count_volumeHelp" class="form-text text-muted">Si aucun autre tome mettre 1</small>
             </div>
 
-            <p>Déjà fini ? :</p>
+            <p>Déjà lu ? :</p>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="finish" id="yes" value="1" checked>
                 <label class="form-check-label" for="yes">

@@ -80,11 +80,12 @@ try{
             $genre          = htmlspecialchars($_POST["genre"]);
             $page_count     = htmlspecialchars($_POST["page_count"]);
             $count_volume   = htmlspecialchars($_POST["count_volume"]);
+            $active         = htmlspecialchars($_POST["active"]);
             $finish         = htmlspecialchars($_POST["finish"]);
             $comment        = htmlspecialchars($_POST["comment"]);
             $rate           = htmlspecialchars($_POST["rate"]);
             $cover          = htmlspecialchars($_POST["cover"]);
-            ToolsFrontend::updateNovelConfirm($id,$title, $author,$isbn, $genre, $page_count, $count_volume, $finish, $comment, $rate, $cover);
+            ToolsFrontend::updateNovelConfirm($id,$title, $author,$isbn, $genre, $page_count, $count_volume,$active, $finish, $comment, $rate, $cover);
         }
 
         elseif($_GET["action"] == "deleteNovel"){
