@@ -16,7 +16,7 @@ class Model_PageCartoonManager extends Model_ManagerDb
 
         }
 
-        public function newPageCount($id, $newPageCount) // method for inserting the number of pages already read
+        public function newCartoonPageCount($id, $newPageCount) // method for inserting the number of pages already read
         {
             $db = $this->dbConnect();
             $req = $db->prepare("INSERT INTO cartoon_page_count (cartoon_id, new_page_count, update_date)

@@ -5,6 +5,7 @@
 require("model/NovelManager.php"); //call the class novelManager require_once (once only)
 require("model/PageNovelManager.php");
 require("model/CartoonManager.php");
+require("model/PageCartoonManager.php");
 
 
     trait ToolsFrontend{
@@ -169,5 +170,12 @@ require("model/CartoonManager.php");
                 header("location:index.php?action=allCartoons");
             }
 
+            //cartoon page count
+            public static function newCartoonPageCount($id,$newPageCount)
+            {
+                $pageCartoonManager = new Model_PageCartoonManager();
+                $req = $pageCartoonManager->newCartoonPageCount($id,$newPageCount);
+                header("location: index.php?action=cartoonCurrent");
+            }
 
         }

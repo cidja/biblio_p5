@@ -84,6 +84,20 @@ foreach($oneInfos as $data){ // Let's go through the board
                 </label>
             </div>
 
+            <p>Lecture actuelle :</p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="active" id="yes" value="1" >
+                <label class="form-check-label" for="yes">
+                    Oui
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="active" id="no" value="0" checked>
+                <label class="form-check-label" for="no">
+                    Non
+                </label>
+            </div>
+
             <div class="form-group">
                 <label>Note actuelle</label>
                 <input type="number" class="form-control" id="rate" name="rate" value="<?= $data["rate"];?>" min="1" max="5" >

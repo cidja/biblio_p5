@@ -36,9 +36,16 @@ class Model_CartoonManager extends Model_ManagerDb
     public function cartoonCurrent()
     {
         $db = $this->dbConnect();
-        $cartoonCurrent = $db->query('SELECT id, title, serie, scriptwriter, designer, isbn, genre, page_count, count_volume
-        ,active,finish,comment,rate,cover,DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM cartoon
-        WHERE active = 1');
+        $cartoonCurrent = $db->query('SELECT cartoon.id, cartoon.title, cartoon.serie, cartoon.scriptwriter,
+                                    cartoon.designer, cartoon.isbn, cartoon.genre, cartoon.page_count,
+                                    cartoon.count_volume, cartoon.volume_number, cartoon.active, cartoon.finish,
+                                    cartoon.comment, cartoon.rate, cartoon.cover, DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr,
+                                    cartoon_page_count.cartoon_id, cartoon_page_count.new_page_count, DATE_FORMAT(update_date, "%d/%m/%Y à %Hh%imin%ss") AS update_date_fr FROM cartoon
+        INNER JOIN cartoon_page_count on cartoon.id = cartoon_page_count.cartoon_id WHERE active = 1 AND finish = 0 ORDER BY update_date_fr DESC LIMIT 0,1;'); 
+                                        // inner query for table join with a date_format on the dates of the 2 tables, a descending ranking and we keep that the last record 
+                                        // used to display new_pages_count
+            return $cartoonCurrent;
+        
         return $cartoonCurrent;
     }
     public function countCartoons() // method that counts the number of cartoon
@@ -106,7 +113,7 @@ class Model_CartoonManager extends Model_ManagerDb
             $db = $this->dbConnect();
             $updateCartoon = $db->prepare("UPDATE cartoon SET title=:title, serie=:serie, scriptwriter=:scriptwriter, designer=:designer,
                                          isbn=:isbn, genre=:genre, page_count=:page_count, count_volume=:count_volume, volume_number=:volume_number,
-                                         active=:active, finish=:finish, comment=:comment, rate=:rate, cover=:cover  WHERE id=:id");
+                                         active=:active, finish=:finish, comment=:comment, rate=:rate, cover=:cover WHERE id=:id");
             $updateCartoon->execute(array(
                 "id"                => $id,
                 "title"             => $title,

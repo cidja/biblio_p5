@@ -124,6 +124,7 @@ try{
             $page_count         = htmlspecialchars($_POST["page_count"]);
             $count_volume       = htmlspecialchars($_POST["count_volume"]);
             $volume_number      = htmlspecialchars($_POST["volume_number"]);
+            $active             = htmlspecialchars($_POST["active"]);
             $finish             = htmlspecialchars($_POST["finish"]);
             $comment            = htmlspecialchars($_POST["comment"]);
             $rate               = htmlspecialchars($_POST["rate"]);
@@ -156,6 +157,15 @@ try{
             ToolsFrontend::addCartoonsConfirm($title, $serie, $scriptwriter, $designer, $isbn, $genre, $page_count, $count_volume, $volume_number, $finish, $comment,
             $rate, $cover);
         }
+
+        //Cartoon pages
+        elseif($_GET["action"] == "newCartoonPageCount"){
+            $id             = htmlspecialchars($_POST["id"]);
+            $newPageCount   = htmlspecialchars($_POST["newPageCount"]);
+            ToolsFrontend::newCartoonPageCount($id, $newPageCount);
+        }
+
+
         elseif($_GET["action"] == "statisticsCartoon"){
             ToolsFrontend::statisticsCartoon();
         }
