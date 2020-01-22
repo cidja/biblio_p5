@@ -100,6 +100,33 @@ class Model_CartoonManager extends Model_ManagerDb
             $updatePageCount->execute(array($lastId));
         }
 
+        public function updateCartoon($id, $title, $serie, $scriptwriter, $designer, $isbn, $genre, $page_count, $count_volume, $volume_number, $active, $finish, $comment,
+        $rate, $cover)
+        {
+            $db = $this->dbConnect();
+            $updateCartoon = $db->prepare("UPDATE cartoon SET title=:title, serie=:serie, scriptwriter=:scriptwriter, designer=:designer,
+                                         isbn=:isbn, genre=:genre, page_count=:page_count, count_volume=:count_volume, volume_number=:volume_number,
+                                         active=:active, finish=:finish, comment=:comment, rate=:rate, cover=:cover  WHERE id=:id");
+            $updateCartoon->execute(array(
+                "id"                => $id,
+                "title"             => $title,
+                "serie"             => $serie,
+                "scriptwriter"      => $scriptwriter,
+                "designer"          => $designer,
+                "isbn"              => $isbn,
+                "genre"             => $genre,
+                "page_count"        => $page_count, 
+                "count_volume"      => $count_volume,
+                "volume_number"     => $volume_number,
+                "active"            => $active,
+                "finish"            => $finish,
+                "comment"           => $comment,
+                "rate"              => $rate,
+                "cover"             => $cover
+            ));
+            
+        }
+
         public function deleteCartoon($id)
         {
             $db = $this->dbConnect();

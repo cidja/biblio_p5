@@ -153,6 +153,15 @@ require("model/CartoonManager.php");
                 require("view/frontend/updateCartoonView.php");
             }
 
+            public static function updateCartoonConfirm($id, $title, $serie, $scriptwriter, $designer, $isbn, $genre, $page_count, $count_volume, $volume_number, $active, $finish, $comment,
+            $rate, $cover)
+            {
+                $cartoonManager= new Model_CartoonManager();
+                $updateCartoonConfirm = $cartoonManager->updateCartoon($id, $title, $serie, $scriptwriter, $designer, $isbn, $genre, $page_count, $count_volume, $volume_number, $active, $finish, $comment,
+                $rate, $cover);
+                header("location: index.php?action=allCartoons");
+            }
+
             public static function deleteCartoon($id)
             {
                 $cartoonManager= new Model_CartoonManager();

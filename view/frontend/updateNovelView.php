@@ -13,21 +13,21 @@ foreach($oneInfos as $data){ // Let's go through the board
         <form method="post" action="index.php?action=updateNovelConfirm&amp;id=<?= $data["id"];?>">
             <div class="form-group">
                 <label for="title">Titre de l'ouvrage </label>
-                <input type="text" class="form-control" id="title" name="title" required value="<?= $data['title'];?>">
+                <input type="text" class="form-control" id="title" name="title" required value="<?= $data["title"];?>">
             </div>
             <div class="form-group">
                 <label for="author">Auteur de l'ouvrage</label>
-                <input type="text" class="form-control" id="author" name="author" required value="<?= $data['author'];?>">
+                <input type="text" class="form-control" id="author" name="author" required value="<?= $data["author"];?>">
             </div>
             <div class="form-group">
                 <label for="isbn">ISBN</label>
-                <input type="number" class="form-control" id="isbn" name="isbn" placeholder="exemple : 2253257419" value="<?= $data['isbn'];?>">
+                <input type="number" class="form-control" id="isbn" name="isbn" placeholder="exemple : 2253257419" value="<?= $data["isbn"];?>">
                 <small id="isbnHelp" class="form-text text-muted">Si ISBN inconnu ne rien mettre</small>
             </div>
             <div class="form-group">
                 <label for="genre">Genre</label>
                 <select class="form-control" id="genre" name="genre">
-                    <option><?= $data['genre'];?></option>
+                    <option><?= $data["genre"];?></option>
                     <option>Developpement personnel</option>
                     <option>Biographie</option>
                     <option>Auto biographie</option>
@@ -43,11 +43,11 @@ foreach($oneInfos as $data){ // Let's go through the board
             </div>
             <div class="form-group">
                 <label for="page_count">Nombre de pages : </label>
-                <input type="number" class="form-control" id="page_count" name="page_count" value="<?= $data['page_count'];?>">
+                <input type="number" class="form-control" id="page_count" name="page_count" value="<?= $data["page_count"];?>">
             </div>
             <div class="form-group">
                 <label for="count_volume">Nombre de tomes :</label>
-                <input type="text" class="form-control" id="count_volume" name="count_volume" value="<?= $data['count_volume'];?>">
+                <input type="text" class="form-control" id="count_volume" name="count_volume" value="<?= $data["count_volume"];?>">
                 <small id="count_volumeHelp" class="form-text text-muted">Si aucun autre tome mettre 1</small>
             </div>
 
@@ -78,41 +78,14 @@ foreach($oneInfos as $data){ // Let's go through the board
                 </label>
             </div>
 
-            <div>Une note :</div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="rate" id="1" value="1" >
-                <label class="form-check-label" for="1">
-                    1
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="rate" id="2" value="2" >
-                <label class="form-check-label" for="2">
-                    2
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="rate" id="3" value="3" >
-                <label class="form-check-label" for="3">
-                    3
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="rate" id="4" value="4" >
-                <label class="form-check-label" for="4">
-                    4
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="rate" id="5" value="5" checked>
-                <label class="form-check-label" for="5">
-                    5
-                </label>
+            <div class="form-group">
+                <label>Note actuelle</label>
+                <input type="number" class="form-control" id="rate" name="rate" value="<?= $data["rate"];?>" min="1" max="5" >
             </div>
 
             <div class="form-group">
-                <label for="comment">Un commentaire (pour s'en rappeler pour plus tard :))</label>
-                <textarea class="form-control" id="comment" rows="3"><?= $data["comment"]; ?></textarea>
+                <label for="comment">Revoir ton commentaire ? (on change tous d'avis :) )</label>
+                <textarea class="form-control" id="comment" name="comment" rows="3"><?= $data["comment"]; ?></textarea>
             </div>
             <div class="form-group">
                 <label for="cover">Une image de couverture (ça marque bien les images ):</label>

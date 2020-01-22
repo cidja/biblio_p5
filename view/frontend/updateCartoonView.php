@@ -15,27 +15,27 @@ foreach($oneInfos as $data){ // Let's go through the board
         <form method="post" action="index.php?action=updateCartoonConfirm&amp;id=<?= $data["id"];?>">
             <div class="form-group">
                 <label for="title">Titre de l'ouvrage</label>
-                <input type="text" class="form-control" id="title" name="title" required value="<?= $data['title'];?>">
+                <input type="text" class="form-control" id="title" name="title" required value="<?= $data["title"];?>">
             </div>
 
             <div class="form-group">
                 <label for="serie">Série </label>
-                <input type="text" class="form-control" id="serie" name="serie" placeholder="leonard, spirou, boule et bill,..." required value="<?= $data['serie'];?>">
+                <input type="text" class="form-control" id="serie" name="serie" placeholder="leonard, spirou, boule et bill,..." required value="<?= $data["serie"];?>">
             </div>
 
             <div class="form-group">
                 <label for="scriptwriter">Scénario</label>
-                <input type="text" class="form-control" id="scriptwriter" name="scriptwriter" value="<?= $data['scriptwriter'];?>">
+                <input type="text" class="form-control" id="scriptwriter" name="scriptwriter" value="<?= $data["scriptwriter"];?>">
             </div>
 
             <div class="form-group">
                 <label for="designer">dessinateur </label>
-                <input type="text" class="form-control" id="designer" name="designer" value="<?= $data['designer'];?>">
+                <input type="text" class="form-control" id="designer" name="designer" value="<?= $data["designer"];?>">
             </div>
             
             <div class="form-group">
                 <label for="isbn">ISBN</label>
-                <input type="number" class="form-control" id="isbn" name="isbn" placeholder="exemple : 2253257419" value="<?= $data['isbn'];?>">
+                <input type="number" class="form-control" id="isbn" name="isbn" placeholder="exemple : 2253257419" value="<?= $data["isbn"];?>">
                 <small id="isbnHelp" class="form-text text-muted">Si ISBN inconnu ne rien mettre</small>
             </div>
 
@@ -57,17 +57,17 @@ foreach($oneInfos as $data){ // Let's go through the board
 
             <div class="form-group">
                 <label for="page_count">Nombre de pages </label>
-                <input type="number" class="form-control" id="page_count" name="page_count" value="<?= $data['page_count'];?>">
+                <input type="number" class="form-control" id="page_count" name="page_count" value="<?= $data["page_count"];?>">
             </div>
 
             <div class="form-group">
                 <label for="count_volume">Nombre de tomes </label>
-                <input type="number" class="form-control" id="count_volume" name="count_volume" value="<?= $data['count_volume'];?>">
+                <input type="number" class="form-control" id="count_volume" name="count_volume" value="<?= $data["count_volume"];?>">
             </div>
 
             <div class="form-group">
                 <label for="volume_number">Numéro de ce tome </label>
-                <input type="number" class="form-control" id="volume_number" name="volume_number" value="<?= $data['volume_number'];?>">
+                <input type="number" class="form-control" id="volume_number" name="volume_number" value="<?= $data["volume_number"];?>">
             </div>
 
             <p>Déjà fini ? :</p>
@@ -86,17 +86,17 @@ foreach($oneInfos as $data){ // Let's go through the board
 
             <div class="form-group">
                 <label>Note actuelle</label>
-                <input type="number" class="form-control" id="rate" name="rate" value="<?= $data['rate'];?>" min="1" max="5" >
+                <input type="number" class="form-control" id="rate" name="rate" value="<?= $data["rate"];?>" min="1" max="5" >
             </div>
             
 
             <div class="form-group">
                 <label for="comment">Revoir ton commentaire ? (on change tous d'avis :) )</label>
-                <textarea class="form-control" id="comment" rows="3"><?= $data['comment'];?>"</textarea>
+                <textarea class="form-control" id="comment" name="comment" rows="3"><?= $data["comment"];?></textarea>
             </div>
             <div class="form-group">
                 <label for="cover">Une image de couverture (ça marque bien les images ):</label>
-                <input type="text" class="form-control" id="cover" name="cover" placeholder="rentrez l'adresse du lien de l'image" value="<?= $data['cover'];?>">
+                <input type="text" class="form-control" id="cover" name="cover" placeholder="rentrez l'adresse du lien de l'image" value="<?= $data["cover"];?>">
             </div>
             <div class="row">
                 <input type="submit" value="valider">
