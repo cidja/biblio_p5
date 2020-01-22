@@ -41,4 +41,62 @@ class Model_CartoonManager extends Model_ManagerDb
         WHERE active = 1');
         return $cartoonCurrent;
     }
+    public function countCartoons() // method that counts the number of cartoon
+        {
+            $db = $this->dbConnect();
+            $countNovels = $db->query("SELECT COUNT(title) as nb FROM cartoon"); //source: https://openclassrooms.com/forum/sujet/pdo-compter-le-nombre-de-resultats-d-une-requete
+            $result = $countNovels->fetch();
+            $nbCartoons = $result['nb'];
+            return $nbCartoons;
+        }
+        
+        public function countPages() // method that counts the total number of pages in the library
+        {
+            $db = $this->dbConnect();
+            $req = $db->query("SELECT SUM(page_count) as nb_pages FROM cartoon");
+            $result = $req->fetch();
+            $countPages = $result["nb_pages"];
+            return $countPages;
+        }
+
+        public function avgPages() // method that counts the average number of pages in the library
+        {
+            $db = $this->dbConnect();
+            $req = $db->query("SELECT AVG(page_count) as avg_nb_pages FROM cartoon");
+            $result = $req->fetch();
+            $avgPagesCartoon = $result["avg_nb_pages"];
+            return $avgPagesCartoon;
+        }
+
+        public function addCartoonConfirm($title, $serie, $scriptwriter, $designer, $isbn, $genre, $page_count, $count_volume, $volume_number, $finish, $comment,
+        $rate, $cover)
+        {
+            $db = $this->dbConnect();
+            $addNovel = $db->prepare("INSERT INTO cartoon(`title`, `serie`, `scriptwriter`, `designer`, `isbn`, `genre`, `page_count`, `count_volume`, `volume_number`
+                                    , `active`, `finish`, `comment`, `rate`, `cover`, `creation_date`)
+                                    VALUES(:title, :serie, :scriptwriter, :designer, :isbn, :genre, :page_count, :count_volume, :volume_number, :active, :finish, :comment,
+                                    :rate, :cover, NOW())");
+            $addNovel->execute(array(
+                "title"             => $title,
+                "serie"             => $serie,
+                "scriptwriter"      => $scriptwriter,
+                "designer"          => $designer,
+                "isbn"              => $isbn,
+                "genre"             => $genre,
+                "page_count"        => $page_count, 
+                "count_volume"      => $count_volume,
+                "volume_number"     => $volume_number,
+                "active"            => 0,//to say it's non active by default
+                "finish"            => $finish,
+                "comment"           => $comment,
+                "rate"              => $rate,
+                "cover"             => $cover
+            ));
+            $lastId = $db->lastInsertId();  // source: I retrieve the last id entered in the novel table to insert it in my 
+                                            //query from below and display it with the novelCurrent method. 
+                                            // https://openclassrooms.com/forum/sujet/pdo-lastinsertid-61280
+            $updatePageCount = $db->prepare("INSERT INTO cartoon_page_count (`cartoon_id`, `new_page_count`, `update_date`)
+            VALUES(?, '0', NOW())");
+            $updatePageCount->execute(array($lastId));
+        }
 }

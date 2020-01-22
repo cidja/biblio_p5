@@ -93,6 +93,7 @@ require("model/CartoonManager.php");
                 $countPages = $novelManager->countPages();
                 $avgPages = $novelManager->avgPages();
                 $nbNovels = $novelManager->countNovels();
+                
                 require("view/frontend/statisticsView.php");
             }
 
@@ -116,11 +117,40 @@ require("model/CartoonManager.php");
                 require("view/frontend/updateNovelView.php");
             }
 
-            public static function updateNovelConfirm($id,$title, $author,$isbn, $genre, $page_count, $count_volume, $finish, $comment, $rate, $cover)
+            public static function updateNovelConfirm($id,$title, $author,$isbn, $genre, $page_count, $count_volume,$active, $finish, $comment, $rate, $cover)
             {
                 $novelManager = new Model_NovelManager();
-                $updateConfirm = $novelManager->updateNovel($id,$title, $author,$isbn, $genre, $page_count, $count_volume, $finish, $comment, $rate, $cover);
+                $updateConfirm = $novelManager->updateNovel($id,$title, $author,$isbn, $genre, $page_count, $count_volume,$active, $finish, $comment, $rate, $cover);
                 header("location:index.php?action=allNovels");
+            }
+
+            public static function deleteNovel($id)
+            {
+                $novelManager = new Model_NovelManager();
+                $deleteNovel = $novelManager->deleteNovel($id);
+                header("location:index.php?action=allNovels");
+            }
+
+            public static function addCartoons()
+            {
+                require("view/frontend/addCartoonView.php");
+            }
+            public static function addCartoonsConfirm($title, $serie, $scriptwriter, $designer, $isbn, $genre, $page_count, $count_volume, $volume_number, $finish, $comment,
+            $rate, $cover)
+            {
+                $cartoonManager = new Model_CartoonManager();
+                $addCartoon = $cartoonManager->addCartoonConfirm($title, $serie, $scriptwriter, $designer, $isbn, $genre, $page_count, $count_volume, $volume_number, $finish, $comment,
+                $rate, $cover);
+                header("location:index.php?action=allCartoons");
+            }
+
+            public static function statisticsCartoon()
+            {
+                $cartoonManager= new Model_CartoonManager();
+                $countPagesCartoon = $cartoonManager->countPages();
+                $nbCartoons = $cartoonManager->countCartoons();
+                $avgPagesCartoon = $cartoonManager->avgPages();
+                require("view/frontend/statisticsCartoonView.php");
             }
 
 

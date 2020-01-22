@@ -59,14 +59,18 @@ foreach($oneInfos as $data){ // Let's go through the board
         </div>
         <div class="finish">
             <div>
-                <span>Fini ? :</span>
+               
                 <span>
                     <?php 
                         if($data["finish"] == 0){
-                            echo "pas fini";
+                            ?> 
+                                <button class="btn btn-warning">En cours</button>
+                            <?php
                         }
                         else{
-                            echo "fini";
+                            ?>
+                                <button class="btn btn-success">Fini</button>
+                            <?php
                         } ?>
                 </span>
             </div>
@@ -91,6 +95,9 @@ foreach($oneInfos as $data){ // Let's go through the board
         </div>
         <button>
             <a href="index.php?action=updateNovel&amp;id=<?= $data["id"];?>">Modifier la fiche</a>
+        </button>
+        <button>
+            <a href="index.php?action=deleteNovel&amp;id=<?= $data["id"];?>">Supprimer le livre</a>
         </button>
     </section>
 <?php

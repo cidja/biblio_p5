@@ -49,7 +49,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                 <small id="count_volumeHelp" class="form-text text-muted">Si aucun autre tome mettre 1</small>
             </div>
 
-            <p>Déjà fini ? :</p>
+            <p>Déjà lu ? :</p>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="finish" id="yes" value="1" checked>
                 <label class="form-check-label" for="yes">
@@ -101,7 +101,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
             </div>
             <div class="form-group">
                 <label for="cover">Une image de couverture (ça marque bien les images ):</label>
-                <input type="file" class="form-control-file" id="cover" name="cover" placeholder="rentrez l'adresse du lien de l'image">
+                <input type="text" class="form-control" id="cover" name="cover" placeholder="rentrez l'adresse du lien de l'image">
             </div>
             <div class="row">
                 <input type="submit" value="valider">

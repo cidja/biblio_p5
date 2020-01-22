@@ -10,10 +10,20 @@ class Model_PageNovelManager extends Model_ManagerDb
         public function currentPageCount($id) // method for displaying the number of pages already read
         {
             $db = $this->dbConnect();
-            $req = $db->prepare('SELECT new_page_count,  DATE_FORMAT(update_date, "%d/%m/%Y à %Hh%imin%ss") AS update_date_fr FROM novel_page_count WHERE id=?');
+            $req = $db->prepare('SELECT new_page_count,  DATE_FORMAT(update_date, "%d/%m/%Y à %Hh%imin%ss") AS update_date_fr FROM novel_page_count WHERE novel_id=?');
             $currentPageCount = $req->execute(array($id));
             return $currentPageCount;
 
+        }
+
+        public function createPageCount($id) // method that will create an entry a 0 in the table novel_page_count this in order to see it displayed in current book
+        {
+            $db = $this->dbConnect();
+            $req = $db->prepare("INSERT INTO novel_page_count (novel_id, new_page_count, update_date)
+                                VALUES (:novel_id, 0, NOW())");
+            $req->execute(array(
+                "novel_id"         => $id
+            )); 
         }
 
         public function newPageCount($id, $newPageCount) // method for inserting the number of pages already read
@@ -24,6 +34,6 @@ class Model_PageNovelManager extends Model_ManagerDb
             $req->execute(array(
                 "novel_id"         => $id,
                 "new_page_count"   => $newPageCount
-            ));
+            )); 
         }
     }

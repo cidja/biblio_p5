@@ -13,17 +13,22 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
     <?php
     foreach($novelCurrent as $data) //source: https://www.php.net/manual/fr/control-structures.foreach.php
     {
+        if(!empty($data["cover"])){
+            $cover = $data["cover"];
+        } else {
+            $cover = "public/img/noCover.png";
+        }
         ?>
         
             <div class="container">
                 <section class="cover">
                     <a href="index.php?action=oneNovel&amp;id=<?= $data["id"];?>">
-                        <img class="imgCover +"src=<?=$data["cover"]; ?> alt="couverture du livre" title="couverture du livre <?= $data["title"]; ?>" />
+                        <img class="imgCover +"src=<?= $cover; ?> alt="couverture du livre" title="couverture du livre <?= $data["title"]; ?>" />
                     </a>
                 </section>
                 <div class="infos">
                     <div class="row">
-                        <p>Nombre de pages : </p>
+                        <div>Nombre de pages : </div>
                     </div>
                     <div class="#">
                         <?= $data["page_count"]; ?>
@@ -31,11 +36,11 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                 </div>
                 <div class="row">
                     <div>Date de la dernière lecture :</div>
-                    <div><"date dernière lecture"></div>
+                    <div><?= $data["update_date_fr"]; ?></div>
                 </div>
                 <div class="row">
                     <div>Vous en étiez à la page :</div>
-                    <div>"page number"</div>
+                    <div><?= $data["new_page_count"]; ?></div>
                 </div>
                 <form method="post" action="index.php?action=newPageCount">
                     <div class="form-group">

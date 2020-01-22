@@ -13,13 +13,25 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
         } else {
             $cover = "public/img/noCover.png";
         }
-
         ?>
         
             <div>
                 <a href="index.php?action=oneNovel&amp;id=<?= $data["id"];?>">
                     <img class="imgCover +"src=<?=$cover; ?> alt="couverture du livre" title="couverture du livre" />
                 </a>
+                <div>
+                    <?php
+                if($data["finish"] == 0){
+                            ?> 
+                                <button class="btn btn-warning">En cours</button>
+                            <?php
+                        }
+                        else{
+                            ?>
+                                <button class="btn btn-success">Fini</button>
+                            <?php
+                        } ?>
+                </div>
             </div>
         <?php
     }

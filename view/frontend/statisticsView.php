@@ -9,8 +9,11 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
 ?>
 
     <div class="container">
-        <section class="container">
-            <h2>Quelques chiffres</h2>
+        <section class="novelStatistics container">
+            <h1>Quelques chiffres</h1>
+            <div>
+                <h2>Les livres </h2>
+            </div>
             <div class="row">
                 <div class="#">
                     Nombres total de livres :
@@ -37,14 +40,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                     ?> pages en moyenne
                 </div>
             </div>
-            <div class="row">
-                <div class="#">
-                    Nombres total de pages lus pour le moment :
-                </div>
-                <div class="#">
-                    "nb paage_current"
-                </div>
-            </div>
+            
             <div class="row">
                 <div class="#">
                     Genre le plus lus :
@@ -61,9 +57,9 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                     "auteur préféré"
                 </div>
             </div>
-
         </section>
     </div>
+    
 
 
 <?php

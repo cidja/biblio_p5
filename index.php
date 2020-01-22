@@ -30,7 +30,9 @@ try{
             ToolsFrontend::novelRead();
         }
         elseif($_GET["action"] == "novelCurrent"){
+            
             ToolsFrontend::novelCurrent();
+            
         }
         elseif($_GET["action"] == "statistics"){
             ToolsFrontend::statistics();
@@ -78,11 +80,22 @@ try{
             $genre          = htmlspecialchars($_POST["genre"]);
             $page_count     = htmlspecialchars($_POST["page_count"]);
             $count_volume   = htmlspecialchars($_POST["count_volume"]);
+            $active         = htmlspecialchars($_POST["active"]);
             $finish         = htmlspecialchars($_POST["finish"]);
             $comment        = htmlspecialchars($_POST["comment"]);
             $rate           = htmlspecialchars($_POST["rate"]);
             $cover          = htmlspecialchars($_POST["cover"]);
-            ToolsFrontend::updateNovelConfirm($id,$title, $author,$isbn, $genre, $page_count, $count_volume, $finish, $comment, $rate, $cover);
+            ToolsFrontend::updateNovelConfirm($id,$title, $author,$isbn, $genre, $page_count, $count_volume,$active, $finish, $comment, $rate, $cover);
+            
+        }
+
+        elseif($_GET["action"] == "deleteNovel"){
+            if(isset($_GET["id"]) && $_GET["id"] > 0) { // check if $_get["id"] defined and greater than 0
+            $id = htmlspecialchars($_GET["id"]); // to avoid inclusion xss
+            ToolsFrontend::deleteNovel($id);
+            }else {
+                throw new Exception("Aucun identifiant de billet envoyé !");
+            }
         }
 
 
@@ -102,6 +115,31 @@ try{
         elseif ($_GET["action"] == "cartoonCurrent"){
             ToolsFrontend::cartoonCurrent();
         }
+        elseif($_GET["action"] == "addCartoons"){
+            ToolsFrontend::addCartoons();
+        }
+        elseif($_GET["action"] == "addCartoonsConfirm"){
+            $title              = htmlspecialchars($_POST['title']);
+            $serie              = htmlspecialchars($_POST["serie"]);
+            $scriptwriter       = htmlspecialchars($_POST["scriptwriter"]);
+            $designer           = htmlspecialchars($_POST["designer"]);
+            $isbn               = htmlspecialchars($_POST["isbn"]); 
+            $genre              = htmlspecialchars($_POST["genre"]);
+            $page_count         = htmlspecialchars($_POST["page_count"]);
+            $count_volume       = htmlspecialchars($_POST["count_volume"]);
+            $volume_number      = htmlspecialchars($_POST["volume_number"]);
+            $finish             = htmlspecialchars($_POST["finish"]);
+            $comment            = htmlspecialchars($_POST["comment"]);
+            $rate               = htmlspecialchars($_POST["rate"]);
+            $cover              = htmlspecialchars($_POST["cover"]);
+
+            ToolsFrontend::addCartoonsConfirm($title, $serie, $scriptwriter, $designer, $isbn, $genre, $page_count, $count_volume, $volume_number, $finish, $comment,
+            $rate, $cover);
+        }
+        elseif($_GET["action"] == "statisticsCartoon"){
+            ToolsFrontend::statisticsCartoon();
+        }
+        
     }
     else{
         ToolsFrontend::listNovel();
