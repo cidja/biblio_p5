@@ -41,6 +41,40 @@ require("model/CartoonManager.php");
                 require("view/frontend/novelCurrentView.php");
             }
 
+            public static function addNovel()
+            {
+                require("view/frontend/addNovelView.php");
+            }
+
+            public static function addNovelConfirm($title, $author,$isbn, $genre, $page_count, $count_volume, $finish, $comment, $rate, $cover)
+            {
+            
+                $novelManager = new Model_NovelManager();
+                $addConfirm = $novelManager->addNovelConfirm($title, $author,$isbn, $genre, $page_count, $count_volume, $finish, $comment, $rate, $cover);
+                header("location:index.php?action=allNovels");
+            }
+
+            public static function updateNovelInfos($id)
+            {
+                $novelManager = new Model_NovelManager();
+                $oneInfos = $novelManager->oneNovelInfos($id); // $oneInfo which is called in oneNovelView.php
+                require("view/frontend/updateNovelView.php");
+            }
+
+            public static function updateNovelConfirm($id,$title, $author,$isbn, $genre, $page_count, $count_volume,$active, $finish, $comment, $rate, $cover)
+            {
+                $novelManager = new Model_NovelManager();
+                $updateConfirm = $novelManager->updateNovel($id,$title, $author,$isbn, $genre, $page_count, $count_volume,$active, $finish, $comment, $rate, $cover);
+                header("location:index.php?action=allNovels");
+            }
+
+            public static function deleteNovel($id)
+            {
+                $novelManager = new Model_NovelManager();
+                $deleteNovel = $novelManager->deleteNovel($id);
+                header("location:index.php?action=allNovels");
+            }
+
 
 
             //************** */ novelPageCount part ******
@@ -79,14 +113,7 @@ require("model/CartoonManager.php");
                 $cartoonCurrent = $cartoonManager->cartoonCurrent();
                 require("view/frontend/cartoonCurrentView.php");
             }
-            public static function countNovels()
-            {
-                //$novelManager = new Model_NovelManager();
-                //$countNovels = $novelManager->countNovels();
-                echo "je rentre";
-                
-            }
-
+       
             public static function statistics()
             {
                 $novelManager = new Model_NovelManager();
@@ -95,40 +122,6 @@ require("model/CartoonManager.php");
                 $nbNovels = $novelManager->countNovels();
                 
                 require("view/frontend/statisticsView.php");
-            }
-
-            public static function addNovel()
-            {
-                require("view/frontend/addNovelView.php");
-            }
-
-            public static function addNovelConfirm($title, $author,$isbn, $genre, $page_count, $count_volume, $finish, $comment, $rate, $cover)
-            {
-            
-                $novelManager = new Model_NovelManager();
-                $addConfirm = $novelManager->addNovelConfirm($title, $author,$isbn, $genre, $page_count, $count_volume, $finish, $comment, $rate, $cover);
-                header("location:index.php?action=allNovels");
-            }
-
-            public static function updateNovelInfos($id)
-            {
-                $novelManager = new Model_NovelManager();
-                $oneInfos = $novelManager->oneNovelInfos($id); // $oneInfo which is called in oneNovelView.php
-                require("view/frontend/updateNovelView.php");
-            }
-
-            public static function updateNovelConfirm($id,$title, $author,$isbn, $genre, $page_count, $count_volume,$active, $finish, $comment, $rate, $cover)
-            {
-                $novelManager = new Model_NovelManager();
-                $updateConfirm = $novelManager->updateNovel($id,$title, $author,$isbn, $genre, $page_count, $count_volume,$active, $finish, $comment, $rate, $cover);
-                header("location:index.php?action=allNovels");
-            }
-
-            public static function deleteNovel($id)
-            {
-                $novelManager = new Model_NovelManager();
-                $deleteNovel = $novelManager->deleteNovel($id);
-                header("location:index.php?action=allNovels");
             }
 
             public static function addCartoons()
@@ -151,6 +144,20 @@ require("model/CartoonManager.php");
                 $nbCartoons = $cartoonManager->countCartoons();
                 $avgPagesCartoon = $cartoonManager->avgPages();
                 require("view/frontend/statisticsCartoonView.php");
+            }
+
+            public static function updateCartoonInfos($id)
+            {
+                $cartoonManager= new Model_CartoonManager();
+                $oneInfos = $cartoonManager->oneCartoonInfos($id); // $oneInfo which is called in oneNovelView.php
+                require("view/frontend/updateCartoonView.php");
+            }
+
+            public static function deleteCartoon($id)
+            {
+                $cartoonManager= new Model_CartoonManager();
+                $deleteCartoon = $cartoonManager->deleteCartoon($id);
+                header("location:index.php?action=allCartoons");
             }
 
 

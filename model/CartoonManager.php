@@ -99,4 +99,13 @@ class Model_CartoonManager extends Model_ManagerDb
             VALUES(?, '0', NOW())");
             $updatePageCount->execute(array($lastId));
         }
+
+        public function deleteCartoon($id)
+        {
+            $db = $this->dbConnect();
+            $deleteNovel = $db->prepare("DELETE FROM cartoon WHERE id=?");
+            $deleteNovel->execute(array($id));
+
+        }
+
 }

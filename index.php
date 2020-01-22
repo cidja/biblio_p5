@@ -139,6 +139,25 @@ try{
         elseif($_GET["action"] == "statisticsCartoon"){
             ToolsFrontend::statisticsCartoon();
         }
+        elseif($_GET["action"] == "updateCartoon"){
+            if(isset($_GET["id"]) && $_GET["id"] > 0) { // check if $_get["id"] defined and greater than 0
+                $id = htmlspecialchars($_GET["id"]); // to avoid inclusion xss
+                ToolsFrontend::updateCartoonInfos($id); // calling the tool oneNovelInfos
+            }
+            else {
+                throw new Exception("Aucun identifiant de billet envoyé !");
+                }
+            }  
+
+        elseif($_GET["action"] == "deleteCartoon"){
+            if(isset($_GET["id"]) && $_GET["id"] > 0) { // check if $_get["id"] defined and greater than 0
+            $id = htmlspecialchars($_GET["id"]); // to avoid inclusion xss
+            ToolsFrontend::deleteCartoon($id);
+            }else {
+                throw new Exception("Aucun identifiant de billet envoyé !");
+            }
+        }
+
         
     }
     else{
