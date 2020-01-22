@@ -92,5 +92,11 @@ class Model_CartoonManager extends Model_ManagerDb
                 "rate"              => $rate,
                 "cover"             => $cover
             ));
+            $lastId = $db->lastInsertId();  // source: I retrieve the last id entered in the novel table to insert it in my 
+                                            //query from below and display it with the novelCurrent method. 
+                                            // https://openclassrooms.com/forum/sujet/pdo-lastinsertid-61280
+            $updatePageCount = $db->prepare("INSERT INTO cartoon_page_count (`cartoon_id`, `new_page_count`, `update_date`)
+            VALUES(?, '0', NOW())");
+            $updatePageCount->execute(array($lastId));
         }
 }

@@ -86,6 +86,7 @@ try{
             $rate           = htmlspecialchars($_POST["rate"]);
             $cover          = htmlspecialchars($_POST["cover"]);
             ToolsFrontend::updateNovelConfirm($id,$title, $author,$isbn, $genre, $page_count, $count_volume,$active, $finish, $comment, $rate, $cover);
+            
         }
 
         elseif($_GET["action"] == "deleteNovel"){
