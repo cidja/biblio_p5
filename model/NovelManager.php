@@ -39,7 +39,7 @@ class Model_NovelManager extends Model_ManagerDb
             $novelcurrent = $db->query('SELECT novel.id, novel.title, novel.author, novel.isbn, novel.genre, novel.page_count, novel.count_volume, novel.active,novel.finish, 
                                         novel.comment,novel.rate,novel.cover, DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr, novel_page_count.novel_id,
                                         novel_page_count.new_page_count,  DATE_FORMAT(update_date, "%d/%m/%Y à %Hh%imin%ss") AS update_date_fr FROM novel 
-                                        RIGHT JOIN novel_page_count on novel.id = novel_page_count.novel_id WHERE active = 1 AND finish = 0 ORDER BY update_date_fr DESC LIMIT 0,1;');
+                                        INNER JOIN novel_page_count on novel.id = novel_page_count.novel_id WHERE active = 1 AND finish = 0 ORDER BY update_date_fr DESC LIMIT 0,1;');
                                         // inner query for table join with a date_format on the dates of the 2 tables, a descending ranking and we keep that the last record 
                                         // used to display new_pages_count
             return $novelcurrent;
@@ -75,8 +75,10 @@ class Model_NovelManager extends Model_ManagerDb
         public function addNovelConfirm($title, $author,$isbn, $genre, $page_count, $count_volume, $finish, $comment, $rate, $cover)
         {
             $db = $this->dbConnect();
-            $addNovel = $db->prepare("INSERT INTO novel(`title`, `author`, `isbn`, `genre`, `page_count`, `count_volume`, `active`, `finish`, `comment`, `rate`, `cover`, `creation_date`)
-                                    VALUES(:title, :author, :isbn, :genre, :page_count, :count_volume, :active, :finish, :comment, :rate, :cover, NOW())");
+            $addNovel = $db->prepare("INSERT INTO novel(`title`, `author`, `isbn`, `genre`, `page_count`, `count_volume`,
+                                     `active`, `finish`, `comment`, `rate`, `cover`, `creation_date`)
+                                      VALUES(:title, :author, :isbn, :genre, :page_count, :count_volume, 
+                                      :active, :finish, :comment, :rate, :cover, NOW())");
             $addNovel->execute(array(
                 "title"         => $title,
                 "author"        => $author,
@@ -90,11 +92,12 @@ class Model_NovelManager extends Model_ManagerDb
                 "rate"          => $rate,
                 "cover"         => $cover
             ));
-            $res = $db->query("SELECT id FROM novel ORDER BY id DESC LIMIT 0,1");
-            $req = $res->fetch();
-            $updatePageCount = $db->prepare("INSERT INTO `novel_page_count` (`novel_id`, `new_page_count`, `update_date`)
-            VALUES(?, '0', NOW()");
-            $updatePageCount->execute(array($req));
+            $lastId = $db->lastInsertId();  // source: I retrieve the last id entered in the novel table to insert it in my 
+                                            //query from below and display it with the novelCurrent method. 
+                                            // https://openclassrooms.com/forum/sujet/pdo-lastinsertid-61280
+            $updatePageCount = $db->prepare("INSERT INTO novel_page_count (`novel_id`, `new_page_count`, `update_date`)
+            VALUES(?, '0', NOW())");
+            $updatePageCount->execute(array($lastId));
         }
         public function creationUpdateNovelPageCount($id) // method that adds 0 to the creation of an entry 
         {
@@ -107,7 +110,8 @@ class Model_NovelManager extends Model_ManagerDb
         public function updateNovel($id,$title, $author,$isbn, $genre, $page_count, $count_volume, $active, $finish, $comment, $rate, $cover)
         {
             $db = $this->dbConnect();
-            $updateNovel = $db->prepare("UPDATE novel SET title=:title, author=:author, isbn=:isbn, genre=:genre, page_count=:page_count, count_volume=:count_volume, active=:active,
+            $updateNovel = $db->prepare("UPDATE novel SET title=:title, author=:author, isbn=:isbn, genre=:genre, page_count=:page_count,
+                                         count_volume=:count_volume, active=:active,
                                         finish=:finish, comment=:comment, rate=:rate, cover=:cover  WHERE id=:id");
             $updateNovel->execute(array(
                 ":id"           => $id,

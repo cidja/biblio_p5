@@ -101,7 +101,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
             </div>
             <div class="form-group">
                 <label for="cover">Une image de couverture (ça marque bien les images ):</label>
-                <input type="file" class="form-control-file" id="cover" name="cover" placeholder="rentrez l'adresse du lien de l'image">
+                <input type="text" class="form-control" id="cover" name="cover" placeholder="rentrez l'adresse du lien de l'image">
             </div>
             <div class="row">
                 <input type="submit" value="valider">
