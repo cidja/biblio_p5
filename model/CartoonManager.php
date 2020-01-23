@@ -142,4 +142,10 @@ class Model_CartoonManager extends Model_ManagerDb
 
         }
 
+        public function endCartoonReading($id)
+        {
+            $db = $this->dbConnect();
+            $req = $db->prepare("UPDATE cartoon SET active=0, finish=1 WHERE id=?");
+            $endReading= $req->execute(array($id));
+        }
 }

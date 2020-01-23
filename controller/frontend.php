@@ -180,6 +180,14 @@ require("model/PageCartoonManager.php");
                 header("location: index.php?action=allCartoons");
             }
 
+            public static function endCartoonReading($id)
+            {
+                $cartoonManager= new Model_CartoonManager();
+                $endCartoonReading = $cartoonManager->endCartoonReading($id);
+                require("view/frontend/endReadingCartoonConfirm.php");
+
+            }
+
             public static function deleteCartoon($id)
             {
                 $cartoonManager= new Model_CartoonManager();

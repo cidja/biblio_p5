@@ -13,6 +13,8 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
     <?php
     foreach($cartoonCurrent as $data) //source: https://www.php.net/manual/fr/control-structures.foreach.php
     {
+        if($data["new_page_count"] < $data["page_count"]){
+
         if(!empty($data["cover"])){
             $cover = $data["cover"];
         } else {
@@ -52,7 +54,30 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                 </form>
             </div>
         <?php
-    }
+    }else{
+          
+        if(!empty($data["cover"])){
+              $cover = $data["cover"];
+          } else {
+              $cover = "public/img/noCover.png";
+          }
+          ?>
+          
+              <div class="container">
+                  <section class="cover col">
+                      <a href="index.php?action=oneCartoon&amp;id=<?= $data["id"];?>">
+                          <img class="imgCover +"src=<?= $cover; ?> alt="couverture de la bande déssinée" title="couverture de <?= $data["title"]; ?>" />
+                      </a>
+                  </section>
+                  <div class="col">
+                      <button class="btn btn-success" type="submit"><a class="bodyLink" href="index.php?action=endCartoonReading&amp;id=<?= $data["id"]; ?>">Valider la fin de la lecture</a></button>
+                  </div>
+          
+              </div>
+              <?php
+      }
+
+}
 
 $cartoonCurrent->closeCursor();
 $content = ob_get_clean();

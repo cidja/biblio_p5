@@ -62,7 +62,6 @@ try{
             else {
                 throw new Exception("Aucun identifiant de billet envoyé !");
             }
-        
         }
 
         // novelPagesCount
@@ -197,6 +196,15 @@ try{
             $id = htmlspecialchars($_GET["id"]); // to avoid inclusion xss
             ToolsFrontend::deleteCartoon($id);
             }else {
+                throw new Exception("Aucun identifiant de billet envoyé !");
+            }
+        }
+        elseif($_GET["action"] == "endCartoonReading"){
+            if(isset($_GET["id"]) && $_GET["id"] > 0) { // check if $_get["id"] defined and greater than 0
+                $id = htmlspecialchars($_GET["id"]); // to avoid inclusion xss
+                ToolsFrontend::endCartoonReading($id); // calling the tool oneNovelInfos
+            }
+            else {
                 throw new Exception("Aucun identifiant de billet envoyé !");
             }
         }
