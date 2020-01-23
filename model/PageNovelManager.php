@@ -36,4 +36,21 @@ class Model_PageNovelManager extends Model_ManagerDb
                 "new_page_count"   => $newPageCount
             )); 
         }
+
+        public function readingNovelTime($novel_id) // method for displaying the time taken to read the book
+        {
+            $db = $this->dbConnect();
+            $req = $db->prepare("SELECT update_date FROM novel_page_count WHERE novel_id=? ORDER BY update_date limit 0,1"); //to select the first record in the playback table
+            $beginDate = $req->execute(array($novel_id));
+
+            $req = $db->prepare("SELECT update_date FROM novel_page_count WHERE novel_id=? ORDER BY update_date DESC limit 0,1"); //to select the last record in the playback table
+            $endDate = $req->execute(array($novel_id));
+
+            $dateDiff = $db->prepare('SELECT DATEDIFF(":endDate", ":beginDate")');
+            $readingNovelTime = $dateDiff->execute(array(
+                "endDate"       => $endDate,
+                "beginDate"     => $beginDate
+            ));
+            return $readingNovelTime;
+        }
     }

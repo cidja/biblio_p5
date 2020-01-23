@@ -40,6 +40,9 @@
                     <a class="nav-link" href="index.php?action=cartoonsRead">Bande dessinée déjà lus </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="index.php?action=allCartoons">Toutes les BD</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="index.php?action=statisticsCartoon">Statistiques</a>
                 </li>
                 <li class="nav-item">

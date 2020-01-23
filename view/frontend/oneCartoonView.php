@@ -71,14 +71,17 @@ foreach($oneCartoonInfos as $data){ // Let's go through the board
         </div>
         <div class="finish">
             <div>
-                <span>Fini ? :</span>
                 <span>
-                    <?php 
+                <?php 
                         if($data["finish"] == 0){
-                            echo "pas fini";
+                            ?> 
+                                <button class="btn btn-warning">En cours</button>
+                            <?php
                         }
                         else{
-                            echo "fini";
+                            ?>
+                                <button class="btn btn-success">Fini</button>
+                            <?php
                         } ?>
                 </span>
             </div>
@@ -101,6 +104,12 @@ foreach($oneCartoonInfos as $data){ // Let's go through the board
                 <span><?= $data["creation_date_fr"]; ?></span>
             </div>
         </div>
+        <button>
+            <a href="index.php?action=updateCartoon&amp;id=<?= $data["id"];?>">Modifier la fiche</a>
+        </button>
+        <button>
+            <a href="index.php?action=deleteCartoon&amp;id=<?= $data["id"];?>">Supprimer la BD</a>
+        </button>
     </section>
 <?php
 }

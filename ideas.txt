@@ -1,0 +1,1 @@
+Quand on fini un livre voir pour afficher des statistiques de lecture du livre voir les méthodes "readingNovelTime" dans PageNovelManager.php (le 23.01.20 à 14h50)

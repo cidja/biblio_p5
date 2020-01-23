@@ -4,3 +4,10 @@
 .containerContent{
     margin-top: 65px;
 }
+
+.bodyLink{
+   color: white;
+}
+.bodyLink:hover{
+    color: white;
+}

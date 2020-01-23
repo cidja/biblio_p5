@@ -1,6 +1,6 @@
 <?php
 
-class ManagerDb 
+class Model_ManagerDb 
 {
     protected function dbConnect()
 {

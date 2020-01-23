@@ -4,54 +4,73 @@
 //to support : mail: christian@linternaute-averti.fr
 
 
-ob_start(); // Start of capture to put it in the variable at the end of the script 
+ob_start(); //Start of capture to put it in the variable at the end of the script 
+
 foreach($oneInfos as $data){ // Let's go through the board
-    $title = $data["title"]; 
+    $title = "Modification de " .$data["title"]; 
     
     ?>
-    <section class="container novelForm">
-        <form method="post" action="index.php?action=updateNovelConfirm&amp;id=<?= $data["id"];?>">
+<!-- source: https://getbootstrap.com/docs/4.0/components/forms/ !-->
+    <section class=" container CartoonForm">
+        <form method="post" action="index.php?action=updateCartoonConfirm&amp;id=<?= $data["id"];?>">
             <div class="form-group">
-                <label for="title">Titre de l'ouvrage </label>
+                <label for="title">Titre de l'ouvrage</label>
                 <input type="text" class="form-control" id="title" name="title" required value="<?= $data["title"];?>">
             </div>
+
             <div class="form-group">
-                <label for="author">Auteur de l'ouvrage</label>
-                <input type="text" class="form-control" id="author" name="author" required value="<?= $data["author"];?>">
+                <label for="serie">Série </label>
+                <input type="text" class="form-control" id="serie" name="serie" placeholder="leonard, spirou, boule et bill,..." required value="<?= $data["serie"];?>">
             </div>
+
+            <div class="form-group">
+                <label for="scriptwriter">Scénario</label>
+                <input type="text" class="form-control" id="scriptwriter" name="scriptwriter" value="<?= $data["scriptwriter"];?>">
+            </div>
+
+            <div class="form-group">
+                <label for="designer">dessinateur </label>
+                <input type="text" class="form-control" id="designer" name="designer" value="<?= $data["designer"];?>">
+            </div>
+            
             <div class="form-group">
                 <label for="isbn">ISBN</label>
                 <input type="number" class="form-control" id="isbn" name="isbn" placeholder="exemple : 2253257419" value="<?= $data["isbn"];?>">
                 <small id="isbnHelp" class="form-text text-muted">Si ISBN inconnu ne rien mettre</small>
             </div>
+
             <div class="form-group">
                 <label for="genre">Genre</label>
                 <select class="form-control" id="genre" name="genre">
-                    <option><?= $data["genre"];?></option>
-                    <option>Developpement personnel</option>
-                    <option>Biographie</option>
-                    <option>Auto biographie</option>
-                    <option>Fantastique</option>
+                    <option><?= $data["genre"]; ?></option>
+                    <option>Aventure</option>
+                    <option>Comics</option>
+                    <option>Heroïque fantasy</option>
+                    <option>Historique</option>
+                    <option>Humour</option>
+                    <option>Manga</option>  
+                    <option>Policier</option> 
                     <option>Science-fiction</option>
-                    <option>Traité</option>
-                    <option>Essais</option>
-                    <option>Policier</option>
-                    <option>Thriller</option>
-                    <option>Classique</option>
-                    <option>Roman</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="page_count">Nombre de pages : </label>
-                <input type="number" class="form-control" id="page_count" name="page_count" value="<?= $data["page_count"];?>">
-            </div>
-            <div class="form-group">
-                <label for="count_volume">Nombre de tomes :</label>
-                <input type="text" class="form-control" id="count_volume" name="count_volume" value="<?= $data["count_volume"];?>">
-                <small id="count_volumeHelp" class="form-text text-muted">Si aucun autre tome mettre 1</small>
+                    <option>Western</option>
+                 </select>
             </div>
 
-            <p>Déjà lu ? :</p>
+            <div class="form-group">
+                <label for="page_count">Nombre de pages </label>
+                <input type="number" class="form-control" id="page_count" name="page_count" value="<?= $data["page_count"];?>">
+            </div>
+
+            <div class="form-group">
+                <label for="count_volume">Nombre de tomes </label>
+                <input type="number" class="form-control" id="count_volume" name="count_volume" value="<?= $data["count_volume"];?>">
+            </div>
+
+            <div class="form-group">
+                <label for="volume_number">Numéro de ce tome </label>
+                <input type="number" class="form-control" id="volume_number" name="volume_number" value="<?= $data["volume_number"];?>">
+            </div>
+
+            <p>Déjà fini ? :</p>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="finish" id="yes" value="1" checked>
                 <label class="form-check-label" for="yes">
@@ -59,14 +78,15 @@ foreach($oneInfos as $data){ // Let's go through the board
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="finish" id="no" value="0">
+                <input class="form-check-input" type="radio" name="finish" id="no" value="0" >
                 <label class="form-check-label" for="no">
                     Non
                 </label>
             </div>
-            <p>Lecture actuelle ?</p>
+
+            <p>Lecture actuelle :</p>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="active" id="yes" value="1">
+                <input class="form-check-input" type="radio" name="active" id="yes" value="1" >
                 <label class="form-check-label" for="yes">
                     Oui
                 </label>
@@ -82,14 +102,15 @@ foreach($oneInfos as $data){ // Let's go through the board
                 <label>Note actuelle</label>
                 <input type="number" class="form-control" id="rate" name="rate" value="<?= $data["rate"];?>" min="1" max="5" >
             </div>
+            
 
             <div class="form-group">
                 <label for="comment">Revoir ton commentaire ? (on change tous d'avis :) )</label>
-                <textarea class="form-control" id="comment" name="comment" rows="3"><?= $data["comment"]; ?></textarea>
+                <textarea class="form-control" id="comment" name="comment" rows="3"><?= $data["comment"];?></textarea>
             </div>
             <div class="form-group">
                 <label for="cover">Une image de couverture (ça marque bien les images ):</label>
-                <input type="text" class="form-control" id="cover" name="cover" placeholder="rentrez l'adresse du lien de l'image" value="<?= $data["cover"];?>" >
+                <input type="text" class="form-control" id="cover" name="cover" placeholder="rentrez l'adresse du lien de l'image" value="<?= $data["cover"];?>">
             </div>
             <div class="row">
                 <input type="submit" value="valider">
@@ -101,7 +122,7 @@ foreach($oneInfos as $data){ // Let's go through the board
 <?php
 }
 $content = ob_get_clean();
-require("templateNovel.php");
+require("templateCartoon.php");
 /*This code does 3 things:
 
     It defines the title of the page in $title. This will be integrated in the <title> tag in the template.

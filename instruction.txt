@@ -1,0 +1,12 @@
+//English version
+
+all links that are decorated in the body must have the class linkBody
+
+
+
+
+
+//French version
+
+LINK a href: tous les liens qui sont décorés dans le body doivent avoir la classe linkBody
+
