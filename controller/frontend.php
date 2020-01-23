@@ -69,6 +69,14 @@ require("model/PageCartoonManager.php");
                 header("location:index.php?action=allNovels");
             }
 
+            public static function endReading($id)
+            {
+                $novelManager= new Model_NovelManager();
+                $endReading = $novelManager->endReading($id);
+                require("view/frontend/endReadingNovelConfirm.php");
+
+            }
+
             public static function deleteNovel($id)
             {
                 $novelManager = new Model_NovelManager();
@@ -83,7 +91,16 @@ require("model/PageCartoonManager.php");
             {
                 $pageNovelManager = new Model_PageNovelManager();
                 $req = $pageNovelManager->newPageCount($id,$newPageCount);
+                
                 header("location: index.php?action=novelCurrent");
+            }
+
+            public static function readingNovelTime($novel_id)
+            {
+                $pageNovelManager = new Model_PageNovelManager();
+                $readingNovelTime = $pageNovelManager->readingNovelTime($novel_id);
+                return $readingNovelTime;
+
             }
 
 

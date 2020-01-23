@@ -99,6 +99,7 @@ class Model_NovelManager extends Model_ManagerDb
             VALUES(?, '0', NOW())");
             $updatePageCount->execute(array($lastId));
         }
+
         public function creationUpdateNovelPageCount($id) // method that adds 0 to the creation of an entry 
         {
             $db = $this->dbConnect();
@@ -136,6 +137,13 @@ class Model_NovelManager extends Model_ManagerDb
             $deleteNovel = $db->prepare("DELETE FROM novel  WHERE id=?");
             $deleteNovel->execute(array($id));
 
+        }
+
+        public function endReading($id)
+        {
+            $db = $this->dbConnect();
+            $req = $db->prepare("UPDATE novel SET active=0, finish=1 WHERE id=?");
+            $endReading= $req->execute(array($id));
         }
 
     }

@@ -72,11 +72,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                         </a>
                     </section>
                     <div class="col">
-                        <div>Bravo <?= $data["title"]; ?> terminé</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6">Vous avez terminé le livre en :</div>
-                        <div class="col-6"></div>
+                        <button class="btn btn-success" type="submit"><a href="index.php?action=endReading&amp;id=<?= $data["id"]; ?>">Valider la fin de la lecture</a></button>
                     </div>
             
                 </div>

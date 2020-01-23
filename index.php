@@ -30,8 +30,8 @@ try{
             ToolsFrontend::novelRead();
         }
         elseif($_GET["action"] == "novelCurrent"){
-            
             ToolsFrontend::novelCurrent();
+            
             
         }
         elseif($_GET["action"] == "statistics"){
@@ -54,12 +54,24 @@ try{
             ToolsFrontend::addNovelConfirm($title, $author,$isbn, $genre, $page_count, $count_volume, $finish, $comment, $rate, $cover);
         }
 
+        elseif($_GET["action"] == "endReading"){
+            if(isset($_GET["id"]) && $_GET["id"] > 0) { // check if $_get["id"] defined and greater than 0
+                $id = htmlspecialchars($_GET["id"]); // to avoid inclusion xss
+                ToolsFrontend::endReading($id); // calling the tool oneNovelInfos
+            }
+            else {
+                throw new Exception("Aucun identifiant de billet envoyé !");
+            }
+        
+        }
 
         // novelPagesCount
         elseif($_GET["action"] == "newPageCount"){
             $id             = htmlspecialchars($_POST["id"]);
             $newPageCount   = htmlspecialchars($_POST["newPageCount"]);
             ToolsFrontend::newPageCount($id, $newPageCount);
+            
+            
         }
 
         
@@ -163,6 +175,7 @@ try{
             $id             = htmlspecialchars($_POST["id"]);
             $newPageCount   = htmlspecialchars($_POST["newPageCount"]);
             ToolsFrontend::newCartoonPageCount($id, $newPageCount);
+            
         }
 
 
