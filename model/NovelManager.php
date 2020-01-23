@@ -72,7 +72,7 @@ class Model_NovelManager extends Model_ManagerDb
             return $avgPages;
         }
 
-        public function addNovelConfirm($title, $author,$isbn, $genre, $page_count, $count_volume, $finish, $comment, $rate, $cover)
+        public function addNovelConfirm($title, $author,$isbn, $genre, $page_count, $count_volume, $comment, $rate, $cover)
         {
             $db = $this->dbConnect();
             $addNovel = $db->prepare("INSERT INTO novel(`title`, `author`, `isbn`, `genre`, `page_count`, `count_volume`,
@@ -87,7 +87,7 @@ class Model_NovelManager extends Model_ManagerDb
                 "page_count"    => $page_count,
                 "count_volume"  => $count_volume,
                 "active"        => 0, //to say it's non active by default
-                "finish"        => $finish,
+                "finish"        => 1,
                 "comment"       => $comment,
                 "rate"          => $rate,
                 "cover"         => $cover
