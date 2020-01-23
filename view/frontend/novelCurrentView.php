@@ -13,6 +13,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
     <?php
     foreach($novelCurrent as $data) //source: https://www.php.net/manual/fr/control-structures.foreach.php
     {
+        
         if(!empty($data["cover"])){
             $cover = $data["cover"];
         } else {
@@ -45,7 +46,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                 <form method="post" action="index.php?action=newPageCount">
                     <div class="form-group">
                         <label for="newPageCount">Nouveau numéro de pages :</label>
-                        <input type="number" class="form-control" id="newPageCount" name="newPageCount" required>
+                        <input type="number" class="form-control" max ="<?= $data["page_count"]; //max value number of page of the $data ("page_count") ?>" id="newPageCount" name="newPageCount" required>
                         <input type="hidden" value="<?= $data["id"];?>" id="id" name="id"> <!--to retrieve the id for the query!-->
                         <button type="submit" class="btn btn-success">Valider</button>
                     </div>
