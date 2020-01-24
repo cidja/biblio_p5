@@ -7,7 +7,7 @@ session_start(); // saving settings for the source admin: http://www.lephpfacile
 include(dirname(__FILE__)."/controller/frontend.php");
 //include(dirname(__FILE__)."/controller/backend.php");
 
-try{
+try{ 
     if(isset($_GET["action"])){
         
         if($_GET["action"] == "home"){
