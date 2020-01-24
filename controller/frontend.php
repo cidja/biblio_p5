@@ -6,10 +6,21 @@ require("model/NovelManager.php"); //call the class novelManager require_once (o
 require("model/PageNovelManager.php");
 require("model/CartoonManager.php");
 require("model/PageCartoonManager.php");
+require("model/UserManager.php");
 
 
     trait ToolsFrontend{
+            public static function connexionScreen()
+            {
+                require("view/frontend/connexionView.php");
+            }
+            public static function checkUser($user, $pwd)
+            {
+                $userManager = new Model_UserManager(); // creation of the UserManager objet
+                $check = $userManager->checkUser($user, $pwd); //
 
+
+            }
             public static function countTemplate()
             {
                 $novelManager = new Model_NovelManager(); // creation of the novelManager object

@@ -5,15 +5,16 @@ require_once("model/ManagerDb.php"); // Calling the ManagerDb.php class Source: 
 
 class Model_UserManager extends Model_ManagerDb
 {
-    //fonction pour vérifier le user et le mdp rentré dans le header
-    public function checkUser($user, $mdp)
+    //function to check the user and the mdp entered in the header
+    public function checkUser($user, $pwd)
     {
         $db = $this->dbConnect(); 
-        $check = $db->query("SELECT user,mdp FROM users");
-        foreach($check as $data){ //boucle d'itération
-            if(($data["user"] == $_POST["user"]) AND (password_verify($_POST["mdp"], $data["mdp"]))){
-                    $_SESSION["user"] = $user; // Création des sessions
-                    $_SESSION["mdp"] = $mdp; // Création des sessions
+        $check = $db->query("SELECT user,pwd FROM users");
+        foreach($check as $data){ // iteration 
+            if(($data["user"] == $_POST["user"]) AND (password_verify($_POST["pwd"], $data["pwd"]))){
+                    $_SESSION["user"] = $user; // sessions create
+                    $_SESSION["pwd"] = $pwd; // sessions create
+                    header ("location: view/frontend/home.php");
                 
             }
             else {
