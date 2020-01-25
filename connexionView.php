@@ -20,11 +20,11 @@
                 <input type="text" class="form-control" id="user" name="user" required>
             </div>
             <div class="form-group">
-                <label for="password">Mot de passe : </label>
-                <input type="password" class="form-control" id="password" name="password" required >
+                <label for="pwd">Mot de passe : </label>
+                <input type="password" class="form-control" id="pwd" name="pwd" required >
             </div>
             <div class="form-group">
-                <button type="submit" value="Valider"></button>
+                <input type="submit" value="Valider">
             </div>
         </form>
     </section>

@@ -210,14 +210,15 @@ try{
                 }
             }
         }
-        elseif(empty($_SESSION["user"]) && empty($_SESSION["mdp"])){ //Si $_SESSION empty on crée les variables $user et $mdp pour connexion backend
-            $user = htmlspecialchars($_POST["user"]); // htmlspecialchars pour éviter une faille de sécurité 
-            $mdp = $_POST["mdp"]; 
-            ToolsFrontend::checkUser($user, $mdp);
-        }
+        
         else{
             ToolsFrontend::listNovel();
         }
+    } 
+    elseif($_GET["action"] == "checkConnexion"){
+        $user = htmlspecialchars($_POST["user"]); // htmlspecialchars pour éviter une faille de sécurité 
+        $pwd = $_POST["pwd"]; 
+        ToolsFrontend::checkUser($user, $pwd);
     }
 }
 catch(Exception $e) // s'il y a une erreur, alors...
