@@ -13,7 +13,10 @@
     <script src="https://kit.fontawesome.com/bad7172f0a.js" crossorigin="anonymous"></script> <!--cdn fontawesome source: https://fontawesome.com/kits/bad7172f0a/settings !-->
 </head>
 <body>
-    <section class="container connexion">
+    <div class="col text-center">
+        <h1>Bienvenue sur l'application de gestion de bibliothèque</h1>
+    </div>
+    <section class="container text-center jumbotron connexion mt-5">
         <form method="post" action="index.php?action=checkConnexion">
             <div class="form-group">
                 <label for="user">Utilisateur :</label>

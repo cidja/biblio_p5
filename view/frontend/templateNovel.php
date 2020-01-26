@@ -50,10 +50,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?action=addNovel">Ajout</a>
                 </li>
-
-            <!--<li class="nav-item">
-                    <a class="nav-link" href="index.php?action=whishList">Livre à lire</a>
-                </li> !-->
             </ul>
             <form class="form-inline" id="searchForm">
                 <input class="form-control mr-sm-2" type="search" placeholder="rechercher un ouvrage" aria-label="search">
@@ -62,12 +58,23 @@
         </div>
     </nav>
     <div class="containerContent +">
-    <?= $content ?> <!--va contenir ce que l'on veut mettre dedans direction listPostView.php !-->
+    <?= $content ?> <!--will contain what you want to put in the direction of listPostView.php !-->
     </div>
     <?php
 }
-else{
-    ?> <a href="connexionView.php">Page de connexion</a>
+else{ // If no session is started with user and pwd we don't give access and return to the login page. 
+    ?> 
+    <div class="container text-center jumbotron mt-5">
+        <div class="col">
+            <i class="fas fa-door-closed fa-4x"></i>
+        </div>
+        <div class="col">
+            Vous n'êtes pas connecté, un petit tour sur la page de connexion ? 
+        </div>
+        <div class="col">
+            <button class="btn btn-warning"><a class="bodyLink" href="connexionView.php">Page de connexion</a></button>
+        </div>
+    </div>
     <?php
 }
 ?>
