@@ -8,12 +8,15 @@ include(dirname(__FILE__)."/controller/frontend.php");
 
 
 try{
-    if(isset($_SESSION["user"]) && isset($_SESSION["mdp"])){
-      
-        if(isset($_GET["action"])){
+    if(isset($_GET["action"])){
         
             if($_GET["action"] == "home"){
                 header ("location: view/frontend/home.php");
+            }
+            elseif($_GET["action"] == "checkConnexion"){
+                $user = htmlspecialchars($_POST["user"]); // htmlspecialchars pour éviter une faille de sécurité 
+                $pwd = $_POST["pwd"]; 
+                ToolsFrontend::checkUser($user, $pwd);
             }
             elseif($_GET["action"] == "allNovels"){
                 ToolsFrontend::listNovel();
@@ -211,18 +214,12 @@ try{
                 }
             }
         }
-        
         else{
-            ToolsFrontend::listNovel();
-           
+            ToolsFrontend::connexionScreen();
         }
-    } 
-    elseif($_GET["action"] == "checkConnexion"){
-        $user = htmlspecialchars($_POST["user"]); // htmlspecialchars pour éviter une faille de sécurité 
-        $pwd = $_POST["pwd"]; 
-        ToolsFrontend::checkUser($user, $pwd);
-    }
 }
+
+
 catch(Exception $e) // s'il y a une erreur, alors...
 {
     echo "Erreur : " . $e->getMessage();

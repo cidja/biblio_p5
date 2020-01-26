@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="fr-FR">
 <head>
@@ -17,6 +14,8 @@ session_start();
     
 </head>
 <body>
+<?php if(isset($_SESSION["user"]) && isset($_SESSION["pwd"])){
+    ?>
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="index.php?action=home">
         <i class="fas fa-book-reader"></i>
@@ -61,5 +60,12 @@ session_start();
     <div class="containerContent +">
     <?= $content ?> <!--va contenir ce que l'on veut mettre dedans direction listPostView.php !-->
     </div>
+    <?php
+}
+else{
+    ?> <a href="connexionView.php">Page de connexion</a>
+    <?php
+}
+?>
 </body>
 </html>

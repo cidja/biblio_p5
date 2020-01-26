@@ -12,7 +12,7 @@ require("model/UserManager.php");
     trait ToolsFrontend{
             public static function connexionScreen()
             {
-                require("view/frontend/connexionView.php");
+                require("connexionView.php");
             }
             public static function checkUser($user, $pwd)
             {
