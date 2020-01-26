@@ -5,10 +5,11 @@ session_start(); // saving settings for the source admin: http://www.lephpfacile
 
 
 include(dirname(__FILE__)."/controller/frontend.php");
-//include(dirname(__FILE__)."/controller/backend.php");
+
 
 try{
     if(isset($_SESSION["user"]) && isset($_SESSION["mdp"])){
+      
         if(isset($_GET["action"])){
         
             if($_GET["action"] == "home"){
@@ -213,6 +214,7 @@ try{
         
         else{
             ToolsFrontend::listNovel();
+           
         }
     } 
     elseif($_GET["action"] == "checkConnexion"){

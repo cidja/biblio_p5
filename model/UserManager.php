@@ -14,7 +14,8 @@ class Model_UserManager extends Model_ManagerDb
             if(($data["user"] == $_POST["user"]) AND (password_verify($_POST["pwd"], $data["pwd"]))){
                     $_SESSION["user"] = $user; // sessions create
                     $_SESSION["pwd"] = $pwd; // sessions create
-                    header ("location: view/frontend/home.php");
+                    echo $user . "   " . $pwd;
+                    //header ("location: index.php?action=home");
                 
             }
             else {
