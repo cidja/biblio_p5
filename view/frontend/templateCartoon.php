@@ -14,7 +14,7 @@
     
 </head>
 <body>
-<?php if(isset($_SESSION["user"]) && isset($_SESSION["pwd"])){
+<?php if(isset($_SESSION["user"])){
     ?>
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="index.php?action=home">
