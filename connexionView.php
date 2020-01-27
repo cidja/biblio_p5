@@ -20,7 +20,7 @@
         <form method="post" action="index.php?action=checkConnexion">
             <div class="form-group">
                 <label for="user">Utilisateur :</label>
-                <input type="text" class="form-control" id="user" name="user" required>
+                <input type="text" class="form-control" id="user" name="user" autofocus required>
             </div>
             <div class="form-group">
                 <label for="pwd">Mot de passe : </label>
