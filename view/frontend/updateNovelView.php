@@ -91,8 +91,8 @@ foreach($oneInfos as $data){ // Let's go through the board
                 <label for="cover">Une image de couverture (ça marque bien les images ):</label>
                 <input type="text" class="form-control" id="cover" name="cover" placeholder="rentrez l'adresse du lien de l'image" value="<?= $data["cover"];?>" >
             </div>
-            <div class="row">
-                <input type="submit" value="valider">
+            <div class="row justify-content-center">
+                <input class="btn btn-success" type="submit" value="valider">
             </div>
         </form>
     </section>

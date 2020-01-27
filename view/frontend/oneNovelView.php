@@ -8,98 +8,102 @@ ob_start(); // Start of capture to put it in the variable at the end of the scri
 foreach($oneInfos as $data){ // Let's go through the board
     $title = $data["title"]; 
     ?>
-    <div class="cover">
-        <img class="imgCover +" src="<?= $data["cover"];?>" alt="image de couverture du livre" title="image de couverture du livre <?= $data["title"]; ?>">
+    <div class="container oneInfos d-flex justify-content-center flex-column">
+        <div class="cover text-center">
+            <img class="imgOneCover +" src="<?= $data["cover"];?>" alt="image de couverture du livre" title="image de couverture du livre <?= $data["title"]; ?>">
+        </div>
+        <section class="infosNovel d-flex flex-column align-items-center">
+            <h3>Infos du livre </h3>
+            <div class="title">
+                <div class="d-flex">
+                    <div class="fieldDescription">Titre :</div>
+                    <div><?= $data["title"]; ?></div>
+                </div>
+            </div>
+            <div class="author">
+                <div class="d-flex">
+                    <div class="fieldDescription">Auteur :</div>
+                    <div><?= $data["author"]; ?></div>
+                </div>
+            </div>
+            <div class="genre">
+                <div class="d-flex">
+                    <div class="fieldDescription">Genre : </div>
+                    <div><?= $data["genre"]; ?></div>
+                </div>
+            </div>
+            <div class="pagesCount">
+                <div class="d-flex">
+                    <div class="fieldDescription">Nombre de pages :</div>
+                    <div><?= $data["page_count"]; ?></div>
+                </div>
+            </div>
+            <div class="countVolume">
+                <div class="d-flex">
+                    <div class="fieldDescription">Nombre de volumes :</div>
+                    <div><?= $data["count_volume"]; ?></div>
+                </div>
+            </div>
+            <div class="isbn">
+                <div class="d-flex">
+                    <div class="fieldDescription">ISBN :</div>
+                    <div>
+                        <?php
+                        if ($data["isbn"] == 0){
+                            echo "non renseigné";
+                        } else{
+                            echo $data["isbn"];
+                        } 
+                        ?>
+                    </div>
+                </div>
+            </div>
+            <div class="finish">
+                <div class="d-flex">
+                    
+                    <div>
+                        <?php 
+                            if($data["finish"] == 0){
+                                ?> 
+                                    <button class="btn btn-warning">En cours</button>
+                                <?php
+                            }
+                            else{
+                                ?>
+                                    <button class="btn btn-success">Fini</button>
+                                <?php
+                            } ?>
+                    </div>
+                </div>
+            </div>
+            <div class="rate">
+                <div class="d-flex">
+                    <div class="fieldDescription">Note :</div>
+                    <div><?= $data["rate"]; ?></div>
+                </div>
+            </div>
+            <div class="comment">
+                <div class="d-flex">
+                    <div class="fieldDescription">Commentaires :</div>
+                    <div><?=$data["comment"]; ?></div>
+                </div>
+            </div>
+            <div class="creation_date">
+                <div class="d-flex">
+                    <div class="fieldDescription">Date d'ajout :</div>
+                    <div><?= $data["creation_date_fr"]; ?></div>
+                </div>
+            </div>
+            <div class="d-flex">
+                <button class="btn btn-info">
+                    <a class="bodyLink" href="index.php?action=updateNovel&amp;id=<?= $data["id"];?>">Modifier la fiche</a>
+                </button>
+                <button class="btn btn-danger ml-4">
+                    <a class="bodyLink" href="index.php?action=deleteNovel&amp;id=<?= $data["id"];?>">Supprimer le livre</a>
+                </button>
+            </div>
+        </section>
     </div>
-    <section class="infosNovel">
-        <h3>Infos du livre </h3>
-        <div class="title">
-            <div>
-                <span>Titre :</span>
-                <span><?= $data["title"]; ?></span>
-            </div>
-        </div>
-        <div class="author">
-            <div>
-                <span>Auteur :</span>
-                <span><?= $data["author"]; ?></span>
-            </div>
-        </div>
-        <div class="genre">
-            <div>
-                <span>Genre : </span>
-                <span><?= $data["genre"]; ?></span>
-            </div>
-        </div>
-        <div class="pagesCount">
-            <div>
-                <span>Nombre de pages :</span>
-                <span><?= $data["page_count"]; ?></span>
-            </div>
-        </div>
-        <div class="countVolume">
-            <div>
-                <span>Nombre de volumes :</span>
-                <span><?= $data["count_volume"]; ?></span>
-            </div>
-        </div>
-        <div class="isbn">
-            <div>
-                <span>ISBN :</span>
-                <span>
-                    <?php
-                    if ($data["isbn"] == 0){
-                        echo "non renseigné";
-                    } else{
-                        echo $data["isbn"];
-                    } 
-                    ?>
-                </span>
-            </div>
-        </div>
-        <div class="finish">
-            <div>
-               
-                <span>
-                    <?php 
-                        if($data["finish"] == 0){
-                            ?> 
-                                <button class="btn btn-warning">En cours</button>
-                            <?php
-                        }
-                        else{
-                            ?>
-                                <button class="btn btn-success">Fini</button>
-                            <?php
-                        } ?>
-                </span>
-            </div>
-        </div>
-        <div class="rate">
-            <div>
-                <span>Note :</span>
-                <span><?= $data["rate"]; ?></span>
-            </div>
-        </div>
-        <div class="comment">
-            <div>
-                <span>Commentaires :</span>
-                <span><?=$data["comment"]; ?></span>
-            </div>
-        </div>
-        <div class="creation_date">
-            <div>
-                <span>Date d'ajout :</span>
-                <span><?= $data["creation_date_fr"]; ?></span>
-            </div>
-        </div>
-        <button>
-            <a href="index.php?action=updateNovel&amp;id=<?= $data["id"];?>">Modifier la fiche</a>
-        </button>
-        <button>
-            <a href="index.php?action=deleteNovel&amp;id=<?= $data["id"];?>">Supprimer le livre</a>
-        </button>
-    </section>
 <?php
 }
 
