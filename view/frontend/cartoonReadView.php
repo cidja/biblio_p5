@@ -2,23 +2,34 @@
 //Tous les commentaires sont en anglais pour la compréhension pour le plus grand nombre
 //All comments are in English for the understanding of as many people as possible.
 //to support : mail: christian@linternaute-averti.fr
-
+include("public/inc/tools.php");
 $title = "Liste des Bandes dessinés Lus";
 
 ob_start(); //Start of capture to put it in the variable at the end of the script 
+?>
 
+        <h1 class="text-uppercase text-center">BD Déjà lus</h1>
+        <div class="container alreadyRead d-flex text-center flex-wrap justify-content-center">
+    <?php
     foreach($cartoonsFinish as $data) //source: https://www.php.net/manual/fr/control-structures.foreach.php
     {
+        if(!empty($data["cover"])){
+            $cover = $data["cover"];
+        } else {
+            $cover = "public/img/noCover.png";
+        }
         ?>
         
-            <div>
+            <div class="cover col-12 col-md-6 col-lg-4">
                 <a href="index.php?action=oneCartoon&amp;id=<?= $data["id"];?>">
-                    <img class="imgCover +"src=<?=$data["cover"]; ?> alt="couverture de la bande dessinée" title="couverture de la bande dessinée <?=$data["title"] ;?>" />
+                    <img class="imgCover + mt-4"src=<?=$cover; ?> alt="couverture de la bande dessinée" title="couverture de la bande dessinée <?=$data["title"] ;?>" />
                 </a>
             </div>
         <?php
     }
-
+    ?>
+    </div>
+<?php
 $cartoonsFinish->closeCursor();
 $content = ob_get_clean();
 require("templateCartoon.php");

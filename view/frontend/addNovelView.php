@@ -3,9 +3,11 @@
 //All comments are in English for the understanding of as many people as possible.
 //to support : mail: christian@linternaute-averti.fr
 
+include("public/inc/tools.php");
 $title = "Ajout d'un ouvrage";
 
 ob_start(); //Start of capture to put it in the variable at the end of the script 
+    echo $backLink;
 ?>
 <!-- source: https://getbootstrap.com/docs/4.0/components/forms/ !-->
     <section class=" container addNovelForm">

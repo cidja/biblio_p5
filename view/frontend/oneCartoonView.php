@@ -2,15 +2,21 @@
 //Tous les commentaires sont en anglais pour la compréhension pour le plus grand nombre
 //All comments are in English for the understanding of as many people as possible.
 //to support : mail: christian@linternaute-averti.fr
-
+include("public/inc/tools.php");
 
 ob_start(); // Start of capture to put it in the variable at the end of the script 
+    echo $backLink;
 foreach($oneCartoonInfos as $data){ // Let's go through the board
     $title = $data["title"]; 
+    if(!empty($data["cover"])){
+        $cover = $data["cover"];
+    } else {
+        $cover = "public/img/noCover.png";
+    }
     ?>
     <div class="container oneInfos d-flex justify-content-center flex-column">
         <div class="cover text-center">
-            <img class="imgCover +" src="<?= $data["cover"];?>" alt="image de couverture de la bande dessinée" title="image de couverture de <?= $data["title"]; ?>">
+            <img class="imgCover +" src="<?= $cover;?>" alt="image de couverture de la bande dessinée" title="image de couverture de <?= $data["title"]; ?>">
         </div>
         <section class="infosNovel d-flex flex-column align-items-center">
             <h3>Infos de la bande dessinée </h3>
