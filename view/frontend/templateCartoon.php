@@ -24,8 +24,8 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" ide="navbarNav">
-            <ul class="navbar-nav">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav text-uppercase">
             <li class="navbar-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Accueil
@@ -50,11 +50,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?action=addCartoons">Ajout</a>
                 </li>
-            </ul>
-            <form class="form-inline" id="searchForm">
+                <form class="form-inline" id="searchForm">
                 <input class="form-control mr-sm-2" type="search" placeholder="rechercher un ouvrage" aria-label="search">
                 <button class="btn btn-success my-2 my-sm-0" type="submit">Rechercher</button>
             </form>
+            <li class="nav-item">
+                <button class="btn btn-warning ml-5"><a class="bodyLink" href="index.php?action=sessionStop">Déconnexion</a></button>
+            </li>
+            </ul>
+            
         </div>
     </nav>
     <div class="containerContent +">
