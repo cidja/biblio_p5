@@ -7,6 +7,7 @@ require("model/PageNovelManager.php");
 require("model/CartoonManager.php");
 require("model/PageCartoonManager.php");
 require("model/UserManager.php");
+require("model/SessionManager.php");
 
 
     trait ToolsFrontend{
@@ -214,4 +215,11 @@ require("model/UserManager.php");
                 header("location: index.php?action=cartoonCurrent");
             }
 
+            // Session Manager
+            public static function sessionStop()
+            {
+                $sessionManager = new Model_SessionManager();
+                $sessionStop = $sessionManager->sessionStop();
+                header("location: connexionView.php"); // once the session has been deleted, we go back to the login page.
+            }
         }

@@ -213,6 +213,10 @@ try{
                     throw new Exception("Aucun identifiant de billet envoyé !");
                 }
             }
+
+            elseif($_GET["action"] == "sessionStop"){
+                ToolsFrontend::sessionStop();
+            }
         }
         else{
             ToolsFrontend::connexionScreen();

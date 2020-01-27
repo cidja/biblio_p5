@@ -55,6 +55,9 @@
                 <input class="form-control mr-sm-2" type="search" placeholder="rechercher un ouvrage" aria-label="search">
                 <button class="btn btn-success my-2 my-sm-0" type="submit">Rechercher</button>
             </form>
+            <li class="nav-item">
+                <button class="btn btn-warning"><a  href="index.php?action=sessionStop">Déconnexion</a></button>
+            </li>
         </div>
     </nav>
     <div class="containerContent +">
