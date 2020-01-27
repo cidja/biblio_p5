@@ -8,7 +8,7 @@ $title = "Liste des romans";
 ob_start(); //Start of capture to put it in the variable at the end of the script 
 ?>
 
-    <div class="container d-flex text-center">
+    <div class="container d-flex text-center flex-wrap justify-content-center">
         <?php
     foreach($infos as $data) //source: https://www.php.net/manual/fr/control-structures.foreach.php
     {
@@ -18,11 +18,11 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
             $cover = "public/img/noCover.png";
         }
         ?>
-                <div class="">
+                <div class="col-4">
                     <a href="index.php?action=oneNovel&amp;id=<?= $data["id"];?>">
                         <img class="imgCover +"src=<?=$cover; ?> alt="couverture du livre" title="couverture du livre" />
                     </a>
-                    <div>
+                    <div class="mt-1">
                         <?php
                     if($data["finish"] == 0){
                                 ?> 

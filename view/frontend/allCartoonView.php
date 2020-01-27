@@ -6,7 +6,9 @@
 $title = "Liste des Bandes dessinés";
 
 ob_start(); //Start of capture to put it in the variable at the end of the script 
-
+?>
+<div class="container d-flex text-center flex-wrap justify-content-center">
+        <?php
     foreach($infos as $data) //source: https://www.php.net/manual/fr/control-structures.foreach.php
     {
         if(!empty($data["cover"])){
@@ -15,15 +17,30 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
             $cover = "public/img/noCover.png";
         }
         ?>
-        
-            <div>
-                <a href="index.php?action=oneCartoon&amp;id=<?= $data["id"];?>">
-                    <img class="imgCover +"src=<?=$cover; ?> alt="couverture de la bande dessinnée <?= $data["title"]; ?>" title="couverture de la bande dessinnée <?= $data["title"]; ?>" />
-                </a>
-            </div>
+                <div class="col-4">
+                    <a href="index.php?action=oneCartoon&amp;id=<?= $data["id"];?>">
+                        <img class="imgCover +"src=<?=$cover; ?> alt="couverture du livre" title="couverture du livre" />
+                    </a>
+                    <div class="mt-1">
+                        <?php
+                    if($data["finish"] == 0){
+                                ?> 
+                                    <button class="btn btn-warning">En cours</button>
+                                <?php
+                            }
+                            else{
+                                ?>
+                                    <button class="btn btn-success">Fini</button>
+                                <?php
+                            } ?>
+                    </div>
+                </div>
+            
         <?php
     }
-
+?>
+</div>
+<?php
 $infos->closeCursor();
 $content = ob_get_clean();
 require("templateCartoon.php");
