@@ -13,7 +13,7 @@ class Model_UserManager extends Model_ManagerDb
         foreach($check as $data){ // iteration 
             if(($data["user"] == $_POST["user"]) AND (password_verify($_POST["pwd"], $data["pwd"]))){
                     $_SESSION["user"] = $user; // sessions create
-                    $_SESSION["pwd"] = $pwd; // sessions create
+                    
                     header ("location: index.php?action=home");
                 
             }
