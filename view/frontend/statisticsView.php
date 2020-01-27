@@ -8,33 +8,33 @@ $title = "Statistiques";
 ob_start(); //Start of capture to put it in the variable at the end of the script 
 ?>
 
-    <div class="container">
-        <section class="novelStatistics container">
-            <h1>Quelques chiffres</h1>
+    <div class="container statistics d-flex justify-content-center flex-column +">
+        <section class="text-center">
+            <h1 class="text-uppercase">Quelques chiffres</h1>
             <div>
                 <h2>Les livres </h2>
             </div>
-            <div class="row">
-                <div class="dataDescription">
+            <div class="nbNovels">
+                <div class="fieldDescription">
                     Nombres total de livres :
                 </div>
-                <div class="#">
+                <div class="dataDescription">
                     <?= $nbNovels; ?> 
                 </div>
             </div>
-            <div class="row">
-                <div class="dataDescription">
+            <div class="countPages">
+                <div class="fieldDescription">
                     Nombres total de pages :
                 </div>
-                <div class="#">
+                <div class="dataDescription">
                 <?= $countPages; ?> pages
                 </div>
             </div>
-            <div class="row">
-                <div class="dataDescription">
+            <div class="avgPages">
+                <div class="fieldDescription">
                     Nombres de pages en moyenne par ouvrage : 
                 </div>
-                <div class="#">
+                <div class="dataDescription">
                     <?= intval($avgPages); // to remove decimals 
                     //source: https://www.php.net/manual/fr/function.intval.php 
                     ?> pages en moyenne

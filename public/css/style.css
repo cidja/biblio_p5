@@ -16,7 +16,7 @@
 
 
 /* Oneinfos part (oneNovel and oneCartoon)*/
-.oneInfos{
+.oneInfos, .statistics{
     border: 2px solid #f4f4f4;
     background-color: #f4f4f4;
     border-radius: 25px;

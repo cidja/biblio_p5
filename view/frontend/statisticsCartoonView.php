@@ -7,32 +7,33 @@ $title = "Statistiques des Bandes dessinnées";
 
 ob_start(); //Start of capture to put it in the variable at the end of the script 
 ?>
-        <div class="container">
-            <section class="cartoonStatistics container">
+        <div class="container statistics d-flex justify-content-center flex-column +">
+            <section class="text-center">
+            <h1 class="text-uppercase">Quelques chiffres</h1>
                 <div>
                     <h2>Les bandes dessinées</h2>
                 </div>
-                <div class="row">
-                    <div class="#">
+                <div class="nbCartoons">
+                    <div class="fieldDescription">
                         Nombres total de BD :
                     </div>
-                    <div class="#">
+                    <div class="dataDescription">
                         <?= $nbCartoons; ?> 
                     </div>
                 </div>
-                <div class="row">
-                    <div class="#">
+                <div class="countPagesCartoon">
+                    <div class="fieldDescription">
                         Nombres total de pages de BD :
                     </div>
-                    <div class="#">
+                    <div class="dataDescription">
                         <?= $countPagesCartoon; ?> Pages
                     </div>
                 </div>
-                <div class="row">
-                    <div class="#">
+                <div class="avgPagesCartoon">
+                    <div class="fieldDescription">
                         Nombres de pages en moyenne par BD :
                     </div>
-                    <div class="#">
+                    <div class="dataDescription">
                         <?= intval($avgPagesCartoon); ?> pages en moyenne
                     </div>
                 </div>
