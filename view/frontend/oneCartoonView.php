@@ -17,49 +17,49 @@ foreach($oneCartoonInfos as $data){ // Let's go through the board
             <div class="title">
                 <div class="d-flex">
                     <div class="fieldDescription">Titre :</div>
-                    <div><?= $data["title"]; ?></div>
+                    <div class="dataDescription"><?= $data["title"]; ?></div>
                 </div>
             </div>
             <div class="serie">
                 <div class="d-flex">
                     <div class="fieldDescription">Série :</div>
-                    <div><?= $data["serie"]; ?></div>
+                    <div class="dataDescription"><?= $data["serie"]; ?></div>
                 </div>
             </div>
             <div class="volume_number">
                 <div class="d-flex">
                     <div class="fieldDescription">volume :</div>
-                    <div><?= $data["volume_number"]; ?></div>
+                    <div class="dataDescription"><?= $data["volume_number"]; ?></div>
                 </div>
             </div>
             <div class="scriptwriter">
                 <div class="d-flex">
                     <div class="fieldDescription">scénario :</div>
-                    <div><?= $data["scriptwriter"]; ?></div>
+                    <div class="dataDescription"><?= $data["scriptwriter"]; ?></div>
                 </div>
             </div>
             <div class="designer">
                 <div class="d-flex">
                     <div class="fieldDescription">Dessin :</div>
-                    <div><?= $data["designer"]; ?></div>
+                    <div class="dataDescription"><?= $data["designer"]; ?></div>
                 </div>
             </div>
             <div class="genre">
                 <div class="d-flex">
                     <div class="fieldDescription">Genre : </div>
-                    <div><?= $data["genre"]; ?></div>
+                    <div class="dataDescription"><?= $data["genre"]; ?></div>
                 </div>
             </div>
             <div class="pagesCount">
                 <div class="d-flex">
                     <div class="fieldDescription">Nombre de pages :</div>
-                    <div><?= $data["page_count"]; ?></div>
+                    <div class="dataDescription"><?= $data["page_count"]; ?></div>
                 </div>
             </div>
             <div class="isbn">
                 <div class="d-flex">
                     <div class="fieldDescription">ISBN :</div>
-                    <div>
+                    <div class="dataDescription">
                         <?php
                         if ($data["isbn"] == 0){
                             echo "non renseigné";
@@ -90,19 +90,19 @@ foreach($oneCartoonInfos as $data){ // Let's go through the board
             <div class="rate">
                 <div class="d-flex">
                     <div class="fieldDescription">Note :</div>
-                    <div><?= $data["rate"]; ?></div>
+                    <div class="dataDescription"><?= $data["rate"]; ?></div>
                 </div>
             </div>
             <div class="comment">
                 <div class="d-flex">
                     <div class="fieldDescription">Commentaires :</div>
-                    <div><?=$data["comment"]; ?></div>
+                    <div class="dataDescription"><?=$data["comment"]; ?></div>
                 </div>
             </div>
             <div class="creation_date">
                 <div class="d-flex">
                     <div class="fieldDescription">Date d'ajout :</div>
-                    <div><?= $data["creation_date_fr"]; ?></div>
+                    <div class="dataDescription"><?= $data["creation_date_fr"]; ?></div>
                 </div>
             </div>
             <div class="d-flex">

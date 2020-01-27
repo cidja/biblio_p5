@@ -17,31 +17,31 @@ foreach($oneInfos as $data){ // Let's go through the board
             <div class="title">
                 <div class="d-flex">
                     <div class="fieldDescription">Titre :</div>
-                    <div><?= $data["title"]; ?></div>
+                    <div class="dataDescription"><?= $data["title"]; ?></div>
                 </div>
             </div>
             <div class="author">
                 <div class="d-flex">
                     <div class="fieldDescription">Auteur :</div>
-                    <div><?= $data["author"]; ?></div>
+                    <div class="dataDescription"><?= $data["author"]; ?></div>
                 </div>
             </div>
             <div class="genre">
                 <div class="d-flex">
                     <div class="fieldDescription">Genre : </div>
-                    <div><?= $data["genre"]; ?></div>
+                    <div class="dataDescription"><?= $data["genre"]; ?></div>
                 </div>
             </div>
             <div class="pagesCount">
                 <div class="d-flex">
                     <div class="fieldDescription">Nombre de pages :</div>
-                    <div><?= $data["page_count"]; ?></div>
+                    <div class="dataDescription"><?= $data["page_count"]; ?></div>
                 </div>
             </div>
             <div class="countVolume">
                 <div class="d-flex">
                     <div class="fieldDescription">Nombre de volumes :</div>
-                    <div><?= $data["count_volume"]; ?></div>
+                    <div class="dataDescription"><?= $data["count_volume"]; ?></div>
                 </div>
             </div>
             <div class="isbn">
@@ -50,7 +50,7 @@ foreach($oneInfos as $data){ // Let's go through the board
                     <div>
                         <?php
                         if ($data["isbn"] == 0){
-                            echo "non renseigné";
+                            echo " non renseigné";
                         } else{
                             echo $data["isbn"];
                         } 
@@ -79,19 +79,19 @@ foreach($oneInfos as $data){ // Let's go through the board
             <div class="rate">
                 <div class="d-flex">
                     <div class="fieldDescription">Note :</div>
-                    <div><?= $data["rate"]; ?></div>
+                    <div class="dataDescription"><?= $data["rate"]; ?></div>
                 </div>
             </div>
             <div class="comment">
                 <div class="d-flex">
                     <div class="fieldDescription">Commentaires :</div>
-                    <div><?=$data["comment"]; ?></div>
+                    <div class="dataDescription"><?=$data["comment"]; ?></div>
                 </div>
             </div>
             <div class="creation_date">
                 <div class="d-flex">
                     <div class="fieldDescription">Date d'ajout :</div>
-                    <div><?= $data["creation_date_fr"]; ?></div>
+                    <div class="dataDescription"><?= $data["creation_date_fr"]; ?></div>
                 </div>
             </div>
             <div class="d-flex">
