@@ -9,7 +9,7 @@ $title = "Fin du livre";
         <h3>En route pour la prochaine !!!</h3>
     </div>
     <div class="col">
-        <button class="btn btn-success" type="button"><a class="bodyLink" href="index.php?allNovels">Acceuil</a></button>
+        <button class="btn btn-success" type="button"><a class="bodyLink" href="index.php?action=allNovels">Acceuil</a></button>
     </div>
 </section>
 <?php
