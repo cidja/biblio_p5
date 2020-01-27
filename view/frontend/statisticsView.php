@@ -15,7 +15,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                 <h2>Les livres </h2>
             </div>
             <div class="row">
-                <div class="#">
+                <div class="dataDescription">
                     Nombres total de livres :
                 </div>
                 <div class="#">
@@ -23,7 +23,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                 </div>
             </div>
             <div class="row">
-                <div class="#">
+                <div class="dataDescription">
                     Nombres total de pages :
                 </div>
                 <div class="#">
@@ -31,7 +31,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                 </div>
             </div>
             <div class="row">
-                <div class="#">
+                <div class="dataDescription">
                     Nombres de pages en moyenne par ouvrage : 
                 </div>
                 <div class="#">
@@ -40,23 +40,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                     ?> pages en moyenne
                 </div>
             </div>
-            
-            <div class="row">
-                <div class="#">
-                    Genre le plus lus :
-                </div>
-                <div class="#">
-                    "best genre"
-                </div>
-            </div>
-            <div class="row">
-                <div class="#">
-                    Auteur préféré :
-                </div>
-                <div class="#">
-                    "auteur préféré"
-                </div>
-            </div>
+           
         </section>
     </div>
     
