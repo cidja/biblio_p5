@@ -15,7 +15,7 @@
     border: 1px solid black;
 }
 
-
+/*general */
 .imgCover{
     max-width: 50%; 
 }
@@ -29,7 +29,10 @@
 .bodyLink:hover{
     color: white;
 }
-
+/* cartoon part font */
+.menuCartoon, .containerContentCartoon{ /*change of the fonts in bangers for the whole cartoon part*/
+    font-family: 'Bangers', cursive;
+}
 
 /* addNovel and Cartoon part */
 .addSubmitButton{

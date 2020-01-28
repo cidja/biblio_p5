@@ -16,7 +16,7 @@
 <body>
 <?php if(isset($_SESSION["user"])){
     ?>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <nav class="menuCartoon navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="index.php?action=home">
         <i class="fas fa-book-reader"></i>
         <span>Biblio BD</span>
@@ -57,7 +57,7 @@
             
         </div>
     </nav>
-    <div class="containerContent +">
+    <div class="containerContentCartoon +">
     <?= $content ?> <!--will contain what you want to put in the direction of listPostView.php !-->
     </div>
     <?php
