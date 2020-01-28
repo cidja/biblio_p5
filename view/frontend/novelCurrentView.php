@@ -44,6 +44,23 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                             <div class="dataDescription">le <?= $data["update_date_fr"]; ?></div>
                         </div>      
                     </div>
+                    <div class="lastReadTime">
+                        <div class="d-flex">
+                                <?php
+                                foreach($lastUpdate as $dataDate){ // to see difference between 2 date source: https://www.php.net/manual/fr/datetime.diff.php
+                                    $dateBdd =  $dataDate["update_date"];
+                                    $datetime1 = new DateTime('now');
+                                    $datetime2 = new DateTime($dateBdd);
+                                    $interval = $datetime2->diff($datetime1);
+                                    $result =  $interval->format('%a jour');
+                                    ?>
+                                    <div class="fieldDescription">Votre dernière session de lecture remonte a</div>
+                                    <div class="dataDescription"><?= $result; ?></div> 
+                                    <?php 
+                                }
+                                ?>
+                        </div>
+                    </div>
                     <div class="newPagesCount">
                         <div class="d-flex">
                             <div class="fieldDescription">Vous en étiez à la page : </div>
@@ -86,7 +103,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                 <?php
         }
         
-       
+    
     }
 
 $novelCurrent->closeCursor();

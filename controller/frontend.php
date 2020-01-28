@@ -56,6 +56,7 @@ require("model/SessionManager.php");
             {
                 $novelManager = new Model_NovelManager();
                 $novelCurrent = $novelManager->novelCurrent();
+                $lastUpdate = $novelManager->lastUpdate();
                 require("view/frontend/novelCurrentView.php");
             }
 
