@@ -41,6 +41,15 @@ foreach($oneInfos as $data){ // Let's go through the board
                     <div class="dataDescription"><?= $data["page_count"]; ?></div>
                 </div>
             </div>
+            <div class="">
+                <div class="d-flex">
+                    <div class="fieldDescription">Pour lire ce livre en 30 jours il faut lire </div>
+                    <div class="dataDescription"><?php
+                    $result =  $data["page_count"]/ 30;
+                    $timeReading = round($result, 0, PHP_ROUND_HALF_UP); // source: https://www.php.net/manual/fr/function.round.php
+                    echo $timeReading; ?> pages par jours.</div>
+                </div>
+            </div>
             <div class="countVolume">
                 <div class="d-flex">
                 <?php 
