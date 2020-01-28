@@ -50,13 +50,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?action=addNovel">Ajout</a>
                 </li>
-                <form class="form-inline" id="searchForm">
-                <input class="form-control mr-sm-2" type="search" placeholder="rechercher un ouvrage" aria-label="search">
-                <button class="btn btn-success my-2 my-sm-0" type="submit">Rechercher</button>
-            </form>
-            <li class="nav-item">
-                <button class="btn btn-warning ml-5"><a class="bodyLink" href="index.php?action=sessionStop">Déconnexion</a></button>
-            </li>
+                <li class="nav-item">
+                    <button class="btn btn-warning ml-5"><a class="bodyLink" href="index.php?action=sessionStop">Déconnexion</a></button>
+                </li>
             </ul>
             
         </div>
