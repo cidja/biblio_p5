@@ -43,8 +43,19 @@ foreach($oneInfos as $data){ // Let's go through the board
             </div>
             <div class="countVolume">
                 <div class="d-flex">
+                <?php 
+                if($data["count_volume"] == 00){
+                    ?>
+                    <div class="fieldDescription">Livre Unique</div>
+                    <?php
+                } else {
+                    ?>
                     <div class="fieldDescription">Nombre de volumes :</div>
                     <div class="dataDescription"><?= $data["count_volume"]; ?></div>
+                    <?php
+                }
+                ?>
+                    
                 </div>
             </div>
             <div class="isbn">

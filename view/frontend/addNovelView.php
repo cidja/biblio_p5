@@ -47,8 +47,8 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
             </div>
             <div class="form-group">
                 <label for="count_volume">Nombre de tomes :</label>
-                <input type="text" class="form-control" id="count_volume" name="count_volume" value="1">
-                <small id="count_volumeHelp" class="form-text text-muted">Si aucun autre tome mettre 1</small>
+                <input type="text" class="form-control" id="count_volume" name="count_volume" value="0"">
+                <small id="count_volumeHelp" class="form-text text-muted">Si aucun autre tome mettre 0</small>
             </div>
 
             <div>Une note :</div>
