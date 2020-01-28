@@ -49,7 +49,7 @@ foreach($oneInfos as $data){ // Let's go through the board
             <div class="form-group">
                 <label for="count_volume">Nombre de tomes :</label>
                 <input type="text" class="form-control" id="count_volume" name="count_volume" value="<?= $data["count_volume"];?>">
-                <small id="count_volumeHelp" class="form-text text-muted">Si aucun autre tome mettre 1</small>
+                <small id="count_volumeHelp" class="form-text text-muted">Si aucun autre tome mettre 0</small>
             </div>
 
             <p>Déjà lu ? :</p>
