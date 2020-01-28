@@ -15,8 +15,8 @@
 </head>
 <body>
     
-    <div class="container-fluid">
-        <h1>Bienvenue sur ta BIBLIO</h1>
+    <div class="container">
+        <h1>Choisis ton univers</h1>
         <div class="imgContainer container d-flex">
             <div class="imgNovel">
                 <a href="/p5/index.php?action=allNovels"> <!--Check for passage inline !-->
@@ -25,7 +25,7 @@
             </div>
             <div class="imgCartoon">
                 <a href="/p5/index.php?action=allCartoons">
-                    <img src="/p5/public/img/cartoonHome.png">
+                    <img src="/p5/public/img/bd.png">
                 </a>
             </div>
         </div>
