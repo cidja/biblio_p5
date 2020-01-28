@@ -15,5 +15,5 @@ Dans ce projet, je souhaite crée une bibliothèque interactive personnelle.
 Dans un premier temps on se connecte via id/mdp
 ensuite l'on ajout le livre que l'on a acquis et l'on rentre les informations du livre.
 Une fois ce dernier rentré a chaque séance de lecture l'on renseigne le nombre de pages lus.
-Une fois, le livre est classé comme fini.
+Une fois fini, le livre est classé comme fini.
 C'est pour me permettre de me souvenir de l'ensemble des livres lus et pouvoir accéder à ma bibliotèque de n'importe où afin d'en faire partager mes proches et de les conseiller sur un livre qui m'aurait particulièrement marqué.
