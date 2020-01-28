@@ -18,15 +18,15 @@
     
     <div class="container  text-center">
         <h1 class="mb-5 titleUniverse">Choisis ton univers</h1>
-        <div class="imgContainer container d-flex">
-            <div class="imgNovel">
+        <div class="imgContainer container d-flex flex-wrap">
+            <div class="imgNovel col-12 col-md-6">
                 <a href="/p5/index.php?action=allNovels"> <!--Check for passage inline !-->
-                    <img src="/p5/public/img/livrecadre.png">
+                    <img src="/p5/public/img/livrecadre.png" class="img-fluid">
                 </a>
             </div>
-            <div class="imgCartoon">
+            <div class="imgCartoon col-12 col-md-6">
                 <a href="/p5/index.php?action=allCartoons">
-                    <img src="/p5/public/img/bd.png">
+                    <img src="/p5/public/img/bd.png" class="img-fluid">
                 </a>
             </div>
         </div>
