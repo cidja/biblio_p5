@@ -31,7 +31,13 @@
 }
 
 
-
+/* addNovel and Cartoon part */
+.addSubmitButton{
+    padding: 10px 25% !important;
+}
+.addCartoonForm{
+    font-family: 'Bangers', cursive;
+}
 
 /* Oneinfos part (oneNovel and oneCartoon)*/
 .oneInfos, .statistics, .alreadyRead{

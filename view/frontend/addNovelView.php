@@ -10,7 +10,8 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
     echo $backLink;
 ?>
 <!-- source: https://getbootstrap.com/docs/4.0/components/forms/ !-->
-    <section class=" container addNovelForm">
+    <section class=" container jumbotron addNovelForm">
+        <h3 class="text-center text-uppercase">Ajout d'un livre</h3>
         <form method="post" action="index.php?action=addNovelConfirm">
             <div class="form-group">
                 <label for="title">Titre de l'ouvrage</label>
@@ -91,8 +92,8 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                 <label for="cover">Une image de couverture (ça marque bien les images ):</label>
                 <input type="text" class="form-control" id="cover" name="cover" placeholder="rentrez l'adresse du lien de l'image">
             </div>
-            <div class="row">
-                <input type="submit" value="valider">
+            <div class="d-flex justify-content-center">
+                <input class="addSubmitButton btn btn-success text-uppercase" type="submit" value="valider">
             </div>
         </form>
     </section>
