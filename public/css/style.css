@@ -2,9 +2,19 @@
     font-family: 'Bangers', cursive;
     font-family: 'Marck Script', cursive;
 */
-.titleConnexion{
+.titleConnexion, .connexion{
     font-family: 'Bangers', cursive;
 }
+.connexion{
+    font-size: 30px;
+}
+.submitButtonConnexion{
+    padding: 10px 10%;
+    font-size: 40px;
+    border-radius: 30px;
+    border: 1px solid black;
+}
+
 
 .imgCover{
     max-width: 50%; 

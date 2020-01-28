@@ -29,7 +29,7 @@
                 <input type="password" class="form-control" id="pwd" name="pwd" required >
             </div>
             <div class="form-group">
-                <input type="submit" value="Valider">
+                <input class="submitButtonConnexion +" type="submit" value="Valider">
             </div>
         </form>
     </section>
