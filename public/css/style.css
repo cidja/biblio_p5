@@ -19,7 +19,7 @@
 .imgCover{
     max-width: 50%; 
 }
-.containerContent{
+.containerContent, .containerContentCartoon{
     margin-top: 65px;
 }
 
