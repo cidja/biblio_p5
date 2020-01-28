@@ -18,6 +18,9 @@ try{
                 $pwd = $_POST["pwd"]; 
                 ToolsFrontend::checkUser($user, $pwd);
             }
+            elseif($_GET["action"] == "wrongId"){
+                ToolsFrontend::wrongId();
+            }
             elseif($_GET["action"] == "allNovels"){
                 ToolsFrontend::listNovel();
                 

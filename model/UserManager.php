@@ -18,7 +18,7 @@ class Model_UserManager extends Model_ManagerDb
                 
             }
             else {
-                echo "mauvais mot de passe ou identifiant";
+                header("location: index.php?action=wrongId");
             }
         }
     }

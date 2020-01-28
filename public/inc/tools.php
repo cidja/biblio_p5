@@ -7,3 +7,5 @@ ob_start();
 </a> <!--back to previous page source: http://memo-web.fr/categorie-html-34.php!-->
 <?php
 $backLink = ob_get_clean();
+$wrongId =  "index.php?action=wrongId";
+

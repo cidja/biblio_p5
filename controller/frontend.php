@@ -15,13 +15,18 @@ require("model/SessionManager.php");
             {
                 require("connexionView.php");
             }
+
             public static function checkUser($user, $pwd)
             {
                 $userManager = new Model_UserManager(); // creation of the UserManager objet
                 $check = $userManager->checkUser($user, $pwd); //
-
-
             }
+
+            public static function wrongId()
+            {
+                require("view/frontend/wrongIdView.php");
+            }
+
             public static function countTemplate()
             {
                 $novelManager = new Model_NovelManager(); // creation of the novelManager object
