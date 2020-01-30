@@ -95,6 +95,10 @@ require("model/SessionManager.php");
 
             }
 
+            public static function formDeleteNovel($id)
+            {
+                require("view/frontend/deleteNovelConfirm.php");
+            }
             public static function deleteNovel($id)
             {
                 $novelManager = new Model_NovelManager();

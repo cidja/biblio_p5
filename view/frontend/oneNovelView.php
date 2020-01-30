@@ -122,7 +122,7 @@ foreach($oneInfos as $data){ // Let's go through the board
                     <a class="bodyLink" href="index.php?action=updateNovel&amp;id=<?= $data["id"];?>">Modifier la fiche</a>
                 </button>
                 <button class="btn btn-danger ml-4">
-                    <a class="bodyLink" href="index.php?action=deleteNovel&amp;id=<?= $data["id"];?>">Supprimer le livre</a>
+                    <a class="bodyLink" href="index.php?action=formDeleteNovel&amp;id=<?= $data["id"];?>">Supprimer le livre</a>
                 </button>
             </div>
         </section>
