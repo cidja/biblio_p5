@@ -107,18 +107,19 @@ try{
                 ToolsFrontend::updateNovelConfirm($id,$title, $author,$isbn, $genre, $page_count, $count_volume,$active, $finish, $comment, $rate, $cover);
                 
             }
-            elseif($_GET["action"] == "formDeleteNovel"){
-                if(isset($_GET["id"]) && $_GET["id"] > 0) { // check if $_get["id"] defined and greater than 0
-                $id = htmlspecialchars($_GET["id"]); // to avoid inclusion xss
-                ToolsFrontend::formDeleteNovel($id);
-            }else {
-                throw new Exception("Aucun identifiant de billet envoyé !");
+
+            elseif($_GET["action"] == "formDeleteNovel"){ // calls the form that asks for a password to delete a work
+                $id = htmlspecialchars($_POST["id"]); // to avoid inclusion xss
+                $novel = htmlspecialchars($_POST["novel"]); // to avoid inclusion xss
+                ToolsFrontend::formDeleteNovel($id, $novel);
             }
-        }
             elseif($_GET["action"] == "deleteNovel"){
                 if(isset($_GET["id"]) && $_GET["id"] > 0) { // check if $_get["id"] defined and greater than 0
                 $id = htmlspecialchars($_GET["id"]); // to avoid inclusion xss
-                ToolsFrontend::deleteNovel($id);
+                $pwdDelete = htmlspecialchars($_POST["pwdDelete"]); // to avoid inclusion xss
+                ToolsFrontend::deleteNovel($id,$pwdDelete);
+                }else{
+                    throw new Exception ("aucun identifiant de billet envoyé");
                 }
             }
     

@@ -3,6 +3,7 @@
 //All comments are in English for the understanding of as many people as possible.
 //to support : mail: christian@linternaute-averti.fr
 include("public/inc/tools.php");
+$title = "validation de suppression";
 
 ob_start(); // Start of capture to put it in the variable at the end of the script 
 
@@ -10,10 +11,11 @@ ob_start(); // Start of capture to put it in the variable at the end of the scri
 ?>
 <div class="container">
     <div class="col">
-        <form method="get" action="index.php?action=deleteNovel&amp;id=<?= $data["id"];?>">
+        <form method="post" action="index.php?action=deleteNovel&amp;id=<?=$id;?>">
             <div class="form-group">
-                <label for="confirmDelete">Mot de passe pour la confirmation de la suppression</label>
-                <input type="text" class="form-control" id="confirmDelete" name="confirmDelete">
+                <label for="pwdDelete">Mot de passe pour confirmer la suppression du livre <?= $novel; ?></label>
+                <input type="password" class="form-control" id="pwdDelete" name="pwdDelete" required>
+                
             </div>
             <div class="form-group">
                 <input class="btn btn-info" type="submit" value="valider">

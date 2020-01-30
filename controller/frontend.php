@@ -95,15 +95,22 @@ require("model/SessionManager.php");
 
             }
 
-            public static function formDeleteNovel($id)
+            //*******************Delete Part **************************** */
+            public static function formDeleteNovel($id, $novel)
             {
-                require("view/frontend/deleteNovelConfirm.php");
+                require("view/frontend/formDeleteNovel.php");
             }
-            public static function deleteNovel($id)
+
+            public static function deleteNovel($id, $pwdDelete)
             {
-                $novelManager = new Model_NovelManager();
-                $deleteNovel = $novelManager->deleteNovel($id);
-                header("location:index.php?action=allNovels");
+                if($pwdDelete == "secret"){ //chosen password that must be entered in the form to validate the deletion of the work
+                    $novelManager = new Model_NovelManager();
+                    $deleteNovel = $novelManager->deleteNovel($id);
+                    header("location:index.php?action=allNovels");
+                } else{
+                    echo "mauvais mot de passe";
+                }
+                
             }
 
 
