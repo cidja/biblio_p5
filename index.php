@@ -220,14 +220,7 @@ try{
                     }
                 }  
     
-            elseif($_GET["action"] == "deleteCartoon"){
-                if(isset($_GET["id"]) && $_GET["id"] > 0) { // check if $_get["id"] defined and greater than 0
-                $id = htmlspecialchars($_GET["id"]); // to avoid inclusion xss
-                ToolsFrontend::deleteCartoon($id);
-                }else {
-                    throw new Exception("Aucun identifiant de billet envoyé !");
-                }
-            }
+            
             elseif($_GET["action"] == "endCartoonReading"){
                 if(isset($_GET["id"]) && $_GET["id"] > 0) { // check if $_get["id"] defined and greater than 0
                     $id = htmlspecialchars($_GET["id"]); // to avoid inclusion xss
@@ -235,6 +228,20 @@ try{
                 }
                 else {
                     throw new Exception("Aucun identifiant de billet envoyé !");
+                }
+            }
+            elseif($_GET["action"] == "formDeleteCartoon"){ // calls the form that asks for a password to delete a work
+                $id = htmlspecialchars($_POST["id"]); // to avoid inclusion xss
+                $cartoon = htmlspecialchars($_POST["cartoon"]); // to avoid inclusion xss
+                ToolsFrontend::formDeleteCartoon($id, $cartoon);
+            }
+            elseif($_GET["action"] == "deleteCartoon"){
+                if(isset($_GET["id"]) && $_GET["id"] > 0) { // check if $_get["id"] defined and greater than 0
+                $id = htmlspecialchars($_GET["id"]); // to avoid inclusion xss
+                $pwdDelete = htmlspecialchars($_POST["pwdDelete"]); // to avoid inclusion xss
+                ToolsFrontend::deleteCartoon($id,$pwdDelete);
+                }else{
+                    throw new Exception ("aucun identifiant de billet envoyé");
                 }
             }
 

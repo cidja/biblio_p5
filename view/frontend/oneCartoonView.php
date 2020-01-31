@@ -115,9 +115,11 @@ foreach($oneCartoonInfos as $data){ // Let's go through the board
                 <button class="btn btn-info">
                     <a class="bodyLink" href="index.php?action=updateCartoon&amp;id=<?= $data["id"];?>">Modifier la fiche</a>
                 </button>
-                <button class="btn btn-danger ml-4">
-                    <a class="bodyLink" href="index.php?action=deleteCartoon&amp;id=<?= $data["id"];?>">Supprimer la BD</a>
-                </button>
+                <form method="post" action="index.php?action=formDeleteCartoon&amp;id=<?= $data["id"]; ?>">
+                    <input type="hidden" value="<?= $data["id"];?>" name="id">
+                    <input type="hidden" value="<?= $data["title"]; ?>" name="cartoon">
+                    <button type="submit" class="btn btn-danger ml-4">Supprimer la BD</button>
+                </form>
             </div>
         </section>
     </div>

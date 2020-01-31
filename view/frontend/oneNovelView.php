@@ -123,7 +123,7 @@ foreach($oneInfos as $data){ // Let's go through the board
                 </button>
                 <form method="post" action="index.php?action=formDeleteNovel&amp;id=<?= $data["id"]; ?>">
                     <input type="hidden" value=<?= $data["id"];?> name="id">
-                    <input type="hidden" value=<?= $data["title"]; ?> name="novel">
+                    <input type="hidden" value="<?= $data["title"]; ?>" name="novel">
                     <button type="submit" class="btn btn-danger ml-4">Supprimer le livre</button>
                 </form>
             </div>

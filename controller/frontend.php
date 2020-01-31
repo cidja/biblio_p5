@@ -217,19 +217,31 @@ require_once("model/SessionManager.php");
 
             }
 
-            public static function deleteCartoon($id)
-            {
-                $cartoonManager= new Model_CartoonManager();
-                $deleteCartoon = $cartoonManager->deleteCartoon($id);
-                header("location:index.php?action=allCartoons");
-            }
-
             //cartoon page count
             public static function newCartoonPageCount($id,$newPageCount)
             {
                 $pageCartoonManager = new Model_PageCartoonManager();
                 $req = $pageCartoonManager->newCartoonPageCount($id,$newPageCount);
                 header("location: index.php?action=cartoonCurrent");
+            }
+
+
+            /****************deleteCartoon part ********************************/
+            public static function formDeleteCartoon($id, $cartoon)
+            {
+                require("view/frontend/fromDeleteCartoon.php");
+            }
+
+            public static function deleteCartoon($id, $pwdDelete)
+            {
+                if($pwdDelete == "secret"){ //chosen password that must be entered in the form to validate the deletion of the work
+                    $cartoonManager = new Model_CartoonManager();
+                    $deleteCartoon = $cartoonManager->deleteCartoon($id);
+                    header("location:index.php?action=allCartoons");
+                } else{
+                    echo "mauvais mot de passe";
+                }
+                
             }
 
             // Session Manager

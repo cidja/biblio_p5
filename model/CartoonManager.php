@@ -137,8 +137,8 @@ class Model_CartoonManager extends Model_ManagerDb
         public function deleteCartoon($id)
         {
             $db = $this->dbConnect();
-            $deleteNovel = $db->prepare("DELETE FROM cartoon WHERE id=?");
-            $deleteNovel->execute(array($id));
+            $deleteCartoon = $db->prepare("DELETE FROM cartoon WHERE id=?");
+            $deleteCartoon->execute(array($id));
 
         }
 
