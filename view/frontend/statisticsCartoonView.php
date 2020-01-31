@@ -7,7 +7,6 @@ include("public/inc/tools.php");
 $title = "Statistiques des Bandes dessinnées";
 
 ob_start(); //Start of capture to put it in the variable at the end of the script 
-    echo $backLink;
 ?>
         <div class="container statistics d-flex justify-content-center flex-column +">
             <section class="text-center">
