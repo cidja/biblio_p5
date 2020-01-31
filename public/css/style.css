@@ -5,6 +5,9 @@
 .titleConnexion, .connexion, .wrongIdText{
     font-family: 'Bangers', cursive;
 }
+.user, .pwd{
+    font-family: Arial, Helvetica, sans-serif;
+}
 .connexion{
     font-size: 30px;
 }
