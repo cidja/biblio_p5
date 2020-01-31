@@ -2,12 +2,12 @@
 //Tous les commentaires sont en anglais pour la compréhension pour le plus grand nombre
 //All comments are in English for the understanding of as many people as possible.
 //to support : mail: christian@linternaute-averti.fr
-require("model/NovelManager.php"); //call the class novelManager require_once (once only)
-require("model/PageNovelManager.php");
-require("model/CartoonManager.php");
-require("model/PageCartoonManager.php");
-require("model/UserManager.php");
-require("model/SessionManager.php");
+require_once("model/NovelManager.php"); //call the class novelManager require_once (once only)
+require_once("model/PageNovelManager.php");
+require_once("model/CartoonManager.php");
+require_once("model/PageCartoonManager.php");
+require_once("model/UserManager.php");
+require_once("model/SessionManager.php");
 
 
     trait ToolsFrontend{

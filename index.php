@@ -5,6 +5,7 @@ session_start(); // saving settings for the source admin: http://www.lephpfacile
 
 
 include(dirname(__FILE__)."/controller/frontend.php");
+include(dirname(__FILE__)."/controller/backend.php");
 
 
 try{
@@ -122,6 +123,20 @@ try{
                     throw new Exception ("aucun identifiant de billet envoyé");
                 }
             }
+
+            //********change password part ********* */
+            //Appel de la méthode pour afficher le formNewPassword
+        elseif($_GET["action"] == "formNewPassword"){
+            ToolsBackend::formNewPassword();
+        }
+
+        //Appel de la méthode pour modifier le mot de passe admin
+        elseif($_GET["action"] == "updatePassword"){
+            $oldMdp = htmlspecialchars($_POST["oldMdp"]);
+            $newMdp = htmlspecialchars($_POST["newMdp"]);
+            $newMdpRepeat = htmlspecialchars($_POST["newMdpRepeat"]);
+            ToolsBackend::changePassword($oldMdp, $newMdp, $newMdpRepeat);
+        }
     
     
             //Cartoon part 

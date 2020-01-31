@@ -26,17 +26,17 @@ class Model_UserManager extends Model_ManagerDb
     public function changePassword($oldMdp,$newMdp, $newMdpRepeat)
     {
         $db= $this->dbConnect(); //fonction qui va vérifier si l'ancien mot de passe est bon 
-        $checkMdp = $db->query("SELECT user,mdp FROM users");
+        $checkMdp = $db->query("SELECT user,pwd FROM users");
         foreach($checkMdp as $data){
-            if(password_verify($oldMdp, $data["mdp"])){
+            if(password_verify($oldMdp, $data["pwd"])){
                 if($newMdp === $newMdpRepeat){
                     $db = $this->dbConnect();
                         $mdp = password_hash($newMdp,PASSWORD_DEFAULT); //source: https://www.php.net/manual/en/function.password-hash.php
-                        $change = $db->prepare("UPDATE users SET mdp=?, update_date=NOW() WHERE user='admin'"); 
+                        $change = $db->prepare("UPDATE users SET pwd=?, update_date=NOW() WHERE user='admin'"); 
                         $changeresult = $change->execute(array($mdp));
                         echo "Mot de passe modifié";
                         ?>
-                        <a href="index.php?action=backend"> Retour à l'admin</a>
+                        <a href="index.php?action=allNovels"> Retour à l'accueil romans</a>
                         <?php
                 }
             }else{

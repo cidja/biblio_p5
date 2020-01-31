@@ -50,8 +50,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?action=addNovel">Ajout</a>
                 </li>
-                <li class="nav-item">
-                    <button class="btn btn-warning ml-5"><a class="bodyLink" href="index.php?action=sessionStop">Déconnexion</a></button>
+                <li class="navbar-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Administration
+                    </a><div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="index.php?action=formNewPassword"><button class="btn btn-info">Modifier mot de passe</button></a>
+                        <a class="dropdown-item" href="index.php?action=sessionStop"><button class="btn btn-warning ml-5">Déconnexion</button></a>
+                    </div>
                 </li>
             </ul>
             
