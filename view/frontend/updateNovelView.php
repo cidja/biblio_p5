@@ -117,7 +117,7 @@ else{
         <h2 class="textDemo container text-center text-uppercase">Mode visiteur aucune modification possible</h2>
         <section class="container novelForm">
             
-            <form method="post" action="#">
+            
                 <div class="form-group">
                     <label for="title">Titre de l'ouvrage </label>
                     <input type="text" class="form-control" id="title" name="title" required value="<?= $data["title"];?>">
@@ -201,7 +201,7 @@ else{
                 <div class="row justify-content-center">
                     <input class="btn btn-success" type="submit" value="valider">
                 </div>
-            </form>
+            
         </section>
     
     

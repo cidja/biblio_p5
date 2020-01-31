@@ -253,10 +253,7 @@ else{
                     <button class="btn btn-info">
                         <a class="bodyLink" href="index.php?action=updateNovel&amp;id=<?= $data["id"];?>">Modifier la fiche</a>
                     </button>
-                    <form method="post" action="#">
-                        
-                        <button type="submit" class="btn btn-danger ml-4" title="connectez vous pour utiliser cette fonction">Supprimer le livre</button>
-                    </form>
+                    <button type="submit" class="btn btn-danger ml-4" title="connectez vous pour utiliser cette fonction">Supprimer le livre</button>
                 </div>
             </section>
         </div>
