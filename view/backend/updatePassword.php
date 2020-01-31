@@ -11,9 +11,6 @@ if(isset($_SESSION["user"])){
                 <div class="row justify-content-center">
                     <div class="mb-5 mt-4">
                         <form class="form-login" action="index.php?action=updatePassword" method="post">
-                            <div class="text-center">
-                                Nouveau mot de passe administrateur :
-                            </div>
                             <div class="form-group text-center mb-1">
                                 <label for="oldMdp">
                                     <input class="form-control " type="password" id="oldMdp" name="oldMdp" placeholder="ancien mot de passe" required autofocus>
@@ -47,15 +44,11 @@ if(isset($_SESSION["user"])){
     else{
         ?>
         <div class="blocPage">
-        <h2 class="textDemo container text-center text-uppercase">Mode visiteur aucune modification possible</h2>
-        <section id="sectionUpdatePassword">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="mb-5 mt-4">
-                        
-                            <div class="text-center">
-                                Nouveau mot de passe administrateur :
-                            </div>
+            <h2 class="textDemo container text-center text-uppercase">Mode visiteur aucune modification possible</h2>
+            <section id="sectionUpdatePassword">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="mb-5 mt-4">
                             <div class="form-group text-center mb-1">
                                 <label for="oldMdp">
                                     <input class="form-control " type="password" id="oldMdp" name="oldMdp" placeholder="ancien mot de passe" required autofocus>
@@ -77,13 +70,11 @@ if(isset($_SESSION["user"])){
                             <div class="text-center">
                                 <input class="container-fluid btn btn-success" type="submit" value="valider">
                             </div>
-                        
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        
-    </div>
+            </section>
+        </div>
     
     <?php
     }
