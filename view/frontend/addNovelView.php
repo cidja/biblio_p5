@@ -106,7 +106,7 @@ if(isset($_SESSION["user"])){
     else{ 
 
         ?>
-         <h2 class="textDemo container text-center text-uppercase">Mode visiteur aucune modification possible</h2>
+        <h2 class="textDemo container text-center text-uppercase">Mode visiteur aucune modification possible</h2>
         <section class=" container jumbotron addNovelForm">
         <h3 class="text-center text-uppercase">Ajout d'un livre</h3>
         <form method="post" action="#">
