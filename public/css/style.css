@@ -32,6 +32,16 @@
 .bodyLink:hover{
     color: white;
 }
+
+/*Demo mode */
+.textDemo{
+    border: 2px solid #007bff;
+    background-color: #007bff;
+    border-radius: 25px;
+    color: white;
+}
+
+
 /* cartoon part font */
 .menuCartoon, .containerContentCartoon{ /*change of the fonts in bangers for the whole cartoon part*/
     font-family: 'Bangers', cursive;
