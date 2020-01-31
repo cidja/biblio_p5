@@ -38,9 +38,9 @@ class Model_UserManager extends Model_ManagerDb
                         ?>
                         <a href="index.php?action=allNovels"> Retour à l'accueil romans</a>
                         <?php
-                }
-            }else{
-                echo "les mots de passe ne correspondent pas";
+                }else{
+                    echo "les mots de passe ne correspondent pas";
+            }
             }
         }
     }
