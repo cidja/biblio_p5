@@ -2,8 +2,9 @@
 
 
     $title = "Admin mon blog"; 
-    ob_start(); ?>
-
+    ob_start(); 
+if(isset($_SESSION["user"])){
+    ?>
     <div class="blocPage">
         <section id="sectionUpdatePassword">
             <div class="container">
@@ -42,6 +43,50 @@
         
     </div>
     <?php
+    } // if end
+    else{
+        ?>
+        <div class="blocPage">
+        <h2 class="textDemo container text-center text-uppercase">Mode visiteur aucune modification possible</h2>
+        <section id="sectionUpdatePassword">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="mb-5 mt-4">
+                        
+                            <div class="text-center">
+                                Nouveau mot de passe administrateur :
+                            </div>
+                            <div class="form-group text-center mb-1">
+                                <label for="oldMdp">
+                                    <input class="form-control " type="password" id="oldMdp" name="oldMdp" placeholder="ancien mot de passe" required autofocus>
+                                    <p class="show-password btn btn-primary mt-1">Afficher</p> <!--source: http://www.rbastien.com/blog/2015/02/afficher-password-formulaire/!-->
+                                </label>
+                            </div>
+                            <div class="form-group text-center mb-1">
+                                <label for="newMdp">
+                                    <input class="form-control" type="password" id="newMdp" name="newMdp" placeholder="nouveau mot de passe" required>
+                                    <span class="show-password btn btn-primary mt-1">Afficher</span> <!--source: http://www.rbastien.com/blog/2015/02/afficher-password-formulaire/!-->
+                                </label>
+                            </div>
+                            <div class="form-group text-center mb-1">
+                                <label for="newMdpRepeat">
+                                    <input class="form-control" type="password" id="newMdpRepeat" name="newMdpRepeat" placeholder="rentrez le mot de passe à nouveau" required>
+                                    <span class="show-password btn btn-primary mt-1">Afficher</span> <!--source: http://www.rbastien.com/blog/2015/02/afficher-password-formulaire/!-->
+                                </label>
+                            </div>
+                            <div class="text-center">
+                                <input class="container-fluid btn btn-success" type="submit" value="valider">
+                            </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+    
+    <?php
+    }
     $content = ob_get_clean();
 
  require("view/frontend/templateNovel.php"); 
