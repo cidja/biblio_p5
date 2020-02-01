@@ -76,23 +76,7 @@ if(isset($_SESSION["user"])){
                         </div>
                     </div>
                 </div>
-                <div class="finish">
-                    <div class="d-flex">
-                        <div>
-                        <?php 
-                                if($data["finish"] == 0){
-                                    ?> 
-                                        <button class="btn btn-warning">En cours</button>
-                                    <?php
-                                }
-                                else{
-                                    ?>
-                                        <button class="btn btn-success">Fini</button>
-                                    <?php
-                                } ?>
-                        </div>
-                    </div>
-                </div>
+                
                 <div class="rate">
                     <div class="d-flex">
                         <div class="fieldDescription">Note :</div>
@@ -198,23 +182,7 @@ else{
                         </div>
                     </div>
                 </div>
-                <div class="finish">
-                    <div class="d-flex">
-                        <div>
-                        <?php 
-                                if($data["finish"] == 0){
-                                    ?> 
-                                        <button class="btn btn-warning">En cours</button>
-                                    <?php
-                                }
-                                else{
-                                    ?>
-                                        <button class="btn btn-success">Fini</button>
-                                    <?php
-                                } ?>
-                        </div>
-                    </div>
-                </div>
+                
                 <div class="rate">
                     <div class="d-flex">
                         <div class="fieldDescription">Note :</div>

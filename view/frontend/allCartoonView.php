@@ -24,19 +24,6 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                     <div class="">
                         <div><?= $data["title"]; ?></div>
                     </div>
-                    <div class="mt-1">
-                        <?php
-                    if($data["finish"] == 0){
-                                ?> 
-                                    <button class="btn btn-warning">En cours</button>
-                                <?php
-                            }
-                            else{
-                                ?>
-                                    <button class="btn btn-success">Fini</button>
-                                <?php
-                            } ?>
-                    </div>
                 </div>
             
         <?php
