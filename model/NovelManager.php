@@ -49,7 +49,7 @@ class Model_NovelManager extends Model_ManagerDb
         public function lastUpdate()
         {
             $db = $this->dbConnect();
-            $lastUpdate = $db->query("SELECT update_date from novel_page_count ORDER BY update_date DESC LIMIT 0,1;");
+            $lastUpdate = $db->query('SELECT new_page_count,update_date FROM novel_page_count ORDER BY update_date DESC LIMIT 1');
             return $lastUpdate;
         }
 

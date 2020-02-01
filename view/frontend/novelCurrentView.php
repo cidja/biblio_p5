@@ -14,6 +14,7 @@ if(isset($_SESSION["user"])){
     <?php
     foreach($novelCurrent as $data) //source: https://www.php.net/manual/fr/control-structures.foreach.php
     {
+        
         ?>
         <div class="container oneInfos d-flex justify-content-center flex-column">
             <?php
@@ -39,17 +40,20 @@ if(isset($_SESSION["user"])){
                                 <div class="dataDescription"><?= $data["page_count"]; ?></div>
                             </div>
                         </div>
+                        <?php
+                                foreach($lastUpdate as $data2){
+                                    ?>
                     <div class="updateDate">
                         <div class="d-flex">
                             <div class="fieldDescription">Date de la dernière lecture  </div>
-                            <div class="dataDescription">le <?= $data["update_date_fr"]; ?></div>
+                            <div class="dataDescription">le <?= $data2["update_date"]; ?></div>
                         </div>      
                     </div>
                     <div class="lastReadTime">
                         <div class="d-flex">
                                 <?php
-                                foreach($lastUpdate as $dataDate){ // to see difference between 2 date source: https://www.php.net/manual/fr/datetime.diff.php
-                                    $dateBdd =  $dataDate["update_date"];
+                                 // to see difference between 2 date source: https://www.php.net/manual/fr/datetime.diff.php
+                                    $dateBdd =  $data2["update_date"];
                                     $datetime1 = new DateTime('now');
                                     $datetime2 = new DateTime($dateBdd);
                                     $interval = $datetime2->diff($datetime1);
@@ -58,16 +62,19 @@ if(isset($_SESSION["user"])){
                                     <div class="fieldDescription">Votre dernière session de lecture remonte a</div>
                                     <div class="dataDescription"><?= $result; ?></div> 
                                     <?php 
-                                }
+                                
                                 ?>
                         </div>
                     </div>
                     <div class="newPagesCount">
                         <div class="d-flex">
                             <div class="fieldDescription">Vous en étiez à la page : </div>
-                            <div class="dataDescription"><?= $data["new_page_count"]; ?></div>
+                            <div class="dataDescription"><?=$data2["new_page_count"]; ?></div>
                         </div>
                     </div>
+                    <?php
+                }
+                ?>
                     <form method="post" action="index.php?action=newPageCount">
                         <div class="form-group d-flex flex-column">
                             <input type="number" class="form-control" max ="<?= $data["page_count"]; //max value number of page of the $data ("page_count") ?>" 
@@ -203,7 +210,7 @@ if(isset($_SESSION["user"])){
         
         }
     } // else end
-$novelCurrent->closeCursor();
+
 $content = ob_get_clean();
 require("templateNovel.php");
 /*This code does 3 things:
