@@ -150,7 +150,6 @@ else{
     } // foreach end
 } //else end
 
-$cartoonCurrent->closeCursor();
 $content = ob_get_clean();
 require("templateCartoon.php");
 /*This code does 3 things:

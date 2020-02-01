@@ -35,12 +35,7 @@
                         <a class="dropdown-item" href="index.php?action=allCartoons">BD</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php?action=cartoonCurrent"> BD en cours </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php?action=cartoonsRead">BD déjà lus </a>
-                </li>
+                
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?action=allCartoons">Toutes les BD</a>
                 </li>
@@ -87,12 +82,6 @@ else{ // If no session is started with user and pwd we don't give access and ret
                         <a class="dropdown-item" href="index.php?action=allNovels">Livres</a>
                         <a class="dropdown-item" href="index.php?action=allCartoons">BD</a>
                     </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php?action=cartoonCurrent"> BD en cours </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php?action=cartoonsRead">BD déjà lus </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?action=allCartoons">Toutes les BD</a>

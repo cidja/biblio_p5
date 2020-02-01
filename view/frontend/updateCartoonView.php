@@ -70,33 +70,9 @@ if(isset($_SESSION["user"])){
                     <input type="number" class="form-control" id="volume_number" name="volume_number" value="<?= $data["volume_number"];?>">
                 </div>
 
-                <p>Déjà fini ? :</p>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="finish" id="yes" value="1" checked>
-                    <label class="form-check-label" for="yes">
-                        Oui
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="finish" id="no" value="0" >
-                    <label class="form-check-label" for="no">
-                        Non
-                    </label>
-                </div>
-
-                <p>Lecture actuelle :</p>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="active" id="yes" value="1" >
-                    <label class="form-check-label" for="yes">
-                        Oui
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="active" id="no" value="0" checked>
-                    <label class="form-check-label" for="no">
-                        Non
-                    </label>
-                </div>
+                    <input type="hidden" name="finish" value="1">
+                    <input type="hidden" name="active" value="0">                   
+                
 
                 <div class="form-group">
                     <label>Note actuelle</label>
@@ -188,33 +164,8 @@ else{
                     <input type="number" class="form-control" id="volume_number" name="volume_number" value="<?= $data["volume_number"];?>">
                 </div>
 
-                <p>Déjà fini ? :</p>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="finish" id="yes" value="1" checked>
-                    <label class="form-check-label" for="yes">
-                        Oui
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="finish" id="no" value="0" >
-                    <label class="form-check-label" for="no">
-                        Non
-                    </label>
-                </div>
-
-                <p>Lecture actuelle :</p>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="active" id="yes" value="1" >
-                    <label class="form-check-label" for="yes">
-                        Oui
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="active" id="no" value="0" checked>
-                    <label class="form-check-label" for="no">
-                        Non
-                    </label>
-                </div>
+                <input type="hidden" name="finish" value="1">
+                <input type="hidden" name="active" value="0"> 
 
                 <div class="form-group">
                     <label>Note actuelle</label>

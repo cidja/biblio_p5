@@ -25,7 +25,7 @@
                 </a>
             </div>
             <div class="imgCartoon col-12 col-md-6">
-                <a href="/p5/index.php?action=cartoonCurrent">
+                <a href="/p5/index.php?action=allCartoons">
                     <img src="/p5/public/img/bd.png" class="img-fluid">
                 </a>
             </div>
