@@ -10,7 +10,7 @@ class Model_NovelManager extends Model_ManagerDb
         public function allNovelInfos() //method for retrieving all the information from all the novels
         {
             $db = $this->dbConnect();
-            $infos = $db->query('SELECT id,title, author, isbn, genre, page_count, count_volume, active,finish, comment,rate,cover,
+            $infos = $db->query('SELECT id,title, author, isbn,`format`, genre, page_count, count_volume, active,finish, comment,rate,cover,
                                  DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM novel');
             return $infos;
         }
