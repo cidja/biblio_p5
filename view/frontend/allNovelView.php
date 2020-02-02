@@ -22,9 +22,15 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                     <a href="index.php?action=oneNovel&amp;id=<?= $data["id"];?>">
                         <img class="imgCover +"src=<?=$cover; ?> alt="couverture du livre" title="couverture du livre" />
                     </a>
-                    <div class="">
-                        <div><?= $data["title"]; ?></div>
-                    </div>
+                   
+                        <div>
+                            <div><?= $data["title"]; ?></div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="dataDescription"> Format : </div>
+                            <div class="fieldDescription ml-1"> <?= $data["publication"];?></div>
+                        </div>
+                    
                     <div class="mt-1">
                         <?php
                     if($data["finish"] == 0){
