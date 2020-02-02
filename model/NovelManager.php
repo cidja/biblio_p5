@@ -25,13 +25,15 @@ class Model_NovelManager extends Model_ManagerDb
             
         }
 
+        /* NOT USE
         public function novelsRead() // method that displays the books read based on whether 1 in the table (read) otherwise (not finished)
+        
         {
             $db = $this->dbConnect();
             $novelsread = $db->query('SELECT id,title, author, isbn, genre, page_count, count_volume, active,finish, comment,rate,cover,
             DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM novel WHERE finish = 1');
             return $novelsread;
-        }
+        }*/
 
         public function novelCurrent() // method that displays the current novel
         {

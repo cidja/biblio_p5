@@ -46,12 +46,15 @@ require_once("model/SessionManager.php");
                 require("view/frontend/oneNovelView.php");
             }
             
+            /* NOT USE
             public static function novelRead()
             {
                 $novelManager = new Model_NovelManager();
                 $novelsRead = $novelManager->novelsRead(); // $result which is called in novelReadView.php
                 require("view/frontend/novelReadView.php");
             }
+            */
+
             public static function novelCurrent()
             {
                 $novelManager = new Model_NovelManager();

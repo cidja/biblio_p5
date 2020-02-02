@@ -40,9 +40,6 @@
                     <a class="nav-link" href="index.php?action=novelCurrent">Livre en cours </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php?action=novelsRead">Livres déjà lus</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="index.php?action=allNovels">Tous les livres</a>
                 </li>
                 <li class="nav-item">
@@ -97,9 +94,6 @@ else{ // If no session is started with user and pwd we don't give access and ret
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?action=novelCurrent">Livre en cours </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php?action=novelsRead">Livres déjà lus</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?action=allNovels">Tous les livres</a>
