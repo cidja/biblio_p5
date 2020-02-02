@@ -42,7 +42,7 @@ if(isset($_SESSION["user"])){
                 <div class="form-group">
                     <label for="genre">Genre</label>
                     <select class="form-control" id="genre" name="genre">
-                        <option><?= $data["genre"]; ?></option>
+                        <option>actuellement : <?= $data["genre"]; ?></option>
                         <option>Aventure</option>
                         <option>Comics</option>
                         <option>Heroïque fantasy</option>
@@ -72,13 +72,18 @@ if(isset($_SESSION["user"])){
 
                     <input type="hidden" name="finish" value="1">
                     <input type="hidden" name="active" value="0">                   
-                
 
-                <div class="form-group">
-                    <label>Note actuelle</label>
-                    <input type="number" class="form-control" id="rate" name="rate" value="<?= $data["rate"];?>" min="1" max="5" >
-                </div>
-                
+                    <div class="form-group">
+                <label for="rate">Note actuelle </label>
+                <select class="form-control" id="rate" name="rate">
+                    <option>actuellement : <?= $data["rate"]; ?></option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
 
                 <div class="form-group">
                     <label for="comment">Revoir ton commentaire ? (on change tous d'avis :) )</label>
@@ -136,7 +141,7 @@ else{
                 <div class="form-group">
                     <label for="genre">Genre</label>
                     <select class="form-control" id="genre" name="genre">
-                        <option><?= $data["genre"]; ?></option>
+                        <option>Actuellement : <?= $data["genre"]; ?></option>
                         <option>Aventure</option>
                         <option>Comics</option>
                         <option>Heroïque fantasy</option>
@@ -168,9 +173,16 @@ else{
                 <input type="hidden" name="active" value="0"> 
 
                 <div class="form-group">
-                    <label>Note actuelle</label>
-                    <input type="number" class="form-control" id="rate" name="rate" value="<?= $data["rate"];?>" min="1" max="5" >
-                </div>
+                <label for="rate">Note actuelle </label>
+                <select class="form-control" id="rate" name="rate">
+                    <option>actuellement : <?= $data["rate"]; ?></option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
                 
 
                 <div class="form-group">

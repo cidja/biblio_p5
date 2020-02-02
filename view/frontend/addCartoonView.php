@@ -70,36 +70,15 @@ if(isset($_SESSION["user"])){
 
             <input type="hidden" name="finish" value="1">
             
-            <div>Une note :</div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="rate" id="1" value="1" >
-                <label class="form-check-label" for="1">
-                    1
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="rate" id="2" value="2" >
-                <label class="form-check-label" for="2">
-                    2
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="rate" id="3" value="3" >
-                <label class="form-check-label" for="3">
-                    3
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="rate" id="4" value="4" >
-                <label class="form-check-label" for="4">
-                    4
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="rate" id="5" value="5" checked>
-                <label class="form-check-label" for="5">
-                    5
-                </label>
+            <div class="form-group">
+                <label for="rate">Une note </label>
+                <select class="form-control" id="rate" name="rate">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
             </div>
 
             <div class="form-group">
@@ -186,37 +165,16 @@ else {
 
         <input type="hidden" name="finish" value="1">
 
-        <div>Une note :</div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="rate" id="1" value="1" >
-            <label class="form-check-label" for="1">
-                1
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="rate" id="2" value="2" >
-            <label class="form-check-label" for="2">
-                2
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="rate" id="3" value="3" >
-            <label class="form-check-label" for="3">
-                3
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="rate" id="4" value="4" >
-            <label class="form-check-label" for="4">
-                4
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="rate" id="5" value="5" checked>
-            <label class="form-check-label" for="5">
-                5
-            </label>
-        </div>
+        <div class="form-group">
+                <label for="rate">Une note </label>
+                <select class="form-control" id="rate" name="rate">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
 
         <div class="form-group">
             <label for="comment">Un commentaire (pour s'en rappeler pour plus tard :))</label>
