@@ -10,7 +10,7 @@ class Model_NovelManager extends Model_ManagerDb
         public function allNovelInfos() //method for retrieving all the information from all the novels
         {
             $db = $this->dbConnect();
-            $infos = $db->query('SELECT id,title, author, isbn,`format`, genre, page_count, count_volume, active,finish, comment,rate,cover,
+            $infos = $db->query('SELECT id,title, author, isbn, genre,`publication`, page_count, count_volume, active,finish, comment,rate,cover,
                                  DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM novel');
             return $infos;
         }
@@ -18,7 +18,7 @@ class Model_NovelManager extends Model_ManagerDb
         public function oneNovelInfos($id) //method for retrieving all the information from one novel with $_GET["id"]
         {
             $db = $this->dbConnect();
-            $infos = $db->prepare('SELECT id,title, author, isbn, genre, page_count, count_volume, active,finish, comment,rate,cover,
+            $infos = $db->prepare('SELECT id,title, author, isbn, genre, `publication`, page_count, count_volume, active,finish, comment,rate,cover,
                                     DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM novel WHERE id=?');
             $infos->execute(array($id));
             return $infos;
@@ -80,17 +80,18 @@ class Model_NovelManager extends Model_ManagerDb
             return $avgPages;
         }
 
-        public function addNovelConfirm($title, $author,$isbn, $genre, $page_count, $count_volume, $comment, $rate, $cover)
+        public function addNovelConfirm($title, $author,$isbn, $publication, $genre, $page_count, $count_volume, $comment, $rate, $cover)
         {
             $db = $this->dbConnect();
-            $addNovel = $db->prepare("INSERT INTO novel(`title`, `author`, `isbn`, `genre`, `page_count`, `count_volume`,
+            $addNovel = $db->prepare("INSERT INTO novel(`title`, `author`, `isbn`, `publication`, `genre`, `page_count`, `count_volume`,
                                      `active`, `finish`, `comment`, `rate`, `cover`, `creation_date`)
-                                      VALUES(:title, :author, :isbn, :genre, :page_count, :count_volume, 
+                                      VALUES(:title, :author, :isbn, :publication, :genre, :page_count, :count_volume, 
                                       :active, :finish, :comment, :rate, :cover, NOW())");
             $addNovel->execute(array(
                 "title"         => $title,
                 "author"        => $author,
                 "isbn"          => $isbn,
+                "publication"   => $publication,
                 "genre"         => $genre,
                 "page_count"    => $page_count,
                 "count_volume"  => $count_volume,

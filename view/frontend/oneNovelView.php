@@ -22,24 +22,35 @@ foreach($oneInfos as $data){ // Let's go through the board
                     <div class="dataDescription"><?= $data["title"]; ?></div>
                 </div>
             </div>
+
             <div class="author">
                 <div class="d-flex">
                     <div class="fieldDescription">Auteur :</div>
                     <div class="dataDescription"><?= $data["author"]; ?></div>
                 </div>
             </div>
+
             <div class="genre">
                 <div class="d-flex">
                     <div class="fieldDescription">Genre : </div>
                     <div class="dataDescription"><?= $data["genre"]; ?></div>
                 </div>
             </div>
+
+            <div class="publication">
+                <div class="d-flex">
+                    <div class="fieldDescription">format : </div>
+                    <div class="dataDescription"><?= $data["publication"]; ?></div>
+                </div>
+            </div>
+
             <div class="pagesCount">
                 <div class="d-flex">
                     <div class="fieldDescription">Nombre de pages :</div>
                     <div class="dataDescription"><?= $data["page_count"]; ?></div>
                 </div>
             </div>
+
             <div class="">
                 <div class="d-flex">
                     <div class="fieldDescription">Pour lire ce livre en 30 jours il faut lire </div>
@@ -49,6 +60,7 @@ foreach($oneInfos as $data){ // Let's go through the board
                     echo $timeReading; ?> pages par jours.</div>
                 </div>
             </div>
+
             <div class="countVolume">
                 <div class="d-flex">
                 <?php 
@@ -62,10 +74,10 @@ foreach($oneInfos as $data){ // Let's go through the board
                     <div class="dataDescription"><?= $data["count_volume"]; ?></div>
                     <?php
                 }
-                ?>
-                    
+                ?>  
                 </div>
             </div>
+
             <div class="isbn">
                 <div class="d-flex">
                     <div class="fieldDescription">ISBN :</div>
@@ -80,6 +92,7 @@ foreach($oneInfos as $data){ // Let's go through the board
                     </div>
                 </div>
             </div>
+
             <div class="finish">
                 <div class="d-flex">
                     
@@ -98,18 +111,21 @@ foreach($oneInfos as $data){ // Let's go through the board
                     </div>
                 </div>
             </div>
+
             <div class="rate">
                 <div class="d-flex">
                     <div class="fieldDescription">Note :</div>
                     <div class="dataDescription"><?= $data["rate"]; ?></div>
                 </div>
             </div>
+
             <div class="comment">
                 <div class="d-flex">
                     <div class="fieldDescription">Commentaires :</div>
                     <div class="dataDescription"><?=$data["comment"]; ?></div>
                 </div>
             </div>
+
             <div class="creation_date">
                 <div class="d-flex">
                     <div class="fieldDescription">Date d'ajout :</div>
@@ -154,24 +170,35 @@ else{
                         <div class="dataDescription"><?= $data["title"]; ?></div>
                     </div>
                 </div>
+
                 <div class="author">
                     <div class="d-flex">
                         <div class="fieldDescription">Auteur :</div>
                         <div class="dataDescription"><?= $data["author"]; ?></div>
                     </div>
                 </div>
+
                 <div class="genre">
                     <div class="d-flex">
                         <div class="fieldDescription">Genre : </div>
                         <div class="dataDescription"><?= $data["genre"]; ?></div>
                     </div>
                 </div>
+
+                <div class="publication">
+                    <div class="d-flex">
+                        <div class="fieldDescription">format : </div>
+                        <div class="dataDescription"><?= $data["publication"]; ?></div>
+                    </div>
+                </div>
+
                 <div class="pagesCount">
                     <div class="d-flex">
                         <div class="fieldDescription">Nombre de pages :</div>
                         <div class="dataDescription"><?= $data["page_count"]; ?></div>
                     </div>
                 </div>
+
                 <div class="">
                     <div class="d-flex">
                         <div class="fieldDescription">Pour lire ce livre en 30 jours il faut lire </div>
@@ -181,6 +208,7 @@ else{
                         echo $timeReading; ?> pages par jours.</div>
                     </div>
                 </div>
+
                 <div class="countVolume">
                     <div class="d-flex">
                     <?php 
@@ -194,10 +222,10 @@ else{
                         <div class="dataDescription"><?= $data["count_volume"]; ?></div>
                         <?php
                     }
-                    ?>
-                        
+                    ?>  
                     </div>
                 </div>
+
                 <div class="isbn">
                     <div class="d-flex">
                         <div class="fieldDescription">ISBN :</div>
@@ -212,6 +240,7 @@ else{
                         </div>
                     </div>
                 </div>
+
                 <div class="finish">
                     <div class="d-flex">
                         
@@ -230,18 +259,21 @@ else{
                         </div>
                     </div>
                 </div>
+
                 <div class="rate">
                     <div class="d-flex">
                         <div class="fieldDescription">Note :</div>
                         <div class="dataDescription"><?= $data["rate"]; ?></div>
                     </div>
                 </div>
+
                 <div class="comment">
                     <div class="d-flex">
                         <div class="fieldDescription">Commentaires :</div>
                         <div class="dataDescription"><?=$data["comment"]; ?></div>
                     </div>
                 </div>
+                
                 <div class="creation_date">
                     <div class="d-flex">
                         <div class="fieldDescription">Date d'ajout :</div>

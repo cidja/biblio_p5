@@ -65,11 +65,11 @@ require_once("model/SessionManager.php");
                 require("view/frontend/addNovelView.php");
             }
 
-            public static function addNovelConfirm($title, $author,$isbn, $genre, $page_count, $count_volume, $comment, $rate, $cover)
+            public static function addNovelConfirm($title, $author,$isbn, $publication, $genre, $page_count, $count_volume, $comment, $rate, $cover)
             {
             
                 $novelManager = new Model_NovelManager();
-                $addConfirm = $novelManager->addNovelConfirm($title, $author,$isbn, $genre, $page_count, $count_volume, $comment, $rate, $cover);
+                $addConfirm = $novelManager->addNovelConfirm($title, $author,$isbn, $publication, $genre, $page_count, $count_volume, $comment, $rate, $cover);
                 header("location:index.php?action=allNovels");
             }
 

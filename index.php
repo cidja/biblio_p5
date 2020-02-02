@@ -53,6 +53,7 @@ try{
                 $title          = htmlspecialchars($_POST["title"]);
                 $author         = htmlspecialchars($_POST["author"]);
                 $isbn           = htmlspecialchars($_POST["isbn"]);
+                $publication    = htmlspecialchars($_POST["publication"]);
                 $genre          = htmlspecialchars($_POST["genre"]);
                 $page_count     = htmlspecialchars($_POST["page_count"]);
                 $count_volume   = htmlspecialchars($_POST["count_volume"]);
@@ -60,7 +61,7 @@ try{
                 $comment        = htmlspecialchars($_POST["comment"]);
                 $rate           = htmlspecialchars($_POST["rate"]);
                 $cover          = htmlspecialchars($_POST["cover"]);
-                ToolsFrontend::addNovelConfirm($title, $author,$isbn, $genre, $page_count, $count_volume, $comment, $rate, $cover);
+                ToolsFrontend::addNovelConfirm($title, $author,$isbn, $publication, $genre, $page_count, $count_volume, $comment, $rate, $cover);
             }
     
             elseif($_GET["action"] == "endReading"){

@@ -42,46 +42,35 @@ if(isset($_SESSION["user"])){
                     <option>Roman</option>
                 </select>
             </div>
+
+            <div class="form-group">
+                <label for="publication">format : </label>
+                <select class="form-control" id="publication" name="publication">
+                    <option>papier</option>
+                    <option>kindle</option>
+                </select>
+            </div>
+
             <div class="form-group">
                 <label for="page_count">Nombre de pages : </label>
                 <input type="number" class="form-control" id="page_count" name="page_count">
             </div>
+
             <div class="form-group">
                 <label for="count_volume">Nombre de tomes :</label>
                 <input type="text" class="form-control" id="count_volume" name="count_volume" value="0"">
                 <small id="count_volumeHelp" class="form-text text-muted">Si aucun autre tome mettre 0</small>
             </div>
 
-            <div>Une note :</div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="rate" id="1" value="1" >
-                <label class="form-check-label" for="1">
-                    1
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="rate" id="2" value="2" >
-                <label class="form-check-label" for="2">
-                    2
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="rate" id="3" value="3" >
-                <label class="form-check-label" for="3">
-                    3
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="rate" id="4" value="4" >
-                <label class="form-check-label" for="4">
-                    4
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="rate" id="5" value="5" checked>
-                <label class="form-check-label" for="5">
-                    5
-                </label>
+            <div class="form-group">
+                <label for="rate">Une note </label>
+                <select class="form-control" id="rate" name="rate">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
             </div>
 
             <div class="form-group">
@@ -139,46 +128,35 @@ if(isset($_SESSION["user"])){
                     <option>Roman</option>
                 </select>
             </div>
+
+            <div class="form-group">
+                <label for="publication">format : </label>
+                <select class="form-control" id="publication" name="publication">
+                    <option>papier</option>
+                    <option>kindle</option>
+                </select>
+            </div>
+
             <div class="form-group">
                 <label for="page_count">Nombre de pages : </label>
                 <input type="number" class="form-control" id="page_count" name="page_count">
             </div>
+
             <div class="form-group">
                 <label for="count_volume">Nombre de tomes :</label>
                 <input type="text" class="form-control" id="count_volume" name="count_volume" value="0"">
                 <small id="count_volumeHelp" class="form-text text-muted">Si aucun autre tome mettre 0</small>
             </div>
 
-            <div>Une note :</div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="rate" id="1" value="1" >
-                <label class="form-check-label" for="1">
-                    1
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="rate" id="2" value="2" >
-                <label class="form-check-label" for="2">
-                    2
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="rate" id="3" value="3" >
-                <label class="form-check-label" for="3">
-                    3
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="rate" id="4" value="4" >
-                <label class="form-check-label" for="4">
-                    4
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="rate" id="5" value="5" checked>
-                <label class="form-check-label" for="5">
-                    5
-                </label>
+            <div class="form-group">
+                <label for="rate">Une note </label>
+                <select class="form-control" id="rate" name="rate">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
             </div>
 
             <div class="form-group">
