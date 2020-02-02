@@ -117,22 +117,22 @@ class Model_NovelManager extends Model_ManagerDb
             $updatePageCount->execute(array($id));
         }
 
-        public function updateNovel($id,$title, $author,$isbn, $genre, $page_count, $count_volume, $active, $finish, $comment, $rate, $cover)
+        public function updateNovel($id,$title, $author,$isbn, $publication, $genre, $page_count, $count_volume, $active, $comment, $rate, $cover)
         {
             $db = $this->dbConnect();
-            $updateNovel = $db->prepare("UPDATE novel SET title=:title, author=:author, isbn=:isbn, genre=:genre, page_count=:page_count,
+            $updateNovel = $db->prepare("UPDATE novel SET title=:title, author=:author, isbn=:isbn, publication=:publication, genre=:genre, page_count=:page_count,
                                          count_volume=:count_volume, active=:active,
-                                        finish=:finish, comment=:comment, rate=:rate, cover=:cover  WHERE id=:id");
+                                         comment=:comment, rate=:rate, cover=:cover  WHERE id=:id");
             $updateNovel->execute(array(
                 ":id"           => $id,
                 "title"         => $title,
                 "author"        => $author,
                 "isbn"          => $isbn,
+                "publication"   => $publication,
                 "genre"         => $genre,
                 "page_count"    => $page_count,
                 "count_volume"  => $count_volume,
                 "active"        => $active,
-                "finish"        => $finish,
                 "comment"       => $comment,
                 "rate"          => $rate,
                 "cover"         => $cover

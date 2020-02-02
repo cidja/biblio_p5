@@ -26,10 +26,11 @@ foreach($oneInfos as $data){ // Let's go through the board
                 <input type="number" class="form-control" id="isbn" name="isbn" placeholder="exemple : 2253257419" value="<?= $data["isbn"];?>">
                 <small id="isbnHelp" class="form-text text-muted">Si ISBN inconnu ne rien mettre</small>
             </div>
+
             <div class="form-group">
                 <label for="genre">Genre</label>
                 <select class="form-control" id="genre" name="genre">
-                    <option><?= $data["genre"];?></option>
+                    <option>actuellement : <?= $data["genre"];?></option>
                     <option>Developpement personnel</option>
                     <option>Biographie</option>
                     <option>Auto biographie</option>
@@ -43,29 +44,28 @@ foreach($oneInfos as $data){ // Let's go through the board
                     <option>Roman</option>
                 </select>
             </div>
+
+            <div class="form-group">
+                <label for="publication">format : </label>
+                <select class="form-control" id="publication" name="publication">
+                    <option>actuellement : <?= $data["publication"];?></option>
+                    <option>papier</option>
+                    <option>kindle</option>
+                </select>
+            </div>
+
             <div class="form-group">
                 <label for="page_count">Nombre de pages : </label>
                 <input type="number" class="form-control" id="page_count" name="page_count" value="<?= $data["page_count"];?>">
             </div>
+
             <div class="form-group">
                 <label for="count_volume">Nombre de tomes :</label>
                 <input type="text" class="form-control" id="count_volume" name="count_volume" value="<?= $data["count_volume"];?>">
                 <small id="count_volumeHelp" class="form-text text-muted">Si aucun autre tome mettre 0</small>
             </div>
 
-            <p>Déjà lu ? :</p>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="finish" id="yes" value="1" checked>
-                <label class="form-check-label" for="yes">
-                    Oui
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="finish" id="no" value="0">
-                <label class="form-check-label" for="no">
-                    Non
-                </label>
-            </div>
+            
             <p>Lecture actuelle ?</p>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="active" id="yes" value="1">
@@ -81,18 +81,27 @@ foreach($oneInfos as $data){ // Let's go through the board
             </div>
 
             <div class="form-group">
-                <label>Note actuelle</label>
-                <input type="number" class="form-control" id="rate" name="rate" value="<?= $data["rate"];?>" min="1" max="5" >
+                <label for="rate">Une note </label>
+                <select class="form-control" id="rate" name="rate">
+                    <option>actuellement : <?= $data["rate"];?></option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
             </div>
-
+            
             <div class="form-group">
                 <label for="comment">Revoir ton commentaire ? (on change tous d'avis :) )</label>
                 <textarea class="form-control" id="comment" name="comment" rows="3"><?= $data["comment"]; ?></textarea>
             </div>
+
             <div class="form-group">
                 <label for="cover">Une image de couverture (ça marque bien les images ):</label>
                 <input type="text" class="form-control" id="cover" name="cover" placeholder="rentrez l'adresse du lien de l'image" value="<?= $data["cover"];?>" >
             </div>
+
             <div class="row justify-content-center">
                 <input class="btn btn-success" type="submit" value="valider">
             </div>
@@ -131,73 +140,82 @@ else{
                     <input type="number" class="form-control" id="isbn" name="isbn" placeholder="exemple : 2253257419" value="<?= $data["isbn"];?>">
                     <small id="isbnHelp" class="form-text text-muted">Si ISBN inconnu ne rien mettre</small>
                 </div>
+
                 <div class="form-group">
-                    <label for="genre">Genre</label>
-                    <select class="form-control" id="genre" name="genre">
-                        <option><?= $data["genre"];?></option>
-                        <option>Developpement personnel</option>
-                        <option>Biographie</option>
-                        <option>Auto biographie</option>
-                        <option>Fantastique</option>
-                        <option>Science-fiction</option>
-                        <option>Traité</option>
-                        <option>Essais</option>
-                        <option>Policier</option>
-                        <option>Thriller</option>
-                        <option>Classique</option>
-                        <option>Roman</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="page_count">Nombre de pages : </label>
-                    <input type="number" class="form-control" id="page_count" name="page_count" value="<?= $data["page_count"];?>">
-                </div>
-                <div class="form-group">
-                    <label for="count_volume">Nombre de tomes :</label>
-                    <input type="text" class="form-control" id="count_volume" name="count_volume" value="<?= $data["count_volume"];?>">
-                    <small id="count_volumeHelp" class="form-text text-muted">Si aucun autre tome mettre 0</small>
-                </div>
-    
-                <p>Déjà lu ? :</p>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="finish" id="yes" value="1" checked>
-                    <label class="form-check-label" for="yes">
-                        Oui
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="finish" id="no" value="0">
-                    <label class="form-check-label" for="no">
-                        Non
-                    </label>
-                </div>
-                <p>Lecture actuelle ?</p>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="active" id="yes" value="1">
-                    <label class="form-check-label" for="yes">
-                        Oui
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="active" id="no" value="0" checked>
-                    <label class="form-check-label" for="no">
-                        Non
-                    </label>
-                </div>
-    
-                <div class="form-group">
-                    <label>Note actuelle</label>
-                    <input type="number" class="form-control" id="rate" name="rate" value="<?= $data["rate"];?>" min="1" max="5" >
-                </div>
+                <label for="genre">Genre</label>
+                <select class="form-control" id="genre" name="genre">
+                    <option>actuellement : <?= $data["genre"];?></option>
+                    <option>Developpement personnel</option>
+                    <option>Biographie</option>
+                    <option>Auto biographie</option>
+                    <option>Fantastique</option>
+                    <option>Science-fiction</option>
+                    <option>Traité</option>
+                    <option>Essais</option>
+                    <option>Policier</option>
+                    <option>Thriller</option>
+                    <option>Classique</option>
+                    <option>Roman</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="publication">format : </label>
+                <select class="form-control" id="publication" name="publication">
+                    <option>actuellement : <?= $data["publication"];?></option>
+                    <option>papier</option>
+                    <option>kindle</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="page_count">Nombre de pages : </label>
+                <input type="number" class="form-control" id="page_count" name="page_count" value="<?= $data["page_count"];?>">
+            </div>
+
+            <div class="form-group">
+                <label for="count_volume">Nombre de tomes :</label>
+                <input type="text" class="form-control" id="count_volume" name="count_volume" value="<?= $data["count_volume"];?>">
+                <small id="count_volumeHelp" class="form-text text-muted">Si aucun autre tome mettre 0</small>
+            </div>
+
+            
+            <p>Lecture actuelle ?</p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="active" id="yes" value="1">
+                <label class="form-check-label" for="yes">
+                    Oui
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="active" id="no" value="0" checked>
+                <label class="form-check-label" for="no">
+                    Non
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label for="rate">Une note </label>
+                <select class="form-control" id="rate" name="rate">
+                    <option>actuellement : <?= $data["rate"];?></option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
     
                 <div class="form-group">
                     <label for="comment">Revoir ton commentaire ? (on change tous d'avis :) )</label>
                     <textarea class="form-control" id="comment" name="comment" rows="3"><?= $data["comment"]; ?></textarea>
                 </div>
+
                 <div class="form-group">
                     <label for="cover">Une image de couverture (ça marque bien les images ):</label>
                     <input type="text" class="form-control" id="cover" name="cover" placeholder="rentrez l'adresse du lien de l'image" value="<?= $data["cover"];?>" >
                 </div>
+
                 <div class="row justify-content-center">
                     <input class="btn btn-success" type="submit" value="valider">
                 </div>
