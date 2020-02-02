@@ -15,7 +15,7 @@ foreach($oneInfos as $data){ // Let's go through the board
         <form method="post" action="index.php?action=updateNovelConfirm&amp;id=<?= $data["id"];?>">
             <div class="form-group">
                 <label for="title">Titre de l'ouvrage </label>
-                <input type="text" class="form-control" id="title" name="title" required value="<?= $data["title"];?>">
+                <input type="text" class="form-control" id="title" name="title" required value="<?= $data["title"];?>" autofocus>
             </div>
             <div class="form-group">
                 <label for="author">Auteur de l'ouvrage</label>
@@ -129,7 +129,7 @@ else{
             
                 <div class="form-group">
                     <label for="title">Titre de l'ouvrage </label>
-                    <input type="text" class="form-control" id="title" name="title" required value="<?= $data["title"];?>">
+                    <input type="text" class="form-control" id="title" name="title" required value="<?= $data["title"];?>" autofocus>
                 </div>
                 <div class="form-group">
                     <label for="author">Auteur de l'ouvrage</label>

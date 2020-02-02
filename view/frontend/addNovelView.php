@@ -15,7 +15,7 @@ if(isset($_SESSION["user"])){
         <form method="post" action="index.php?action=addNovelConfirm">
             <div class="form-group">
                 <label for="title">Titre de l'ouvrage</label>
-                <input type="text" class="form-control" id="title" name="title" required>
+                <input type="text" class="form-control" id="title" name="title" required autofocus>
             </div>
             <div class="form-group">
                 <label for="author">Auteur de l'ouvrage</label>
