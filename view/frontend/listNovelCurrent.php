@@ -32,5 +32,8 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                         </a>
                     </div>
                     <?php
+$listNovelCurrent->closeCursor();
         }
+
+require("templateNovel.php");
         ?>
