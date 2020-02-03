@@ -37,7 +37,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php?action=novelCurrent">Livre en cours </a>
+                    <a class="nav-link" href="index.php?action=listNovelCurrent">Livre en cours </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?action=allNovels">Tous les livres</a>

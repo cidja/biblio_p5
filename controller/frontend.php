@@ -54,12 +54,19 @@ require_once("model/SessionManager.php");
                 require("view/frontend/novelReadView.php");
             }
             */
-
-            public static function novelCurrent()
+            public static function listNovelCurrent()
             {
                 $novelManager = new Model_NovelManager();
+                $listNovelCurrent = $novelManager->novelCurrent();
+                require("view/frontend/listNovelCurrent.php");
+            }
+
+            public static function novelCurrent($id)
+            {
+
+                $novelManager = new Model_NovelManager();
                 $novelCurrent = $novelManager->novelCurrent();
-                $lastUpdate = $novelManager->lastUpdate();
+                $lastUpdate = $novelManager->lastUpdate($id);
                 require("view/frontend/novelCurrentView.php");
             }
 
@@ -124,7 +131,7 @@ require_once("model/SessionManager.php");
                 $pageNovelManager = new Model_PageNovelManager();
                 $req = $pageNovelManager->newPageCount($id,$newPageCount);
                 
-                header("location: index.php?action=novelCurrent");
+                header("location: index.php?action=listNovelCurrent");
             }
 
             public static function readingNovelTime($novel_id)

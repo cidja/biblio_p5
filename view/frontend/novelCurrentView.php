@@ -57,7 +57,7 @@ if(isset($_SESSION["user"])){
                                     $datetime1 = new DateTime('now');
                                     $datetime2 = new DateTime($dateBdd);
                                     $interval = $datetime2->diff($datetime1);
-                                    $result =  $interval->format('%a jour');
+                                    $result =  $interval->format('%a jour, %h heures et %i minutes');
                                     ?>
                                     <div class="fieldDescription">Votre dernière session de lecture remonte a</div>
                                     <div class="dataDescription"><?= $result; ?></div> 

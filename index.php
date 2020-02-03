@@ -36,11 +36,22 @@ try{
                 }
             }
 
-            elseif($_GET["action"] == "novelCurrent"){
-                ToolsFrontend::novelCurrent();
-                
-                
+            elseif($_GET["action"] == "listNovelCurrent"){
+                ToolsFrontend::listNovelCurrent();
             }
+
+            elseif($_GET["action"] == "novelCurrent"){
+                $id = htmlspecialchars($_GET["id"]);
+                ToolsFrontend::novelCurrent($id);
+            }
+
+            // novelPagesCount
+            elseif($_GET["action"] == "newPageCount"){
+                $id             = htmlspecialchars($_POST["id"]);
+                $newPageCount   = htmlspecialchars($_POST["newPageCount"]);
+                ToolsFrontend::newPageCount($id, $newPageCount);   
+            }
+
             elseif($_GET["action"] == "statistics"){
                 ToolsFrontend::statistics();
             }
@@ -72,14 +83,7 @@ try{
                 }
             }
     
-            // novelPagesCount
-            elseif($_GET["action"] == "newPageCount"){
-                $id             = htmlspecialchars($_POST["id"]);
-                $newPageCount   = htmlspecialchars($_POST["newPageCount"]);
-                ToolsFrontend::newPageCount($id, $newPageCount);
-                
-                
-            }
+            
     
             
             elseif($_GET["action"] == "updateNovel"){

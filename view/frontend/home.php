@@ -20,7 +20,7 @@
         <h1 class="mb-5 titleUniverse">Choisis ton univers</h1>
         <div class="imgContainer container d-flex flex-wrap">
             <div class="imgNovel col-12 col-md-6">
-                <a href="/p5/index.php?action=novelCurrent"> <!--Check for passage inline !-->
+                <a href="/p5/index.php?action=listNovelCurrent"> <!--Check for passage inline !-->
                     <img src="/p5/public/img/livrecadre.png" class="img-fluid">
                 </a>
             </div>

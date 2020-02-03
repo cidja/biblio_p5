@@ -35,6 +35,7 @@ class Model_NovelManager extends Model_ManagerDb
             return $novelsread;
         }*/
 
+        
         public function novelCurrent() // method that displays the current novel
         {
             $db = $this->dbConnect();
@@ -48,10 +49,13 @@ class Model_NovelManager extends Model_ManagerDb
             
         }
 
-        public function lastUpdate()
+        public function lastUpdate($id)
         {
             $db = $this->dbConnect();
-            $lastUpdate = $db->query('SELECT new_page_count,update_date FROM novel_page_count ORDER BY update_date DESC LIMIT 1');
+            $lastUpdate = $db->prepare('SELECT novel.id, novel_page_count.novel_id, novel_page_count.new_page_count,
+            novel_page_count.update_date FROM novel_page_count INNER JOIN novel on novel_page_count.novel_id = novel.id 
+           WHERE novel_page_count.novel_id = ? ORDER BY update_date DESC LIMIT 0,1');
+           $lastUpdate->execute(array($id));
             return $lastUpdate;
         }
 
