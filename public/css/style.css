@@ -79,3 +79,9 @@
 .dataDescription{
     margin-left: 10px;
 }
+
+
+/*UpdatePassword part */
+.error{
+    display: none;
+}
