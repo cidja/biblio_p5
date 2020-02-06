@@ -38,18 +38,7 @@ if(isset($_SESSION["user"])){
                         <div class="dataDescription"><?= $data["volume_number"]; ?></div>
                     </div>
                 </div>
-                <div class="scriptwriter">
-                    <div class="d-flex">
-                        <div class="fieldDescription">scénario :</div>
-                        <div class="dataDescription"><?= $data["scriptwriter"]; ?></div>
-                    </div>
-                </div>
-                <div class="designer">
-                    <div class="d-flex">
-                        <div class="fieldDescription">Dessin :</div>
-                        <div class="dataDescription"><?= $data["designer"]; ?></div>
-                    </div>
-                </div>
+                
                 <div class="genre">
                     <div class="d-flex">
                         <div class="fieldDescription">Genre : </div>
@@ -144,18 +133,7 @@ else{
                         <div class="dataDescription"><?= $data["volume_number"]; ?></div>
                     </div>
                 </div>
-                <div class="scriptwriter">
-                    <div class="d-flex">
-                        <div class="fieldDescription">scénario :</div>
-                        <div class="dataDescription"><?= $data["scriptwriter"]; ?></div>
-                    </div>
-                </div>
-                <div class="designer">
-                    <div class="d-flex">
-                        <div class="fieldDescription">Dessin :</div>
-                        <div class="dataDescription"><?= $data["designer"]; ?></div>
-                    </div>
-                </div>
+                
                 <div class="genre">
                     <div class="d-flex">
                         <div class="fieldDescription">Genre : </div>
