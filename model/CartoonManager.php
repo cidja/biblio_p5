@@ -10,16 +10,14 @@ class Model_CartoonManager extends Model_ManagerDb
     public function allCartoonInfos() // method for retrieving all the information from all the cartoons
     {
         $db =$this->dbConnect();
-        $infos = $db->query('SELECT id, title, serie, scriptwriter, designer, isbn, genre, page_count, count_volume
-        ,active,finish,comment,rate,cover,DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM cartoon');
+        $infos = $db->query('SELECT id, title, serie, isbn, genre, page_count,finish,comment,rate,cover,DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM cartoon');
         return $infos;
     }
 
     public function oneCartoonInfos($id) // method for retrieving all the information from one cartoon with $_GET["id"]
         {
             $db = $this->dbConnect();
-            $oneCartoonInfos = $db->prepare('SELECT id, title, serie, scriptwriter, designer, isbn, genre, page_count, count_volume, volume_number, active, 
-            finish,comment,rate,cover,DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM cartoon WHERE id=?');
+            $oneCartoonInfos = $db->prepare('SELECT id, title, serie, isbn, genre, page_count, volume_number,finish,comment,rate,cover,DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM cartoon WHERE id=?');
             $oneCartoonInfos->execute(array($id));
             return $oneCartoonInfos;
         }

@@ -26,42 +26,36 @@ if(isset($_SESSION["user"])){
                         <div class="dataDescription"><?= $data["title"]; ?></div>
                     </div>
                 </div>
+
                 <div class="serie">
                     <div class="d-flex">
                         <div class="fieldDescription">Série :</div>
                         <div class="dataDescription"><?= $data["serie"]; ?></div>
                     </div>
                 </div>
+
                 <div class="volume_number">
                     <div class="d-flex">
                         <div class="fieldDescription">volume :</div>
                         <div class="dataDescription"><?= $data["volume_number"]; ?></div>
                     </div>
                 </div>
-                <div class="scriptwriter">
-                    <div class="d-flex">
-                        <div class="fieldDescription">scénario :</div>
-                        <div class="dataDescription"><?= $data["scriptwriter"]; ?></div>
-                    </div>
-                </div>
-                <div class="designer">
-                    <div class="d-flex">
-                        <div class="fieldDescription">Dessin :</div>
-                        <div class="dataDescription"><?= $data["designer"]; ?></div>
-                    </div>
-                </div>
+
+                
                 <div class="genre">
                     <div class="d-flex">
                         <div class="fieldDescription">Genre : </div>
                         <div class="dataDescription"><?= $data["genre"]; ?></div>
                     </div>
                 </div>
+
                 <div class="pagesCount">
                     <div class="d-flex">
                         <div class="fieldDescription">Nombre de pages :</div>
                         <div class="dataDescription"><?= $data["page_count"]; ?></div>
                     </div>
                 </div>
+
                 <div class="isbn">
                     <div class="d-flex">
                         <div class="fieldDescription">ISBN :</div>
@@ -83,18 +77,21 @@ if(isset($_SESSION["user"])){
                         <div class="dataDescription"><?= $data["rate"]; ?></div>
                     </div>
                 </div>
+
                 <div class="comment">
                     <div class="d-flex">
                         <div class="fieldDescription">Commentaires :</div>
                         <div class="dataDescription"><?=$data["comment"]; ?></div>
                     </div>
                 </div>
+
                 <div class="creation_date">
                     <div class="d-flex">
                         <div class="fieldDescription">Date d'ajout :</div>
                         <div class="dataDescription"><?= $data["creation_date_fr"]; ?></div>
                     </div>
                 </div>
+                
                 <div class="d-flex">
                     <button class="btn btn-info">
                         <a class="bodyLink" href="index.php?action=updateCartoon&amp;id=<?= $data["id"];?>">Modifier la fiche</a>
@@ -132,42 +129,35 @@ else{
                         <div class="dataDescription"><?= $data["title"]; ?></div>
                     </div>
                 </div>
+
                 <div class="serie">
                     <div class="d-flex">
                         <div class="fieldDescription">Série :</div>
                         <div class="dataDescription"><?= $data["serie"]; ?></div>
                     </div>
                 </div>
+
                 <div class="volume_number">
                     <div class="d-flex">
                         <div class="fieldDescription">volume :</div>
                         <div class="dataDescription"><?= $data["volume_number"]; ?></div>
                     </div>
                 </div>
-                <div class="scriptwriter">
-                    <div class="d-flex">
-                        <div class="fieldDescription">scénario :</div>
-                        <div class="dataDescription"><?= $data["scriptwriter"]; ?></div>
-                    </div>
-                </div>
-                <div class="designer">
-                    <div class="d-flex">
-                        <div class="fieldDescription">Dessin :</div>
-                        <div class="dataDescription"><?= $data["designer"]; ?></div>
-                    </div>
-                </div>
+                
                 <div class="genre">
                     <div class="d-flex">
                         <div class="fieldDescription">Genre : </div>
                         <div class="dataDescription"><?= $data["genre"]; ?></div>
                     </div>
                 </div>
+
                 <div class="pagesCount">
                     <div class="d-flex">
                         <div class="fieldDescription">Nombre de pages :</div>
                         <div class="dataDescription"><?= $data["page_count"]; ?></div>
                     </div>
                 </div>
+
                 <div class="isbn">
                     <div class="d-flex">
                         <div class="fieldDescription">ISBN :</div>
@@ -189,18 +179,21 @@ else{
                         <div class="dataDescription"><?= $data["rate"]; ?></div>
                     </div>
                 </div>
+
                 <div class="comment">
                     <div class="d-flex">
                         <div class="fieldDescription">Commentaires :</div>
                         <div class="dataDescription"><?=$data["comment"]; ?></div>
                     </div>
                 </div>
+
                 <div class="creation_date">
                     <div class="d-flex">
                         <div class="fieldDescription">Date d'ajout :</div>
                         <div class="dataDescription"><?= $data["creation_date_fr"]; ?></div>
                     </div>
                 </div>
+
                 <div class="d-flex">
                     <button class="btn btn-info">
                         <a class="bodyLink" href="index.php?action=updateCartoon&amp;id=<?= $data["id"];?>">Modifier la fiche</a>
