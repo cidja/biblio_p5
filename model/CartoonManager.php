@@ -18,7 +18,8 @@ class Model_CartoonManager extends Model_ManagerDb
     public function oneCartoonInfos($id) // method for retrieving all the information from one cartoon with $_GET["id"]
         {
             $db = $this->dbConnect();
-            $oneCartoonInfos = $db->prepare('SELECT id, title, serie, isbn, genre, page_count, volume_number, finish,comment,rate,cover,DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM cartoon WHERE id=?');
+            $oneCartoonInfos = $db->prepare('SELECT id, title, serie, isbn, genre, page_count, volume_number, finish, comment, rate, 
+            cover,DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM cartoon WHERE id=?');
             $oneCartoonInfos->execute(array($id));
             return $oneCartoonInfos;
         }
@@ -106,25 +107,20 @@ class Model_CartoonManager extends Model_ManagerDb
             $updatePageCount->execute(array($lastId));
         }
 
-        public function updateCartoon($id, $title, $serie, $scriptwriter, $designer, $isbn, $genre, $page_count, $count_volume, $volume_number, $active, $finish, $comment,
+        public function updateCartoon($id, $title, $serie, $isbn, $genre, $page_count, $volume_number, $finish, $comment,
         $rate, $cover)
         {
             $db = $this->dbConnect();
-            $updateCartoon = $db->prepare("UPDATE cartoon SET title=:title, serie=:serie, scriptwriter=:scriptwriter, designer=:designer,
-                                         isbn=:isbn, genre=:genre, page_count=:page_count, count_volume=:count_volume, volume_number=:volume_number,
-                                         active=:active, finish=:finish, comment=:comment, rate=:rate, cover=:cover WHERE id=:id");
+            $updateCartoon = $db->prepare("UPDATE cartoon SET title=:title, serie=:serie, isbn=:isbn, genre=:genre, page_count=:page_count,
+                                         volume_number=:volume_number, finish=:finish, comment=:comment, rate=:rate, cover=:cover WHERE id=:id");
             $updateCartoon->execute(array(
                 "id"                => $id,
                 "title"             => $title,
                 "serie"             => $serie,
-                "scriptwriter"      => $scriptwriter,
-                "designer"          => $designer,
                 "isbn"              => $isbn,
                 "genre"             => $genre,
                 "page_count"        => $page_count, 
-                "count_volume"      => $count_volume,
                 "volume_number"     => $volume_number,
-                "active"            => $active,
                 "finish"            => $finish,
                 "comment"           => $comment,
                 "rate"              => $rate,
