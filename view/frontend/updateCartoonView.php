@@ -55,8 +55,17 @@ if(isset($_SESSION["user"])){
                     <input type="number" class="form-control" id="volume_number" name="volume_number" value="<?= $data["volume_number"];?>">
                 </div>
 
+                <div class="form-group">
+                    <label for="begin_date">Date début lecture</label>
+                    <input type="date" class="form-control" id="begin_date" name="begin_date">
+                </div>
+
+                <div class="form-group">
+                    <label for="end_date">Date de fin de lecture</label>
+                    <input type="date" class="form-control" id="end_date" name="end_date">
+                </div>
+
                     <input type="hidden" name="finish" value="1">
-                    <input type="hidden" name="active" value="0">                   
 
                     <div class="form-group">
                 <label for="rate">Note actuelle </label>
@@ -141,6 +150,16 @@ else{
 
                 <input type="hidden" name="finish" value="1">
                 <input type="hidden" name="active" value="0"> 
+
+                <div class="form-group">
+                    <label for="begin_date">Date début lecture</label>
+                    <input type="date" class="form-control" id="begin_date" name="begin_date">
+                </div>
+
+                <div class="form-group">
+                    <label for="end_date">Date de fin de lecture</label>
+                    <input type="date" class="form-control" id="end_date" name="end_date">
+                </div>
 
                 <div class="form-group">
                     <label for="rate">Note actuelle </label>

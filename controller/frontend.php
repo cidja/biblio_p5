@@ -211,11 +211,11 @@ require_once("model/SessionManager.php");
             }
 
             public static function updateCartoonConfirm($id, $title, $serie, $isbn, $genre, $page_count, $volume_number, $finish, $comment,
-            $rate, $cover)
+            $rate, $cover, $begin_date, $end_date)
             {
                 $cartoonManager= new Model_CartoonManager();
                 $updateCartoonConfirm = $cartoonManager->updateCartoon($id, $title, $serie, $isbn, $genre, $page_count, $volume_number, $finish, $comment,
-                $rate, $cover);
+                $rate, $cover, $begin_date, $end_date);
                 header("location: index.php?action=allCartoons");
             }
 

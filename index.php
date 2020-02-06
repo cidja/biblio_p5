@@ -190,8 +190,10 @@ try{
                 $comment            = htmlspecialchars($_POST["comment"]);
                 $rate               = htmlspecialchars($_POST["rate"]);
                 $cover              = htmlspecialchars($_POST["cover"]);
+                $begin_date         = htmlspecialchars($_POST["begin_date"]);
+                $end_date           = htmlspecialchars($_POST["end_date"]);
                 ToolsFrontend::updateCartoonConfirm($id, $title, $serie, $isbn, $genre, $page_count, $volume_number, $finish, $comment,
-                $rate, $cover);
+                $rate, $cover, $begin_date, $end_date);
             }
     
             //Cartoon pages
