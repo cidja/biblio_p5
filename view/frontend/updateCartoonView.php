@@ -64,8 +64,10 @@ if(isset($_SESSION["user"])){
                     <label for="end_date">Date de fin de lecture</label>
                     <input type="date" class="form-control" id="end_date" name="end_date">
                 </div>
+                
 
                     <input type="hidden" name="finish" value="1">
+                   
 
                     <div class="form-group">
                 <label for="rate">Note actuelle </label>
