@@ -20,6 +20,7 @@ if(isset($_SESSION["user"])){
             </div>
             <section class="infosNovel d-flex flex-column align-items-center">
                 <h3>Infos de la bande dessinée </h3>
+                
                 <div class="title">
                     <div class="d-flex">
                         <div class="fieldDescription">Titre :</div>
