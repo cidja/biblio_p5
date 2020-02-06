@@ -23,16 +23,6 @@ if(isset($_SESSION["user"])){
             </div>
 
             <div class="form-group">
-                <label for="scriptwriter">Scénario</label>
-                <input type="text" class="form-control" id="scriptwriter" name="scriptwriter">
-            </div>
-
-            <div class="form-group">
-                <label for="designer">dessinateur </label>
-                <input type="text" class="form-control" id="designer" name="designer">
-            </div>
-            
-            <div class="form-group">
                 <label for="isbn">ISBN</label>
                 <input type="number" class="form-control" id="isbn" name="isbn" placeholder="exemple : 2253257419">
                 <small id="isbnHelp" class="form-text text-muted">Si ISBN inconnu ne rien mettre</small>
@@ -56,11 +46,6 @@ if(isset($_SESSION["user"])){
             <div class="form-group">
                 <label for="page_count">Nombre de pages </label>
                 <input type="number" class="form-control" id="page_count" name="page_count">
-            </div>
-
-            <div class="form-group">
-                <label for="count_volume">Nombre de tomes </label>
-                <input type="number" class="form-control" id="count_volume" name="count_volume" value="1">
             </div>
 
             <div class="form-group">
@@ -118,16 +103,6 @@ else {
         </div>
 
         <div class="form-group">
-            <label for="scriptwriter">Scénario</label>
-            <input type="text" class="form-control" id="scriptwriter" name="scriptwriter">
-        </div>
-
-        <div class="form-group">
-            <label for="designer">dessinateur </label>
-            <input type="text" class="form-control" id="designer" name="designer">
-        </div>
-            
-        <div class="form-group">
             <label for="isbn">ISBN</label>
             <input type="number" class="form-control" id="isbn" name="isbn" placeholder="exemple : 2253257419">
             <small id="isbnHelp" class="form-text text-muted">Si ISBN inconnu ne rien mettre</small>
@@ -151,11 +126,6 @@ else {
         <div class="form-group">
             <label for="page_count">Nombre de pages </label>
             <input type="number" class="form-control" id="page_count" name="page_count">
-        </div>
-
-        <div class="form-group">
-            <label for="count_volume">Nombre de tomes </label>
-            <input type="number" class="form-control" id="count_volume" name="count_volume" value="1">
         </div>
 
         <div class="form-group">

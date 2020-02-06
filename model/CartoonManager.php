@@ -75,25 +75,21 @@ class Model_CartoonManager extends Model_ManagerDb
             return $avgPagesCartoon;
         }
 
-        public function addCartoonConfirm($title, $serie, $scriptwriter, $designer, $isbn, $genre, $page_count, $count_volume, $volume_number, $finish, $comment,
+        public function addCartoonConfirm($title, $serie, $isbn, $genre, $page_count, $volume_number, $finish, $comment,
         $rate, $cover)
         {
             $db = $this->dbConnect();
-            $addNovel = $db->prepare("INSERT INTO cartoon(`title`, `serie`, `scriptwriter`, `designer`, `isbn`, `genre`, `page_count`, `count_volume`, `volume_number`
-                                    , `active`, `finish`, `comment`, `rate`, `cover`, `creation_date`)
-                                    VALUES(:title, :serie, :scriptwriter, :designer, :isbn, :genre, :page_count, :count_volume, :volume_number, :active, :finish, :comment,
+            $addNovel = $db->prepare("INSERT INTO cartoon(`title`, `serie`, `isbn`, `genre`, `page_count`, `volume_number`
+                                    , `finish`, `comment`, `rate`, `cover`, `creation_date`)
+                                    VALUES(:title, :serie, :isbn, :genre, :page_count, :volume_number, :finish, :comment,
                                     :rate, :cover, NOW())");
             $addNovel->execute(array(
                 "title"             => $title,
                 "serie"             => $serie,
-                "scriptwriter"      => $scriptwriter,
-                "designer"          => $designer,
                 "isbn"              => $isbn,
                 "genre"             => $genre,
                 "page_count"        => $page_count, 
-                "count_volume"      => $count_volume,
                 "volume_number"     => $volume_number,
-                "active"            => 0,//to say it's non active by default
                 "finish"            => $finish,
                 "comment"           => $comment,
                 "rate"              => $rate,

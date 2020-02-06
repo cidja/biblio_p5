@@ -185,11 +185,11 @@ require_once("model/SessionManager.php");
             {
                 require("view/frontend/addCartoonView.php");
             }
-            public static function addCartoonsConfirm($title, $serie, $scriptwriter, $designer, $isbn, $genre, $page_count, $count_volume, $volume_number, $finish, $comment,
+            public static function addCartoonsConfirm($title, $serie, $isbn, $genre, $page_count, $volume_number, $finish, $comment,
             $rate, $cover)
             {
                 $cartoonManager = new Model_CartoonManager();
-                $addCartoon = $cartoonManager->addCartoonConfirm($title, $serie, $scriptwriter, $designer, $isbn, $genre, $page_count, $count_volume, $volume_number, $finish, $comment,
+                $addCartoon = $cartoonManager->addCartoonConfirm($title, $serie, $isbn, $genre, $page_count, $volume_number, $finish, $comment,
                 $rate, $cover);
                 header("location:index.php?action=allCartoons");
             }

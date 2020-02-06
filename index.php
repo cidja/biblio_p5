@@ -156,6 +156,28 @@ try{
                 }
             }
     
+            elseif ($_GET["action"] == "cartoonCurrent"){
+                ToolsFrontend::cartoonCurrent();
+            }
+            elseif($_GET["action"] == "addCartoons"){
+                ToolsFrontend::addCartoons();
+            }
+            elseif($_GET["action"] == "addCartoonsConfirm"){
+                $title              = htmlspecialchars($_POST['title']);
+                $serie              = htmlspecialchars($_POST["serie"]);
+                $isbn               = htmlspecialchars($_POST["isbn"]); 
+                $genre              = htmlspecialchars($_POST["genre"]);
+                $page_count         = htmlspecialchars($_POST["page_count"]);
+                $volume_number      = htmlspecialchars($_POST["volume_number"]);
+                $finish             = htmlspecialchars($_POST["finish"]);
+                $comment            = htmlspecialchars($_POST["comment"]);
+                $rate               = htmlspecialchars($_POST["rate"]);
+                $cover              = htmlspecialchars($_POST["cover"]);
+    
+                ToolsFrontend::addCartoonsConfirm($title, $serie, $isbn, $genre, $page_count, $volume_number, $finish, $comment,
+                $rate, $cover);
+            }
+            
             elseif($_GET["action"] == "updateCartoonConfirm"){
                 $id                 = htmlspecialchars($_GET["id"]);
                 $title              = htmlspecialchars($_POST['title']);
@@ -169,31 +191,6 @@ try{
                 $rate               = htmlspecialchars($_POST["rate"]);
                 $cover              = htmlspecialchars($_POST["cover"]);
                 ToolsFrontend::updateCartoonConfirm($id, $title, $serie, $isbn, $genre, $page_count, $volume_number, $finish, $comment,
-                $rate, $cover);
-            }
-    
-            elseif ($_GET["action"] == "cartoonCurrent"){
-                ToolsFrontend::cartoonCurrent();
-            }
-            elseif($_GET["action"] == "addCartoons"){
-                ToolsFrontend::addCartoons();
-            }
-            elseif($_GET["action"] == "addCartoonsConfirm"){
-                $title              = htmlspecialchars($_POST['title']);
-                $serie              = htmlspecialchars($_POST["serie"]);
-                $scriptwriter       = htmlspecialchars($_POST["scriptwriter"]);
-                $designer           = htmlspecialchars($_POST["designer"]);
-                $isbn               = htmlspecialchars($_POST["isbn"]); 
-                $genre              = htmlspecialchars($_POST["genre"]);
-                $page_count         = htmlspecialchars($_POST["page_count"]);
-                $count_volume       = htmlspecialchars($_POST["count_volume"]);
-                $volume_number      = htmlspecialchars($_POST["volume_number"]);
-                $finish             = htmlspecialchars($_POST["finish"]);
-                $comment            = htmlspecialchars($_POST["comment"]);
-                $rate               = htmlspecialchars($_POST["rate"]);
-                $cover              = htmlspecialchars($_POST["cover"]);
-    
-                ToolsFrontend::addCartoonsConfirm($title, $serie, $scriptwriter, $designer, $isbn, $genre, $page_count, $count_volume, $volume_number, $finish, $comment,
                 $rate, $cover);
             }
     
