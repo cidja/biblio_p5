@@ -6,15 +6,13 @@ include("public/inc/tools.php");
 $title = "validation de suppression";
 
 ob_start(); // Start of capture to put it in the variable at the end of the script 
-
-    echo $backLink;
 ?>
 <div class="container">
     <div class="col">
         <form method="post" action="index.php?action=deleteCartoon&amp;id=<?=$id;?>">
             <div class="form-group">
                 <label for="pwdDelete">Mot de passe pour confirmer la suppression du tome <?= $cartoon; ?></label>
-                <input type="password" class="form-control" id="pwdDelete" name="pwdDelete" required>
+                <input type="password" class="form-control" id="pwdDelete" name="pwdDelete" required autofocus>
                 
             </div>
             <div class="form-group">
