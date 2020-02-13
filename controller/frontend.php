@@ -9,6 +9,14 @@ require_once("model/PageCartoonManager.php");
 require_once("model/UserManager.php");
 require_once("model/SessionManager.php");
 
+use cidja\novelManager\Model_NovelManager;
+use cidja\pageNovelManager\Model_PageNovelManager;
+use cidja\userManager\Model_UserManager;
+use cidja\cartoonManager\Model_CartoonManager;
+use cidja\pageCartoonManager\Model_PageCartoonManager;
+
+
+
 
     trait ToolsFrontend{
             public static function connexionScreen()

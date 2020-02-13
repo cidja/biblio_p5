@@ -1,5 +1,10 @@
 <?php
 
+namespace cidja\managerDb;
+
+use \PDO;
+use \FFI\Exception;
+
 class Model_ManagerDb 
 {
     protected function dbConnect()

@@ -2,8 +2,14 @@
 //Tous les commentaires sont en anglais pour la compréhension pour le plus grand nombre
 //All comments are in English for the understanding of as many people as possible.
 //to support : mail: christian@linternaute-averti.fr
+namespace cidja\cartoonManager; //source: https://youtu.be/WHtbi8S0rkI?t=163
+
+use \cidja\managerDb\Model_ManagerDb;
+
 
 require_once("model/ManagerDb.php"); //calling the file for the connection to the database
+
+
 
 class Model_CartoonManager extends Model_ManagerDb
 {

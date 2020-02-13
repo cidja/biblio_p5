@@ -9,6 +9,9 @@ require_once("model/PageCartoonManager.php");
 require_once("model/UserManager.php");
 require_once("model/SessionManager.php");
 
+use cidja\userManager\Model_UserManager;
+
+
     trait ToolsBackend{
         public static function formNewPassword()
         {
