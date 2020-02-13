@@ -74,13 +74,13 @@ if(isset($_SESSION["user"])){
                     </div>
                     <?php
                 }
-                ?>
+                ?><div class="result"></div>
                     <form method="post" action="index.php?action=newPageCount">
                         <div class="form-group d-flex flex-column">
                             <input type="number" class="form-control" max ="<?= $data["page_count"]; //max value number of page of the $data ("page_count") ?>" 
                             placeholder="Nouveau numéro de pages " id="newPageCount" name="newPageCount" required>
                             <input type="hidden" value="<?= $data["id"];?>" id="id" name="id"> <!--to retrieve the id for the query!-->
-                            <button type="submit" class="btn btn-success mt-2">Valider</button>
+                            <button id="submitForm" type="submit" class="btn btn-success mt-2">Valider</button>
                         </div>
                     </form>
                 </div>
@@ -180,7 +180,7 @@ if(isset($_SESSION["user"])){
                         <div class="form-group d-flex flex-column">
                             <input type="number" class="form-control" max ="<?= $data["page_count"]; //max value number of page of the $data ("page_count") ?>" 
                             placeholder="Nouveau numéro de pages " id="newPageCount" name="newPageCount" required>
-                            <button type="submit" class="btn btn-success mt-2">Valider</button>
+                            <button  type="submit" class="btn btn-success mt-2">Valider</button>
                         </div>
                     </div>
                 <?php
@@ -213,7 +213,7 @@ if(isset($_SESSION["user"])){
 
 $content = ob_get_clean();
 ?>
-<script scr="public/js/app.js"></script>
+<script src="/p5/public/js/app.js"></script>
 <?php
 require("templateNovel.php");
 /*This code does 3 things:
