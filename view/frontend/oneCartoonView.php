@@ -5,7 +5,9 @@
 include("public/inc/tools.php");
 
 ob_start(); // Start of capture to put it in the variable at the end of the script 
-if(isset($_SESSION["user"])){
+
+testnotUserIssetVisitTitle();
+
     foreach($oneCartoonInfos as $data){ // Let's go through the board
         $title = $data["title"]; 
         if(!empty($data["cover"])){
@@ -101,6 +103,7 @@ if(isset($_SESSION["user"])){
                     </div>
                 </div>
                 <div class="d-flex">
+                <?php if(isset($_SESSION["user"])){ ?>
                     <button class="btn btn-info">
                         <a class="bodyLink" href="index.php?action=updateCartoon&amp;id=<?= $data["id"];?>">Modifier la fiche</a>
                     </button>
@@ -109,103 +112,13 @@ if(isset($_SESSION["user"])){
                         <input type="hidden" value="<?= $data["title"]; ?>" name="cartoon">
                         <button type="submit" class="btn btn-danger ml-4">Supprimer la BD</button>
                     </form>
+                    <?php };?>
                 </div>
             </section>
         </div>
     <?php
     } // foreach end
-} // if end
 
-else{
-    foreach($oneCartoonInfos as $data){ // Let's go through the board
-        $title = $data["title"]; 
-        if(!empty($data["cover"])){
-            $cover = $data["cover"];
-        } else {
-            $cover = "public/img/noCover.png";
-        }
-        ?>
-        <div class="container oneInfos d-flex justify-content-center flex-column">
-            <div class="cover text-center">
-                <img class="imgCover +" src="<?= $cover;?>" alt="image de couverture de la bande dessinée" title="image de couverture de <?= $data["title"]; ?>">
-            </div>
-            <section class="infosNovel d-flex flex-column align-items-center">
-                <h3>Infos de la bande dessinée </h3>
-                <div class="title">
-                    <div class="d-flex">
-                        <div class="fieldDescription">Titre :</div>
-                        <div class="dataDescription"><?= $data["title"]; ?></div>
-                    </div>
-                </div>
-                <div class="serie">
-                    <div class="d-flex">
-                        <div class="fieldDescription">Série :</div>
-                        <div class="dataDescription"><?= $data["serie"]; ?></div>
-                    </div>
-                </div>
-                <div class="volume_number">
-                    <div class="d-flex">
-                        <div class="fieldDescription">volume :</div>
-                        <div class="dataDescription"><?= $data["volume_number"]; ?></div>
-                    </div>
-                </div>
-                
-                <div class="genre">
-                    <div class="d-flex">
-                        <div class="fieldDescription">Genre : </div>
-                        <div class="dataDescription"><?= $data["genre"]; ?></div>
-                    </div>
-                </div>
-                <div class="pagesCount">
-                    <div class="d-flex">
-                        <div class="fieldDescription">Nombre de pages :</div>
-                        <div class="dataDescription"><?= $data["page_count"]; ?></div>
-                    </div>
-                </div>
-                <div class="isbn">
-                    <div class="d-flex">
-                        <div class="fieldDescription">ISBN :</div>
-                        <div class="dataDescription">
-                            <?php
-                            if ($data["isbn"] == 0){
-                                echo "non renseigné";
-                            } else{
-                                echo $data["isbn"];
-                            } 
-                            ?>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="rate">
-                    <div class="d-flex">
-                        <div class="fieldDescription">Note :</div>
-                        <div class="dataDescription"><?= $data["rate"]; ?></div>
-                    </div>
-                </div>
-                <div class="comment">
-                    <div class="d-flex">
-                        <div class="fieldDescription">Commentaires :</div>
-                        <div class="dataDescription"><?=$data["comment"]; ?></div>
-                    </div>
-                </div>
-                <div class="creation_date">
-                    <div class="d-flex">
-                        <div class="fieldDescription">Date d'ajout :</div>
-                        <div class="dataDescription"><?= $data["creation_date_fr"]; ?></div>
-                    </div>
-                </div>
-                <div class="d-flex">
-                    <button class="btn btn-info">
-                        <a class="bodyLink" href="index.php?action=updateCartoon&amp;id=<?= $data["id"];?>">Modifier la fiche</a>
-                    </button>
-                        <button type="submit" class="btn btn-danger ml-4" title="connectez vous pour supprimer la BD">Supprimer la BD</button>
-                </div>
-            </section>
-        </div>
-    <?php
-    } // foreach end
-} //else end
 
 
 $content = ob_get_clean();
