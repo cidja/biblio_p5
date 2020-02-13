@@ -35,5 +35,8 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
 $listNovelCurrent->closeCursor();
         }
 
+$content = ob_get_clean();
 require("templateNovel.php");
+
         ?>
+        

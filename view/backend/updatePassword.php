@@ -5,6 +5,7 @@
     ob_start(); 
 if(isset($_SESSION["user"])){
     ?>
+    
     <div class="blocPage">
         <section id="sectionUpdatePassword">
             <div class="container">

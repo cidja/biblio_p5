@@ -212,6 +212,9 @@ if(isset($_SESSION["user"])){
     } // else end
 
 $content = ob_get_clean();
+?>
+<script scr="public/js/app.js"></script>
+<?php
 require("templateNovel.php");
 /*This code does 3 things:
 

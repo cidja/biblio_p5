@@ -12,5 +12,9 @@ $(document).ready(function(){ //Source: http://www.rbastien.com/blog/2015/02/aff
             $(this).text('afficher');
         }
     });
-
+    /*let back = document.getElementById('back');
+    back.addEventListener('click', function () {
+        history.back();
+    });*/
 });
+
