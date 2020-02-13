@@ -18,7 +18,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
             $cover = "public/img/noCover.png";
         }
         ?>
-                <div class="coverAndStatus col-12 col-md-6 col-lg-4">
+                <div class="coverAndStatus col-12 col-md-3 col-lg-3">
                     <a href="index.php?action=oneNovel&amp;id=<?= $data["id"];?>">
                         <img class="imgCover +"src=<?=$cover; ?> alt="couverture du livre" title="couverture du livre" />
                     </a>
