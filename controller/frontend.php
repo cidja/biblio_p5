@@ -53,6 +53,13 @@ use cidja\pageCartoonManager\Model_PageCartoonManager;
                 $oneInfos = $novelManager->oneNovelInfos($id); // $oneInfo which is called in oneNovelView.php
                 require("view/frontend/oneNovelView.php");
             }
+
+            public static function oneNovelInfosAjax($id)
+            {
+                $novelManager = new Model_NovelManager();
+                $oneInfos = $novelManager->oneNovelInfosAjax($id);
+                
+            }
             
             /* NOT USE
             public static function novelRead()

@@ -35,6 +35,15 @@ try{
                     throw new Exception("Aucun identifiant de billet envoyé !");
                 }
             }
+            elseif($_GET["action"] == "oneNovelAjax"){ // if in the url $_GET["action"]= oneNovel
+                if(isset($_GET["id"]) && $_GET["id"] > 0) { // check if $_get["id"] defined and greater than 0
+                    $id = htmlspecialchars($_GET["id"]); // to avoid inclusion xss
+                    ToolsFrontend::oneNovelInfosAjax($id); // calling the tool oneNovelInfos
+                }
+                else {
+                    throw new Exception("Aucun identifiant de billet envoyé !");
+                }
+            }
 
             elseif($_GET["action"] == "listNovelCurrent"){
                 ToolsFrontend::listNovelCurrent();
