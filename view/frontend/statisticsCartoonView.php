@@ -59,4 +59,5 @@ require("templateCartoon.php");
 
     Finally, it calls the template with a require. This one will retrieve the variables $title and $content that we just created... to display the page!
     */
+?>
 

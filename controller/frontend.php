@@ -9,6 +9,14 @@ require_once("model/PageCartoonManager.php");
 require_once("model/UserManager.php");
 require_once("model/SessionManager.php");
 
+use cidja\novelManager\Model_NovelManager;
+use cidja\pageNovelManager\Model_PageNovelManager;
+use cidja\userManager\Model_UserManager;
+use cidja\cartoonManager\Model_CartoonManager;
+use cidja\pageCartoonManager\Model_PageCartoonManager;
+
+
+
 
     trait ToolsFrontend{
             public static function connexionScreen()
@@ -44,6 +52,13 @@ require_once("model/SessionManager.php");
                 $novelManager = new Model_NovelManager();
                 $oneInfos = $novelManager->oneNovelInfos($id); // $oneInfo which is called in oneNovelView.php
                 require("view/frontend/oneNovelView.php");
+            }
+
+            public static function oneNovelInfosAjax($id)
+            {
+                $novelManager = new Model_NovelManager();
+                $oneInfos = $novelManager->oneNovelInfosAjax($id);
+                
             }
             
             /* NOT USE
@@ -185,11 +200,11 @@ require_once("model/SessionManager.php");
             {
                 require("view/frontend/addCartoonView.php");
             }
-            public static function addCartoonsConfirm($title, $serie, $scriptwriter, $designer, $isbn, $genre, $page_count, $count_volume, $volume_number, $finish, $comment,
+            public static function addCartoonsConfirm($title, $serie, $isbn, $genre, $page_count, $volume_number, $finish, $comment,
             $rate, $cover)
             {
                 $cartoonManager = new Model_CartoonManager();
-                $addCartoon = $cartoonManager->addCartoonConfirm($title, $serie, $scriptwriter, $designer, $isbn, $genre, $page_count, $count_volume, $volume_number, $finish, $comment,
+                $addCartoon = $cartoonManager->addCartoonConfirm($title, $serie, $isbn, $genre, $page_count, $volume_number, $finish, $comment,
                 $rate, $cover);
                 header("location:index.php?action=allCartoons");
             }
@@ -210,12 +225,12 @@ require_once("model/SessionManager.php");
                 require("view/frontend/updateCartoonView.php");
             }
 
-            public static function updateCartoonConfirm($id, $title, $serie, $scriptwriter, $designer, $isbn, $genre, $page_count, $count_volume, $volume_number, $active, $finish, $comment,
-            $rate, $cover)
+            public static function updateCartoonConfirm($id, $title, $serie, $isbn, $genre, $page_count, $volume_number, $finish, $comment,
+            $rate, $cover, $begin_date, $end_date)
             {
                 $cartoonManager= new Model_CartoonManager();
-                $updateCartoonConfirm = $cartoonManager->updateCartoon($id, $title, $serie, $scriptwriter, $designer, $isbn, $genre, $page_count, $count_volume, $volume_number, $active, $finish, $comment,
-                $rate, $cover);
+                $updateCartoonConfirm = $cartoonManager->updateCartoon($id, $title, $serie, $isbn, $genre, $page_count, $volume_number, $finish, $comment,
+                $rate, $cover, $begin_date, $end_date);
                 header("location: index.php?action=allCartoons");
             }
 

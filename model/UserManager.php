@@ -1,6 +1,9 @@
 <?php
 //tous les appels ce font directement dans le index.php
 //source: https://openclassrooms.com/fr/courses/4670706-adoptez-une-architecture-mvc-en-php/4735671-passage-du-modele-en-objet#/id/r-4735685
+namespace cidja\userManager;
+use cidja\managerDb\Model_ManagerDb;
+
 require_once("model/ManagerDb.php"); // Calling the ManagerDb.php class Source: https://openclassrooms.com/fr/courses/4670706-adoptez-une-architecture-mvc-en-php/4744941-tirer-parti-de-lheritage#/id/r-4745131
 
 class Model_UserManager extends Model_ManagerDb

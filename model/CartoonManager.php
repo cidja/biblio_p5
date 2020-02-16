@@ -2,22 +2,31 @@
 //Tous les commentaires sont en anglais pour la compréhension pour le plus grand nombre
 //All comments are in English for the understanding of as many people as possible.
 //to support : mail: christian@linternaute-averti.fr
+namespace cidja\cartoonManager; //source: https://youtu.be/WHtbi8S0rkI?t=163
+
+use \cidja\managerDb\Model_ManagerDb;
+
 
 require_once("model/ManagerDb.php"); //calling the file for the connection to the database
+
+
 
 class Model_CartoonManager extends Model_ManagerDb
 {
     public function allCartoonInfos() // method for retrieving all the information from all the cartoons
     {
         $db =$this->dbConnect();
-        $infos = $db->query('SELECT id, title, serie, isbn, genre, page_count,finish,comment,rate,cover,DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM cartoon');
+        $infos = $db->query('SELECT id, title, serie, isbn, genre, page_count, finish, comment, rate, 
+        cover, DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM cartoon');
         return $infos;
     }
 
     public function oneCartoonInfos($id) // method for retrieving all the information from one cartoon with $_GET["id"]
         {
             $db = $this->dbConnect();
-            $oneCartoonInfos = $db->prepare('SELECT id, title, serie, isbn, genre, page_count, volume_number,finish,comment,rate,cover,DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM cartoon WHERE id=?');
+            $oneCartoonInfos = $db->prepare('SELECT id, title, serie, isbn, genre, page_count, volume_number, finish, comment, rate, 
+            cover,DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr, DATE_FORMAT(begin_date, "%d/%m%/%Y") as begin_date_fr, 
+            DATE_FORMAT(end_date, "%d/%m%/%Y") as end_date_fr FROM cartoon WHERE id=?');
             $oneCartoonInfos->execute(array($id));
             return $oneCartoonInfos;
         }
@@ -73,25 +82,21 @@ class Model_CartoonManager extends Model_ManagerDb
             return $avgPagesCartoon;
         }
 
-        public function addCartoonConfirm($title, $serie, $scriptwriter, $designer, $isbn, $genre, $page_count, $count_volume, $volume_number, $finish, $comment,
+        public function addCartoonConfirm($title, $serie, $isbn, $genre, $page_count, $volume_number, $finish, $comment,
         $rate, $cover)
         {
             $db = $this->dbConnect();
-            $addNovel = $db->prepare("INSERT INTO cartoon(`title`, `serie`, `scriptwriter`, `designer`, `isbn`, `genre`, `page_count`, `count_volume`, `volume_number`
-                                    , `active`, `finish`, `comment`, `rate`, `cover`, `creation_date`)
-                                    VALUES(:title, :serie, :scriptwriter, :designer, :isbn, :genre, :page_count, :count_volume, :volume_number, :active, :finish, :comment,
+            $addNovel = $db->prepare("INSERT INTO cartoon(`title`, `serie`, `isbn`, `genre`, `page_count`, `volume_number`
+                                    , `finish`, `comment`, `rate`, `cover`, `creation_date`)
+                                    VALUES(:title, :serie, :isbn, :genre, :page_count, :volume_number, :finish, :comment,
                                     :rate, :cover, NOW())");
             $addNovel->execute(array(
                 "title"             => $title,
                 "serie"             => $serie,
-                "scriptwriter"      => $scriptwriter,
-                "designer"          => $designer,
                 "isbn"              => $isbn,
                 "genre"             => $genre,
                 "page_count"        => $page_count, 
-                "count_volume"      => $count_volume,
                 "volume_number"     => $volume_number,
-                "active"            => 0,//to say it's non active by default
                 "finish"            => $finish,
                 "comment"           => $comment,
                 "rate"              => $rate,
@@ -105,29 +110,28 @@ class Model_CartoonManager extends Model_ManagerDb
             $updatePageCount->execute(array($lastId));
         }
 
-        public function updateCartoon($id, $title, $serie, $scriptwriter, $designer, $isbn, $genre, $page_count, $count_volume, $volume_number, $active, $finish, $comment,
-        $rate, $cover)
+        public function updateCartoon($id, $title, $serie, $isbn, $genre, $page_count, $volume_number, $finish, $comment,
+        $rate, $cover, $begin_date, $end_date)
         {
             $db = $this->dbConnect();
-            $updateCartoon = $db->prepare("UPDATE cartoon SET title=:title, serie=:serie, scriptwriter=:scriptwriter, designer=:designer,
-                                         isbn=:isbn, genre=:genre, page_count=:page_count, count_volume=:count_volume, volume_number=:volume_number,
-                                         active=:active, finish=:finish, comment=:comment, rate=:rate, cover=:cover WHERE id=:id");
+            $updateCartoon = $db->prepare("UPDATE cartoon SET title=:title, serie=:serie, isbn=:isbn, genre=:genre, page_count=:page_count,
+                                         volume_number=:volume_number, finish=:finish, comment=:comment, rate=:rate, cover=:cover,
+                                          begin_date= :begin_date, end_date=:end_date WHERE id=:id");
             $updateCartoon->execute(array(
                 "id"                => $id,
                 "title"             => $title,
                 "serie"             => $serie,
-                "scriptwriter"      => $scriptwriter,
-                "designer"          => $designer,
                 "isbn"              => $isbn,
                 "genre"             => $genre,
                 "page_count"        => $page_count, 
-                "count_volume"      => $count_volume,
                 "volume_number"     => $volume_number,
-                "active"            => $active,
                 "finish"            => $finish,
                 "comment"           => $comment,
                 "rate"              => $rate,
-                "cover"             => $cover
+                "cover"             => $cover,
+                "begin_date"        => $begin_date,
+                "end_date"          => $end_date
+
             ));
             
         }

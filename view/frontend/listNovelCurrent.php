@@ -21,6 +21,9 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
             if(!empty($data["cover"])){
                 $cover = $data["cover"];
             } else {
+                ?>
+                <h2 class="title text-center text-uppercase"><?= $data["title"]; ?></h2>
+                <?php
                 $cover = "public/img/noCover.png";
             }
             ?>
@@ -31,10 +34,16 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                             <img class="imgCover img-fluid +"src=<?= $cover; ?> alt="couverture du livre" title="couverture du livre <?= $data["title"]; ?>" />
                         </a>
                     </div>
+                    <div>
+                        
+                    </div>
                     <?php
 $listNovelCurrent->closeCursor();
         }
         $content = ob_get_clean();
 
+$content = ob_get_clean();
 require("templateNovel.php");
+
         ?>
+        
