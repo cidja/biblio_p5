@@ -140,7 +140,7 @@ class Model_NovelManager extends Model_ManagerDb
         {
             $db = $this->dbConnect();
             $updateNovel = $db->prepare("UPDATE novel SET title=:title, author=:author, isbn=:isbn, publication=:publication, genre=:genre, page_count=:page_count,
-                                         count_volume=:count_volume, active=:active,
+                                         count_volume=:count_volume, active=:active, finish=0,
                                          comment=:comment, rate=:rate, cover=:cover  WHERE id=:id");
             $updateNovel->execute(array(
                 ":id"           => $id,
