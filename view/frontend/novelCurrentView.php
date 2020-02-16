@@ -26,7 +26,7 @@ testnotUserIssetVisitTitle();?>
             }
             ?>
             
-               
+                <h2 class="title text-center text-uppercase"><?= $data["title"]; ?></h2>
                     <div class="cover text-center">
                         <a href="index.php?action=oneNovel&amp;id=<?= $data["id"];?>">
                             <img class="imgCover +"src=<?= $cover; ?> alt="couverture du livre" title="couverture du livre <?= $data["title"]; ?>" />
