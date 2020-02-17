@@ -49,7 +49,12 @@
                     Administration
                     </a><div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="index.php?action=formNewPassword"><button class="btn btn-info">Modifier mot de passe</button></a>
-                        <a class="dropdown-item" href="index.php?action=sessionStop"><button class="btn btn-warning ml-5">Déconnexion</button></a>
+                        <a class="dropdown-item" href="index.php?action=sessionStop"><button class="btn btn-warning ml-5">
+                        <?php if(isset($_SESSION["user"])){
+                            echo "Déconnexion";
+                        }else{
+                            echo "Connexion"; 
+                        }?></button></a>
                     </div>
                 </li>
                 <?php if(!isset($_SESSION["user"])){ ?>
