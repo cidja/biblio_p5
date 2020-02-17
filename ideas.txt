@@ -1,3 +1,7 @@
 Quand on fini un livre voir pour afficher des statistiques de lecture du livre voir les méthodes "readingNovelTime" dans PageNovelManager.php (le 23.01.20 à 14h50)
 
 Voir pour quand on arrive à la fin d'un livre on affiche lien pour valider fin du livre et voir requête qui pose pb sur novel Manager
+
+Pour la requete voir pour faire un offset de 1 a chaque requête 
+source: https://www.supinfo.com/articles/single/6761-sql-limit-offset
+

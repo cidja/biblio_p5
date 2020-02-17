@@ -1,23 +1,14 @@
-$('.next').click(function(){
+let test = document.getElementById('next');
+test.addEventListener('click', function (e) {
+    console.log("test");
+});
+
+$('#next').on('click', () => {
     console.log("yes");
-    /*$.ajax({ 
+    $.ajax({ 
         url : "oneNovelView.php",
         type : "GET",
-        data : "id=" +id,
-        datatype : "html",
-        //passage des données au fichier externe
-        success : function(code_html, statut){
-            $("#next").css("color" , "red");
-            console.log("yes");
-        },
-        error : function(resultat, statut, erreur){
-
-        },
-
-        complete : function(resultat, statut){
-
-        }
-        
-    });*/
-
+        data : "id=" + $id,
+        context : document.body
+    });
 });
