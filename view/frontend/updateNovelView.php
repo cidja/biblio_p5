@@ -31,17 +31,18 @@ foreach($oneInfos as $data){ // Let's go through the board
                 <label for="genre">Genre</label>
                 <select class="form-control" id="genre" name="genre">
                     <option>actuellement : <?= $data["genre"];?></option>
-                    <option>Developpement personnel</option>
-                    <option>Biographie</option>
                     <option>Auto biographie</option>
+                    <option>Biographie</option>
+                    <option>Classique</option>
+                    <option>Developpement personnel</option>
+                    <option>Essais</option>
                     <option>Fantastique</option>
+                    <option>Policier</option>
+                    <option>Roman</option>
                     <option>Science-fiction</option>
                     <option>Traité</option>
-                    <option>Essais</option>
-                    <option>Policier</option>
                     <option>Thriller</option>
-                    <option>Classique</option>
-                    <option>Roman</option>
+                    <option>Vie quotidienne</option>
                 </select>
             </div>
 
