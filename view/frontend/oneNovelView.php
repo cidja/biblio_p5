@@ -79,7 +79,7 @@ foreach($oneInfos as $data){ // Let's go through the board
             <div class="countVolume">
                 <div class="d-flex">
                 <?php 
-                if($data["count_volume"] !== 00){
+                if($data["count_volume"] != 00){
                     ?>
                     <div class="fieldDescription">Nombre de volumes :</div>
                     <div class="dataDescription"><?= $data["count_volume"]; ?></div>
