@@ -62,6 +62,20 @@ foreach($oneInfos as $data){ // Let's go through the board
                 </div>
             </div>
 
+            <div class="beginDate">
+                    <div class="d-flex">
+                        <div class="fieldDescription">Date de début de lecture :</div>
+                        <div class="dataDescription"><?= $data["begin_date_fr"]; ?></div>
+                    </div>
+                </div>
+
+                <div class="endDate">
+                    <div class="d-flex">
+                        <div class="fieldDescription">Date de fin de lecture :</div>
+                        <div class="dataDescription"><?= $data["end_date_fr"]; ?></div>
+                    </div>
+                </div>
+
             <div class="countVolume">
                 <div class="d-flex">
                 <?php 
