@@ -75,7 +75,7 @@ foreach($oneInfos as $data){ // Let's go through the board
                     </div>
                 </div>
             </div>
-            
+
             <div class="beginDate">
                     <div class="d-flex">
                         <div class="fieldDescription">Date de début de lecture :</div>
@@ -182,8 +182,8 @@ foreach($oneInfos as $data){ // Let's go through the board
                 </form>
             <?php };?>
             </div>
-            <button id="next">Next</button>
-            <div id="result"></div>
+            <!--<button id="next">Next</button>
+            <div id="result"></div>  !-->
         </section>
     </div>
 <?php
