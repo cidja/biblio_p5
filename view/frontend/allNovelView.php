@@ -33,7 +33,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                     
                     <div class="mt-1">
                         <?php
-                    if($data["finish"] == 0){
+                    if($data["active"] == 1){
                                 ?> 
                                     <button class="btn btn-warning">En cours</button>
                                 <?php

@@ -55,7 +55,7 @@ class Model_NovelManager extends Model_ManagerDb
             $novelcurrent = $db->query('SELECT novel.id, novel.title, novel.author, novel.isbn, novel.genre, novel.page_count, novel.count_volume, novel.active,novel.finish, 
                                         novel.comment,novel.rate,novel.cover, DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr, novel_page_count.novel_id,
                                         novel_page_count.new_page_count,  DATE_FORMAT(update_date, "%d/%m/%Y à %Hh%i") AS update_date_fr FROM novel 
-                                        INNER JOIN novel_page_count on novel.id = novel_page_count.novel_id WHERE active = 1 AND finish = 0 ORDER BY update_date_fr DESC LIMIT 0,1;');
+                                        INNER JOIN novel_page_count on novel.id = novel_page_count.novel_id WHERE active = 1 ORDER BY update_date_fr DESC LIMIT 0,1;');
                                         // inner query for table join with a date_format on the dates of the 2 tables, a descending ranking and we keep that the last record 
                                         // used to display new_pages_count
             return $novelcurrent;
@@ -138,9 +138,10 @@ class Model_NovelManager extends Model_ManagerDb
 
         public function updateNovel($id,$title, $author,$isbn, $publication, $genre, $page_count, $count_volume, $active, $comment, $rate, $cover)
         {
+           
             $db = $this->dbConnect();
             $updateNovel = $db->prepare("UPDATE novel SET title=:title, author=:author, isbn=:isbn, publication=:publication, genre=:genre, page_count=:page_count,
-                                         count_volume=:count_volume, active=:active, finish=0,
+                                         count_volume=:count_volume, active=:active,
                                          comment=:comment, rate=:rate, cover=:cover  WHERE id=:id");
             $updateNovel->execute(array(
                 ":id"           => $id,

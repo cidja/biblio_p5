@@ -99,7 +99,7 @@ foreach($oneInfos as $data){ // Let's go through the board
                     
                     <div>
                         <?php 
-                            if($data["finish"] == 0){
+                            if($data["active"] == 1){
                                 ?> 
                                     <button class="btn btn-warning">En cours</button>
                                 <?php
