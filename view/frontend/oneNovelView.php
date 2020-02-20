@@ -62,6 +62,20 @@ foreach($oneInfos as $data){ // Let's go through the board
                 </div>
             </div>
 
+            <div class="timeToRead">
+                <div class="d-flex">
+                    <div class="fieldDescription">Livres lus en : </div>
+                    <div class="dataDescription">
+                        <?php //source: https://www.php.net/manual/fr/function.date-create.php
+                        $bDate = date_create($data["begin_date"]);
+                        $eDate = date_create($data["end_date"]);
+                        $interval = date_diff($bDate, $eDate);
+                        echo $interval->format("%a jours");
+                        ?>
+                    </div>
+                </div>
+            </div>
+            
             <div class="beginDate">
                     <div class="d-flex">
                         <div class="fieldDescription">Date de début de lecture :</div>
