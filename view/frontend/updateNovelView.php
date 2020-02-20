@@ -82,7 +82,17 @@ foreach($oneInfos as $data){ // Let's go through the board
             </div>
 
             <div class="form-group">
-                <label for="rate">Une note </label>
+                <label for="begin_date">Date début lecture</label>
+                <input type="date" class="form-control" id="begin_date" name="begin_date">
+            </div>
+
+            <div class="form-group">
+                <label for="end_date">Date de fin de lecture</label>
+                <input type="date" class="form-control" id="end_date" name="end_date">
+            </div>
+
+            <div class="form-group">
+                <label for="rate">Note actuelle : </label>
                 <select class="form-control" id="rate" name="rate">
                     <option>actuellement : <?= $data["rate"];?></option>
                     <option>1</option>

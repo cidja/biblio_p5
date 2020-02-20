@@ -117,7 +117,9 @@ try{
                 $comment        = htmlspecialchars($_POST["comment"]);
                 $rate           = htmlspecialchars($_POST["rate"]);
                 $cover          = htmlspecialchars($_POST["cover"]);
-                ToolsFrontend::updateNovelConfirm($id,$title, $author,$isbn, $publication, $genre, $page_count, $count_volume,$active, $comment, $rate, $cover);
+                $begin_date         = htmlspecialchars($_POST["begin_date"]);
+                $end_date           = htmlspecialchars($_POST["end_date"]);
+                ToolsFrontend::updateNovelConfirm($id,$title, $author,$isbn, $publication, $genre, $page_count, $count_volume,$active, $comment, $rate, $cover, $begin_date, $end_date);
                 
             }
 

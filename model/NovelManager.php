@@ -22,7 +22,8 @@ class Model_NovelManager extends Model_ManagerDb
         {
             $db = $this->dbConnect();
             $infos = $db->prepare('SELECT id,title, author, isbn, genre, `publication`, page_count, count_volume, active,finish, comment,rate,cover,
-                                    DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM novel WHERE id=?');
+                                    DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr, DATE_FORMAT(begin_date, "%d/%m%/%Y") as begin_date_fr, 
+            DATE_FORMAT(end_date, "%d/%m%/%Y") as end_date_fr  FROM novel WHERE id=?');
             $infos->execute(array($id));
             return $infos;
             
@@ -136,13 +137,13 @@ class Model_NovelManager extends Model_ManagerDb
             $updatePageCount->execute(array($id));
         }
 
-        public function updateNovel($id,$title, $author,$isbn, $publication, $genre, $page_count, $count_volume, $active, $comment, $rate, $cover)
+        public function updateNovel($id,$title, $author,$isbn, $publication, $genre, $page_count, $count_volume, $active, $comment, $rate, $cover, $begin_date, $end_date)
         {
            
             $db = $this->dbConnect();
             $updateNovel = $db->prepare("UPDATE novel SET title=:title, author=:author, isbn=:isbn, publication=:publication, genre=:genre, page_count=:page_count,
                                          count_volume=:count_volume, active=:active,
-                                         comment=:comment, rate=:rate, cover=:cover  WHERE id=:id");
+                                         comment=:comment, rate=:rate, cover=:cover, begin_date=:begin_date, end_date=:end_date  WHERE id=:id");
             $updateNovel->execute(array(
                 ":id"           => $id,
                 "title"         => $title,
@@ -155,7 +156,9 @@ class Model_NovelManager extends Model_ManagerDb
                 "active"        => $active,
                 "comment"       => $comment,
                 "rate"          => $rate,
-                "cover"         => $cover
+                "cover"         => $cover,
+                "begin_date"    => $begin_date,
+                "end_date"      => $end_date
             ));
             
         }

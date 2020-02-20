@@ -116,7 +116,7 @@ class Model_CartoonManager extends Model_ManagerDb
             $db = $this->dbConnect();
             $updateCartoon = $db->prepare("UPDATE cartoon SET title=:title, serie=:serie, isbn=:isbn, genre=:genre, page_count=:page_count,
                                          volume_number=:volume_number, finish=:finish, comment=:comment, rate=:rate, cover=:cover,
-                                          begin_date= :begin_date, end_date=:end_date WHERE id=:id");
+                                          begin_date=:begin_date, end_date=:end_date WHERE id=:id");
             $updateCartoon->execute(array(
                 "id"                => $id,
                 "title"             => $title,
