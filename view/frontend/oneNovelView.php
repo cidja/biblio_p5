@@ -66,7 +66,7 @@ foreach($oneInfos as $data){ // Let's go through the board
                     <div class="d-flex">
                         <div class="fieldDescription">Date de début de lecture :</div>
                         <div class="dataDescription">
-                            <?php
+                            <?php //source: https://www.php.net/manual/fr/function.explode.php
                             $begin_date = $data["begin_date"];
                             $begin_date_fr = explode("-", $begin_date);
                             echo $begin_date_fr[2] . "/". $begin_date_fr[1] . "/". $begin_date_fr[0];
@@ -79,7 +79,7 @@ foreach($oneInfos as $data){ // Let's go through the board
                     <div class="d-flex">
                         <div class="fieldDescription">Date de fin de lecture :</div>
                         <div class="dataDescription">
-                        <?php
+                        <?php //source: https://www.php.net/manual/fr/function.explode.php
                             $end_date = $data["end_date"];
                             $end_date_fr = explode("-", $end_date);
                             echo $end_date_fr[2] . "/". $end_date_fr[1] . "/". $end_date_fr[0];
