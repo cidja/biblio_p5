@@ -169,6 +169,7 @@ foreach($oneInfos as $data){ // Let's go through the board
             <?php };?>
             </div>
             <button id="next">Next</button>
+            <div id="result"></div>
         </section>
     </div>
 <?php
