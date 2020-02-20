@@ -120,6 +120,16 @@ use cidja\pageCartoonManager\Model_PageCartoonManager;
 
             }
 
+
+            //*******************Sort Part */
+            public static function genreSort($genre)
+            {
+                $novelManager = new Model_NovelManager();
+                $infos = $novelManager->genreSortNovel($genre);
+                $countNovels = $novelManager->genreCountNovels($genre);
+                require("view/frontend/allNovelView.php");
+            }
+
             //*******************Delete Part **************************** */
             public static function formDeleteNovel($id, $novel)
             {

@@ -92,9 +92,6 @@ try{
                 }
             }
     
-            
-    
-            
             elseif($_GET["action"] == "updateNovel"){
                 if(isset($_GET["id"]) && $_GET["id"] > 0) { // check if $_get["id"] defined and greater than 0
                     $id = htmlspecialchars($_GET["id"]); // to avoid inclusion xss
@@ -136,6 +133,12 @@ try{
                 }else{
                     throw new Exception ("aucun identifiant de billet envoyé");
                 }
+            }
+
+
+            elseif($_GET["action"] == "genreSort"){
+                $genre = htmlspecialchars(($_POST["genre"]));
+                ToolsFrontend::genreSort($genre);
             }
 
             //********change password part ********* */

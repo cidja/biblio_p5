@@ -7,8 +7,41 @@ $title = "Liste des romans";
 
 ob_start(); //Start of capture to put it in the variable at the end of the script 
 ?>
-
+    <div class="container titleSort">
+        <form action="index.php?action=genreSort" method="post">
+            <div class="form-group row text-center">
+            <label for="genre" class="col-sm-2 col-form-label text-uppercase">tri par genre : </label>
+            <div class="col-sm-8">
+                <select class="form-control" id="genre" name="genre">
+                    <option>Auto biographie</option>
+                    <option>Biographie</option>
+                    <option>Classique</option>
+                    <option>Developpement personnel</option>
+                    <option>Essais</option>
+                    <option>Fantastique</option>
+                    <option>Policier</option>
+                    <option>Roman</option>
+                    <option>Science-fiction</option>
+                    <option>Traité</option>
+                    <option>Thriller</option>
+                    <option>Vie quotidienne</option>
+                </select>
+            </div>
+            <div class="col-sm-2 mt-1">
+                <input type="submit" class="btn btn-primary text-uppercase" value="valider">
+            </div>
+            </div>
+            
+        </form>
+        <div class="nbNovels">
+            <div class="d-flex justify-content-center">
+                <div class="fieldDescription">Nombre de livres dans la catégorie choisie :  </div>
+                <div class="dataDescription"><?= $countNovels; ?></div>
+            </div>
+        </div>
+    </div>
     <div class="container d-flex text-center flex-wrap justify-content-center">
+    
         <?php
     foreach($infos as $data) //source: https://www.php.net/manual/fr/control-structures.foreach.php
     {
