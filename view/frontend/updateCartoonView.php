@@ -59,12 +59,12 @@ foreach($oneInfos as $data){ // Let's go through the board
 
                 <div class="form-group">
                     <label for="begin_date">Date début lecture</label>
-                    <input type="date" class="form-control" id="begin_date" name="begin_date">
+                    <input type="date" class="form-control" id="begin_date" name="begin_date" value="<?= $data["begin_date"];?>">
                 </div>
 
                 <div class="form-group">
                     <label for="end_date">Date de fin de lecture</label>
-                    <input type="date" class="form-control" id="end_date" name="end_date">
+                    <input type="date" class="form-control" id="end_date" name="end_date" value="<?= $data["end_date"];?>">
                 </div>
                 
 
