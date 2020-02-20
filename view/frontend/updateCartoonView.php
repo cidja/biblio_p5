@@ -34,7 +34,7 @@ foreach($oneInfos as $data){ // Let's go through the board
                 <div class="form-group">
                     <label for="genre">Genre</label>
                     <select class="form-control" id="genre" name="genre">
-                        <option>actuellement : <?= $data["genre"]; ?></option>
+                        <option><?= $data["genre"]; ?></option>
                         <option>Aventure</option>
                         <option>Comics</option>
                         <option>Heroïque fantasy</option>
@@ -74,7 +74,7 @@ foreach($oneInfos as $data){ // Let's go through the board
                     <div class="form-group">
                 <label for="rate">Note actuelle </label>
                 <select class="form-control" id="rate" name="rate">
-                    <option>actuellement : <?= $data["rate"]; ?></option>
+                    <option><?= $data["rate"]; ?></option>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
