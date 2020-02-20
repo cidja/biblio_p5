@@ -7,10 +7,10 @@ $title = "Liste des romans";
 
 ob_start(); //Start of capture to put it in the variable at the end of the script 
 ?>
-    <div class="container titleSort">
+    <div class="container" id="titleSort">
         <form action="index.php?action=genreSort" method="post">
-            <div class="form-group row text-center">
-            <label for="genre" class="col-sm-2 col-form-label text-uppercase">tri par genre : </label>
+            <div class="form-group row text-center align-items-center">
+            <label for="genre" id="genreSortTitle" class="col-sm-2 col-form-label text-uppercase">tri par genre : </label>
             <div class="col-sm-8">
                 <select class="form-control" id="genre" name="genre">
                     <option>Auto biographie</option>
@@ -31,15 +31,15 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                 <input type="submit" class="btn btn-primary text-uppercase" value="valider">
             </div>
             </div>
-            
         </form>
-        <div class="nbNovels">
-            <div class="d-flex justify-content-center">
-                <div class="fieldDescription">Nombre de livres dans la catégorie choisie :  </div>
-                <div class="dataDescription"><?= $countNovels; ?></div>
-            </div>
+    </div>
+    <div class="nbNovels">
+        <div class="d-flex justify-content-center">
+            <div class="fieldDescription">Nombre de livres dans la catégorie choisie :  </div>
+            <div class="dataDescription"><?= $countNovels; ?></div>
         </div>
     </div>
+    
     <div class="container d-flex text-center flex-wrap justify-content-center">
     
         <?php
