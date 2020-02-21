@@ -120,7 +120,7 @@ try{
                 $borrower       = htmlspecialchars($_POST["borrower"]);
                 $lend_date      = htmlspecialchars($_POST["lend_date"]);
 
-                ToolsFrontend::updateNovelConfirm($id,$title, $author,$isbn, $publication, $genre, $page_count, $count_volume,$active, $comment, $rate, $cover, $begin_date, $end_date, $lend, $borrower, $lend_date);
+               ToolsFrontend::updateNovelConfirm($id,$title, $author,$isbn, $publication, $genre, $page_count, $count_volume,$active, $comment, $rate, $cover, $begin_date, $end_date, $lend, $borrower, $lend_date);
                 
             }
 

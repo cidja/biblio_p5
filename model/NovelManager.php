@@ -185,16 +185,17 @@ class Model_NovelManager extends Model_ManagerDb
 
         public function insertLendNovel($id, $lend, $borrower, $lend_date)
         {
-            $db = $this->dbConnect();
-            $insertLend = $db->prepare("INSERT INTO `novel_lend`(`novel_id`,`lend`, `borrower`,`lend_date`)
-                                        VALUES(:novel_id, :lend, :borrower, :lend_date)");
-            $insertLend->execute(array(
-                "novel_id"      => $id,
-                "lend"          => $lend,
-                "borrower"      => $borrower,
-                "lend_date"     => $lend_date   
-            ));
-            
+            if($lend == 1){
+                $db = $this->dbConnect();
+                $insertLend = $db->prepare("INSERT INTO `novel_lend`(`novel_id`,`lend`, `borrower`,`lend_date`)
+                VALUES(:novel_id, :lend, :borrower, :lend_date)");
+                    $insertLend->execute(array(
+                    "novel_id"      => $id,
+                    "lend"          => $lend,
+                    "borrower"      => $borrower,
+                    "lend_date"     => $lend_date   
+                ));
+            } 
         }
 
         public function deleteNovel($id)
