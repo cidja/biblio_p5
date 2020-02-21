@@ -163,9 +163,9 @@ class Model_NovelManager extends Model_ManagerDb
             $db = $this->dbConnect();
             $updateNovel = $db->prepare("UPDATE novel SET title=:title, author=:author, isbn=:isbn, publication=:publication, genre=:genre, page_count=:page_count,
                                          count_volume=:count_volume, active=:active,
-                                         comment=:comment, rate=:rate, cover=:cover, begin_date=:begin_date, end_date=:end_date  WHERE id=:id");
+                                         comment=:comment, rate=:rate, cover=:cover, begin_date=:begin_date, end_date=:end_date WHERE id=:id");
             $updateNovel->execute(array(
-                ":id"           => $id,
+                "id"            => $id,
                 "title"         => $title,
                 "author"        => $author,
                 "isbn"          => $isbn,
@@ -179,6 +179,20 @@ class Model_NovelManager extends Model_ManagerDb
                 "cover"         => $cover,
                 "begin_date"    => $begin_date,
                 "end_date"      => $end_date
+                
+            ));
+        }
+
+        public function insertLendNovel($id, $lend, $borrower, $lend_date)
+        {
+            $db = $this->dbConnect();
+            $insertLend = $db->prepare("INSERT INTO `novel_lend`(`novel_id`,`lend`, `borrower`,`lend_date`)
+                                        VALUES(:novel_id, :lend, :borrower, :lend_date)");
+            $insertLend->execute(array(
+                "novel_id"      => $id,
+                "lend"          => $lend,
+                "borrower"      => $borrower,
+                "lend_date"     => $lend_date   
             ));
             
         }

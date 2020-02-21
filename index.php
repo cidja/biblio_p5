@@ -114,9 +114,13 @@ try{
                 $comment        = htmlspecialchars($_POST["comment"]);
                 $rate           = htmlspecialchars($_POST["rate"]);
                 $cover          = htmlspecialchars($_POST["cover"]);
-                $begin_date         = htmlspecialchars($_POST["begin_date"]);
-                $end_date           = htmlspecialchars($_POST["end_date"]);
-                ToolsFrontend::updateNovelConfirm($id,$title, $author,$isbn, $publication, $genre, $page_count, $count_volume,$active, $comment, $rate, $cover, $begin_date, $end_date);
+                $begin_date     = htmlspecialchars($_POST["begin_date"]);
+                $end_date       = htmlspecialchars($_POST["end_date"]);
+                $lend           = htmlspecialchars($_POST["lend"]);
+                $borrower       = htmlspecialchars($_POST["borrower"]);
+                $lend_date      = htmlspecialchars($_POST["lend_date"]);
+
+                ToolsFrontend::updateNovelConfirm($id,$title, $author,$isbn, $publication, $genre, $page_count, $count_volume,$active, $comment, $rate, $cover, $begin_date, $end_date, $lend, $borrower, $lend_date);
                 
             }
 

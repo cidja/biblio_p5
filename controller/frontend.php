@@ -105,10 +105,11 @@ use cidja\pageCartoonManager\Model_PageCartoonManager;
                 require("view/frontend/updateNovelView.php");
             }
 
-            public static function updateNovelConfirm($id,$title, $author,$isbn, $publication, $genre, $page_count, $count_volume,$active, $comment, $rate, $cover,$begin_date, $end_date)
+            public static function updateNovelConfirm($id,$title, $author,$isbn, $publication, $genre, $page_count, $count_volume,$active, $comment, $rate, $cover,$begin_date, $end_date, $lend, $borrower, $lend_date)
             {
                 $novelManager = new Model_NovelManager();
                 $updateConfirm = $novelManager->updateNovel($id,$title, $author,$isbn, $publication, $genre, $page_count, $count_volume,$active, $comment, $rate, $cover, $begin_date, $end_date);
+                $lendNovel = $novelManager->insertLendNovel($id, $lend, $borrower, $lend_date);
                 header("location:index.php?action=allNovels");
             }
 

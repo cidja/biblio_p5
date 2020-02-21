@@ -13,6 +13,27 @@ foreach($oneInfos as $data){ // Let's go through the board
     ?>
     <section class="container novelForm">
         <form method="post" action="index.php?action=updateNovelConfirm&amp;id=<?= $data["id"];?>">
+
+        <!-- lend part !-->
+            <div class="form-group row justify-content-center align-items-center">
+                <label for="lend" id="lend" class="col-sm-auto col-form-label">Emprunté ? :</label>
+                <div class="col-sm-auto">
+                    <select class="form-control" id="lend" name="lend">
+                        <option value="0">Non</option>
+                        <option value="1">Oui</option>
+                    </select>
+                </div>
+                <label for="borrower" id="borrower" class="col-sm-auto col-form-label">Par qui ?</label>
+                <div class="col-sm-auto">
+                    <input type="text" id="borrower" name="borrower">
+                </div>
+                <label for="lend_date" id="lend_date" class="col-sm-auto col-form-label">Date du prêt : </label>
+                <div class="col-sm-auto">
+                    <input type="date" id="lend_date" name="lend_date">
+                </div>
+            </div>
+           
+            <!--update novel part !-->
             <div class="form-group">
                 <label for="title">Titre de l'ouvrage </label>
                 <input type="text" class="form-control" id="title" name="title" required value="<?= $data["title"];?>" autofocus>
