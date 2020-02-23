@@ -23,4 +23,14 @@ use cidja\userManager\Model_UserManager;
             $newPassword = $userManager->changePassword($oldMdp, $mdp1, $mdprepeat);
 
         }
+
+        public static function formNewUser()
+        {
+
+        }
+
+        public static function createNewUser()
+        {
+            
+        }
     }
