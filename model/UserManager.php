@@ -38,8 +38,10 @@ class Model_UserManager extends Model_ManagerDb
                         $change = $db->prepare("UPDATE superuser SET pwd=?, update_date=NOW() WHERE user='admin'"); 
                         $changeresult = $change->execute(array($mdp));
                         echo "Mot de passe modifié";
+                        session_unset();
+                        session_destroy();
                         ?>
-                        <a href="index.php?action=allNovels"> Retour à l'accueil romans</a>
+                        <a href="connexionView.php"> Merci de vous reconnecter avec le nouveau mot de passe</a>
                         <?php
                 }else{
                     echo "les mots de passe ne correspondent pas";
@@ -59,7 +61,8 @@ class Model_UserManager extends Model_ManagerDb
             "user"      => $user,
             "pwd"       => $passwordHash
         ));
-        $createUser->debugDumpParams();
+        ?><div>validation de la création du nouvel utilisateur, <a href="index.php?action=home">Cliquez ici pour aller au menu</a></div>
+        <?php
         
     }
 }
