@@ -26,11 +26,13 @@ use cidja\userManager\Model_UserManager;
 
         public static function formNewUser()
         {
-
+            require("view/backend/formNewUser.php");
         }
 
-        public static function createNewUser()
+        public static function createNewUser($user, $pwd1)
         {
-            
+            $userManager = new Model_UserManager();
+            $newUser = $userManager->createNewUser($user, $pwd1);
+
         }
     }

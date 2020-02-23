@@ -14,6 +14,8 @@ try{
             if($_GET["action"] == "home"){
                 header ("location: view/frontend/home.php");
             }
+
+            // To check connexion 
             elseif($_GET["action"] == "checkConnexion"){
                 $user = htmlspecialchars($_POST["user"]); // htmlspecialchars pour éviter une faille de sécurité 
                 $pwd = $_POST["pwd"]; 
@@ -22,10 +24,24 @@ try{
             elseif($_GET["action"] == "wrongId"){
                 ToolsFrontend::wrongId();
             }
+
+            //To create newUser
+            elseif($_GET["action"] == "inscription"){
+                ToolsBackend::formNewUser();
+            }
+
+            elseif($_GET["action"] == "createUserConfirm"){
+                $user = htmlspecialchars($_POST["pseudo"]);
+                $pwd1 = htmlspecialchars($_POST["password1"]);
+                ToolsBackend::createNewUser($user, $pwd1);
+            }
+
+            //Novel part
+
             elseif($_GET["action"] == "allNovels"){
                 ToolsFrontend::listNovel();
-                
             }
+
             elseif($_GET["action"] == "oneNovel"){ // if in the url $_GET["action"]= oneNovel
                 if(isset($_GET["id"]) && $_GET["id"] > 0) { // check if $_get["id"] defined and greater than 0
                     $id = htmlspecialchars($_GET["id"]); // to avoid inclusion xss
@@ -35,6 +51,7 @@ try{
                     throw new Exception("Aucun identifiant de billet envoyé !");
                 }
             }
+
             elseif($_GET["action"] == "oneNovelAjax"){ // if in the url $_GET["action"]= oneNovel
                 if(isset($_GET["id"]) && $_GET["id"] > 0) { // check if $_get["id"] defined and greater than 0
                     $id = htmlspecialchars($_GET["id"]); // to avoid inclusion xss

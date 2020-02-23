@@ -12,7 +12,7 @@ class Model_UserManager extends Model_ManagerDb
     public function checkUser($user, $pwd)
     {
         $db = $this->dbConnect(); 
-        $check = $db->query("SELECT user,pwd FROM users");
+        $check = $db->query("SELECT user,pwd FROM superuser");
         foreach($check as $data){ // iteration 
             if(($data["user"] == $_POST["user"]) AND (password_verify($_POST["pwd"], $data["pwd"]))){
                     $_SESSION["user"] = $user; // sessions create
@@ -29,13 +29,13 @@ class Model_UserManager extends Model_ManagerDb
     public function changePassword($oldMdp,$newMdp, $newMdpRepeat)
     {
         $db= $this->dbConnect(); //fonction qui va vérifier si l'ancien mot de passe est bon 
-        $checkMdp = $db->query("SELECT user,pwd FROM users");
+        $checkMdp = $db->query("SELECT user,pwd FROM superuser");
         foreach($checkMdp as $data){
             if(password_verify($oldMdp, $data["pwd"])){
                 if($newMdp === $newMdpRepeat){
                     $db = $this->dbConnect();
                         $mdp = password_hash($newMdp,PASSWORD_DEFAULT); //source: https://www.php.net/manual/en/function.password-hash.php
-                        $change = $db->prepare("UPDATE users SET pwd=?, update_date=NOW() WHERE user='admin'"); 
+                        $change = $db->prepare("UPDATE superuser SET pwd=?, update_date=NOW() WHERE user='admin'"); 
                         $changeresult = $change->execute(array($mdp));
                         echo "Mot de passe modifié";
                         ?>
@@ -43,8 +43,23 @@ class Model_UserManager extends Model_ManagerDb
                         <?php
                 }else{
                     echo "les mots de passe ne correspondent pas";
-            }
+                }
             }
         }
+    }
+
+    public function createNewUser($user, $pwd1)
+    {
+        $passwordHash = password_hash($pwd1, PASSWORD_DEFAULT);
+
+        $db= $this->dbConnect();
+        $createUser = $db->prepare("INSERT INTO users(user, pwd, inscription_date, update_date)
+                                    VALUES(:user, :pwd, now(), now())");
+        $createUser->execute(array(
+            "user"      => $user,
+            "pwd"       => $passwordHash
+        ));
+        $createUser->debugDumpParams();
+        
     }
 }

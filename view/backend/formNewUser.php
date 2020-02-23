@@ -13,34 +13,35 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/bad7172f0a.js" crossorigin="anonymous"></script> <!--cdn fontawesome source: https://fontawesome.com/kits/bad7172f0a/settings !-->
 </head>
-<body>
-    <div class=" text-center text-uppercase">
-        <h1 class="titleConnexion">Il était une fois...</h1>
-        <h2 class="titleConnexion">l'application de gestion de bibliothèque</h2>
-    </div>
-    <section class="container text-center jumbotron connexion mt-5">
-        <form method="post" action="index.php?action=checkConnexion">
-            <div class="form-group">
-                <label for="user">Utilisateur :</label>
-                <input type="text" class="form-control user" id="user" name="user" autofocus required>
+    <body>
+
+    <?php
+    include("public/inc/tools.php");
+    $title = "creation d'utilisateur"; 
+
+    ?>
+        <div class="container text-center">
+            <h2>Création d'un nouvel utilisateur :</h2>
+            <div class="formUser">
+                <form action="index.php?action=createUserConfirm" method="post">
+                    <div class="form-group">
+                        <label for="pseudo">Nom d'utilisateur : </label>
+                        <input type="text" class="form-control" id="pseudo" name="pseudo">
+                    </div>
+                    <div class="form-group">
+                        <label for="password1">Mot de passe : </label>
+                        <input type="password" class="form-control" id="password1" name="password1">
+                    </div>
+                    <div class="form-group">
+                        <label for="password2">Retaper le mot de passe : </label>
+                        <input type="password" class="form-control" id="password2" name="password2">
+                    </div>
+                    <div class="form-group">
+                        <input class="btn btn-info" type="submit" value="valider">
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="pwd">Mot de passe : </label>
-                <input type="password" class="form-control pwd" id="pwd" name="pwd" required >
-            </div>
-            <div class="form-group">
-                <input class="submitButtonConnexion +" type="submit" value="Valider">
-            </div>
-        </form>
-        <div class="row">
-        <div class="col-sm-6">
-            <button class="btn btn-warning" id="inscriptionButton"><a class="connexionViewLink" href="index.php?action=inscription">Inscription</a></button>
         </div>
-        <div class="col-sm-6">
-            <button class="btn btn-success" id="visitButton" ><a class="connexionViewLink" href="index.php?action=home">Visiteur</a></button>
-        </div>
-        </div>
-    </section>
-    
-</body>
+
+    </body>
 </html>
