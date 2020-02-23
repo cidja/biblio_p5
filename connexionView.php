@@ -32,8 +32,13 @@
                 <input class="submitButtonConnexion +" type="submit" value="Valider">
             </div>
         </form>
-        <div class="container">
-            <button><a href="index.php?action=home">Visiteur</a></button>
+        <div class="row">
+        <div class="col-sm-6">
+            <button class="btn btn-warning" id="inscriptionButton"><a class="connexionViewLink" href="index.php?action=inscription">Inscription</a></button>
+        </div>
+        <div class="col-sm-6">
+            <button class="btn btn-success" id="visitButton" ><a class="connexionViewLink" href="index.php?action=home">Visiteur</a></button>
+        </div>
         </div>
     </section>
     

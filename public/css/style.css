@@ -18,8 +18,19 @@ body{
     padding: 10px 10%;
     font-size: 40px;
     border-radius: 30px;
-    border: 1px solid black;
+    background-color: royalblue;
 }
+#inscriptionButton{
+    margin-bottom: 10px;
+}
+#inscriptionButton, #visitButton{
+    padding: 10px 10%;
+    border-radius: 30px;
+}
+.connexionViewLink{
+    font-size: 40px;
+}
+
 
 /*general */
 .imgCover{

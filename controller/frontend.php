@@ -45,6 +45,7 @@ use cidja\pageCartoonManager\Model_PageCartoonManager;
                 $novelManager = new Model_NovelManager(); // creation of the novelManager object
                 $infos = $novelManager->allNovelInfos(); // call of the method allNovelInfos of the NovelManager object
                 $countNovels = $novelManager->countNovels();
+                
                 require("view/frontend/allNovelView.php"); // Displays a list of all novels 
             }
             public static function oneNovelInfos($id)

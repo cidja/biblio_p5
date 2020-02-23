@@ -10,11 +10,13 @@ require_once("model/ManagerDb.php"); //calling the file for the connection to th
 
 class Model_NovelManager extends Model_ManagerDb
     {
+
+        //For debut use : $infos->debugDumpParams(); 
         public function allNovelInfos() //method for retrieving all the information from all the novels
         {
             $db = $this->dbConnect();
-            $infos = $db->query('SELECT id,title, author, isbn, genre,`publication`, page_count, count_volume, active,finish, comment,rate,cover,
-                                 DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM novel');
+            $infos = $db->query('SELECT id,title, author, isbn, genre,`publication`, page_count, count_volume, 
+            active, finish, comment, rate, cover,DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM novel');
             return $infos;
         }
         
@@ -181,12 +183,20 @@ class Model_NovelManager extends Model_ManagerDb
                 "end_date"      => $end_date
                 
             ));
+            
         }
 
         public function insertLendNovel($id, $lend, $borrower, $lend_date)
         {
-            if($lend == 1){
-                $db = $this->dbConnect();
+            $db = $this->dbConnect();
+            /*
+            $test = $db->query("SELECT id, novel_id FROM novel_lend WHERE novel_id=?");
+            $result = $test->execute(array($id));
+            print_r($result);*/
+
+
+            if($lend == 1){ //if lend 1 (The book's already on loan. We can't get in the loop.)
+                
                 $insertLend = $db->prepare("INSERT INTO `novel_lend`(`novel_id`,`lend`, `borrower`,`lend_date`)
                 VALUES(:novel_id, :lend, :borrower, :lend_date)");
                     $insertLend->execute(array(
@@ -196,6 +206,14 @@ class Model_NovelManager extends Model_ManagerDb
                     "lend_date"     => $lend_date   
                 ));
             } 
+        }
+
+        public function statusLendNovel($id)
+        {
+            $db = $this->dbConnect();
+            $statusLendNovel = $db->prepare("SELECT novel_id, lend, borrower, lend_date FROM novel_lend WHERE novel_id= ?");
+            $statusLendNovel->execute(array($id));
+            return $statusLendNovel;
         }
 
         public function deleteNovel($id)
