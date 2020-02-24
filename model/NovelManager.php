@@ -16,7 +16,7 @@ class Model_NovelManager extends Model_ManagerDb
         {
             $db = $this->dbConnect();
             $infos = $db->query('SELECT id,title, author, isbn, genre,`publication`, page_count, count_volume, 
-            active, finish, comment, rate, cover,DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM novel');
+            active, finish, comment, rate, cover,DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM novel ORDER BY id DESC');
             return $infos;
         }
         

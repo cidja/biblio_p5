@@ -17,7 +17,7 @@ class Model_CartoonManager extends Model_ManagerDb
     {
         $db =$this->dbConnect();
         $infos = $db->query('SELECT id, title, serie, isbn, genre, page_count, finish, comment, rate, 
-        cover, DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM cartoon');
+        cover, DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM cartoon ORDER BY id DESC');
         return $infos;
     }
 
