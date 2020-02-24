@@ -46,7 +46,7 @@ try{
 
             // To check connexion 
             elseif($_GET["action"] == "checkConnexion"){
-                $user = htmlspecialchars($_POST["user"]); // htmlspecialchars pour éviter une faille de sécurité 
+                $user = htmlspecialchars($_POST["user"]); // htmlspecialchars to avoid inclusion xss
                 $pwd = $_POST["pwd"]; 
                 ToolsBackend::checkSuperUser($user, $pwd);
             }
