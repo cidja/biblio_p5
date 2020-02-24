@@ -15,11 +15,11 @@
 </head>
     <body>
         <section class="container text-center jumbotron connexion mt-5">
-            <form method="post" action="index.php?action=checkConnexion">
+            <form method="post" action="index.php?action=checkMember">
                 <h3>Accès membre :</h3>
                 <div class="form-group">
-                    <label for="user">Pseudo :</label>
-                    <input type="text" class="form-control user" id="user" name="user" autofocus required>
+                    <label for="member">Pseudo :</label>
+                    <input type="text" class="form-control user" id="member" name="member" autofocus required>
                 </div>
                 <div class="form-group">
                     <label for="pwd">Mot de passe : </label>

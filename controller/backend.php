@@ -58,4 +58,11 @@ use cidja\userManager\Model_UserManager;
         ?><div>validation de la création du nouvel utilisateur, <a href="index.php">Cliquez ici pour se connecter</a></div>
         <?php
         }
+
+        public static function checkMember($member, $pwd)
+        {
+            $userManager = new Model_UserManager();
+            $checkMember = $userManager->checkMember($member, $pwd);
+            
+        }
     }

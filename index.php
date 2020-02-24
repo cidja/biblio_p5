@@ -38,6 +38,12 @@ try{
                 ToolsBackend::createNewUser($user, $pwd1);
             }
 
+            elseif($_GET["action"] == "checkMember"){
+                $member = htmlspecialchars($_POST["member"]);
+                $pwd = $_POST["pwd"];
+                ToolsBackend::checkMember($member, $pwd);
+            }
+
             // To check connexion 
             elseif($_GET["action"] == "checkConnexion"){
                 $user = htmlspecialchars($_POST["user"]); // htmlspecialchars pour éviter une faille de sécurité 
@@ -47,6 +53,8 @@ try{
             elseif($_GET["action"] == "wrongId"){
                 ToolsBackend::wrongId();
             }
+
+
 
 
             //Novel part

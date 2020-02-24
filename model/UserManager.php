@@ -16,9 +16,7 @@ class Model_UserManager extends Model_ManagerDb
         foreach($check as $data){ // iteration 
             if(($data["user"] == $_POST["user"]) AND (password_verify($_POST["pwd"], $data["pwd"]))){
                     $_SESSION["user"] = $user; // sessions create
-                    
                     header ("location: index.php?action=home");
-                
             }
             else {
                 header("location: index.php?action=wrongId");
@@ -61,7 +59,25 @@ class Model_UserManager extends Model_ManagerDb
             "user"      => $user,
             "pwd"       => $passwordHash
         ));
-        
-        
+    }
+
+    public function checkMember($member, $pwd)
+    {
+        $result = false;
+        $db = $this->dbConnect(); 
+        $check = $db->query("SELECT user,pwd FROM users");
+        foreach($check as $data){ // iteration 
+            if(($data["user"] == $member) AND (password_verify($pwd, $data["pwd"]))){
+                    $_SESSION["member"] = $member; // sessions create
+                    $result = true;    
+            } 
+        }
+        if($result == true){
+            header ("location: index.php?action=home");
+        } else{
+            ?> <h3>mauvais mot de passe ou identifiant</h3>
+            <div><a href="index.php?action=formAccessUser">Réessayer</a></div>
+            <?php
+        }
     }
 }
