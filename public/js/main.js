@@ -2,7 +2,7 @@ $(document).ready(function(){ //Source: http://www.rbastien.com/blog/2015/02/aff
  
     $('.show-password').click(function() {
         if($(this).prev('input').prop('type') == 'password') {
-            console.log("on rentre");
+
             //Si c'est un input type password
             $(this).prev('input').prop('type','text');
             $(this).text('cacher');

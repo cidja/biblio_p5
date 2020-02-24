@@ -45,9 +45,12 @@ class Model_UserManager extends Model_ManagerDb
                         ?>
                         <a href="connexionView.php"> Merci de vous reconnecter avec le nouveau mot de passe</a>
                         <?php
-                }else{
-                    echo "les mots de passe ne correspondent pas";
                 }
+            } else {
+                ?>
+                <h3>le mot de passe actuel n'est pas le bon</h3>
+            <div><a href="index.php?action=formNewPassword">Réessayer</a></div>
+            <?php
             }
         }
     }

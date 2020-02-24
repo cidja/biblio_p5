@@ -16,33 +16,34 @@ $title = "Admin mon blog";
 
                             <div class="form-group text-center mb-1">
                                 <label for="oldMdp">
-                                    <input class="form-control field" type="password" id="oldMdp" name="oldMdp" placeholder="ancien mot de passe" required autofocus>
+                                    <input class="form-control" type="password" id="oldMdp" name="oldMdp" placeholder="ancien mot de passe" required autofocus>
                                     <p class="show-password btn btn-primary mt-1">Afficher</p> <!--source: http://www.rbastien.com/blog/2015/02/afficher-password-formulaire/!-->
                                 </label>
                             </div>
                             <div class="form-group text-center mb-1">
                                 <label for="newMdp">
-                                    <input class="form-control field" type="password" id="newMdp" name="newMdp" placeholder="nouveau mot de passe" required>
+                                    <input class="form-control field" type="password" id="pwd1" name="newMdp" placeholder="nouveau mot de passe" required>
                                     <span class="show-password btn btn-primary mt-1">Afficher</span> <!--source: http://www.rbastien.com/blog/2015/02/afficher-password-formulaire/!-->
                                 </label>
                             </div>
                             <div class="form-group text-center mb-1">
                                 <label for="newMdpRepeat">
-                                    <input class="form-control field" type="password" id="newMdpRepeat" name="newMdpRepeat" placeholder="rentrez le mot de passe à nouveau" required>
+                                    <input class="form-control field" type="password" id="pwd2" name="newMdpRepeat" placeholder="rentrez le mot de passe à nouveau" required>
                                     <span class="show-password btn btn-primary mt-1">Afficher</span> <!--source: http://www.rbastien.com/blog/2015/02/afficher-password-formulaire/!-->
                                 </label>
                             </div>
                             <div class="text-center">
-                                <input class="container-fluid btn btn-success confirm" type="submit" value="valider">
-                                
+                                <input class="container-fluid btn btn-success confirm" id="submitButton" type="submit" value="valider">
                             </div>
                         </form>
+                        <div id="result"></div>
                     </div>
                 </div>
             </div>
         </section>
         
     </div>
+    <script src="/p5/public/js/form_password_check.js"></script>
     <?php
     
     $content = ob_get_clean();
