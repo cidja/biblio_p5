@@ -18,7 +18,7 @@
         <div class="col">
             <img src="public/img/wrongId.png" class="img-fluid" alt="un détective cherche la solution">
             <h1 class="wrongIdText text-center +">Mauvais de mot de passe ou identifiant on dirait ?</h1>
-            <button type="button" class="btn btn-info pl-5 pr-5"><a class="bodyLink" href="connexionView.php">On retente ?</a></button>
+            <button type="button" class="btn btn-info pl-5 pr-5"><a class="bodyLink" href="index.php?action=formAccessAdmin">On retente ?</a></button>
         </div>
     </div>
 
