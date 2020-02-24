@@ -19,7 +19,9 @@ ob_start();
                     <input class="submitButtonConnexion +" type="submit" value="Valider">
                 </div>
             </form>
+            
 <?php
+
 $content = ob_get_clean();
 require("templateConnexion.php");
 ?>
