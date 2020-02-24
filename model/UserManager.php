@@ -11,17 +11,21 @@ class Model_UserManager extends Model_ManagerDb
     //function to check the user and the mdp entered in the header
     public function checkSuperUser($user, $pwd)
     {
+        $result = false;
         $db = $this->dbConnect(); 
         $check = $db->query("SELECT user,pwd FROM superuser");
         foreach($check as $data){ // iteration 
             if(($data["user"] == $_POST["user"]) AND (password_verify($_POST["pwd"], $data["pwd"]))){
                     $_SESSION["user"] = $user; // sessions create
-                    header ("location: index.php?action=home");
+                    $result = true;
             }
+        }
+        if($result == true){
+            header ("location: index.php?action=home");
+        }
             else {
                 header("location: index.php?action=wrongId");
             }
-        }
     }
     
     public function changePassword($oldMdp,$newMdp, $newMdpRepeat)
