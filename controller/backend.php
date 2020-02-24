@@ -55,7 +55,7 @@ use cidja\userManager\Model_UserManager;
             $userManager = new Model_UserManager();
             $newUser = $userManager->createNewUser($user, $pwd1);
             
-        ?><div>validation de la création du nouvel utilisateur, <a href="index.php">Cliquez ici pour se connecter</a></div>
+        ?><div>validation de la création du nouvel utilisateur, <a href="index.php?action=formAccessUser">Cliquez ici pour se connecter</a></div>
         <?php
         }
 

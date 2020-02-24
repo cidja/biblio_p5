@@ -19,8 +19,8 @@
             <div class="formUser">
                 <form action="/p5/index.php?action=createUserConfirm" method="post">
                     <div class="form-group">
-                        <label for="pseudo">Nom d'utilisateur : </label>
-                        <input type="text" class="form-control" id="pseudo" name="pseudo">
+                        <label for="user">Nom d'utilisateur : </label>
+                        <input type="text" class="form-control" id="user" name="user">
                     </div>
                     <div class="form-group">
                         <label for="password1">Mot de passe : </label>

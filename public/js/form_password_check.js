@@ -1,17 +1,24 @@
 //In progress
 
      //source: https://openclassrooms.com/forum/sujet/verifier-si-deux-champs-sont-identiques-15225
-        let pwd1 = $('#pwd1');
-        let pwd2 = $('#pwd2');
-        let result = document.getElementById('result');
-        let submitButton = document.getElementById('submitButton');
-        //const field = document.getElementsByClassName('field');
+        const user = $('#user');
+        const pwd1 = $('#pwd1');
+        const pwd2 = $('#pwd2');
+        
+        const result = document.getElementById('result');
+        const submitButton = document.getElementById('submitButton');
+        
+
+        
+
         function checkPasswordValue(target){
             if(target.val("")){
                 target.css(
                     "border-color", "red"
                 )};
         }
+
+       
         checkPasswordValue(pwd1);
         checkPasswordValue(pwd2);
 

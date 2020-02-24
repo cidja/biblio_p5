@@ -33,7 +33,7 @@ try{
             }
 
             elseif($_GET["action"] == "createUserConfirm"){
-                $user = htmlspecialchars($_POST["pseudo"]);
+                $user = htmlspecialchars($_POST["user"]);
                 $pwd1 = htmlspecialchars($_POST["password1"]);
                 ToolsBackend::createNewUser($user, $pwd1);
             }
