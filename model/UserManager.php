@@ -61,8 +61,7 @@ class Model_UserManager extends Model_ManagerDb
             "user"      => $user,
             "pwd"       => $passwordHash
         ));
-        ?><div>validation de la création du nouvel utilisateur, <a href="index.php?action=home">Cliquez ici pour aller au menu</a></div>
-        <?php
+        
         
     }
 }

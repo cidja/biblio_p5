@@ -15,6 +15,29 @@ try{
                 header ("location: view/frontend/home.php");
             }
 
+            //For connexionView
+
+            // For admin
+            elseif($_GET["action"] == "formAccessAdmin"){
+                header("location: view/backend/formAccessAdmin.php");
+            }
+
+            // For member
+            elseif($_GET["action"] == "formAccessUser"){
+                header("location: view/backend/formAccessUser.php");
+            }
+
+            //To create newUser
+            elseif($_GET["action"] == "inscription"){
+                header("location: view/backend/formNewUser.php");
+            }
+
+            elseif($_GET["action"] == "createUserConfirm"){
+                $user = htmlspecialchars($_POST["pseudo"]);
+                $pwd1 = htmlspecialchars($_POST["password1"]);
+                ToolsBackend::createNewUser($user, $pwd1);
+            }
+
             // To check connexion 
             elseif($_GET["action"] == "checkConnexion"){
                 $user = htmlspecialchars($_POST["user"]); // htmlspecialchars pour éviter une faille de sécurité 
@@ -25,16 +48,6 @@ try{
                 ToolsFrontend::wrongId();
             }
 
-            //To create newUser
-            elseif($_GET["action"] == "inscription"){
-                ToolsBackend::formNewUser();
-            }
-
-            elseif($_GET["action"] == "createUserConfirm"){
-                $user = htmlspecialchars($_POST["pseudo"]);
-                $pwd1 = htmlspecialchars($_POST["password1"]);
-                ToolsBackend::createNewUser($user, $pwd1);
-            }
 
             //Novel part
 

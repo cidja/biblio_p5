@@ -18,28 +18,18 @@
         <h1 class="titleConnexion">Il était une fois...</h1>
         <h2 class="titleConnexion">l'application de gestion de bibliothèque</h2>
     </div>
-    <section class="container text-center jumbotron connexion mt-5">
-        <form method="post" action="index.php?action=checkConnexion">
-            <div class="form-group">
-                <label for="user">Utilisateur :</label>
-                <input type="text" class="form-control user" id="user" name="user" autofocus required>
-            </div>
-            <div class="form-group">
-                <label for="pwd">Mot de passe : </label>
-                <input type="password" class="form-control pwd" id="pwd" name="pwd" required >
-            </div>
-            <div class="form-group">
-                <input class="submitButtonConnexion +" type="submit" value="Valider">
-            </div>
-        </form>
-        <div class="row">
-        <div class="col-sm-6">
-            <button class="btn btn-warning" id="inscriptionButton"><a class="connexionViewLink" href="index.php?action=inscription">Inscription</a></button>
-        </div>
-        <div class="col-sm-6">
-            <button class="btn btn-success" id="visitButton" ><a class="connexionViewLink" href="index.php?action=home">Visiteur</a></button>
-        </div>
-        </div>
+    <div class="container">
+        <button class="btn btn-info"><a class="connexionViewLink" href="index.php?action=formAccessAdmin">Connexion administrateur</a></button>
+    </div>
+        <button class="btn btn-danger"><a class="connexionViewLink" href="index.php?action=formAccessUser">Connexion membre</a></button>
+    
+    <div class="">
+        <button class="btn btn-warning" id="inscriptionButton"><a class="connexionViewLink" href="index.php?action=inscription">Inscription</a></button>
+    </div>
+    <div class="">
+        <button class="btn btn-success" id="visitButton" ><a class="connexionViewLink" href="index.php?action=home">Visiteur</a></button>
+    </div>
+    </div>
     </section>
     
 </body>

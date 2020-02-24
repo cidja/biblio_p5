@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Création nouvel utilisateur</title>
+    <title>Connexion superutilisateur</title>
     <link rel="stylesheet" type="text/css" href="public/css/style.css" >
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Bangers|Marck+Script&display=swap" rel="stylesheet"> <!--google font !-->
@@ -14,28 +14,21 @@
     <script src="https://kit.fontawesome.com/bad7172f0a.js" crossorigin="anonymous"></script> <!--cdn fontawesome source: https://fontawesome.com/kits/bad7172f0a/settings !-->
 </head>
     <body>
-        <div class="container text-center">
-            <h2>Création d'un nouvel utilisateur :</h2>
-            <div class="formUser">
-                <form action="/p5/index.php?action=createUserConfirm" method="post">
-                    <div class="form-group">
-                        <label for="pseudo">Nom d'utilisateur : </label>
-                        <input type="text" class="form-control" id="pseudo" name="pseudo">
-                    </div>
-                    <div class="form-group">
-                        <label for="password1">Mot de passe : </label>
-                        <input type="password" class="form-control" id="password1" name="password1">
-                    </div>
-                    <div class="form-group">
-                        <label for="password2">Retaper le mot de passe : </label>
-                        <input type="password" class="form-control" id="password2" name="password2">
-                    </div>
-                    <div class="form-group">
-                        <input class="btn btn-info" type="submit" value="valider">
-                    </div>
-                </form>
-            </div>
-        </div>
+        <section class="container text-center jumbotron connexion mt-5">
+            <form method="post" action="index.php?action=checkConnexion">
+                <h3>Accès membre :</h3>
+                <div class="form-group">
+                    <label for="user">Pseudo :</label>
+                    <input type="text" class="form-control user" id="user" name="user" autofocus required>
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Mot de passe : </label>
+                    <input type="password" class="form-control pwd" id="pwd" name="pwd" required >
+                </div>
+                <div class="form-group">
+                    <input class="submitButtonConnexion +" type="submit" value="Valider">
+                </div>
+            </form>
 
     </body>
 </html>
