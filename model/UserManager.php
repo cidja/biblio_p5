@@ -9,7 +9,7 @@ require_once("model/ManagerDb.php"); // Calling the ManagerDb.php class Source: 
 class Model_UserManager extends Model_ManagerDb
 {
     //function to check the user and the mdp entered in the header
-    public function checkUser($user, $pwd)
+    public function checkSuperUser($user, $pwd)
     {
         $db = $this->dbConnect(); 
         $check = $db->query("SELECT user,pwd FROM superuser");

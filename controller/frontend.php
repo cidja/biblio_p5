@@ -19,20 +19,15 @@ use cidja\pageCartoonManager\Model_PageCartoonManager;
 
 
     trait ToolsFrontend{
+
+            public static function home()
+            {
+                require("view/frontend/home.php");
+            }
+
             public static function connexionScreen()
             {
                 require("connexionView.php");
-            }
-
-            public static function checkUser($user, $pwd)
-            {
-                $userManager = new Model_UserManager(); // creation of the UserManager objet
-                $check = $userManager->checkUser($user, $pwd); //
-            }
-
-            public static function wrongId()
-            {
-                require("view/frontend/wrongIdView.php");
             }
 
             public static function countTemplate()

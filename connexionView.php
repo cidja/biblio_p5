@@ -19,15 +19,15 @@
         <h2 class="titleConnexion">l'application de gestion de bibliothèque</h2>
     </div>
     <div class="container">
-        <button class="btn btn-info"><a class="connexionViewLink" href="index.php?action=formAccessAdmin">Connexion administrateur</a></button>
+        <button class="btn btn-info"><a class="connexionViewLink bodyLink" href="index.php?action=formAccessAdmin">Connexion administrateur</a></button>
     </div>
-        <button class="btn btn-danger"><a class="connexionViewLink" href="index.php?action=formAccessUser">Connexion membre</a></button>
+        <button class="btn btn-danger"><a class="connexionViewLink bodyLink" href="index.php?action=formAccessUser">Connexion membre</a></button>
     
     <div class="">
-        <button class="btn btn-warning" id="inscriptionButton"><a class="connexionViewLink" href="index.php?action=inscription">Inscription</a></button>
+        <button class="btn btn-warning" id="inscriptionButton"><a class="connexionViewLink bodyLink" href="index.php?action=inscription">Inscription</a></button>
     </div>
     <div class="">
-        <button class="btn btn-success" id="visitButton" ><a class="connexionViewLink" href="index.php?action=home">Visiteur</a></button>
+        <button class="btn btn-success" id="visitButton" ><a class="connexionViewLink bodyLink" href="index.php?action=home">Visiteur</a></button>
     </div>
     </div>
     </section>

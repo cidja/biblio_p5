@@ -13,6 +13,32 @@ use cidja\userManager\Model_UserManager;
 
 
     trait ToolsBackend{
+        public static function formAccessAdmin()
+        {
+            require("view/backend/formAccessAdmin.php");
+        }
+
+        public static function formAccessUser()
+        {
+            require("view/backend/formAccessUser.php");
+        }
+
+        public static function inscription()
+        {
+            require("view/backend/formNewUser.php");
+        }
+
+        public static function checkSuperUser($user, $pwd)
+        {
+            $userManager = new Model_UserManager(); // creation of the UserManager objet
+            $check = $userManager->checkSuperUser($user, $pwd); //
+        }
+
+        public static function wrongId()
+        {
+            require("view/backend/wrongIdView.php");
+        }
+
         public static function formNewPassword()
         {
             require("view/backend/updatePassword.php");

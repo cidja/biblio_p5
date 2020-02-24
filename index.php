@@ -12,24 +12,24 @@ try{
     if(isset($_GET["action"])){
         
             if($_GET["action"] == "home"){
-                header ("location: view/frontend/home.php");
+                ToolsFrontend::home();
             }
 
             //For connexionView
 
             // For admin
             elseif($_GET["action"] == "formAccessAdmin"){
-                header("location: view/backend/formAccessAdmin.php");
+                ToolsBackend::formAccessAdmin();
             }
 
             // For member
             elseif($_GET["action"] == "formAccessUser"){
-                header("location: view/backend/formAccessUser.php");
+                ToolsBackend::formAccessUser();
             }
 
             //To create newUser
             elseif($_GET["action"] == "inscription"){
-                header("location: view/backend/formNewUser.php");
+                ToolsBackend::inscription();
             }
 
             elseif($_GET["action"] == "createUserConfirm"){
@@ -42,10 +42,10 @@ try{
             elseif($_GET["action"] == "checkConnexion"){
                 $user = htmlspecialchars($_POST["user"]); // htmlspecialchars pour éviter une faille de sécurité 
                 $pwd = $_POST["pwd"]; 
-                ToolsFrontend::checkUser($user, $pwd);
+                ToolsBackend::checkSuperUser($user, $pwd);
             }
             elseif($_GET["action"] == "wrongId"){
-                ToolsFrontend::wrongId();
+                ToolsBackend::wrongId();
             }
 
 
