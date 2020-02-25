@@ -46,7 +46,7 @@
                     <a class="nav-link" href="index.php?action=addNovel">Ajout</a>
                 </li>
                 <?php 
-                if(isset($_SESSION["user"])){
+                if(isset($_SESSION["user"])){ //to see administration menu
                     ?>
                     <li class="navbar-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -73,7 +73,7 @@
                     </li>
                     <?php };
 
-                    if(!isset($_SESSION)){
+                    if(!isset($_SESSION["user"]) && (!isset($_SESSION["member"]))){
                     ?>
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?action=connexionview"><button class="btn btn-warning">Connexion</button></a>

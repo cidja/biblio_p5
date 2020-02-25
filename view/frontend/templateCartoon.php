@@ -72,7 +72,7 @@
                     </li>
                     <?php };
 
-                    if(!isset($_SESSION)){
+                if(!isset($_SESSION["user"]) && (!isset($_SESSION["member"]))){
                     ?>
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?action=connexionview"><button class="btn btn-warning">Connexion</button></a>
