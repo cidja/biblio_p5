@@ -13,6 +13,12 @@ use cidja\userManager\Model_UserManager;
 
 
     trait ToolsBackend{
+        
+        public static function connexionView()
+        {
+            require("connexionView.php");
+        }
+
         public static function formAccessAdmin()
         {
             require("view/backend/formAccessAdmin.php");

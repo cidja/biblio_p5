@@ -16,7 +16,9 @@ try{
             }
 
             //For connexionView
-
+            elseif($_GET["action"] == "connexionview"){
+                ToolsBackend::connexionView();
+            }
             // For admin
             elseif($_GET["action"] == "formAccessAdmin"){
                 ToolsBackend::formAccessAdmin();
@@ -54,6 +56,32 @@ try{
                 ToolsBackend::wrongId();
             }
 
+            //------------------Comment part ---------------------------
+
+            elseif ($_GET["action"] == "addComment") { 
+                //source: https://openclassrooms.com/fr/courses/4670706-adoptez-une-architecture-mvc-en-php/4683301-nouvelle-fonctionnalite-ajouter-des-commentaires#/id/r-4683671
+                if (isset($_GET["id"]) && $_GET["id"] > 0){
+                    if (!empty($_POST["author"]) && !empty($_POST["comment"])) {
+                        $novel_id = htmlspecialchars($_GET["id"]);
+                        $author     = htmlspecialchars($_POST["author"]);
+                        $comment    = htmlspecialchars($_POST["comment"]);
+                        ToolsFrontend::addComment($novel_id, $author, $comment); 
+                    }
+                    else {
+                        
+                        throw new Exception("Erreur tous les champs ne sont pas remplis !");
+                    }
+                }
+                else {
+                // other exception
+                throw new Exception("Erreur : aucun identifiant de billet envoyé");
+            }
+            }
+            elseif ($_GET["action"] == "signalComment"){ //to signal a comment
+            $id = htmlspecialchars($_GET["id"]);
+            $novel_id = htmlspecialchars($_GET["novel_id"]);
+            ToolsFrontend::signalComment($id, $novel_id); 
+            }
 
 
 
@@ -73,30 +101,9 @@ try{
                 }
             }
 
-            elseif ($_GET["action"] == "addComment") { 
-                //source: https://openclassrooms.com/fr/courses/4670706-adoptez-une-architecture-mvc-en-php/4683301-nouvelle-fonctionnalite-ajouter-des-commentaires#/id/r-4683671
-                if (isset($_GET["id"]) && $_GET["id"] > 0){
-                    if (!empty($_POST["author"]) && !empty($_POST["comment"])) {
-                        $novel_id = htmlspecialchars($_GET["id"]);
-                        $author     = htmlspecialchars($_POST["author"]);
-                        $comment    = htmlspecialchars($_POST["comment"]);
-                        ToolsFrontend::addComment($novel_id, $author, $comment); //renvoi dans controller/frontend
-                    }
-                    else {
-                        
-                        throw new Exception("Erreur tous les champs ne sont pas remplis !");
-                    }
-                }
-                else {
-                // Autre exception
-                throw new Exception("Erreur : aucun identifiant de billet envoyé");
-            }
-        }
-        elseif ($_GET["action"] == "signalComment"){ //Pour signaler un commentaire 
-            $id = htmlspecialchars($_GET["id"]);
-            $novel_id = htmlspecialchars($_GET["novel_id"]);
-            ToolsFrontend::signalComment($id, $novel_id); //Appel de la fonction signalComment du controller frontend avec comme paramètres le post_id du comment
-        }
+
+            
+
 
             elseif($_GET["action"] == "oneNovelAjax"){ // if in the url $_GET["action"]= oneNovel
                 if(isset($_GET["id"]) && $_GET["id"] > 0) { // check if $_get["id"] defined and greater than 0
