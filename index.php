@@ -92,6 +92,11 @@ try{
                 throw new Exception("Erreur : aucun identifiant de billet envoyé");
             }
         }
+        elseif ($_GET["action"] == "signalComment"){ //Pour signaler un commentaire 
+            $id = htmlspecialchars($_GET["id"]);
+            $novel_id = htmlspecialchars($_GET["novel_id"]);
+            ToolsFrontend::signalComment($id, $novel_id); //Appel de la fonction signalComment du controller frontend avec comme paramètres le post_id du comment
+        }
 
             elseif($_GET["action"] == "oneNovelAjax"){ // if in the url $_GET["action"]= oneNovel
                 if(isset($_GET["id"]) && $_GET["id"] > 0) { // check if $_get["id"] defined and greater than 0

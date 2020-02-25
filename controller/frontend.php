@@ -69,7 +69,22 @@ use cidja\commentManager\Model_CommentManager;
                 else { //Sinon on renvoi sur l'url index.php?action=post&id=5 par exemple pour le post avec l'id 5
                     header("location: index.php?action=oneNovel&id=". $novel_id);
                 }
-}
+            }
+
+            public static function signalComment($id, $novel_id)
+            {
+                $commentManager = new Model_CommentManager(); // création d'un objet
+
+                $signalComment = $commentManager->signalComment($id); // Appel de la fonction signalComment de l'objet CommentManager
+                if($signalComment === false) 
+                {
+                    throw new Exception("Impossible de signaler le commentaire");
+                }
+                else {
+                header("location: index.php?action=oneNovel&id=".$novel_id); // renvoi au menu principal
+                    }
+                    
+                }
 
 
             public static function oneNovelInfosAjax($id)
