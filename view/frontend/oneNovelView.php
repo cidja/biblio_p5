@@ -174,8 +174,8 @@ foreach($oneInfos as $data){ // Let's go through the board
             <section class="mb-4 pt-2 pb-4" id="viewComment">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-8 offset-lg-2 text-white">
-                            <h5 class="text-center text-white">Commentaires</h5>
+                        <div class="col-lg-8 offset-lg-2 ">
+                            <h5 class="text-center ">Commentaires</h5>
                             <?php
                              while($comment = $comments->fetch()) // On parcours le tableau source: https://openclassrooms.com/fr/courses/4670706-adoptez-une-architecture-mvc-en-php/4678891-nouvelle-fonctionnalite-afficher-des-commentaires#/id/r-4681307
                                 {
@@ -193,7 +193,7 @@ foreach($oneInfos as $data){ // Let's go through the board
                                     <?php if ($comment["comment_signal"] == 0){ //condition qui vérifie si comment_signal = 1 ou 0
                                         ?>
                                         <button class="btn btn-success" type="button">
-                                            <a class="text-dark" href="index.php?action=signalComment&amp;id=<?= $comment["id"]?>&post_id=<?= $comment["post_id"]?>" id="signallink">Signaler</a>
+                                            <a class="text-dark" href="index.php?action=signalComment&amp;id=<?= $comment["id"]?>&novel_id=<?= $comment["novel_id"]?>" id="signallink">Signaler</a>
                                         </button><!--Utiliser pour renvoyer sur une page pour valider la signalisation de commentaire !-->
                                         <?php
                                         } else {
@@ -214,19 +214,22 @@ foreach($oneInfos as $data){ // Let's go through the board
                 </div>
             </section>
         </div>
+        <?php 
 
+        if(isset($_SESSION["member"])){
+            ?>
         <div class="container">
             <section id="addComment">
                 <div class="container bg-success mb-5 rounded">
                     <div class="row justify-content-center">
                         <div class="mb-2 mt-2">
-                            <h2 class="text-white">Ajouter un commentaire </h2>
+                            <h2 class="">Ajouter un commentaire </h2>
                                 <!-- formulaire pour ajouter un commentaire !-->
                                 <!-- source: https://openclassrooms.com/fr/courses/4670706-adoptez-une-architecture-mvc-en-php/4683301-nouvelle-fonctionnalite-ajouter-des-commentaires#/id/r-4683667 !-->
                             <form class="form-login" action="index.php?action=addComment&amp;id=<?= $data["id"] ?>" method="post">
                                 <div class="text-center">
                                     <label for="author">
-                                        <input type="text" class="form-control" id="author" name="author" placeholder="auteur" required />
+                                        <input type="text" class="form-control" id="author" name="author" value="<?= $_SESSION["member"]; ?>" required />
                                     </label>
                                 </div>
                                 <div class="text-center">
@@ -243,7 +246,9 @@ foreach($oneInfos as $data){ // Let's go through the board
                 </div>
             </section>
         </div>
-
+        <?php   
+        }
+        ?>
             <div class="d-flex">
             <?php if(isset($_SESSION["user"])){ ?>
                 <button class="btn btn-info">
