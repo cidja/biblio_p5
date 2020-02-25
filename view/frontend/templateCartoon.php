@@ -44,27 +44,49 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?action=addCartoons">Ajout</a>
                 </li>
-                <li class="navbar-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Administration
-                    </a><div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <?php 
+                if(isset($_SESSION["user"])){
+                    ?>
+                    <li class="navbar-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Administration
+                        </a><div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="index.php?action=backend"><button class="btn btn-info">Moderation</button></a>
                         <a class="dropdown-item" href="index.php?action=formNewPassword"><button class="btn btn-info">Modifier mot de passe</button></a>
-                        <a class="dropdown-item" href="index.php?action=sessionStop"><button class="btn btn-warning ml-5">
-                        <?php if(isset($_SESSION)){
-                            echo "Déconnexion";
-                        }else{
-                            echo "Connexion"; 
-                        }?></button></a>
                     </div>
                 </li>
-                <?php if(!isset($_SESSION["user"]) && (!isset($_SESSION["member"]))){ ?>
+                <?php
+                }
+                ?>
+                <?php if(isset($_SESSION["user"])){
+                    ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php?action=sessionStop"><button class="btn btn-warning">Déconnexion</button></a>
+                    </li>
+                <?php };
+
+                 if(isset($_SESSION["member"])){
+                    ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php?action=sessionStop"><button class="btn btn-warning">Déconnexion</button></a>
+                    </li>
+                    <?php };
+
+                    if(!isset($_SESSION)){
+                    ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php?action=connexionview"><button class="btn btn-warning">Connexion</button></a>
+                    </li>  
+                <?php 
+                };
+                if(!isset($_SESSION["user"]) && (!isset($_SESSION["member"]))){ ?>
                     <li>
-                        <div class="btn btn-primary text-uppercase">mode visiteur aucune modification possible</div>
+                        <div class="btn btn-primary text-uppercase mt-2">mode visiteur aucune modification possible</div>
                     </li>
                 <?php }
                 if(isset($_SESSION["member"])){ ?>
                     <li>
-                        <div class="btn btn-primary">mode membre commentaires sur les livres possible</div>
+                        <div class="btn btn-primary mt-2">mode membre commentaires sur les livres possible</div>
                     </li>
                     <?php
                 };?>

@@ -54,20 +54,26 @@
                         </a><div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="index.php?action=backend"><button class="btn btn-info">Moderation</button></a>
                         <a class="dropdown-item" href="index.php?action=formNewPassword"><button class="btn btn-info">Modifier mot de passe</button></a>
-                        <a class="dropdown-item" href="index.php?action=sessionStop"><button class="btn btn-warning ml-5">Déconnexion</button></a>
                     </div>
                 </li>
                 <?php
                 }
                 ?>
-
-                <?php if(isset($_SESSION["member"])){
+                <?php if(isset($_SESSION["user"])){
                     ?>
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?action=sessionStop"><button class="btn btn-warning">Déconnexion</button></a>
                     </li>
-                    <?php                           
-                        }else {
+                <?php };
+
+                 if(isset($_SESSION["member"])){
+                    ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php?action=sessionStop"><button class="btn btn-warning">Déconnexion</button></a>
+                    </li>
+                    <?php };
+
+                    if(!isset($_SESSION)){
                     ?>
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?action=connexionview"><button class="btn btn-warning">Connexion</button></a>
