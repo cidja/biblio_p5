@@ -8,12 +8,14 @@ require_once("model/CartoonManager.php");
 require_once("model/PageCartoonManager.php");
 require_once("model/UserManager.php");
 require_once("model/SessionManager.php");
+require_once("model/CommentManager.php");
 
 use cidja\novelManager\Model_NovelManager;
 use cidja\pageNovelManager\Model_PageNovelManager;
 use cidja\userManager\Model_UserManager;
 use cidja\cartoonManager\Model_CartoonManager;
 use cidja\pageCartoonManager\Model_PageCartoonManager;
+use cidja\commentManager\Model_CommentManager;
 
 
 
@@ -47,8 +49,28 @@ use cidja\pageCartoonManager\Model_PageCartoonManager;
             {
                 $novelManager = new Model_NovelManager();
                 $oneInfos = $novelManager->oneNovelInfos($id); // $oneInfo which is called in oneNovelView.php
+                $commentManager = new Model_CommentManager(); // Création d'un objet
+                $comments = $commentManager->getComments($id); 
                 require("view/frontend/oneNovelView.php");
             }
+
+            public static function addComment($novel_id, $author, $comment)
+            {
+                $commentManager = new Model_CommentManager(); // Création d'un objet
+
+                $affectedLines = $commentManager->postComment($novel_id, $author, $comment); // appel de la fonction postComment de l'objet CommentManager
+
+                if($affectedLines === false) {
+                    //Notre modèle arrête tout et affiche une erreur avec un  die . Il y a moyen de faire plus propre : 
+                    //jetons ici une exception, le code va s'arrêter là et l'erreur être remontée jusque dans le routeur qui contenait le bloc  try  !
+                    //source: https://openclassrooms.com/fr/courses/4670706-adoptez-une-architecture-mvc-en-php/4689546-gerer-les-erreurs#/id/r-4689802
+                    throw new Exception("Impossible d'ajouter le commentaire");
+                }
+                else { //Sinon on renvoi sur l'url index.php?action=post&id=5 par exemple pour le post avec l'id 5
+                    header("location: index.php?action=oneNovel&id=". $novel_id);
+                }
+}
+
 
             public static function oneNovelInfosAjax($id)
             {

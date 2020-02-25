@@ -73,6 +73,26 @@ try{
                 }
             }
 
+            elseif ($_GET["action"] == "addComment") { 
+                //source: https://openclassrooms.com/fr/courses/4670706-adoptez-une-architecture-mvc-en-php/4683301-nouvelle-fonctionnalite-ajouter-des-commentaires#/id/r-4683671
+                if (isset($_GET["id"]) && $_GET["id"] > 0){
+                    if (!empty($_POST["author"]) && !empty($_POST["comment"])) {
+                        $novel_id = htmlspecialchars($_GET["id"]);
+                        $author     = htmlspecialchars($_POST["author"]);
+                        $comment    = htmlspecialchars($_POST["comment"]);
+                        ToolsFrontend::addComment($novel_id, $author, $comment); //renvoi dans controller/frontend
+                    }
+                    else {
+                        
+                        throw new Exception("Erreur tous les champs ne sont pas remplis !");
+                    }
+                }
+                else {
+                // Autre exception
+                throw new Exception("Erreur : aucun identifiant de billet envoyé");
+            }
+        }
+
             elseif($_GET["action"] == "oneNovelAjax"){ // if in the url $_GET["action"]= oneNovel
                 if(isset($_GET["id"]) && $_GET["id"] > 0) { // check if $_get["id"] defined and greater than 0
                     $id = htmlspecialchars($_GET["id"]); // to avoid inclusion xss
