@@ -229,7 +229,7 @@ foreach($oneInfos as $data){ // Let's go through the board
                             <form class="form-login" action="index.php?action=addComment&amp;id=<?= $data["id"] ?>" method="post">
                                 <div class="text-center">
                                     <label for="author">
-                                        <input type="text" class="form-control" id="author" name="author" value="<?= nameInComment(); //include in tools.php?>" required />
+                                        <input type="text" class="form-control" id="author" name="author" value="<?= nameInComment(); //include in tools.php?>" readonly />
                                     </label>
                                 </div>
                                 <div class="text-center">
