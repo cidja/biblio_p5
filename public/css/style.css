@@ -20,15 +20,14 @@ body{
     border-radius: 30px;
     background-color: royalblue;
 }
-#inscriptionButton{
+
+.buttonConnexionView{
+    padding: 10px auto !important;
+    border-radius: 30px !important;
     margin-bottom: 10px;
 }
-#inscriptionButton, #visitButton{
-    padding: 10px 10%;
-    border-radius: 30px;
-}
 .connexionViewLink{
-    font-size: 40px;
+    font-size: 30px;
 }
 
 

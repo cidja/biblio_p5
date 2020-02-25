@@ -18,18 +18,20 @@
         <h1 class="titleConnexion">Il était une fois...</h1>
         <h2 class="titleConnexion">l'application de gestion de bibliothèque</h2>
     </div>
-    <div class="container">
-        <button class="btn btn-info"><a class="connexionViewLink bodyLink" href="index.php?action=formAccessAdmin">Connexion administrateur</a></button>
+    <section class="container d-flex flex-column align-items-center">
+    <div>
+        <button class="btn btn-info buttonConnexionView"><a class="connexionViewLink bodyLink" href="index.php?action=formAccessAdmin">Connexion administrateur</a></button>
     </div>
-        <button class="btn btn-danger"><a class="connexionViewLink bodyLink" href="index.php?action=formAccessUser">Connexion membre</a></button>
+    <div>
+        <button class="btn btn-danger buttonConnexionView"><a class="connexionViewLink bodyLink" href="index.php?action=formAccessUser">Connexion membre</a></button>
+    </div>
+    <div>
+        <button class="btn btn-warning buttonConnexionView"><a class="connexionViewLink bodyLink" href="index.php?action=inscription">Inscription</a></button>
+    </div>
+    <div>
+        <button class="btn btn-success buttonConnexionView"><a class="connexionViewLink bodyLink" href="index.php?action=home">Visiteur</a></button>
+    </div>
     
-    <div class="">
-        <button class="btn btn-warning" id="inscriptionButton"><a class="connexionViewLink bodyLink" href="index.php?action=inscription">Inscription</a></button>
-    </div>
-    <div class="">
-        <button class="btn btn-success" id="visitButton" ><a class="connexionViewLink bodyLink" href="index.php?action=home">Visiteur</a></button>
-    </div>
-    </div>
     </section>
     
 </body>
