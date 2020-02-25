@@ -52,9 +52,9 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
         }
         ?>
                 <div class="coverAndStatus col-12 col-md-3 col-lg-3">
-                    <a href="index.php?action=oneNovel&amp;id=<?= $data["id"];?>">
+                    <a class="linkCover" href="index.php?action=oneNovel&amp;id=<?= $data["id"];?>">
                         <img class="imgCover +"src=<?=$cover; ?> alt="couverture du livre" title="couverture du livre" />
-                    </a>
+                    
                    
                         <div>
                             <div><?= $data["title"]; ?></div>
@@ -77,6 +77,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                                 <?php
                             } ?>
                     </div>
+                    </a>
                 </div>
             
         <?php

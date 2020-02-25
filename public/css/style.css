@@ -61,6 +61,7 @@ body{
     font-family: 'Bangers', cursive;
 }
 /*All novel view */
+
 #titleSort{
     border-radius: 20px;
     background-color: #e1f4f3;
@@ -69,6 +70,10 @@ body{
 #genreSortTitle{
     font-size: 20px;
     color: grey;
+}
+.linkCover{
+    text-decoration: none;
+    color: black;
 }
 
 .coverAndStatus{
