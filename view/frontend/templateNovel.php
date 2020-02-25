@@ -58,11 +58,17 @@
                         }?></button></a>
                     </div>
                 </li>
-                <?php if(!isset($_SESSION["user"])){ ?>
+                <?php if(!isset($_SESSION)){ ?>
                     <li>
                         <div class="btn btn-primary text-uppercase">mode visiteur aucune modification possible</div>
                     </li>
-                <?php };?>
+                <?php }
+                if(isset($_SESSION["member"])){ ?>
+                    <li>
+                        <div class="btn btn-primary">mode membre commentaires sur les livres possible</div>
+                    </li>
+                    <?php
+                };?>
             </ul>
             
         </div>
