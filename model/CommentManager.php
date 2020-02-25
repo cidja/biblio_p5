@@ -30,9 +30,9 @@ class Model_CommentManager extends Model_ManagerDb
         $comments = $db->prepare("INSERT INTO comments(novel_id, author, comment, comment_date, comment_signal)VALUES(?, ?, ?, NOW(),0)"); //comment_signal mis sur 0 
         $affectedLines = $comments->execute(array($novel_id, $author, $comment));
 
-        return $affectedLines;
-        
+        return $affectedLines; 
     }
+
     public function signalComment($id) //to signal comment
     { //le but de la fonction est d'ajouter un TRUE sur la colonne signal de la table comments pour ensuite le faire remonter dans les signal sur le backend
         $db = $this->dbConnect(); //appel de $this S:https://openclassrooms.com/fr/courses/4670706-adoptez-une-architecture-mvc-en-php/4735671-passage-du-modele-en-objet#/id/r-4744592

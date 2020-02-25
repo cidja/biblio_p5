@@ -83,6 +83,25 @@ try{
             ToolsFrontend::signalComment($id, $novel_id); 
             }
 
+            elseif($_GET["action"] == "moderation"){
+                ToolsBackend::moderation();
+            }
+            elseif($_GET["action"] == "signalCommentDecision"){
+                if(isset($_GET['id']) && $_GET["id"] > 0){
+                    if($_POST["commentChoice"] == "commentApprouve"){
+                        ToolsBackend::approuveComment($_GET["id"]);
+                        header("location: index.php?action=moderation");
+                        
+                    }
+                    elseif($_POST["commentChoice"] == "deleteComment"){
+                        ToolsBackend::deleteComment($_GET["id"]);
+                        header("location: index.php?action=moderation");
+                    }
+                }
+                else {
+                    throw new Exception("Aucun id de post envoyé");
+                }
+            }
 
 
             //Novel part

@@ -52,7 +52,7 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Administration
                         </a><div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="index.php?action=backend"><button class="btn btn-info">Moderation</button></a>
+                        <a class="dropdown-item" href="index.php?action=moderation"><button class="btn btn-info">Moderation</button></a>
                         <a class="dropdown-item" href="index.php?action=formNewPassword"><button class="btn btn-info">Modifier mot de passe</button></a>
                     </div>
                 </li>
