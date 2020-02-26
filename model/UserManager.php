@@ -89,4 +89,14 @@ class Model_UserManager extends Model_ManagerDb
         }
     }
 
+    public function memberExist($member)
+    {
+        $db = $this->dbConnect();
+        $req = $db->query("SELECT * FROM users");
+        foreach($req as $result){
+            echo $result["user"];
+            var_dump($result);
+        }
+    }
+
 }
