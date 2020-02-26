@@ -28,10 +28,12 @@ class Model_CommentManager extends Model_ManagerDb
     public function postComment($novel_id, $author, $comment) 
     { 
         $db = $this->dbConnect(); //appel de $this S:https://openclassrooms.com/fr/courses/4670706-adoptez-une-architecture-mvc-en-php/4735671-passage-du-modele-en-objet#/id/r-4744592
-        $comments = $db->prepare("INSERT INTO comments(novel_id, author, comment, comment_date, comment_signal)VALUES(?, ?, ?, NOW(),0)"); //comment_signal mis sur 0 
-        $affectedLines = $comments->execute(array($novel_id, $author, $comment));
-
-        return $affectedLines; 
+        $comments = $db->prepare("INSERT INTO comments(novel_id, author, comment, comment_date, comment_signal)VALUES(:novel_id,:author,:comment, NOW(),0)"); //comment_signal mis sur 0 
+        $affectedLines = $comments->execute(array(
+            "novel_id"  =>$novel_id,
+            "author"    => $author,
+            "comment"   =>  $comment));
+ 
     }
 
     public function signalComment($id) //to signal comment
@@ -74,5 +76,7 @@ class Model_CommentManager extends Model_ManagerDb
         $countSignalComments = $db->query("SELECT COUNT(comment_signal) FROM comments WHERE comment_signal = 1");
         return $countSignalComments;
     }
+
+
 
 }
