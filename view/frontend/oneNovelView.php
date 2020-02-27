@@ -216,7 +216,7 @@ foreach($oneInfos as $data){ // Let's go through the board
         </div>
         <?php 
 
-        if(isset($_SESSION)){
+        if(isset($_SESSION["user"]) || isset($_SESSION["member"])){
             ?>
         <div class="container">
             <section id="addComment">
