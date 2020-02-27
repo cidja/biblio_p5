@@ -355,7 +355,7 @@ try{
             }
         }
         else{
-            ToolsFrontend::connexionScreen();
+            ToolsFrontend::home();
         }
 }
 
