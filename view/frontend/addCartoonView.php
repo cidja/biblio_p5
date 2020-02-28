@@ -11,7 +11,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
 <!-- source: https://getbootstrap.com/docs/4.0/components/forms/ !-->
     <section class="container addCartoonForm jumbotron">
         <h3 class="text-center text-uppercase">Ajout d'une bande dessinée</h3>
-        <?php if(isset($_SESSION["user"])){ ?>
+        <?php if(isset($_SESSION["member"]) && $_SESSION["member"] == "admin"){ ?>
             <form method="post" action="index.php?action=addCartoonsConfirm">
         <?php }; ?>
             <div class="form-group">
