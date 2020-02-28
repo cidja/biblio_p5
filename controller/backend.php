@@ -51,10 +51,10 @@ use cidja\commentManager\Model_CommentManager;
         {
             require("view/backend/updatePassword.php");
         }
-        public static function changePassword($user, $newPwd, $oldPwd, $newPwdRepeat)
+        public static function changePassword($user, $oldPwd, $newPwd, $newPwdRepeat)
         {
             $userManager = new Model_UserManager();
-            $newPassword = $userManager->changePassword($user, $newPwd, $oldPwd, $newPwdRepeat);
+            $newPassword = $userManager->changePassword($user, $oldPwd, $newPwd, $newPwdRepeat);
 
         }
 

@@ -29,10 +29,11 @@ class Model_UserManager extends Model_ManagerDb
             }
     }
     
-    public function changePassword($user, $newPwd, $oldPwd, $newPwdRepeat)
+    public function changePassword($user, $oldPwd, $newPwd, $newPwdRepeat)
     {
         $db= $this->dbConnect(); //fonction qui va vérifier si l'ancien mot de passe est bon 
-        $checkMdp = $db->query("SELECT user,pwd FROM users");
+        $checkMdp = $db->prepare("SELECT user,pwd FROM users WHERE user=?");
+        $checkMdp->execute(array($user));
         foreach($checkMdp as $data){
             if(password_verify($oldPwd, $data["pwd"])){
                 if($newPwd === $newPwdRepeat){
@@ -86,9 +87,7 @@ class Model_UserManager extends Model_ManagerDb
         if($result == true){
             header ("location: index.php?action=home");
         } else{
-            ?> <h3>mauvais mot de passe ou identifiant</h3>
-            <div><a href="index.php?action=formAccessUser">Réessayer</a></div>
-            <?php
+           header("location: index.php?action=wrongId");
         }
     }
 

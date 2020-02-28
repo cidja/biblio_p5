@@ -246,7 +246,7 @@ try{
             $oldPwd = htmlspecialchars($_POST["oldMdp"]);
             $newPwd = htmlspecialchars($_POST["newMdp"]);
             $newPwdRepeat = htmlspecialchars($_POST["newMdpRepeat"]);
-            ToolsBackend::changePassword($user, $oldPwd, $oldPwd, $newPwdRepeat);
+            ToolsBackend::changePassword($user, $oldPwd, $newPwd, $newPwdRepeat);
         }
     
     
