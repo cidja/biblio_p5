@@ -68,7 +68,7 @@
                     </li>
                     <?php
                 };
-                if(!isset($_SESSION)){ //for visit mode
+                if(!isset($_SESSION["member"])){ //for visit mode
                     ?>
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?action=connexionview"><button class="btn btn-warning">Connexion</button></a>
