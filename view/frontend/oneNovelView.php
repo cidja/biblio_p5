@@ -216,7 +216,7 @@ foreach($oneInfos as $data){ // Let's go through the board
         </div>
         <?php 
 
-        if(isset($_SESSION["user"]) || isset($_SESSION["member"])){
+        if(isset($_SESSION["member"])){
             ?>
         <div class="container">
             <section id="addComment">
@@ -250,7 +250,7 @@ foreach($oneInfos as $data){ // Let's go through the board
         }
         ?>
             <div class="d-flex">
-            <?php if(isset($_SESSION["user"])){ ?>
+            <?php if($_SESSION["member"] == "admin"){ ?>
                 <button class="btn btn-info">
                     <a class="bodyLink" href="index.php?action=updateNovel&amp;id=<?= $data["id"];?>">Modifier la fiche</a>
                 </button>

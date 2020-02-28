@@ -19,15 +19,15 @@ try{
             elseif($_GET["action"] == "connexionview"){
                 ToolsBackend::connexionView();
             }
-            // For admin
-            elseif($_GET["action"] == "formAccessAdmin"){
-                ToolsBackend::formAccessAdmin();
-            }
+            // // For admin
+            // elseif($_GET["action"] == "formAccessAdmin"){
+            //     ToolsBackend::formAccessAdmin();
+            // }
 
             // For member
-            elseif($_GET["action"] == "formAccessUser"){
-                ToolsBackend::formAccessUser();
-            }
+            // elseif($_GET["action"] == "formAccessUser"){
+            //     ToolsBackend::formAccessUser();
+            // }
 
             //To create newUser
             elseif($_GET["action"] == "inscription"){
@@ -355,7 +355,7 @@ try{
             }
         }
         else{
-            ToolsFrontend::home();
+            ToolsFrontend::connexionScreen();
         }
 }
 

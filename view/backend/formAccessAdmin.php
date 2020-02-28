@@ -1,5 +1,5 @@
 <?php
-
+DEL
 $title = "Connexion superutilisateur";
 ob_start();
 ?>

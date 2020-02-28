@@ -46,7 +46,7 @@
                     <a class="nav-link" href="index.php?action=addNovel">Ajout</a>
                 </li>
                 <?php 
-                if(isset($_SESSION["user"])){ //to see administration menu
+                if($_SESSION["member"] == "admin"){ //to see administration menu
                     ?>
                     <li class="navbar-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -57,35 +57,36 @@
                     </div>
                 </li>
                 <?php
-                }
-                ?>
-                <?php if(isset($_SESSION["user"])){
+                };
+                if(isset($_SESSION["member"])){ //member and admin mode
                     ?>
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?action=sessionStop"><button class="btn btn-warning">Déconnexion</button></a>
                     </li>
-                <?php };
-
-                 if(isset($_SESSION["member"])){
-                    ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?action=sessionStop"><button class="btn btn-warning">Déconnexion</button></a>
-                    </li>
-                    <?php };
-
-                    if(!isset($_SESSION["user"]) && (!isset($_SESSION["member"]))){
+                    <?php
+                };
+                if(!isset($_SESSION)){ //for visit mode
                     ?>
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?action=connexionview"><button class="btn btn-warning">Connexion</button></a>
                     </li>  
                 <?php 
                 };
-                if(!isset($_SESSION["user"]) && (!isset($_SESSION["member"]))){ ?>
+                if($_SESSION["member"] == "admin"){ //admin mode
+                    ?>
+                    <li>
+                        <div class="btn btn-primary text-uppercase mt-2">Mode administrateur</div>
+                    </li>
+                    
+                    <?php };
+                if(!isset($_SESSION["member"])){ //message for visit mode
+                    ?>
                     <li>
                         <div class="btn btn-primary text-uppercase mt-2">mode visiteur aucune modification possible</div>
                     </li>
-                <?php }
-                if(isset($_SESSION["member"])){ ?>
+                <?php };
+                if(isset($_SESSION["member"]) && $_SESSION["member"] !== "admin"){ //message for member mode
+                    ?>
                     <li>
                         <div class="btn btn-primary mt-2">mode membre commentaires sur les livres possible</div>
                     </li>

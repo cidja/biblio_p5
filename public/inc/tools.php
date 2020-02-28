@@ -6,9 +6,8 @@ function testnotUserIssetVisitTitle() {if(!isset($_SESSION)){ ?>
 function nameInComment(){
     if(isset($_SESSION["member"])){
         echo $_SESSION["member"];
-    } else{
-        echo $_SESSION["user"];
-    };
+    }; 
 }
+
 
     ?> 
