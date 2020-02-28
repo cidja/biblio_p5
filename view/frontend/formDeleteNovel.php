@@ -11,7 +11,9 @@ ob_start(); // Start of capture to put it in the variable at the end of the scri
 ?>
 <div class="container">
     <div class="col">
+    <?php if(isset($_SESSION["member"]) && $_SESSION["member"] == "admin"){ ?>
         <form method="post" action="index.php?action=deleteNovel&amp;id=<?=$id;?>">
+        <?php }; ?>
             <div class="form-group">
                 <label for="pwdDelete">Mot de passe pour confirmer la suppression du livre <?= $novel; ?></label>
                 <input type="password" class="form-control" id="pwdDelete" name="pwdDelete" required>
