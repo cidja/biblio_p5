@@ -43,7 +43,7 @@
                     <a class="nav-link" href="index.php?action=statistics">Statistiques</a>
                 </li>
                 <?php 
-                if(isset($_SESSION["member"]) && $_SESSION["member"] == "admin"){ //to see administration menu
+                if(isset($_SESSION["member"]) && $_SESSION["member"] == "admin"){ 
                     ?>
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?action=addNovel">Ajout</a>
