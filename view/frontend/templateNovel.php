@@ -64,6 +64,9 @@
                 if(isset($_SESSION["member"])){ //member and admin mode
                     ?>
                     <li class="nav-item">
+                    <a class="nav-link" href="index.php?action=formNewPassword"><button class="btn btn-info">Modifier mot de passe</button></a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="index.php?action=sessionStop"><button class="btn btn-warning">Déconnexion</button></a>
                     </li>
                     <?php
