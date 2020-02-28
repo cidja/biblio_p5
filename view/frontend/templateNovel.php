@@ -69,7 +69,7 @@
                     ?>
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?action=connexionview"><button class="btn btn-warning">Connexion</button></a>
-                    </li>  
+                    </li>   
                 <?php 
                 };
                 if($_SESSION["member"] == "admin"){ //admin mode
