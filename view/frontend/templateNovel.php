@@ -46,7 +46,7 @@
                     <a class="nav-link" href="index.php?action=addNovel">Ajout</a>
                 </li>
                 <?php 
-                if($_SESSION["member"] == "admin"){ //to see administration menu
+                if(isset($_SESSION["member"]) && $_SESSION["member"] == "admin"){ //to see administration menu
                     ?>
                     <li class="navbar-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -72,7 +72,7 @@
                     </li>   
                 <?php 
                 };
-                if($_SESSION["member"] == "admin"){ //admin mode
+                if(isset($_SESSION["member"]) && $_SESSION["member"] == "admin"){ //admin mode
                     ?>
                     <li>
                         <div class="btn btn-primary text-uppercase mt-2">Mode administrateur</div>
