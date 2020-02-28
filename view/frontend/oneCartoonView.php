@@ -6,8 +6,6 @@ include("public/inc/tools.php");
 
 ob_start(); // Start of capture to put it in the variable at the end of the script 
 
-testnotUserIssetVisitTitle();
-
     foreach($oneCartoonInfos as $data){ // Let's go through the board
         $title = $data["title"]; 
         if(!empty($data["cover"])){
@@ -135,7 +133,7 @@ testnotUserIssetVisitTitle();
                 </div>
 
                 <div class="d-flex">
-                <?php if(isset($_SESSION["user"])){ ?>
+                <?php if(isset($_SESSION["member"]) && $_SESSION["member"] == "admin"){ ?>
                     <button class="btn btn-info">
                         <a class="bodyLink" href="index.php?action=updateCartoon&amp;id=<?= $data["id"];?>">Modifier la fiche</a>
                     </button>
