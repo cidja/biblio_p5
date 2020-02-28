@@ -4,15 +4,17 @@ $title = "Admin mon blog";
     ob_start(); 
     ?>
     <div class="blocPage">
-    <?= testnotUserIssetVisitTitle();?>
         <section id="sectionUpdatePassword">
             <div class="error"></div>
             <div class="container">
                 <div class="row justify-content-center">
+                    <h3>Connecté en tant que : <?= $_SESSION["member"]; ?></h3>
+                </div>
+                <div class="row justify-content-center">
                     <div class="mb-5 mt-4">
 
-                    <?php if(isset($_SESSION["user"])){ ?>
-                    <form class="form-login" action="index.php?action=updatePassword" method="post"> <?php }; ?>
+                   
+                    <form class="form-login" action="index.php?action=updatePassword" method="post">
 
                             <div class="form-group text-center mb-1">
                                 <label for="oldMdp">
