@@ -250,7 +250,7 @@ foreach($oneInfos as $data){ // Let's go through the board
         }
         ?>
             <div class="d-flex">
-            <?php if($_SESSION["member"] == "admin"){ ?>
+            <?php if(isset($_SESSION["member"]) && $_SESSION["member"] == "admin"){ ?>
                 <button class="btn btn-info">
                     <a class="bodyLink" href="index.php?action=updateNovel&amp;id=<?= $data["id"];?>">Modifier la fiche</a>
                 </button>
