@@ -6,7 +6,7 @@ include("public/inc/tools.php");
 $title = "Roman en cours";
 
 ob_start(); //Start of capture to put it in the variable at the end of the script 
-testnotUserIssetVisitTitle();?>
+?>
     <div class="titleContainer text-center text-uppercase">
         <h2>Livre en cours </h2>
     </div>
@@ -74,7 +74,7 @@ testnotUserIssetVisitTitle();?>
                     <?php
                 }
                 ?><div class="result"></div>
-                    <?php if(isset($_SESSION["user"])){ ?>
+                    <?php if(isset($_SESSION["member"]) && $_SESSION["member"] == "admin"){ ?>
                         <form method="post" action="index.php?action=newPageCount">
                     <?php }; ?>
                         <div class="form-group d-flex flex-column">
