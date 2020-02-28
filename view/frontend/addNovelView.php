@@ -7,13 +7,11 @@ include("public/inc/tools.php");
 $title = "Ajout d'un ouvrage";
 
 ob_start(); //Start of capture to put it in the variable at the end of the script 
- if(!isset($_SESSION["user"])){ ?>
-        <h2 class="textDemo container text-center text-uppercase">Mode visiteur aucune modification possible</h2> 
-    <?php }; ?>
+ ?>
     <!-- source: https://getbootstrap.com/docs/4.0/components/forms/ !-->
     <section class=" container jumbotron addNovelForm">
         <h3 class="text-center text-uppercase">Ajout d'un livre</h3>
-        <?php if(isset($_SESSION["user"])){ ?>
+        <?php if(isset($_SESSION["member"]) && $_SESSION["member"] == "admin"){ ?>
             <form method="post" action="index.php?action=addNovelConfirm">
         <?php }; ?>
             <div class="form-group">
