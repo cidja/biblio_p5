@@ -5,15 +5,16 @@
 include("public/inc/tools.php");
 
 ob_start(); // Start of capture to put it in the variable at the end of the script 
-testnotUserIssetVisitTitle();
+
 
 foreach($oneInfos as $data){ // Let's go through the board
     $title = $data["title"]; 
     
     ?>
     <section class="container novelForm">
+    <?php if(isset($_SESSION["member"]) && $_SESSION["member"] == "admin"){ ?>
         <form method="post" action="index.php?action=updateNovelConfirm&amp;id=<?= $data["id"];?>">
-
+    <?php }; ?>
         <!-- lend part !-->
             <div class="form-group row justify-content-center align-items-center">
                 <label for="lend" id="lend" class="col-sm-auto col-form-label">Emprunté ? :</label>
