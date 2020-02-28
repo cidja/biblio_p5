@@ -5,14 +5,14 @@
 include("public/inc/tools.php");
 
 ob_start(); //Start of capture to put it in the variable at the end of the script 
-testnotUserIssetVisitTitle();
+
 foreach($oneInfos as $data){ // Let's go through the board
         $title = "Modification de " .$data["title"]; 
         
         ?>
     <!-- source: https://getbootstrap.com/docs/4.0/components/forms/ !-->
         <section class=" container CartoonForm">
-        <?php if(isset($_SESSION["user"])){ ?>
+        <?php if(isset($_SESSION["member"]) && $_SESSION["member"] == "admin"){ ?>
             <form method="post" action="index.php?action=updateCartoonConfirm&amp;id=<?= $data["id"];?>">
         <?php }; ?>
                 <div class="form-group">
