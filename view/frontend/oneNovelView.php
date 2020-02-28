@@ -5,8 +5,6 @@
 include("public/inc/tools.php");
 
 ob_start(); // Start of capture to put it in the variable at the end of the script 
-testnotUserIssetVisitTitle();
-
 
 foreach($oneInfos as $data){ // Let's go through the board
     $title = $data["title"]; 

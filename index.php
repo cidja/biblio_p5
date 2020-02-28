@@ -242,10 +242,11 @@ try{
 
         //Appel de la méthode pour modifier le mot de passe admin
         elseif($_GET["action"] == "updatePassword"){
-            $oldMdp = htmlspecialchars($_POST["oldMdp"]);
-            $newMdp = htmlspecialchars($_POST["newMdp"]);
-            $newMdpRepeat = htmlspecialchars($_POST["newMdpRepeat"]);
-            ToolsBackend::changePassword($oldMdp, $newMdp, $newMdpRepeat);
+            $user = htmlspecialchars($_SESSION["member"]);
+            $oldPwd = htmlspecialchars($_POST["oldMdp"]);
+            $newPwd = htmlspecialchars($_POST["newMdp"]);
+            $newPwdRepeat = htmlspecialchars($_POST["newMdpRepeat"]);
+            ToolsBackend::changePassword($user, $oldPwd, $oldPwd, $newPwdRepeat);
         }
     
     

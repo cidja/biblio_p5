@@ -29,17 +29,20 @@ class Model_UserManager extends Model_ManagerDb
             }
     }
     
-    public function changePassword($oldMdp,$newMdp, $newMdpRepeat)
+    public function changePassword($user, $newPwd, $oldPwd, $newPwdRepeat)
     {
         $db= $this->dbConnect(); //fonction qui va vérifier si l'ancien mot de passe est bon 
-        $checkMdp = $db->query("SELECT user,pwd FROM superuser");
+        $checkMdp = $db->query("SELECT user,pwd FROM users");
         foreach($checkMdp as $data){
-            if(password_verify($oldMdp, $data["pwd"])){
-                if($newMdp === $newMdpRepeat){
+            if(password_verify($oldPwd, $data["pwd"])){
+                if($newPwd === $newPwdRepeat){
                     $db = $this->dbConnect();
-                        $mdp = password_hash($newMdp,PASSWORD_DEFAULT); //source: https://www.php.net/manual/en/function.password-hash.php
-                        $change = $db->prepare("UPDATE superuser SET pwd=?, update_date=NOW() WHERE user='admin'"); 
-                        $changeresult = $change->execute(array($mdp));
+                        $pwd = password_hash($newPwd,PASSWORD_DEFAULT); //source: https://www.php.net/manual/en/function.password-hash.php
+                        $change = $db->prepare("UPDATE users SET pwd=:pwd, update_date=NOW() WHERE user=:user"); 
+                        $changeresult = $change->execute(array(
+                            "pwd"       => $pwd,
+                            "user"      => $user
+                        ));
                         echo "Mot de passe modifié";
                         session_unset();
                         session_destroy();
