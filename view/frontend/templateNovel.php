@@ -42,10 +42,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?action=statistics">Statistiques</a>
                 </li>
+                <?php 
+                if(isset($_SESSION["member"]) && $_SESSION["member"] == "admin"){ //to see administration menu
+                    ?>
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?action=addNovel">Ajout</a>
                 </li>
-                <?php 
+                <?php };
                 if(isset($_SESSION["member"]) && $_SESSION["member"] == "admin"){ //to see administration menu
                     ?>
                     <li class="navbar-item dropdown">
