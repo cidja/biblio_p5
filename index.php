@@ -46,12 +46,6 @@ try{
                 ToolsBackend::checkMember($member, $pwd);
             }
 
-            // To check connexion 
-            elseif($_GET["action"] == "checkConnexion"){
-                $user = htmlspecialchars($_POST["user"]); // htmlspecialchars to avoid inclusion xss
-                $pwd = $_POST["pwd"]; 
-                ToolsBackend::checkSuperUser($user, $pwd);
-            }
             elseif($_GET["action"] == "wrongId"){
                 ToolsBackend::wrongId();
             }

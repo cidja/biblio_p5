@@ -35,13 +35,7 @@ use cidja\commentManager\Model_CommentManager;
         {
             require("view/backend/formNewUser.php");
         }
-
-        public static function checkSuperUser($user, $pwd)
-        {
-            $userManager = new Model_UserManager(); // creation of the UserManager objet
-            $check = $userManager->checkSuperUser($user, $pwd); //
-        }
-
+        
         public static function wrongId()
         {
             require("view/backend/wrongIdView.php");
@@ -49,6 +43,7 @@ use cidja\commentManager\Model_CommentManager;
 
         public static function formNewPassword()
         {
+
             require("view/backend/updatePassword.php");
         }
         public static function changePassword($user, $oldPwd, $newPwd, $newPwdRepeat)
