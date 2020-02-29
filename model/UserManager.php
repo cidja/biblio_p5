@@ -9,37 +9,6 @@ require_once("model/ManagerDb.php"); // Calling the ManagerDb.php class Source: 
 
 class Model_UserManager extends Model_ManagerDb
 {
-    public function changePassword($user, $oldPwd, $newPwd, $newPwdRepeat)
-    {
-        $db= $this->dbConnect(); //fonction qui va vérifier si l'ancien mot de passe est bon 
-        $checkMdp = $db->prepare("SELECT user,pwd FROM users WHERE user=?");
-        $checkMdp->execute(array($user));
-        foreach($checkMdp as $data){
-            if(password_verify($oldPwd, $data["pwd"])){
-                if($newPwd === $newPwdRepeat){
-                    $db = $this->dbConnect();
-                        $pwd = password_hash($newPwd,PASSWORD_DEFAULT); //source: https://www.php.net/manual/en/function.password-hash.php
-                        $change = $db->prepare("UPDATE users SET pwd=:pwd, update_date=NOW() WHERE user=:user"); 
-                        $changeresult = $change->execute(array(
-                            "pwd"       => $pwd,
-                            "user"      => $user
-                        ));
-                        echo "Mot de passe modifié";
-                        session_unset();
-                        session_destroy();
-                        ?>
-                        <a href="connexionView.php"> Merci de vous reconnecter avec le nouveau mot de passe</a>
-                        <?php
-                }
-            } else {
-                ?>
-                <h3>le mot de passe actuel n'est pas le bon</h3>
-            <div><a href="index.php?action=formNewPassword">Réessayer</a></div>
-            <?php
-            }
-        }
-    }
-
     public function createNewUser($user, $pwd1)
     {
         $passwordHash = password_hash($pwd1, PASSWORD_DEFAULT);
@@ -76,6 +45,45 @@ class Model_UserManager extends Model_ManagerDb
            header("location: index.php?action=wrongId");
         }
     }
+
+    public function updateDatePassword($user){
+        $db= $this->dbConnect();
+        $updateDatePassword = $db->prepare("SELECT user, inscription_date, update_date FROM users WHERE user =?");
+        $updateDatePassword->execute(array($user));
+        return $updateDatePassword;
+    }
+
+    public function changePassword($user, $oldPwd, $newPwd, $newPwdRepeat)
+    {
+        $db= $this->dbConnect(); //fonction qui va vérifier si l'ancien mot de passe est bon 
+        $checkMdp = $db->prepare("SELECT user,pwd FROM users WHERE user=?");
+        $checkMdp->execute(array($user));
+        foreach($checkMdp as $data){
+            if(password_verify($oldPwd, $data["pwd"])){
+                if($newPwd === $newPwdRepeat){
+                    $db = $this->dbConnect();
+                        $pwd = password_hash($newPwd,PASSWORD_DEFAULT); //source: https://www.php.net/manual/en/function.password-hash.php
+                        $change = $db->prepare("UPDATE users SET pwd=:pwd, update_date=NOW() WHERE user=:user"); 
+                        $changeresult = $change->execute(array(
+                            "pwd"       => $pwd,
+                            "user"      => $user
+                        ));
+                        echo "Mot de passe modifié";
+                        session_unset();
+                        session_destroy();
+                        ?>
+                        <a href="connexionView.php"> Merci de vous reconnecter avec le nouveau mot de passe</a>
+                        <?php
+                }
+            } else {
+                ?>
+                <h3>le mot de passe actuel n'est pas le bon</h3>
+            <div><a href="index.php?action=formNewPassword">Réessayer</a></div>
+            <?php
+            }
+        }
+    }
+
 
     public function memberExist($member)
     {
