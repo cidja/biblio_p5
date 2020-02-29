@@ -2,7 +2,7 @@
 
 $title = "Inscription";
 ob_start();
-?>
+?> 
         <div class="container text-center jumbotron">
             <h2 class="text-uppercase">Création d'un nouvel utilisateur :</h2>
             <div class="formUser">
