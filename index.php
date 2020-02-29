@@ -19,15 +19,7 @@ try{
             elseif($_GET["action"] == "connexionview"){
                 ToolsBackend::connexionView();
             }
-            // // For admin
-            // elseif($_GET["action"] == "formAccessAdmin"){
-            //     ToolsBackend::formAccessAdmin();
-            // }
-
-            // For member
-            // elseif($_GET["action"] == "formAccessUser"){
-            //     ToolsBackend::formAccessUser();
-            // }
+           
 
             //To create newUser
             elseif($_GET["action"] == "inscription"){
@@ -231,7 +223,8 @@ try{
             //********change password part ********* */
             //Appel de la méthode pour afficher le formNewPassword
         elseif($_GET["action"] == "formNewPassword"){
-            ToolsBackend::formNewPassword();
+            $user = $_SESSION["member"];
+            ToolsBackend::formNewPassword($user);
         }
 
         //Appel de la méthode pour modifier le mot de passe admin

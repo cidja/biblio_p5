@@ -35,15 +35,16 @@ use cidja\commentManager\Model_CommentManager;
         {
             require("view/backend/formNewUser.php");
         }
-        
+
         public static function wrongId()
         {
             require("view/backend/wrongIdView.php");
         }
 
-        public static function formNewPassword()
+        public static function formNewPassword($user)
         {
-
+            $userManager = new Model_UserManager();
+            $updateDatePassword = $userManager->updateDatePassword($user);
             require("view/backend/updatePassword.php");
         }
         public static function changePassword($user, $oldPwd, $newPwd, $newPwdRepeat)

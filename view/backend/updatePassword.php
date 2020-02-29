@@ -10,6 +10,36 @@ $title = "Admin mon blog";
                 <div class="row justify-content-center">
                     <h3>Connecté en tant que : <?= $_SESSION["member"]; ?></h3>
                 </div>
+                <?php
+                foreach($updateDatePassword as $data){ // retrieving the updatedatepassword query
+                    //source: https://www.php.net/manual/fr/function.date-create.php
+                        $InscriptionDate = date_create($data["inscription_date"]);
+                        $InscriptionDateFr =  $InscriptionDate->format("d/m/Y à H:i:s");
+                        $date = new DateTime(); // now date creation
+
+                        $UpdateDate = date_create($data["update_date"]);
+                        $UpdateDateFr =  $UpdateDate->format("d/m/Y à H:i:s");
+
+                        $interval = date_diff($InscriptionDate, $date);
+                        $intervalInscriptionNow =  $interval->format("%a jours");
+                    ?> 
+                    <div class="container d-flex flex-column align-items-center">
+                        <div class="row">
+                            <div class="dataDescription">Vous êtes inscrit depuis le :</div>
+                            <div class="fieldDescription"><?= $InscriptionDateFr; ?></div>
+                        </div>
+                        <div class="row">
+                            <div class="dataDescription"> c'était il y a :</div>
+                            <div class="fieldDescription"><?= $intervalInscriptionNow; ?></div>
+                        </div>
+                        <div class="row">
+                            <div class="dataDescription">La dernière fois que vous avez modifié le mot de passe c'était le :</div>
+                            <div class="fieldDescription"><?= $UpdateDateFr; ?></div>
+                        </div>
+                    </div>
+                    <?php
+                }
+                ?>
                 <div class="row justify-content-center">
                     <div class="mb-5 mt-4">
 
