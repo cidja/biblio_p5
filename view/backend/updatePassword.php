@@ -33,8 +33,16 @@ $title = "Admin mon blog";
                             <div class="fieldDescription"><?= $intervalInscriptionNow; ?></div>
                         </div>
                         <div class="row">
-                            <div class="dataDescription">La dernière fois que vous avez modifié le mot de passe c'était le :</div>
+                            <div class="dataDescription"><?php
+                            if($data["inscription_date"] == $data["update_date"]){
+                                ?>vous n'avez jamais modifié le mot de passe, il faudrait y penser peut être :) 
+                                <?php 
+                            } else {
+                                ?>La dernière fois que vous avez modifié le mot de passe c'était le :</div>
                             <div class="fieldDescription"><?= $UpdateDateFr; ?></div>
+                            <?php 
+                            }; 
+                            ?>
                         </div>
                     </div>
                     <?php
