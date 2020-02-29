@@ -9,26 +9,6 @@ require_once("model/ManagerDb.php"); // Calling the ManagerDb.php class Source: 
 
 class Model_UserManager extends Model_ManagerDb
 {
-    //function to check the user and the mdp entered in the header
-    public function checkSuperUser($user, $pwd) 
-    {
-        $result = false; //Create boolean to check if member exist in table
-        $db = $this->dbConnect(); 
-        $check = $db->query("SELECT user,pwd FROM superuser");
-        foreach($check as $data){ // iteration 
-            if(($data["user"] == $user) AND (password_verify($pwd, $data["pwd"]))){
-                    $_SESSION["user"] = $user; // sessions create
-                    $result = true;
-            }
-        }
-        if($result == true){
-            header ("location: index.php?action=home");
-        }
-            else {
-                header("location: index.php?action=wrongId");
-            }
-    }
-    
     public function changePassword($user, $oldPwd, $newPwd, $newPwdRepeat)
     {
         $db= $this->dbConnect(); //fonction qui va vérifier si l'ancien mot de passe est bon 
