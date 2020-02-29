@@ -61,11 +61,8 @@ use cidja\commentManager\Model_CommentManager;
         public static function createNewUser($user, $pwd1)
         {
             $userManager = new Model_UserManager();
-            $memberExist = $userManager->memberExist($user);
+            //$memberExist = $userManager->memberExist($user);
             $newUser = $userManager->createNewUser($user, $pwd1);
-            
-        ?><div>validation de la création du nouvel utilisateur, <a href="index.php?action=formAccessUser">Cliquez ici pour se connecter</a></div>
-        <?php
         }
 
         public static function checkMember($member, $pwd)

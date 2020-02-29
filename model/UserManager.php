@@ -67,10 +67,16 @@ class Model_UserManager extends Model_ManagerDb
         $db= $this->dbConnect();
         $createUser = $db->prepare("INSERT INTO users(user, pwd, inscription_date, update_date)
                                     VALUES(:user, :pwd, now(), now())");
-        $createUser->execute(array(
+        $confirm = $createUser->execute(array(
             "user"      => $user,
             "pwd"       => $passwordHash
         ));
+        if($confirm == false){
+            ?><div>Utilisateur déja pris, merci d'en choisir un autre : <a href="index.php?action=inscription">Cliquez ici pour réessayer avec un autre nom d'utilisateur</a> </div> <?php
+        } else { ?>
+        <div>validation de la création du nouvel utilisateur, <a href="index.php?action=connexionview">Cliquez ici pour se connecter</a></div>
+        <?php
+        };
     }
 
     public function checkMember($member, $pwd)
