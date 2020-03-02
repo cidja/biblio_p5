@@ -7,7 +7,7 @@ $title = "Roman en cours";
 
 ob_start(); //Start of capture to put it in the variable at the end of the script 
 ?>
-    <div class="titleContainer text-center text-uppercase">
+    <div class="titleContainer text-center text-uppercase text-white">
         <h2>Livre en cours </h2>
     </div>
     <?php

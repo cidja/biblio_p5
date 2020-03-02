@@ -14,14 +14,15 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/bad7172f0a.js" crossorigin="anonymous"></script> <!--cdn fontawesome source: https://fontawesome.com/kits/bad7172f0a/settings !-->
 </head>
-<body>
-    
+<body id ="backgroundHome">
+
     <div class="container  text-center">
-        <h1 class="mb-5 titleUniverse">Choisis ton univers</h1>
+        <h1 class="mb-5 text-uppercase text-white">Choisis ton univers</h1>
         <div class="imgContainer container d-flex flex-wrap">
             <div class="imgNovel col-12 col-md-6">
-                <a href="/p5/index.php?action=listNovelCurrent"> <!--Check for passage inline !-->
-                    <img src="/p5/public/img/livrecadre.png" class="img-fluid">
+                <a class="bodyLink" href="/p5/index.php?action=listNovelCurrent">
+                   <img src="/p5/public/img/livrecadre.png" class="img-fluid">
+                    
                 </a>
             </div>
             <div class="imgCartoon col-12 col-md-6">

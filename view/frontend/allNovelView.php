@@ -34,7 +34,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
         </form>
     </div>
     <div class="nbNovels">
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center text-white">
             <div class="fieldDescription">Nombre de livres dans la catégorie choisie :  </div>
             <div class="dataDescription"><?= $countNovels; ?></div>
         </div>

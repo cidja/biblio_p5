@@ -4,6 +4,12 @@
 */
 body{
     color: #606060 !important;
+    background-image: url("../img/background_blue.jpg");
+    background-size: cover; /*prend toute la largeur de l'écran */
+    background-position: right; /*quand on change la taille de la fenêtre l'image fait sa mise au point a droite pour conserver la petite fille */
+    background-repeat: repeat-y;
+    width: 100%;
+    height: 100%;
 }
 .titleConnexion, .connexion, .wrongIdText{
     font-family: 'Bangers', cursive;
@@ -30,6 +36,19 @@ body{
     font-size: 30px;
 }
 
+#backgroundHome{
+    background-image: url("../img/background_blue.jpg");
+    background-size: cover; /*prend toute la largeur de l'écran */
+    background-position: right; /*quand on change la taille de la fenêtre l'image fait sa mise au point a droite pour conserver la petite fille */
+    background-repeat: repeat-y;
+    width: 100%;
+    height: 100%;
+}
+
+#novelHome{
+    border: 2px solid white;
+    padding: 75px;
+}
 
 /*general */
 .imgCover{

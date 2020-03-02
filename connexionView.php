@@ -16,7 +16,7 @@
 </head>
 <body>
     <section>
-        <div class=" text-center text-uppercase">
+        <div class=" text-center text-uppercase text-white">
             <h1 class="titleConnexion">Il était une fois...</h1>
             <h2 class="titleConnexion">l'application de gestion de bibliothèque</h2>
         </div>
