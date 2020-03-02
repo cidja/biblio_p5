@@ -11,7 +11,7 @@ foreach($oneInfos as $data){ // Let's go through the board
     $title = $data["title"]; 
     
     ?>
-    <section class="container novelForm">
+    <section class="container jumbotron novelForm">
     <?php if(isset($_SESSION["member"]) && $_SESSION["member"] == "admin"){ ?>
         <form method="post" action="index.php?action=updateNovelConfirm&amp;id=<?= $data["id"];?>">
     <?php }; ?>

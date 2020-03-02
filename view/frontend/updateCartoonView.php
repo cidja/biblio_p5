@@ -11,7 +11,7 @@ foreach($oneInfos as $data){ // Let's go through the board
         
         ?>
     <!-- source: https://getbootstrap.com/docs/4.0/components/forms/ !-->
-        <section class=" container CartoonForm">
+        <section class=" container CartoonForm jumbotron">
         <?php if(isset($_SESSION["member"]) && $_SESSION["member"] == "admin"){ ?>
             <form method="post" action="index.php?action=updateCartoonConfirm&amp;id=<?= $data["id"];?>">
         <?php }; ?>

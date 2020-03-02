@@ -6,10 +6,8 @@ include("public/inc/tools.php");
 $title = "validation de suppression";
 
 ob_start(); // Start of capture to put it in the variable at the end of the script 
-
-    echo $backLink;
 ?>
-<div class="container">
+<div class="container jumbotron">
     <div class="col">
     <?php if(isset($_SESSION["member"]) && $_SESSION["member"] == "admin"){ ?>
         <form method="post" action="index.php?action=deleteNovel&amp;id=<?=$id;?>">

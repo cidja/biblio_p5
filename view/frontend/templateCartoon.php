@@ -55,13 +55,14 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Administration
                         </a><div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="index.php?action=backend"><button class="btn btn-info">Moderation</button></a>
                         <a class="dropdown-item" href="index.php?action=formNewPassword"><button class="btn btn-info">Modifier mot de passe</button></a>
+                        <a class="dropdown-item" href="index.php?action=listMember"><button class="btn btn-primary">Liste des membres</button></a>
+                        <a class="dropdown-item" href="index.php?action=sessionStop"><button class="btn btn-danger">Déconnexion</button></a>
                     </div>
                 </li>
                 <?php
                 };
-                if(isset($_SESSION["member"])){
+                if(isset($_SESSION["member"]) && ($_SESSION["member"] !== "admin")){ //member and admin mode
                     ?>
                     <li class="nav-item">
                     <a class="nav-link" href="index.php?action=formNewPassword"><button class="btn btn-info">Modifier mot de passe</button></a>
@@ -69,7 +70,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?action=sessionStop"><button class="btn btn-warning">Déconnexion</button></a>
                     </li>
-                <?php
+                    <?php
                  };
                  if(!isset($_SESSION["member"])){ //for visit mode
                     ?>
