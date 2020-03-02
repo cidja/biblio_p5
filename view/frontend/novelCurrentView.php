@@ -78,7 +78,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                         <form method="post" action="index.php?action=newPageCount">
                     <?php }; ?>
                         <div class="form-group d-flex flex-column">
-                            <input type="number" class="form-control" max ="<?= $data["page_count"]; //max value number of page of the $data ("page_count") ?>" 
+                            <input type="number" class="form-control" min="<?=$data2["new_page_count"]; ?>" max="<?= $data["page_count"]; //max value number of page of the $data ("page_count") ?>" 
                             placeholder="Nouveau numéro de pages " id="newPageCount" name="newPageCount" required>
                             <input type="hidden" value="<?= $data["id"];?>" id="id" name="id"> <!--to retrieve the id for the query!-->
                             <button id="submitForm" type="submit" class="btn btn-success mt-2">Valider</button>
