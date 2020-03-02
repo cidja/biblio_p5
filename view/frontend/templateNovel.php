@@ -58,11 +58,12 @@
                         </a><div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="index.php?action=moderation"><button class="btn btn-info">Moderation</button></a>
                         <a class="dropdown-item" href="index.php?action=formNewPassword"><button class="btn btn-info">Modifier mot de passe</button></a>
+                        <a class="dropdown-item" href="index.php?action=sessionStop"><button class="btn btn-danger">Déconnexion</button></a>
                     </div>
                 </li>
                 <?php
                 };
-                if(isset($_SESSION["member"])){ //member and admin mode
+                if(($_SESSION["member"] !== "admin")){ //member and admin mode
                     ?>
                     <li class="nav-item">
                     <a class="nav-link" href="index.php?action=formNewPassword"><button class="btn btn-info">Modifier mot de passe</button></a>
