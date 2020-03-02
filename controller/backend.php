@@ -51,8 +51,15 @@ use cidja\commentManager\Model_CommentManager;
         {
             $userManager = new Model_UserManager();
             $newPassword = $userManager->changePassword($user, $oldPwd, $newPwd, $newPwdRepeat);
-
         }
+
+        public static function listMembers()
+        {
+            $userManager = new Model_UserManager();
+            $listMembers = $userManager->listMembers();
+            require("view/backend/managerMember.php");
+        }
+
 
         public static function createNewUser($user, $pwd1)
         {

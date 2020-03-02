@@ -89,6 +89,10 @@ try{
                 }
             }
 
+            elseif($_GET["action"] == "listMember"){
+                ToolsBackend::listMembers();
+            }
+
 
             //Novel part
 

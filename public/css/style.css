@@ -113,3 +113,12 @@ body{
 .error{
     display: none;
 }
+
+
+
+/*  -------------------backend part ------------------*/
+#listMemberContainer{
+    border-radius: 20px;
+    background-color: #f4f4f4;
+    margin-top: 15rem;
+}

@@ -84,6 +84,15 @@ class Model_UserManager extends Model_ManagerDb
         }
     }
 
+    public function listMembers()
+    {
+        $db= $this->dbConnect();
+        $listMembers = $db->query("SELECT id,user,DATE_FORMAT(inscription_date, '%d/%m/%Y à %Hh%i') AS inscription_date_fr,
+        DATE_FORMAT(update_date, '%d/%m/%Y à %Hh%i') AS update_date_fr FROM users");
+        return $listMembers;
+        var_dump($listMembers);
+    }
+
 
     public function memberExist($member)
     {
