@@ -26,11 +26,11 @@ $title = "Admin mon blog";
                     <div class="container d-flex flex-column align-items-center">
                         <div class="row">
                             <div class="dataDescription">Vous êtes inscrit depuis le :</div>
-                            <div class="fieldDescription"><?= $InscriptionDateFr; ?></div>
+                            <div class="fieldDescription ml-2"><?= $InscriptionDateFr; ?></div>
                         </div>
                         <div class="row">
                             <div class="dataDescription"> c'était il y a :</div>
-                            <div class="fieldDescription"><?= $intervalInscriptionNow; ?></div>
+                            <div class="fieldDescription ml-2"><?= $intervalInscriptionNow; ?></div>
                         </div>
                         <div class="row">
                             <div class="dataDescription"><?php
@@ -39,7 +39,7 @@ $title = "Admin mon blog";
                                 <?php 
                             } else {
                                 ?>La dernière fois que vous avez modifié le mot de passe c'était le :</div>
-                            <div class="fieldDescription"><?= $UpdateDateFr; ?></div>
+                            <div class="fieldDescription ml-2"><?= $UpdateDateFr; ?></div>
                             <?php 
                             }; 
                             ?>
