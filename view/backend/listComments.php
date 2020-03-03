@@ -52,5 +52,5 @@ ob_start();
     </div>
     <?php
     $content = ob_get_clean();
-    require("templateConnexion.php");
+    require("view/frontend/templateNovel.php");
     ?>
