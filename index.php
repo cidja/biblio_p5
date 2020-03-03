@@ -69,6 +69,10 @@ try{
             ToolsFrontend::signalComment($id, $novel_id); 
             }
 
+            elseif($_GET["action"] == "listComments"){
+                ToolsBackend::listComments();
+            }
+
             elseif($_GET["action"] == "moderation"){
                 ToolsBackend::moderation();
             }

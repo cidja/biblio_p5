@@ -60,6 +60,13 @@ use cidja\commentManager\Model_CommentManager;
             require("view/backend/managerMember.php");
         }
 
+        public static function listComments()
+        {
+            $commentManager = new Model_CommentManager();
+            $listComments = $commentManager->listComments();
+            require("view/backend/listComments.php");
+        }
+
 
         public static function createNewUser($user, $pwd1)
         {
