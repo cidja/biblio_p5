@@ -9,7 +9,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
 
 ?>
 
-    <div class="container statistics d-flex justify-content-center flex-column +">
+    <div id="statistics" class="container d-flex justify-content-center flex-column +">
         <section class="text-center">
             <h1 class="text-uppercase">Quelques chiffres</h1>
             <div>
