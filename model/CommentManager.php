@@ -27,7 +27,8 @@ class Model_CommentManager extends Model_ManagerDb
     {
         setlocale(LC_TIME, 'fr_FR.utf8', 'fra');
     $db = $this->dbConnect(); //appel de $this S:https://openclassrooms.com/fr/courses/4670706-adoptez-une-architecture-mvc-en-php/4735671-passage-du-modele-en-objet#/id/r-4744592
-    $listComments = $db->query('SELECT novel.title, novel.author, novel.publication, novel.genre, novel.page_count, novel.cover, comments.id, comments.novel_id, comments.author, comments.comment, DATE_FORMAT(comment_date, "%d/%m/%Y à %Hh%imin%ss") AS comment_date_fr, comments.comment_signal
+    $listComments = $db->query('SELECT novel.title, novel.author, novel.publication, novel.genre, novel.page_count, novel.cover, comments.id, comments.novel_id, comments.author,
+     comments.comment, DATE_FORMAT(comment_date, "%d/%m/%Y à %Hh%imin%ss") AS comment_date_fr, comments.comment_signal
     FROM novel
     INNER JOIN comments
     on novel.id = comments.novel_id

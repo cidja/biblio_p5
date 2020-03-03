@@ -58,6 +58,7 @@
                         </a><div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="index.php?action=moderation"><button class="btn btn-info">Moderation des commentaires</button></a>
                         <a class="dropdown-item" href="index.php?action=formNewPassword"><button class="btn btn-info">Modifier mot de passe</button></a>
+                        <a class="dropdown-item" href="index.php?action=listComments"><button class="btn btn-primary">Liste commentaires</button></a>
                         <a class="dropdown-item" href="index.php?action=listMember"><button class="btn btn-primary">Liste des membres</button></a>
                         <a class="dropdown-item" href="index.php?action=sessionStop"><button class="btn btn-danger">Déconnexion</button></a>
                     </div>
