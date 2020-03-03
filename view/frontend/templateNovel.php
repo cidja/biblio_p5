@@ -109,7 +109,7 @@
     <?= $content ?> <!--will contain what you want to put in the direction of listPostView.php !-->
     </div>
     <script src="public/js/main.js"></script>
-    <script src="public/js/ajax_jquery.js"></script>
+    
 
 
 

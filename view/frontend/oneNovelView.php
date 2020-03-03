@@ -190,8 +190,8 @@ foreach($oneInfos as $data){ // Let's go through the board
                                     <div class="col-6 col-sm-4 col-md-4 offset-sm-4 offset-md-7 mt-2 mb-3 mr-2">
                                     <?php if ($comment["comment_signal"] == 0){ //condition qui vérifie si comment_signal = 1 ou 0
                                         ?>
-                                        <button class="btn btn-success" type="button">
-                                            <a class="text-dark" href="index.php?action=signalComment&amp;id=<?= $comment["id"]?>&novel_id=<?= $comment["novel_id"]?>" id="signallink">Signaler</a>
+                                        <button class="btn btn-success signalLink" type="button">
+                                            <a class="text-dark" href="index.php?action=signalComment&amp;id=<?= $comment["id"]?>&novel_id=<?= $comment["novel_id"]?>">Signaler</a>
                                         </button><!--Utiliser pour renvoyer sur une page pour valider la signalisation de commentaire !-->
                                         <?php
                                         } else {
@@ -200,6 +200,7 @@ foreach($oneInfos as $data){ // Let's go through the board
                                             <?php
                                         }
                                         ?>
+                                        <div id="alreadySignal"></div>
                                     </div>
                                 </div>
                             </div>
@@ -263,6 +264,7 @@ foreach($oneInfos as $data){ // Let's go through the board
             <div id="result"></div>  !-->
         </section>
     </div>
+    <script src="public/js/ajax_jquery.js"></script>
 <?php
     } // Foreach end
 
