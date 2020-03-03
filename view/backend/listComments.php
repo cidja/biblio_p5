@@ -23,7 +23,7 @@ ob_start();
                     <div class="row">
                         <div class="d-flex col-sm-6">
                             <div class="fieldDescription">livre</div>
-                            <div class="dataDescription"><?= $comment["title"]; ?></div>
+                            <div class="dataDescription"><a href="index.php?action=oneNovel&amp;id=<?= $comment["novel_id"];?>"><?= $comment["title"]; ?></a></div>
                         </div>
                         <div class="d-flex col-sm-6">                
                             <div class="fieldDescription">posté le :</div>
