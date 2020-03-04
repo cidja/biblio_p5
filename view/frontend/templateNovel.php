@@ -43,6 +43,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?action=statistics">Statistiques</a>
                 </li>
+                <li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php?action=lastComments&amp;row_count=5">Derniers commentaires</a>
+                    </li>
+                </li>
                 <?php 
                 if(isset($_SESSION["member"]) && $_SESSION["member"] == "admin"){ 
                     ?>

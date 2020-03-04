@@ -71,6 +71,13 @@ use cidja\commentManager\Model_CommentManager;
                 }
             }
 
+            public static function lastComments($row_count)
+            {
+                $commentManager = new Model_CommentManager();
+                $lastComments = $commentManager->lastComments($row_count);
+                require("view/frontend/lastComments.php");
+            }
+
             public static function signalComment($id, $novel_id)
             {
                 $commentManager = new Model_CommentManager(); // création d'un objet

@@ -62,6 +62,7 @@ try{
                 // other exception
                 throw new Exception("Erreur : aucun identifiant de billet envoyé");
             }
+
             }
             elseif ($_GET["action"] == "signalComment"){ //to signal a comment
             $id = htmlspecialchars($_GET["id"]);
@@ -91,6 +92,11 @@ try{
                 else {
                     throw new Exception("Aucun id de post envoyé");
                 }
+            }
+
+            elseif($_GET["action"] == "lastComments"){
+                $row_count = htmlspecialchars($_GET["row_count"]);
+                ToolsFrontend::lastComments($row_count);
             }
 
             elseif($_GET["action"] == "listMember"){
