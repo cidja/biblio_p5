@@ -4,7 +4,7 @@ $title = "liste commentaires";
 ob_start();
 ?>
     <div class="container" id="listcommentContainer">
-        <h2 class="text-center text-uppercase">Liste des derniers commentaires</h2>
+        <h2 class="text-center text-uppercase text-white">Liste des derniers commentaires</h2>
         
             <?php foreach($lastComments as $comment){
                 ?>
