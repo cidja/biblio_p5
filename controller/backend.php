@@ -18,24 +18,24 @@ use cidja\commentManager\Model_CommentManager;
         
         public static function connexionView()
         {
-            require(dirname(__FILE__)."/../connexionView.php");
+            require("connexionView.php");
         }
 
         public static function inscription()
         {
-            require(dirname(__FILE__)."/../view/backend/formNewUser.php");
+            require("view/backend/formNewUser.php");
         }
 
         public static function wrongId()
         {
-            require(dirname(__FILE__)."/../view/backend/wrongIdView.php");
+            require("view/backend/wrongIdView.php");
         }
 
         public static function formNewPassword($user)
         {
             $userManager = new Model_UserManager();
             $updateDatePassword = $userManager->updateDatePassword($user);
-            require(dirname(__FILE__)."/../view/backend/updatePassword.php");
+            require("view/backend/updatePassword.php");
         }
         public static function changePassword($user, $oldPwd, $newPwd, $newPwdRepeat)
         {
@@ -47,14 +47,14 @@ use cidja\commentManager\Model_CommentManager;
         {
             $userManager = new Model_UserManager();
             $listMembers = $userManager->listMembers();
-            require(dirname(__FILE__)."/../view/backend/managerMember.php");
+            require("view/backend/managerMember.php");
         }
 
         public static function listComments()
         {
             $commentManager = new Model_CommentManager();
             $listComments = $commentManager->listComments();
-            require(dirname(__FILE__)."/../view/backend/listComments.php");
+            require("view/backend/listComments.php");
         }
 
 
@@ -77,7 +77,7 @@ use cidja\commentManager\Model_CommentManager;
             $commentManager = new Model_CommentManager(); //Création d'un objet
             $signalComments = $commentManager->checkSignalComment(); // Appel de la méthode checkSignalComment() de l'objet CommentManager
             $countSignalComments = $commentManager->countSignalComments(); // Appel de la méthode countSignalComments() pour affichage du nombre de commentaire à modérer dans signalCommentsView
-            require(dirname(__FILE__)."/../view/backend/signalCommentsView.php");
+            require("view/backend/signalCommentsView.php");
         }
 
         public static function checkSignalComment()
@@ -85,7 +85,7 @@ use cidja\commentManager\Model_CommentManager;
             $commentManager = new Model_CommentManager(); //Création d'un objet
             $signalComments = $commentManager->checkSignalComment(); // Appel de la méthode checkSignalComment() de l'objet CommentManager
             $countSignalComments = $commentManager->countSignalComments(); // Appel de la méthode countSignalComments() pour affichage du nombre de commentaire à modérer dans signalCommentsView
-            require(dirname(__FILE__)."/../view/backend/signalCommentsView.php"); // appel de la vue signalCommentsView.php
+            require("view/backend/signalCommentsView.php"); // appel de la vue signalCommentsView.php
         }
 
         //Fonction pour approuvé un commentaire
