@@ -231,9 +231,6 @@ try{
 
             elseif($_GET["action"] == "genreSort"){
                 $genre = htmlspecialchars(($_POST["genre"]));
-                if($genre == "tous les livres"){
-                    ToolsFrontend::listNovel();
-                }
                 ToolsFrontend::genreSort($genre);
             }
 
