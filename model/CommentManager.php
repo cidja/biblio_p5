@@ -65,7 +65,8 @@ class Model_CommentManager extends Model_ManagerDb
     { //le but de la fonction est d'ajouter un TRUE sur la colonne signal de la table comments pour ensuite le faire remonter dans les signal sur le backend
         $db = $this->dbConnect(); //appel de $this S:https://openclassrooms.com/fr/courses/4670706-adoptez-une-architecture-mvc-en-php/4735671-passage-du-modele-en-objet#/id/r-4744592
         $comments = $db->prepare("UPDATE comments SET comment_signal=1 WHERE id=?");
-        $signalComments = $comments->execute(array($id));
+        $comments->bindValue(1, $id, PDO::PARAM_INT);
+        $signalComments = $comments->execute();
         
         return $signalComments;
     }
@@ -83,7 +84,8 @@ class Model_CommentManager extends Model_ManagerDb
     {
         $db= $this->dbConnect();
         $approuveComment = $db->prepare("UPDATE comments set comment_signal	= 0 WHERE id= ?");
-        $affectedLines = $approuveComment->execute(array($id));
+        $approuveComment->bindValue(1, $id, PDO::PARAM_INT);
+        $affectedLines = $approuveComment->execute();
     }
 
     //Fonction pour supprimer un commentaire signalé
@@ -91,7 +93,8 @@ class Model_CommentManager extends Model_ManagerDb
     {
         $db= $this->dbConnect();
         $comment=$db->prepare("DELETE FROM comments WHERE id=?");
-        $deleteComment = $comment->execute(array($id));
+        $comment->bindValue(1, $id, PDO::PARAM_INT);
+        $deleteComment = $comment->execute();
     }
 
     //Fonction pour compter nombre commentaire a modérer
