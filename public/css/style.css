@@ -127,7 +127,7 @@ body{
 
 
 /*  -------------------backend part ------------------*/
-#listMemberContainer, #listcommentContainer, #statistics{
+#listMemberContainer, #statistics{
     border-radius: 20px;
     background-color: #f4f4f4;
     margin-top: 10rem;

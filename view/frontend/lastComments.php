@@ -48,7 +48,7 @@ ob_start();
                 <?php
             } // foreach end
             ?>
-            <div class="container">
+            <div class="container jumbotron">
                 <div class="d-flex justify-content-end">
                     <a href="index.php?action=lastComments&amp;row_count=10">+5</a>
                     <a href="index.php?action=lastComments&amp;row_count=15">+10</a>
