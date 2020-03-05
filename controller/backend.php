@@ -2,13 +2,13 @@
 //Tous les commentaires sont en anglais pour la compréhension pour le plus grand nombre
 //All comments are in English for the understanding of as many people as possible.
 //to support : mail: christian@linternaute-averti.fr
-require_once("model/NovelManager.php"); //call the class novelManager require_once (once only)
-require_once("model/PageNovelManager.php");
-require_once("model/CartoonManager.php");
-require_once("model/PageCartoonManager.php");
-require_once("model/UserManager.php");
-require_once("model/SessionManager.php");
-require_once("model/CommentManager.php");
+require_once(dirname(__FILE__)."/../model/NovelManager.php"); //call the class novelManager require_once (once only)
+require_once(dirname(__FILE__)."/../model/PageNovelManager.php");
+require_once(dirname(__FILE__)."/../model/CartoonManager.php");
+require_once(dirname(__FILE__)."/../model/PageCartoonManager.php");
+require_once(dirname(__FILE__)."/../model/UserManager.php");
+require_once(dirname(__FILE__)."/../model/SessionManager.php");
+require_once(dirname(__FILE__)."/../model/CommentManager.php");
 
 use cidja\userManager\Model_UserManager;
 use cidja\commentManager\Model_CommentManager;
