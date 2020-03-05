@@ -5,6 +5,7 @@
 namespace cidja\novelManager;
 
 use cidja\managerDb\Model_ManagerDb;
+use \PDO;
 require_once(dirname(__FILE__)."/ManagerDb.php"); //calling the file for the connection to the database
 
 
@@ -26,7 +27,8 @@ class Model_NovelManager extends Model_ManagerDb
             $infos = $db->prepare('SELECT id,title, author, isbn, genre, `publication`, page_count, count_volume, active,finish, comment,rate,cover,
                                     DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr, begin_date, 
             end_date  FROM novel WHERE id=?');
-            $infos->execute(array($id));
+            $infos->bindValue(1, $id, PDO::PARAM_INT);
+            $infos->execute();
             return $infos;
             
         }
@@ -36,7 +38,8 @@ class Model_NovelManager extends Model_ManagerDb
             $db= $this->dbConnect();
             $genreSort = $db->prepare('SELECT id,title, author, isbn, genre,`publication`, page_count, count_volume, active,finish, comment,rate,cover,
             DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM novel WHERE genre=? ORDER BY author');
-            $genreSort->execute(array($genre));
+            $genreSort->bindValue(1, $genre, PDO::PARAM_STR);
+            $genreSort->execute();
             return $genreSort;
 
         }
@@ -56,7 +59,8 @@ class Model_NovelManager extends Model_ManagerDb
             $db = $this->dbConnect();
             $infos = $db->prepare('SELECT id,title, author, isbn, genre, `publication`, page_count, count_volume, active,finish, comment,rate,cover,
                                     DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM novel WHERE id=?');
-            $infos->execute(array($id));
+            $infos->bindValue(1, $id, PDO::PARAM_INT);
+            $infos->execute();
             echo $infos;
             
         }
@@ -91,7 +95,8 @@ class Model_NovelManager extends Model_ManagerDb
             $lastUpdate = $db->prepare('SELECT novel.id, novel_page_count.novel_id, novel_page_count.new_page_count,
             novel_page_count.update_date FROM novel_page_count INNER JOIN novel on novel_page_count.novel_id = novel.id 
            WHERE novel_page_count.novel_id = ? ORDER BY update_date DESC LIMIT 0,1');
-           $lastUpdate->execute(array($id));
+           $lastUpdate->bindValue(1, $id, PDO::PARAM_INT);
+           $lastUpdate->execute();
             return $lastUpdate;
         }
 
@@ -156,7 +161,8 @@ class Model_NovelManager extends Model_ManagerDb
             $db = $this->dbConnect();
             $updatePageCount = $db->prepare("INSERT INTO novel_page_count(novel_id, new_page_count, update_date)
             VALUES(?, 0, :NOW()");
-            $updatePageCount->execute(array($id));
+            $updatePageCount->bindValue(1, $id, PDO::PARAM_INT);
+            $updatePageCount->execute();
         }
 
         public function updateNovel($id,$title, $author,$isbn, $publication, $genre, $page_count, $count_volume, $active, $comment, $rate, $cover, $begin_date, $end_date)
@@ -212,7 +218,8 @@ class Model_NovelManager extends Model_ManagerDb
         {
             $db = $this->dbConnect();
             $statusLendNovel = $db->prepare("SELECT novel_id, lend, borrower, lend_date FROM novel_lend WHERE novel_id= ?");
-            $statusLendNovel->execute(array($id));
+            $statusLendNovel->bindValue(1, $id, PDO::PARAM_INT);
+            $statusLendNovel->execute();
             return $statusLendNovel;
         }
 
@@ -220,7 +227,8 @@ class Model_NovelManager extends Model_ManagerDb
         {
             $db = $this->dbConnect();
             $deleteNovel = $db->prepare("DELETE FROM novel  WHERE id=?");
-            $deleteNovel->execute(array($id));
+            $deleteNovel->bindValue(1, $id, PDO::PARAM_INT);
+            $deleteNovel->execute();
 
         }
 
@@ -228,7 +236,8 @@ class Model_NovelManager extends Model_ManagerDb
         {
             $db = $this->dbConnect();
             $req = $db->prepare("UPDATE novel SET active=0, finish=1 WHERE id=?");
-            $endReading= $req->execute(array($id));
+            $req->bindValue(1, $id, PDO::PARAM_INT);
+            $endReading= $req->execute();
         }
 
     }

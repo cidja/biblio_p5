@@ -13,6 +13,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
             <label for="genre" id="genreSortTitle" class="col-sm-2 col-form-label text-uppercase">tri par genre : </label>
             <div class="col-sm-8">
                 <select class="form-control" id="genre" name="genre">
+                    <option>tous les livres</option>
                     <option>Auto biographie</option>
                     <option>Biographie</option>
                     <option>Classique</option>
