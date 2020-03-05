@@ -1,7 +1,7 @@
 
 <?php 
 
-if(isset($_SESSION["user"])){ //on vérifie que l'on a bien les id et mdp pour acceder à l'interface d'admin
+if(isset($_SESSION["member"])){ //on vérifie que l'on a bien les id et mdp pour acceder à l'interface d'admin
     $title = "Modération des commentaires"; 
 
     ob_start(); ?>
