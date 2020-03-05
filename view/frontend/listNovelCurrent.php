@@ -31,7 +31,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                
                     <div class="cover text-center">
                         <a href="index.php?action=novelCurrent&amp;id=<?= $data["id"];?>">
-                            <img class="imgCover img-fluid +"src=<?= $cover; ?> alt="couverture du livre" title="couverture du livre <?= $data["title"]; ?>" />
+                            <img class="imgCover +"src=<?= $cover; ?> alt="couverture du livre" title="couverture du livre <?= $data["title"]; ?>" />
                         </a>
                     </div>
                     <div>
