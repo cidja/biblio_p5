@@ -5,7 +5,7 @@
 namespace cidja\novelManager;
 
 use cidja\managerDb\Model_ManagerDb;
-require_once("model/ManagerDb.php"); //calling the file for the connection to the database
+require_once(dirname(__FILE__)."/ManagerDb.php"); //calling the file for the connection to the database
 
 
 class Model_NovelManager extends Model_ManagerDb

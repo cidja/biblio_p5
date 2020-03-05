@@ -4,7 +4,7 @@ namespace cidja\commentManager; //source: https://youtu.be/WHtbi8S0rkI?t=163
 
 use \cidja\managerDb\Model_ManagerDb;
 use \PDO;
-require_once("model/ManagerDb.php"); //calling the file for the connection to the database
+require_once(dirname(__FILE__)."/ManagerDb.php"); //calling the file for the connection to the database
 
 class Model_CommentManager extends Model_ManagerDb 
 {

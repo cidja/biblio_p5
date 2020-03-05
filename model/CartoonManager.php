@@ -7,7 +7,7 @@ namespace cidja\cartoonManager; //source: https://youtu.be/WHtbi8S0rkI?t=163
 use \cidja\managerDb\Model_ManagerDb;
 
 
-require_once("model/ManagerDb.php"); //calling the file for the connection to the database
+require_once(dirname(__FILE__)."/ManagerDb.php"); //calling the file for the connection to the database
 
 
 

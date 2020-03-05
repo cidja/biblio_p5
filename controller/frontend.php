@@ -2,13 +2,13 @@
 //Tous les commentaires sont en anglais pour la compréhension pour le plus grand nombre
 //All comments are in English for the understanding of as many people as possible.
 //to support : mail: christian@linternaute-averti.fr
-require_once("model/NovelManager.php"); //call the class novelManager require_once (once only)
-require_once("model/PageNovelManager.php");
-require_once("model/CartoonManager.php");
-require_once("model/PageCartoonManager.php");
-require_once("model/UserManager.php");
-require_once("model/SessionManager.php");
-require_once("model/CommentManager.php");
+require_once(dirname(__FILE__)."/../model/NovelManager.php"); //call the class novelManager require_once (once only)
+require_once(dirname(__FILE__)."/../model/PageNovelManager.php");
+require_once(dirname(__FILE__)."/../model/CartoonManager.php");
+require_once(dirname(__FILE__)."/../model/PageCartoonManager.php");
+require_once(dirname(__FILE__)."/../model/UserManager.php");
+require_once(dirname(__FILE__)."/../model/SessionManager.php");
+require_once(dirname(__FILE__)."/../model/CommentManager.php");
 
 use cidja\novelManager\Model_NovelManager;
 use cidja\pageNovelManager\Model_PageNovelManager;
@@ -78,7 +78,7 @@ use cidja\commentManager\Model_CommentManager;
                 require("view/frontend/lastComments.php");
             }
 
-            public static function signalComment($id, $novel_id)
+            public static function signalComment($id, $novel_id,$redirect=true)
             {
                 $commentManager = new Model_CommentManager(); // création d'un objet
 
@@ -88,8 +88,13 @@ use cidja\commentManager\Model_CommentManager;
                     throw new Exception("Impossible de signaler le commentaire");
                 }
                 else {
-                header("location: index.php?action=oneNovel&id=".$novel_id); // renvoi au menu principal
+                    if ($redirect==true){
+                        header("location: index.php?action=oneNovel&id=".$novel_id); // renvoi au menu principal
                     }
+                    else{
+                        return $signalComment;
+                    }
+                }
                     
                 }
 
