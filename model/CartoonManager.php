@@ -5,7 +5,7 @@
 namespace cidja\cartoonManager; //source: https://youtu.be/WHtbi8S0rkI?t=163
 
 use \cidja\managerDb\Model_ManagerDb;
-
+use \PDO;
 
 require_once(dirname(__FILE__)."/ManagerDb.php"); //calling the file for the connection to the database
 
@@ -26,8 +26,9 @@ class Model_CartoonManager extends Model_ManagerDb
             $db = $this->dbConnect();
             $oneCartoonInfos = $db->prepare('SELECT id, title, serie, isbn, genre, page_count, volume_number, finish, comment, rate, 
             cover,DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr,begin_date, 
-           end_date FROM cartoon WHERE id=?');
-            $oneCartoonInfos->execute(array($id));
+            end_date FROM cartoon WHERE id=?');
+            $oneCartoonInfos->bindValue(1, $id, PDO::PARAM_INT);
+            $oneCartoonInfos->execute();
             return $oneCartoonInfos;
         }
 
@@ -140,7 +141,8 @@ class Model_CartoonManager extends Model_ManagerDb
         {
             $db = $this->dbConnect();
             $deleteCartoon = $db->prepare("DELETE FROM cartoon WHERE id=?");
-            $deleteCartoon->execute(array($id));
+            $deleteCartoon->bindValue(1, $id, PDO::PARAM_INT);
+            $deleteCartoon->execute();
 
         }
 
@@ -148,6 +150,7 @@ class Model_CartoonManager extends Model_ManagerDb
         {
             $db = $this->dbConnect();
             $req = $db->prepare("UPDATE cartoon SET active=0, finish=1 WHERE id=?");
-            $endReading= $req->execute(array($id));
+            $req->bindValue(1, $id, PDO::PARAM_INT);
+            $endReading= $req->execute();
         }
 }
