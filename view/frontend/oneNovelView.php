@@ -156,7 +156,7 @@ foreach($oneInfos as $data){ // Let's go through the board
 
             <div class="comment">
                 <div class="d-flex">
-                    <div class="fieldDescription">Commentaires :</div>
+                    <div class="fieldDescription">Impressions :</div>
                     <div class="dataDescription"><?=$data["comment"]; ?></div>
                 </div>
             </div>

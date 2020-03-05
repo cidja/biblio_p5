@@ -120,7 +120,7 @@ ob_start(); // Start of capture to put it in the variable at the end of the scri
 
                 <div class="comment">
                     <div class="d-flex">
-                        <div class="fieldDescription">Commentaires :</div>
+                        <div class="fieldDescription">Impressions :</div>
                         <div class="dataDescription"><?=$data["comment"]; ?></div>
                     </div>
                 </div>
