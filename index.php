@@ -1,4 +1,9 @@
 <?php //deviens notre routeur 
+/*privileges 
+0 : member only comments
+1 : contributor comments + add book
+2 : admin comments + add book + manage comments + add privilege for other members
+*/
 setlocale(LC_TIME, 'fr_FR.utf8', 'fra');
 session_start(); // saving settings for the source admin: http://www.lephpfacile.com/cours/18-les-sessions Ligne 64
 //source: https://openclassrooms.com/fr/courses/4670706-adoptez-une-architecture-mvc-en-php/4682351-creer-un-routeur#/id/r-4682481
