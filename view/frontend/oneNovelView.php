@@ -237,7 +237,7 @@ foreach($oneInfos as $data){ // Let's go through the board
                 </div>
             </section>
         </div>
-        <?php   
+        <?php
         }
         ?>
             <div class="d-flex">
