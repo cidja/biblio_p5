@@ -18,4 +18,3 @@ $(document).on('click','.signalLink',function(){
             },
         });
 }); 
-     
