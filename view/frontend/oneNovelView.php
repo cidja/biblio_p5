@@ -67,8 +67,13 @@ foreach($oneInfos as $data){ // Let's go through the board
                         <?php //source: https://www.php.net/manual/fr/function.date-create.php
                         $bDate = date_create($data["begin_date"]);
                         $eDate = date_create($data["end_date"]);
-                        $interval = date_diff($bDate, $eDate);
-                        echo $interval->format("%a jours");
+                        if($data["end_date"] == "0000-00-00"){ //to check if end date ok 
+                            echo "pas encore de date de fin";
+                        } else{
+                            $interval = date_diff($bDate, $eDate);
+                            echo $interval->format("%a jours");
+                        }
+                        
                         ?>
                     </div>
                 </div>
