@@ -44,6 +44,12 @@ class Model_NovelManager extends Model_ManagerDb
 
         }
 
+        public function sortAlphabetical(){
+            $db = $this->dbConnect();
+            $sortAlphabetical = $db->prepare('SELECT id,title, author, isbn, genre,`publication`, page_count, count_volume, active,finish, comment,rate,cover,
+            DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM novel ORDER BY ')
+        }
+
         public function genreCountNovels($genre) // method that counts the number of novels
         {
             $db = $this->dbConnect();

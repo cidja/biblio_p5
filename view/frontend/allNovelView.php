@@ -1,7 +1,7 @@
 <?php 
 //Tous les commentaires sont en anglais pour la compréhension pour le plus grand nombre
 //All comments are in English for the understanding of as many people as possible.
-//to support : mail: christian@linternaute-averti.fr
+//to support : mail: contact@christian-georges.net
 
 $title = "Liste des romans";
 
@@ -43,7 +43,8 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
     <div class="container d-flex text-center flex-wrap justify-content-center">
     
         <?php
-    foreach($infos as $data) //source: https://www.php.net/manual/fr/control-structures.foreach.php
+    //foreach($infos as $data) //source: https://www.php.net/manual/fr/control-structures.foreach.php
+        for($i = 0; $i < 9; $i++)
     {
         if(!empty($data["cover"])){
             $cover = $data["cover"];
