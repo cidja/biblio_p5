@@ -33,6 +33,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
             </div>
         </form>
     </div>
+    <div class="container" id="sort"><button type="submit" id="sortAlphabetical">Tri par ordre alphabétique</button></div>
     <div class="nbNovels">
         <div class="d-flex justify-content-center text-white">
             <div class="fieldDescription">Nombre de livres dans la catégorie choisie :  </div>
@@ -43,8 +44,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
     <div class="container d-flex text-center flex-wrap justify-content-center">
     
         <?php
-    //foreach($infos as $data) //source: https://www.php.net/manual/fr/control-structures.foreach.php
-        for($i = 0; $i < 9; $i++)
+    foreach($infos as $data) //source: https://www.php.net/manual/fr/control-structures.foreach.php
     {
         if(!empty($data["cover"])){
             $cover = $data["cover"];

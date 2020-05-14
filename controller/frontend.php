@@ -175,6 +175,12 @@ use cidja\commentManager\Model_CommentManager;
                 $countNovels = $novelManager->genreCountNovels($genre);
                 require("view/frontend/allNovelView.php");
             }
+            public static function sortAlphabetical()
+            {
+                $novelManager = new Model_NovelManager();
+                $infos = $novelManager->sortAlphabetical();
+                require("view/frontend/allNovelView.php");
+            }
 
             //*******************Delete Part **************************** */
             public static function formDeleteNovel($id, $novel)

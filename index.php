@@ -239,6 +239,10 @@ try{
                 ToolsFrontend::genreSort($genre);
             }
 
+            elseif($_GET["action"] == "sortAlphabetical"){
+                ToolsFrontend::sortAlphabetical();
+            }
+
             //********change password part ********* */
             //Appel de la méthode pour afficher le formNewPassword
         elseif($_GET["action"] == "formNewPassword"){

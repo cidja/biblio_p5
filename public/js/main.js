@@ -12,6 +12,13 @@ $(document).ready(function(){ //Source: http://www.rbastien.com/blog/2015/02/aff
             $(this).text('afficher');
         }
     });
+    const sortButton = document.getElementById('sortAlphabetical');
+
+    console.log(sortButton);
+
+    sortButton.addEventListener('click', function (e) {
+        header("location:")
+    });
     /*let back = document.getElementById('back');
     back.addEventListener('click', function () {
         history.back();
