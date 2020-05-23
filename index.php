@@ -243,6 +243,10 @@ try{
                 ToolsFrontend::sortAlphabetical();
             }
 
+            elseif($_GET["action"] == "readDateSort"){
+                
+            }
+
             //********change password part ********* */
             //Appel de la méthode pour afficher le formNewPassword
         elseif($_GET["action"] == "formNewPassword"){

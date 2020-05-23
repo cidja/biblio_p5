@@ -182,6 +182,13 @@ use cidja\commentManager\Model_CommentManager;
                 require("view/frontend/allNovelView.php");
             }
 
+            public static function readDateSort()
+            {
+                $novelManager = new Model_NovelManager();
+                $result = $novelManager->readDateSort();
+                require("view/frontend/readDateSort.php");
+            }
+
             //*******************Delete Part **************************** */
             public static function formDeleteNovel($id, $novel)
             {

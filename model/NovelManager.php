@@ -50,6 +50,11 @@ class Model_NovelManager extends Model_ManagerDb
             DATE_FORMAT(creation_date, "%d/%m/%Y à %Hh%imin%ss") AS creation_date_fr FROM novel ORDER BY title');
         }
 
+        public function readDateSort(){
+            $db = $this->dbConnect();
+            $result = $db->prepare('SELECT id,title,author,page_count, begin_date, end_date, creation_date FROM novel');
+        }
+
         public function genreCountNovels($genre) // method that counts the number of novels
         {
             $db = $this->dbConnect();
