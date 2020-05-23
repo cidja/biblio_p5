@@ -52,7 +52,9 @@ class Model_NovelManager extends Model_ManagerDb
 
         public function readDateSort(){
             $db = $this->dbConnect();
-            $result = $db->prepare('SELECT id,title,author,page_count, begin_date, end_date, creation_date FROM novel');
+            $infos = $db->prepare('SELECT id,title,author,cover,page_count, begin_date, end_date, creation_date FROM novel');
+            $infos->execute();
+            return $infos;
         }
 
         public function genreCountNovels($genre) // method that counts the number of novels

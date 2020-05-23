@@ -185,7 +185,7 @@ use cidja\commentManager\Model_CommentManager;
             public static function readDateSort()
             {
                 $novelManager = new Model_NovelManager();
-                $result = $novelManager->readDateSort();
+                $infos = $novelManager->readDateSort();
                 require("view/frontend/readDateSort.php");
             }
 

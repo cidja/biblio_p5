@@ -7,12 +7,53 @@ $title = "Liste des romans";
 
 ob_start(); //Start of capture to put it in the variable at the end of the script 
 ?>
-
+<div class="container">
 <?php 
 foreach($infos as $data){
-    
-}
+    if(!empty($data["cover"])){
+        $cover = $data["cover"];
+    } else {
+        $cover = "public/img/noCover.png";
+    }
+        ?>
+        <div class="container">
+            <div class="row jumbotron"  id="textContainer">
+                <div class="col-sm-4">
+                    <img src="<?= $cover;?>" class="img-fluid">
+                </div>
+                <div class="row" id="title">
+                    <div class="col-sm-6">
+                    <?= $data["title"]; ?>
+                    </div>
+                    <div class="col-sm-6">
+                        <?= $data["author"];?>
+                    </div>
+                </div>
 
+                <div class="row" id="beginDate">
+                    <div class="col-sm-6">
+                        Commencé le : 
+                    </div>
+                    <div class="col-sm-6">
+                        <?= $data["begin_date"]; ?>
+                    </div>
+                </div>
+
+                <div class="row" id="endDate">
+                    <div class="col-sm-6">
+                        Fini le :
+                    </div>
+                    <div class="col-sm-6">
+                        <?= $data["end_date"]; ?>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <?php
+    }
+?>
+</div>
 <?php
 $infos->closeCursor();
 $content = ob_get_clean();

@@ -244,7 +244,7 @@ try{
             }
 
             elseif($_GET["action"] == "readDateSort"){
-                
+                ToolsFrontend::readDateSort();
             }
 
             //********change password part ********* */

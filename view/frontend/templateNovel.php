@@ -43,6 +43,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?action=statistics">Statistiques</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?action=readDateSort">Chronologie</a>
+                </li>
                 <li>
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?action=lastComments&amp;row_count=5">Derniers commentaires</a>
