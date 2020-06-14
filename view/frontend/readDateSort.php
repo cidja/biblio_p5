@@ -16,39 +16,68 @@ foreach($infos as $data){
         $cover = "public/img/noCover.png";
     }
         ?>
-        <div class="container">
-            <div class="row jumbotron"  id="textContainer">
-                <div class="col-sm-4">
+        <div class="container d-flex jumbotron">
+            
+                <div class="col-sm-2">
                     <img src="<?= $cover;?>" class="img-fluid">
                 </div>
+
+            <div class="container" id="textContent">
                 <div class="row" id="title">
-                    <div class="col-sm-6">
-                    <?= $data["title"]; ?>
+                    <div class="col-sm">
+                        <?= $data["title"]; ?>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm">
                         <?= $data["author"];?>
                     </div>
                 </div>
-
-                <div class="row" id="beginDate">
-                    <div class="col-sm-6">
-                        Commencé le : 
+                <div class="row">
+                    <div class=" col beginDate">
+                        <div class="d-flex">
+                            <div class="fieldDescription">Commencé le : </div>
+                            <div class="dataDescription">
+                                <?php //source: https://www.php.net/manual/fr/function.explode.php
+                                $begin_date = $data["begin_date"];
+                                $begin_date_fr = explode("-", $begin_date);
+                                echo $begin_date_fr[2] . "/". $begin_date_fr[1] . "/". $begin_date_fr[0];
+                                ?>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-sm-6">
-                        <?= $data["begin_date"]; ?>
+
+                    <div class=" col endDate">
+                        <div class="d-flex">
+                            <div class="fieldDescription"> Fini le :</div>
+                            <div class="dataDescription">
+                                <?php //source: https://www.php.net/manual/fr/function.explode.php
+                                $end_date = $data["end_date"];
+                                $end_date_fr = explode("-", $end_date);
+                                echo $end_date_fr[2] . "/". $end_date_fr[1] . "/". $end_date_fr[0];
+                                ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="row" id="endDate">
-                    <div class="col-sm-6">
-                        Fini le :
-                    </div>
-                    <div class="col-sm-6">
-                        <?= $data["end_date"]; ?>
+                <div class="row timeToRead">
+                <div class="d-flex">
+                    <div class="fieldDescription">Livres lus en : </div>
+                    <div class="dataDescription">
+                        <?php //source: https://www.php.net/manual/fr/function.date-create.php
+                        $bDate = date_create($data["begin_date"]);
+                        $eDate = date_create($data["end_date"]);
+                        if($data["end_date"] == "0000-00-00"){ //to check if end date ok 
+                            echo "pas encore de date de fin";
+                        } else{
+                            $interval = date_diff($bDate, $eDate);
+                            echo $interval->format("%a jours");
+                        }
+                        
+                        ?>
                     </div>
                 </div>
-
             </div>
+            </div>
+            
         </div>
         <?php
     }
