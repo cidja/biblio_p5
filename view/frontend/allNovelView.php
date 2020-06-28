@@ -73,7 +73,7 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                                 echo "pas fini";
                                 } else{
                                 $interval = date_diff($bDate, $eDate);
-                                echo $interval->format(" lu en %a jours");
+                                echo $interval->format("lu en %a jours");
                                 }?>
                             </div>
                         </div>
