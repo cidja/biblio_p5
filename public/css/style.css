@@ -96,6 +96,13 @@ body{
     padding: 15px;
     background-color:#e1f4f3;
 }
+
+#notFinish{
+    color: hsl(0, 100%, 55%);
+}
+#finish{
+    color: hsl(216, 100%, 55%);
+}
 /* addNovel and Cartoon part */
 .addSubmitButton{
     padding: 10px 25% !important;
