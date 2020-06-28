@@ -64,6 +64,19 @@ ob_start(); //Start of capture to put it in the variable at the end of the scrip
                             <div class="dataDescription"> Format : </div>
                             <div class="fieldDescription ml-1"> <?= $data["publication"];?></div>
                         </div>
+                        <div class="row justify-content-center">
+                            <div class="fieldDescription">
+                                <?php 
+                                $bDate = date_create($data["begin_date"]);
+                                $eDate = date_create($data["end_date"]);
+                                if($data["end_date"] == "0000-00-00"){ //to check if end date ok 
+                                echo "pas fini";
+                                } else{
+                                $interval = date_diff($bDate, $eDate);
+                                echo $interval->format(" lu en %a jours");
+                                }?>
+                            </div>
+                        </div>
                     
                     <div class="mt-1">
                         <?php
