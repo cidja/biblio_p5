@@ -145,7 +145,7 @@ body{
 }
 
 @media only screen and (max-width: 480px){
-    #title{
+    /*#title{
         display: none;
-    }
+    }*/
 }
