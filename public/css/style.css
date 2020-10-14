@@ -14,6 +14,9 @@ body{
 ::selection{
     background-color: orange;
 }
+.nav-link{ /*modification de la taille de l'écriture dans le menu */
+    font-size: 14px !important;
+}
 .titleConnexion, .connexion, .wrongIdText{
     font-family: 'Bangers', cursive;
 }
@@ -81,7 +84,7 @@ body{
     padding: 10px;
 }
 #genreSortTitle{
-    font-size: 20px;
+    font-size: 18px;
     color: grey;
 }
 .linkCover{
